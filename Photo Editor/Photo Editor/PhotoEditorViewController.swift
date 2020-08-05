@@ -105,6 +105,8 @@ public final class PhotoEditorViewController: UIViewController {
         
         prepareUI()
         
+//        textSizeSlider.setThumbImage(UIImage(named: "icon_back", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
+        
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
         edgePan.delegate = self
@@ -168,19 +170,23 @@ public final class PhotoEditorViewController: UIViewController {
     
     func configureCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 30, height: 30)
+        let width = (UIScreen.main.bounds.width - 24) / 10
+        layout.itemSize = CGSize(width: width, height: 45)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
+        
         colorsCollectionView.collectionViewLayout = layout
         colorsCollectionViewDelegate = ColorsCollectionViewDelegate()
         colorsCollectionViewDelegate.colorDelegate = self
+        colorsCollectionView.isScrollEnabled = false
         if !colors.isEmpty {
             colorsCollectionViewDelegate.colors = colors
         }
         colorsCollectionView.delegate = colorsCollectionViewDelegate
         colorsCollectionView.dataSource = colorsCollectionViewDelegate
-        
+        colorsCollectionView.layer.masksToBounds = false
+        colorsCollectionView.clipsToBounds = false
         colorsCollectionView.register(
             UINib(nibName: "ColorCollectionViewCell", bundle: Bundle(for: ColorCollectionViewCell.self)),
             forCellWithReuseIdentifier: "ColorCollectionViewCell")

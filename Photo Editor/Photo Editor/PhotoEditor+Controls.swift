@@ -115,22 +115,22 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func onStylePressed(sender: UIButton) {
-        font1Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font2Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font3Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font4Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
+        font1Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font2Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font3Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font4Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         
         if (sender.tag ==  0) {
-            font1Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "AppleSDGothicNeo-Regular", size: CGFloat(Int(textSizeSlider.value)))
+            font1Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "SFProDisplay-Regular", size: CGFloat(Int(textSizeSlider.value)))
         } else if (sender.tag ==  1) {
-            font2Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "AmericanTypewriter", size: CGFloat(Int(textSizeSlider.value)))
+            font2Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "SpaceMono-Regular", size: CGFloat(Int(textSizeSlider.value)))
         }else if (sender.tag ==  2) {
-            font3Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "Arial-BoldMT", size: CGFloat(Int(textSizeSlider.value)))
+            font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "Nunito-Black", size: CGFloat(Int(textSizeSlider.value)))
         } else if (sender.tag ==  3) {
-            font4Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
+            font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "BradleyHandITCTT-Bold", size: CGFloat(Int(textSizeSlider.value)))
         }
         

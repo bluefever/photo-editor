@@ -7,145 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "10D9526C-E87A-4262-9F9E-8B56E5F3F67C"
-            shouldBeEnabled = "Yes"
+            uuid = "C180D226-ACBD-4EB6-81F2-565D9391F2A1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Photo Editor/Photo Editor/BackgroundViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "10D9526C-E87A-4262-9F9E-8B56E5F3F67C - c9e871c1383ad00f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.BackgroundViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/BackgroundViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "150">
-               </Location>
-               <Location
-                  uuid = "10D9526C-E87A-4262-9F9E-8B56E5F3F67C - c9e871c1383ad00f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.BackgroundViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/BackgroundViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "280"
-                  endingLineNumber = "280"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FEC41B70-B2EE-4026-BAD1-68977228A1B5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Photo Editor/Photo Editor/BackgroundViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FEC41B70-B2EE-4026-BAD1-68977228A1B5 - 796a5375bcbf0ec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.BackgroundViewController.collectionView(_: __C.UICollectionView, numberOfItemsInSection: Swift.Int) -&gt; Swift.Int"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/BackgroundViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "FEC41B70-B2EE-4026-BAD1-68977228A1B5 - 796a5375bcbf0ec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.BackgroundViewController.collectionView(_: __C.UICollectionView, numberOfItemsInSection: Swift.Int) -&gt; Swift.Int"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/BackgroundViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E2FA4712-1C88-4BC6-9268-B717155626C7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Photo Editor/Photo Editor/ImageCollectionViewDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E2FA4712-1C88-4BC6-9268-B717155626C7 - 6f8162b48ec1e97c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.ImageCollectionViewDelegate.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/ImageCollectionViewDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "150">
-               </Location>
-               <Location
-                  uuid = "E2FA4712-1C88-4BC6-9268-B717155626C7 - 6f8162b48ec1e97c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOSPhotoEditor.ImageCollectionViewDelegate.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "iOSPhotoEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adamp/Documents/Tivix_git/photo-editor/Photo%20Editor/Photo%20Editor/ImageCollectionViewDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "bottomPadding"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

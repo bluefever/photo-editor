@@ -18,25 +18,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncL-uU-y1P">
-                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="1NF-oX-6Ag"/>
-                            <constraint firstAttribute="width" constant="20" id="LcG-gU-6ME"/>
-                        </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="ncL-uU-y1P" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1QZ-sk-wr6"/>
                 <constraint firstItem="ncL-uU-y1P" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8F5-g3-Cfh"/>
+                <constraint firstItem="ncL-uU-y1P" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="iQx-2q-ua0"/>
+                <constraint firstItem="ncL-uU-y1P" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="zfz-dV-NjC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="qgJ-qn-S9q"/>
             <size key="customSize" width="100" height="99"/>
             <connections>
                 <outlet property="colorView" destination="ncL-uU-y1P" id="7PV-0E-mnW"/>
             </connections>
-            <point key="canvasLocation" x="59" y="78"/>
+            <point key="canvasLocation" x="57.600000000000001" y="77.361319340329842"/>
         </collectionViewCell>
     </objects>
 </document>

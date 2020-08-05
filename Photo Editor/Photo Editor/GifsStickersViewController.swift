@@ -8,11 +8,12 @@
 
 import UIKit
 import CollectionViewWaterfallLayout
+import TTSegmentedControl
 
 class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var segmentedView: UISegmentedControl!
+    @IBOutlet weak var segmentedView: TTSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     
     var stickersCollectionView: UICollectionView!
@@ -55,19 +56,27 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        segmentedView.itemTitles = ["STICKERS", "GIFS"]
+        segmentedView.selectedTextFont = UIFont.init(name: "Nunito-ExtraBold", size: 15)!
+        segmentedView.defaultTextFont = UIFont.init(name: "Nunito-SemiBold", size: 15)!
         
-        let font = UIFont.init(name: "Nunito-ExtraBold", size: 15)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#4F5156")], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#64a7fa"), NSAttributedString.Key.font: font!], for: .selected)
-        
-        
-        
-        segmentedView.setTitle("STICKERS", forSegmentAt: 0)
-        segmentedView.setTitle("GIFS", forSegmentAt: 1)
-        
-        segmentedView.layer.backgroundColor = UIColor(hexString: "#efeffb").cgColor;
+        segmentedView.didSelectItemWith = { (index, title) -> () in
+            if index == 0 {
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        self.scrollView.contentOffset = CGPoint(x: 0, y:0);
+                    }, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        self.scrollView.contentOffset = CGPoint(x:self.scrollView.frame.size.width, y:0);
+                    }, completion: nil)
+                }
+            }
+            
+            self.onPageChange(page: index)
+        }
         
         self.view.layer.cornerRadius = 20
         self.view.clipsToBounds = true
@@ -93,13 +102,13 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @IBAction func onSearchChanged(_ sender: UITextField) {
         if let searchText = sender.text {
-            if (segmentedView.selectedSegmentIndex == 0) {
+            if (segmentedView.currentIndex == 0) {
                 stickersApiManager.searchGif(phrase: searchText)
             } else {
                 gifsApiManager.searchGif(phrase: searchText)
             }
         } else {
-            if (segmentedView.selectedSegmentIndex == 0) {
+            if (segmentedView.currentIndex == 0) {
                 stickersApiManager.fetchTrendingPage()
             } else {
                 gifsApiManager.fetchTrendingPage()
@@ -107,26 +116,8 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         }
     }
     
-    @IBAction func segmentedControlButtonClickAction(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                    self.scrollView.contentOffset = CGPoint(x: 0, y:0);
-                }, completion: nil)
-            }
-        } else {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                    self.scrollView.contentOffset = CGPoint(x:self.scrollView.frame.size.width, y:0);
-                }, completion: nil)
-            }
-        }
-        
-        onPageChange(page: sender.selectedSegmentIndex)
-    }
-    
     func initSearchField () {
-        searchTextField.layer.cornerRadius = 10
+        searchTextField.layer.cornerRadius = 20
         searchTextField.clipsToBounds = true
         searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: searchTextField.frame.height))
         searchTextField.leftViewMode = .always
@@ -200,7 +191,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
     }
     
     func loadMoreData() {
-        if (segmentedView.selectedSegmentIndex == 0) {
+        if (segmentedView.currentIndex == 0) {
             stickersApiManager.loadMore()
         } else {
             gifsApiManager.loadMore()
@@ -320,7 +311,7 @@ extension GifsStickersViewController: UIScrollViewDelegate {
         if (sender.tag == 1) {
             let pageWidth = scrollView.bounds.width
             let pageFraction = scrollView.contentOffset.x / pageWidth
-            segmentedView.selectedSegmentIndex = Int(round(pageFraction))
+            segmentedView.selectItemAt(index: Int(round(pageFraction)), animated: true)
             
             onPageChange(page: Int(round(pageFraction)))
         }
