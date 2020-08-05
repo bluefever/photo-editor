@@ -41,8 +41,12 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         configureCollectionViews()
         scrollView.showsHorizontalScrollIndicator = false
         
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        let font = UIFont.init(name: "Nunito-ExtraBold", size: 15)
+        
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#4F5156")], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#64a7fa"), NSAttributedString.Key.font: font!], for: .selected)
+        
+        segmentedView.layer.backgroundColor = UIColor(hexString: "#efeffb").cgColor;
         
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
@@ -101,7 +105,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: bottomPadding, right: 12)
-        let width = (CGFloat) ((screenSize.width - 36) / 4.0)
+        let width = (CGFloat) ((screenSize.width - 44) / 4.0)
         layout.itemSize = CGSize(width: width, height: width)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -169,14 +173,14 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = CGRect(x: scrollView.frame.size.width,
-                                     y: 0,
-                                     width: UIScreen.main.bounds.width,
-                                     height: view.frame.height - 100)
+                                      y: 0,
+                                      width: UIScreen.main.bounds.width,
+                                      height: view.frame.height - 100)
         
         imagesCollectionView.frame = CGRect(x: 0,
-                                           y: 0,
-                                           width: UIScreen.main.bounds.width,
-                                           height: view.frame.height - 100)
+                                            y: 0,
+                                            width: UIScreen.main.bounds.width,
+                                            height: view.frame.height - 100)
         
         scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
                                         height: scrollView.frame.size.height - 100)
@@ -288,7 +292,7 @@ extension BackgroundViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

@@ -23,9 +23,6 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
     
-    @IBOutlet weak var topGradient: UIView!
-    @IBOutlet weak var bottomGradient: UIView!
-    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
@@ -33,6 +30,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textSizeSlider: UISlider!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var controlsView: UIView!
     
     //Controls
     @IBOutlet weak var cropButton: UIButton!
@@ -105,10 +103,7 @@ public final class PhotoEditorViewController: UIViewController {
             self.setBackgroundImage(image: bgImage)
         }
         
-        deleteView.layer.cornerRadius = deleteView.bounds.height / 2
-        deleteView.layer.borderWidth = 2.0
-        deleteView.layer.borderColor = UIColor.white.cgColor
-        deleteView.clipsToBounds = true
+        prepareUI()
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
@@ -144,6 +139,31 @@ public final class PhotoEditorViewController: UIViewController {
                                           height: sizeToFit.height)
             textView.setNeedsDisplay()
         }
+    }
+    
+    func prepareUI() {
+        deleteView.layer.cornerRadius = deleteView.bounds.height / 2
+        deleteView.layer.borderWidth = 2.0
+        deleteView.layer.borderColor = UIColor.white.cgColor
+        deleteView.clipsToBounds = true
+        
+        controlsView.layer.cornerRadius = 20
+        controlsView.clipsToBounds = true
+        
+        if #available(iOS 11.0, *) {
+            self.controlsView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        } else {
+            let path = UIBezierPath(roundedRect: controlsView.bounds,
+                                    byRoundingCorners: [.topRight, .topLeft],
+                                    cornerRadii: CGSize(width: 20, height: 20))
+            
+            let maskLayer = CAShapeLayer()
+            
+            maskLayer.path = path.cgPath
+            controlsView.layer.mask = maskLayer
+        }
+        
+        paintSafeAreaBottomInset(withColor: .white)
     }
     
     func configureCollectionView() {
@@ -200,6 +220,7 @@ public final class PhotoEditorViewController: UIViewController {
         topToolbar.isHidden = hide
         bottomToolbar.isHidden = hide
         continueButton.isHidden = isTyping ? true : hide
+        view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
     }
 }
 

@@ -10,9 +10,11 @@ import UIKit
 
 class StickerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var stickerImage: UIImageView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        stickerImage.layer.cornerRadius = 20
+        stickerImage.clipsToBounds = true
     }
-
 }

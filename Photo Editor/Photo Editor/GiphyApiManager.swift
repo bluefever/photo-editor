@@ -107,7 +107,7 @@ class GiphyApiManager {
         if offset > 0 {
             url = url + "&offset=\(offset)"
         }
-        print(url)
+        
         return URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
     }
     

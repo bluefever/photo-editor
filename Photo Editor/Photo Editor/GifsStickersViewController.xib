@@ -6,6 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-ExtraBold.ttf">
+            <string>Nunito-ExtraBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GifsStickersViewController" customModule="iOSPhotoEditor" customModuleProvider="target">
             <connections>
@@ -25,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sgy-xB-bRW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oF-YM-OfZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="12"/>
@@ -54,8 +59,8 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="mpk-Az-Jmi"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="34"/>
+                                    <color key="textColor" red="0.30980392156862746" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sib-kD-Uen">
@@ -66,7 +71,7 @@
                                     </constraints>
                                 </view>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QxQ-jr-xdD">
-                                    <rect key="frame" x="24" y="102" width="327" height="27"/>
+                                    <rect key="frame" x="12" y="102" width="351" height="27"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="JY3-hf-ZHB"/>
                                     </constraints>
@@ -80,15 +85,29 @@
                                     </connections>
                                 </segmentedControl>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-8C-Fnb">
-                                    <rect key="frame" x="0.0" y="128" width="375" height="16"/>
+                                    <rect key="frame" x="0.0" y="128" width="375" height="14"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="0lR-4j-kL6"/>
+                                        <constraint firstAttribute="height" constant="14" id="0lR-4j-kL6"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search GIPHY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-Tw-Lp6">
-                                    <rect key="frame" x="12" y="144" width="351" height="40"/>
-                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxc-iS-cA6">
+                                    <rect key="frame" x="12" y="142" width="351" height="1"/>
+                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="tWk-2N-dUY"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5B-x6-vSV">
+                                    <rect key="frame" x="0.0" y="143" width="375" height="14"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="14" id="gmQ-zF-UXS"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SEARCH GIPHY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-Tw-Lp6">
+                                    <rect key="frame" x="12" y="157" width="351" height="40"/>
+                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="D6w-Qo-Dwf"/>
                                     </constraints>
@@ -97,7 +116,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                            <color key="value" red="0.46666666666666667" green="0.46666666666666667" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="value" red="0.75686274509803919" green="0.75686274509803919" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
@@ -109,9 +128,11 @@
                                 <constraint firstItem="LmG-Tw-Lp6" firstAttribute="centerX" secondItem="Sgy-xB-bRW" secondAttribute="centerX" id="1Ko-ub-Xvi"/>
                                 <constraint firstItem="HGR-8C-Fnb" firstAttribute="width" secondItem="Sgy-xB-bRW" secondAttribute="width" id="7tR-W6-OWi"/>
                                 <constraint firstItem="72l-Pf-i7O" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="12" id="Gdo-60-4ae"/>
-                                <constraint firstItem="QxQ-jr-xdD" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="24" id="XcP-2v-BC7"/>
+                                <constraint firstAttribute="trailing" secondItem="mxc-iS-cA6" secondAttribute="trailing" constant="12" id="Nna-cE-U8W"/>
+                                <constraint firstItem="mxc-iS-cA6" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="12" id="VhL-tO-WuC"/>
+                                <constraint firstItem="QxQ-jr-xdD" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="12" id="XcP-2v-BC7"/>
                                 <constraint firstItem="FFz-HG-EXZ" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" id="boN-O8-w1P"/>
-                                <constraint firstAttribute="trailing" secondItem="QxQ-jr-xdD" secondAttribute="trailing" constant="24" id="sFo-j6-ryg"/>
+                                <constraint firstAttribute="trailing" secondItem="QxQ-jr-xdD" secondAttribute="trailing" constant="12" id="sFo-j6-ryg"/>
                                 <constraint firstAttribute="trailing" secondItem="Sib-kD-Uen" secondAttribute="trailing" id="snU-rN-RTL"/>
                                 <constraint firstAttribute="trailing" secondItem="LmG-Tw-Lp6" secondAttribute="trailing" constant="12" id="soc-n6-4En"/>
                                 <constraint firstItem="LmG-Tw-Lp6" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="12" id="tHN-xJ-5oZ"/>
@@ -120,7 +141,7 @@
                             </constraints>
                         </stackView>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="389-Pb-g4p">
-                            <rect key="frame" x="0.0" y="196" width="375" height="471"/>
+                            <rect key="frame" x="0.0" y="209" width="375" height="458"/>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

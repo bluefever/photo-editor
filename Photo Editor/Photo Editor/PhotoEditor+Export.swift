@@ -122,9 +122,6 @@ extension PhotoEditorViewController {
             print(error)
         }
         
-        
-        
-        print(jsonData!)
         return jsonData
     }
 }

@@ -57,8 +57,17 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        
+        let font = UIFont.init(name: "Nunito-ExtraBold", size: 15)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#4F5156")], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hexString: "#64a7fa"), NSAttributedString.Key.font: font!], for: .selected)
+        
+        
+        
         segmentedView.setTitle("STICKERS", forSegmentAt: 0)
         segmentedView.setTitle("GIFS", forSegmentAt: 1)
+        
+        segmentedView.layer.backgroundColor = UIColor(hexString: "#efeffb").cgColor;
         
         self.view.layer.cornerRadius = 20
         self.view.clipsToBounds = true
