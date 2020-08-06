@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     func showPhotoEditor () {
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
-        photoEditor.image = UIImage(named: "test")
         
         //Colors for drawing and Text, If not set default values will be used
         //photoEditor.colors = [.red, .blue, .green]

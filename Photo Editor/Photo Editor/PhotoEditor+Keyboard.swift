@@ -12,10 +12,10 @@ import UIKit
 extension PhotoEditorViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
-           if isTyping {
-               doneButton.isHidden = false
-           }
-       }
+        if isTyping {
+            doneButton.isHidden = false
+        }
+    }
     
     @objc func keyboardDidShow(notification: NSNotification) {
         if isTyping {
@@ -34,6 +34,17 @@ extension PhotoEditorViewController {
     }
     
     @objc func keyboardWillChangeFrame(_ notification: NSNotification) {
+        var bottomPadding: CGFloat {
+            var topPadding:CGFloat? = 0
+            
+            if #available(iOS 11.0, *) {
+                let window = UIApplication.shared.keyWindow
+                topPadding = window?.safeAreaInsets.top
+            }
+            
+            return topPadding!
+        }
+        
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
@@ -43,7 +54,11 @@ extension PhotoEditorViewController {
             if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
                 self.colorPickerViewBottomConstraint?.constant = 0.0
             } else {
-                self.colorPickerViewBottomConstraint?.constant = endFrame?.size.height ?? 0.0
+                if let frame = endFrame {
+                    self.colorPickerViewBottomConstraint?.constant = frame.size.height - bottomPadding
+                } else {
+                    self.colorPickerViewBottomConstraint?.constant =   0.0
+                }
             }
             
             UIView.animate(withDuration: duration,
@@ -53,5 +68,5 @@ extension PhotoEditorViewController {
                            completion: nil)
         }
     }
-
+    
 }

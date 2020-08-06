@@ -99,13 +99,7 @@ public final class PhotoEditorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        if let bgImage = image {
-            self.setBackgroundImage(image: bgImage)
-        }
-        
         prepareUI()
-        
-//        textSizeSlider.setThumbImage(UIImage(named: "icon_back", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
@@ -166,6 +160,10 @@ public final class PhotoEditorViewController: UIViewController {
         }
         
         paintSafeAreaBottomInset(withColor: .white)
+        
+        textSizeSlider.setThumbImage(UIImage(named: "icon_thumb", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
+        
+        setBackgroundImage(image: (UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!))
     }
     
     func configureCollectionView() {

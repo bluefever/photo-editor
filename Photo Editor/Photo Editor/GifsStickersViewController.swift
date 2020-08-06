@@ -121,7 +121,12 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         searchTextField.clipsToBounds = true
         searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: searchTextField.frame.height))
         searchTextField.leftViewMode = .always
-        searchTextField.returnKeyType = UIReturnKeyType.search
+        searchTextField.returnKeyType = UIReturnKeyType.done
+        searchTextField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
+    }
+    
+   @IBAction func onReturn() {
+        self.searchTextField.resignFirstResponder()
     }
     
     func initGiphy () {
