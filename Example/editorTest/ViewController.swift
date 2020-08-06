@@ -43,8 +43,8 @@ class ViewController: UIViewController {
 
 extension ViewController: PhotoEditorDelegate {
     
-    func doneEditing(image: UIImage) {
-        
+    func doneEditing(expression: String) {
+        print(expression)
     }
     
     func canceledEditing() {
