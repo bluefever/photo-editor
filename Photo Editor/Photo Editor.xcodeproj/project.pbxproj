@@ -70,6 +70,7 @@
 		9698534424C6D52D0004167C /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9698534324C6D52D0004167C /* GifCollectionViewCell.xib */; };
 		96C9D47924C6C36100BB803D /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */; };
 		96C9D47B24C6C36700BB803D /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */; };
+		96F9690424E177690081A0DB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9690324E177690081A0DB /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 		9698534324C6D52D0004167C /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCollectionViewCell.xib; sourceTree = "<group>"; };
 		96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsStickersViewController.swift; sourceTree = "<group>"; };
 		96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifsStickersViewController.xib; sourceTree = "<group>"; };
+		96F9690324E177690081A0DB /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				9698534324C6D52D0004167C /* GifCollectionViewCell.xib */,
 				964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */,
 				960ED6B224DBCC7F002D3B85 /* default_bg.@2x.png */,
+				96F9690324E177690081A0DB /* CustomTextField.swift */,
 				960ED6B124DBCC7F002D3B85 /* default_bg.@3x.png */,
 				960ED6AE24DBCC7F002D3B85 /* default_bg.png */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
@@ -368,6 +371,7 @@
 				056513481EF489CD009EA38F /* PhotoEditor+Keyboard.swift in Sources */,
 				964F1C7624C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift in Sources */,
 				963AE9B324C6D1EC0043F791 /* GifCollectionViewCell.swift in Sources */,
+				96F9690424E177690081A0DB /* CustomTextField.swift in Sources */,
 				0565131B1EF489B4009EA38F /* ColorCollectionViewCell.swift in Sources */,
 				0565131F1EF489B4009EA38F /* StickerCollectionViewCell.swift in Sources */,
 				964F1C7824C5E3AB00F96C62 /* ImageCollectionViewCell.swift in Sources */,

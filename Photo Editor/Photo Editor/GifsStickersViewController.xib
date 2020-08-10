@@ -114,7 +114,7 @@
                                         <constraint firstAttribute="height" constant="16" id="gmQ-zF-UXS"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SEARCH GIPHY" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-Tw-Lp6">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SEARCH GIPHY" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-Tw-Lp6" customClass="CustomTextField" customModule="iOSPhotoEditor">
                                     <rect key="frame" x="12" y="163" width="351" height="40"/>
                                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
