@@ -73,7 +73,7 @@ public final class PhotoEditorViewController: UIViewController {
     var backgroundVCIsVisible = false
     var gifsStickersVCIsVisible = false
     var drawColor: UIColor = UIColor.black
-    var textColor: UIColor = UIColor.white
+    var textColor: UIColor = UIColor.black
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
     var swiped = false

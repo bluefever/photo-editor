@@ -64,12 +64,6 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
         
         if indexPath.item == 0 {
             cell.colorView.layer.cornerRadius = 15
-            cell.colorView.layer.shadowColor = UIColor.black.cgColor
-            cell.colorView.layer.shadowOpacity = 0.7
-            cell.colorView.layer.shadowOffset = .zero
-            cell.colorView.layer.shadowRadius = 6
-            cell.colorView.layer.masksToBounds = false
-            cell.colorView.clipsToBounds = false
             
             if #available(iOS 11.0, *) {
                 cell.colorView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
@@ -84,6 +78,12 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
                 cell.colorView.layer.mask = maskLayer
             }
         } else if indexPath.item == colors.count - 1 {
+            cell.colorView.layer.shadowColor = UIColor.black.cgColor
+            cell.colorView.layer.shadowOpacity = 0.7
+            cell.colorView.layer.shadowOffset = .zero
+            cell.colorView.layer.shadowRadius = 6
+            cell.colorView.layer.masksToBounds = false
+            cell.colorView.clipsToBounds = false
             cell.colorView.layer.cornerRadius = 15
             
             if #available(iOS 11.0, *) {
