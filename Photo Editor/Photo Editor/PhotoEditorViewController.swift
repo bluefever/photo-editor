@@ -63,6 +63,11 @@ public final class PhotoEditorViewController: UIViewController {
      */
     @objc public var bgImages : [String] = []
     
+    /**
+    Json data to import expression
+    */
+    @objc public var initialData: String?
+    
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
@@ -116,13 +121,19 @@ public final class PhotoEditorViewController: UIViewController {
                                                name: UIResponder.keyboardDidHideNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
-        configureCollectionView()
+
         gifsStickersViewController = GifsStickersViewController(nibName: "GifsStickersViewController", bundle: Bundle(for: GifsStickersViewController.self))
         
         backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
         hideControls()
-        openTextTool()
+        
+        if let expression = initialData {
+            importExpression(data: expression)
+        } else {
+            openTextTool()
+        }
+        
+        configureCollectionView()
     }
     
     @IBAction func slider(_ sender: Any) {
@@ -176,6 +187,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         colorsCollectionView.collectionViewLayout = layout
         colorsCollectionViewDelegate = ColorsCollectionViewDelegate()
+        colorsCollectionViewDelegate.initialColor = textColor
         colorsCollectionViewDelegate.colorDelegate = self
         colorsCollectionView.isScrollEnabled = false
         if !colors.isEmpty {

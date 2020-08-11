@@ -102,8 +102,9 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        photoEditorDelegate?.doneEditing(expression: exportExpression()!)
-        self.dismiss(animated: true, completion: nil)
+        print(exportExpression())
+//        photoEditorDelegate?.doneEditing(expression: exportExpression()!)
+//        self.dismiss(animated: true, completion: nil)
     }
     
 

@@ -12,6 +12,8 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     
     var colorDelegate : ColorDelegate?
     
+    var initialColor: UIColor?
+    
     /**
      Array of Colors that will show while drawing or typing
      */
@@ -62,6 +64,15 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionViewCell", for: indexPath) as! ColorCollectionViewCell
         cell.colorView.backgroundColor = colors[indexPath.item]
         
+        if (colors[indexPath.item].cgColor == initialColor?.cgColor) {
+            cell.colorView.layer.shadowColor = UIColor.black.cgColor
+            cell.colorView.layer.shadowOpacity = 0.7
+            cell.colorView.layer.shadowOffset = .zero
+            cell.colorView.layer.shadowRadius = 6
+            cell.colorView.layer.masksToBounds = false
+            cell.colorView.clipsToBounds = false
+        }
+        
         if indexPath.item == 0 {
             cell.colorView.layer.cornerRadius = 15
             
@@ -78,12 +89,6 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
                 cell.colorView.layer.mask = maskLayer
             }
         } else if indexPath.item == colors.count - 1 {
-            cell.colorView.layer.shadowColor = UIColor.black.cgColor
-            cell.colorView.layer.shadowOpacity = 0.7
-            cell.colorView.layer.shadowOffset = .zero
-            cell.colorView.layer.shadowRadius = 6
-            cell.colorView.layer.masksToBounds = false
-            cell.colorView.clipsToBounds = false
             cell.colorView.layer.cornerRadius = 15
             
             if #available(iOS 11.0, *) {
