@@ -43,22 +43,15 @@ open class ExpressionPreview: UIView {
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                DispatchQueue.global().async { [weak self] in
-                    if let data = try? Data(contentsOf: URL(string: bgImage)!) {
-                        if let image = UIImage(data: data) {
-                            DispatchQueue.main.async {
-                                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-                                imageView.image = image
-                                self?.addSubview(imageView)
-                                self?.sendSubviewToBack(imageView)
-                            }
-                        }
-                    }
-                }
+                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                imageView.image = UIImage(named: bgImage, in: Bundle(for: type(of: self)), compatibleWith: nil)!
+                
+                self.addSubview(imageView)
+                self.sendSubviewToBack(imageView)
             } else {
-              let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
-              
+                
                 self.addSubview(imageView)
                 self.sendSubviewToBack(imageView)
             }

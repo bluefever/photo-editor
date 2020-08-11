@@ -101,8 +101,8 @@ extension PhotoEditorViewController {
     public func exportExpression () -> String? {
         var expression = Expression()
         
-        if let imageUrl = imageBgUrl {
-            expression.backgroundImage = imageUrl
+        if let imageName = imageBgName {
+            expression.backgroundImage = imageName
         } else {
             expression.backgroundColor = imageBg.backgroundColor?.hexString
         }
@@ -161,7 +161,7 @@ extension PhotoEditorViewController {
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                setBackgroundImage(image: bgImage)
+                setBackgroundImage(image: UIImage(named: bgImage, in: Bundle(for: type(of: self)), compatibleWith: nil)!)
             } else {
                 setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
             }

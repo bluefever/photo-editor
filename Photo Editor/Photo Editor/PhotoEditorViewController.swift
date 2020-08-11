@@ -74,7 +74,7 @@ public final class PhotoEditorViewController: UIViewController {
     // list of controls to be hidden
     @objc public var hiddenControls : [NSString] = []
     
-    var imageBgUrl: String? = nil
+    var imageBgName: String? = nil
     var backgroundVCIsVisible = false
     var gifsStickersVCIsVisible = false
     var drawColor: UIColor = UIColor.black
@@ -105,6 +105,7 @@ public final class PhotoEditorViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
+        prepareBackgrounds()
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
@@ -145,6 +146,14 @@ public final class PhotoEditorViewController: UIViewController {
             textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width,
                                           height: sizeToFit.height)
             textView.setNeedsDisplay()
+        }
+    }
+    
+    func prepareBackgrounds() {
+        let bundle = Bundle(for: PhotoEditorViewController.self)
+        
+        for index in 1...62 {
+            bgImages.append(bundle.url(forResource: "bg_\(index)", withExtension: "png")!.absoluteString)
         }
     }
     
@@ -214,12 +223,12 @@ public final class PhotoEditorViewController: UIViewController {
     
     func setBackgroundColor(color: String) {
         self.imageBg.image = nil
-        self.imageBgUrl = nil
+        self.imageBgName = nil
         self.imageBg.backgroundColor = UIColor(hexString: color)
     }
     
-    func setBackgroundImage(image: String) {
-        imageBgUrl = image
+    func setBackgroundImage(image: String, index: Int) {
+        imageBgName = "bg_\(index)"
         
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: URL(string: image)!) {

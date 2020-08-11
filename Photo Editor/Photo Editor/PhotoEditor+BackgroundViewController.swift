@@ -55,9 +55,9 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
         self.setBackgroundColor(color: color)
     }
     
-    func didSelectImageBackground(image: String) {
+    func didSelectImageBackground(image: String, index: Int) {
         self.removeBackgroundView()
-        self.setBackgroundImage(image: image)
+        self.setBackgroundImage(image: image, index: index)
     }
     
     func backgroundViewDidDisappear() {

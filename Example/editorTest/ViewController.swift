@@ -25,19 +25,19 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 3,\n      \"text\" : \"Sfsdfsfsdfasdasd\\nAsdas\\nDas\\nD\\nAs\\nDs\\nAd\",\n      \"textColor\" : \"#76FECB\",\n      \"textStyle\" : \"Apple SD Gothic Neo\",\n      \"textSize\" : 15,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 348.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 190\n      },\n      \"zIndex\" : 0,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media2.giphy.com\\/media\\/gkQqTVkH2x20p3TbPy\\/giphy.gif?cid=cac7b2456a3baa2939028d1324447b6b13cb6abffc003838&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 102.00000000000006,\n        \"y\" : 67.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 190\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 0.30670854641136991,\n        \"b\" : 0.096671540211629325,\n        \"ty\" : 0,\n        \"c\" : -0.096671540211629325,\n        \"a\" : 0.30670854641136991,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media3.giphy.com\\/media\\/IgGcxqawkRc6y43Z6I\\/giphy.gif?cid=cac7b2456f2597cffe413427fcd40e89d6543294ac0a44d4&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 174.5,\n        \"y\" : 166\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 205\n      },\n      \"zIndex\" : 2,\n      \"transform\" : {\n        \"d\" : 1.7029677409116846,\n        \"b\" : -1.7293144319783356,\n        \"ty\" : 0,\n        \"c\" : 1.7293144319783356,\n        \"a\" : 1.7029677409116846,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media0.giphy.com\\/media\\/MaflxovRYY4y6D4Nyy\\/giphy.gif?cid=cac7b2456a3baa2939028d1324447b6b13cb6abffc003838&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 219.99999999999994,\n        \"y\" : 520\n      }\n    }\n  ]}"
+        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 0,\n      \"text\" : \"Asdasdad\",\n      \"textColor\" : \"#FDBEEA\",\n      \"textStyle\" : \"Nunito\",\n      \"textSize\" : 30,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 348.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 190\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media1.giphy.com\\/media\\/KFVSc4k41364FiMBOI\\/giphy.gif?cid=cac7b245a2d14dfd2ca7559e9f402f7e4d2c57113ad80b86&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 109.5,\n        \"y\" : 153.5\n      }\n    }\n  ],\n  \"backgroundImage\" : \"bg_11\"\n}"
         photoEditor.bgColors = bgColors
-        photoEditor.bgImages = bgImages
+//        photoEditor.bgImages = bgImages
         photoEditor.initialData = data
 //
-//        photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
+        photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
 //
-//        present(photoEditor, animated: true, completion: nil)
+        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        preview.data = data
-        self.view.addSubview(preview)
+//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+//        preview.data = data
+//        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {
