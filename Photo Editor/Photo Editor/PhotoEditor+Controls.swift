@@ -118,16 +118,16 @@ extension PhotoEditorViewController {
         
         if (sender.tag ==  0) {
             font1Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "SFProDisplay-Regular", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(Int(textSizeSlider.value)))
         } else if (sender.tag ==  1) {
             font2Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "SpaceMono-Regular", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
         }else if (sender.tag ==  2) {
             font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "Nunito-Black", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "sweetpurple", size: CGFloat(Int(textSizeSlider.value)))
         } else if (sender.tag ==  3) {
             font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "BradleyHandITCTT-Bold", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "ZillaSlabHighlight-Bold", size: CGFloat(Int(textSizeSlider.value)))
         }
         
         activeTextView?.font = lastTextViewFont
@@ -159,7 +159,7 @@ extension PhotoEditorViewController {
                                                     width: UIScreen.main.bounds.width, height: 30))
             
             textView.textAlignment = .center
-            textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 30)
+            textView.font = UIFont(name: "HelveticaNeue-Medium", size: 30)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
             textView.autocorrectionType = .no

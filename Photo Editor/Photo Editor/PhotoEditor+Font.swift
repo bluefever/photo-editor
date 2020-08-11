@@ -11,7 +11,8 @@ import UIKit
 
 extension PhotoEditorViewController {
     static var fonts = ["Nunito-ExtraBold", "Nunito-SemiBold", "Nunito-Black",
-                        "SpaceMono-Regular", "SFProDisplay-Regular"]
+                        "sweetpurple", "ZillaSlabHighlight-Bold",
+                        "BowlbyOneSC-Regular"]
     
     //Resources don't load in main bundle we have to register the font
     func registerFont() {
@@ -23,6 +24,7 @@ extension PhotoEditorViewController {
                 return
             }
             let font = CGFont(fontDataProvider)
+            
             var error: Unmanaged<CFError>?
             guard CTFontManagerRegisterGraphicsFont(font!, &error) else {
                 return

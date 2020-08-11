@@ -225,6 +225,9 @@
 		961104ED24E2C3BB0021D4D7 /* bg_36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_36.png; sourceTree = "<group>"; };
 		961104EE24E2C3BB0021D4D7 /* bg_49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_49.png; sourceTree = "<group>"; };
 		961104EF24E2C3BB0021D4D7 /* bg_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_15.png; sourceTree = "<group>"; };
+		9611052724E2D0060021D4D7 /* sweetpurple.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sweetpurple.ttf; sourceTree = "<group>"; };
+		9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BowlbyOneSC-Regular.ttf"; sourceTree = "<group>"; };
+		9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZillaSlabHighlight-Bold.ttf"; sourceTree = "<group>"; };
 		963AE9B124C6D1EC0043F791 /* GifCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifCollectionViewCell.swift; sourceTree = "<group>"; };
 		964F1C2424C5B3F900F96C62 /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditorViewController.xib; sourceTree = "<group>"; };
 		964F1C6C24C5E3AB00F96C62 /* BackgroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
@@ -250,8 +253,6 @@
 		96618BD924D9B5FF00128708 /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
 		96618BDB24DA831800128708 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		96618BDC24DAAB0D00128708 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
-		96618BDD24DAAB0D00128708 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
-		96618BDE24DAAB0D00128708 /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
 		9698534324C6D52D0004167C /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCollectionViewCell.xib; sourceTree = "<group>"; };
 		96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsStickersViewController.swift; sourceTree = "<group>"; };
 		96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifsStickersViewController.xib; sourceTree = "<group>"; };
@@ -302,6 +303,9 @@
 				960ED6B224DBCC7F002D3B85 /* default_bg.@2x.png */,
 				96F9690324E177690081A0DB /* CustomTextField.swift */,
 				9611043224E2695B0021D4D7 /* ExpressionPreview.swift */,
+				9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */,
+				9611052724E2D0060021D4D7 /* sweetpurple.ttf */,
+				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
 				960ED6B124DBCC7F002D3B85 /* default_bg.@3x.png */,
 				960ED6AE24DBCC7F002D3B85 /* default_bg.png */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
@@ -315,8 +319,6 @@
 				056513111EF489B4009EA38F /* UIView+Image.swift */,
 				056513121EF489B4009EA38F /* Protocols.swift */,
 				96618BDC24DAAB0D00128708 /* Nunito-Black.ttf */,
-				96618BDD24DAAB0D00128708 /* SFProDisplay-Regular.ttf */,
-				96618BDE24DAAB0D00128708 /* SpaceMono-Regular.ttf */,
 				056513131EF489B4009EA38F /* GradientView.swift */,
 				056513141EF489B4009EA38F /* CropView.swift */,
 				96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */,
