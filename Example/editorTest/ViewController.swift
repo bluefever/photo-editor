@@ -33,11 +33,12 @@ class ViewController: UIViewController {
         
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
         
-//        present(photoEditor, animated: true, completion: nil)
-        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        preview.data = data
-        self.view.addSubview(preview)
-//        preview.data
+        present(photoEditor, animated: true, completion: nil)
+        
+        // Expression preview view
+//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 800))
+//        preview.data = data
+//        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -7,8 +7,9 @@
 
 import Foundation
 
-open class ExpressionPreview: UIImageView {
+open class ExpressionPreview: UIView {
     @objc open var data: String? = nil
+    var imported: Bool = false
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,10 +22,14 @@ open class ExpressionPreview: UIImageView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        importExpression()
+        if (!imported) {
+            imported = true
+            importExpression()
+        }
     }
     
-    public func importExpression () {
+    func importExpression () {
+        self.clipsToBounds = true
         let jsonData = data!.data(using: .utf8)!
         var expression: Expression? = nil
         
@@ -42,7 +47,10 @@ open class ExpressionPreview: UIImageView {
                     if let data = try? Data(contentsOf: URL(string: bgImage)!) {
                         if let image = UIImage(data: data) {
                             DispatchQueue.main.async {
-                                self?.image = image
+                                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                                imageView.image = image
+                                self?.addSubview(imageView)
+                                self?.sendSubviewToBack(imageView)
                             }
                         }
                     }
@@ -79,21 +87,19 @@ open class ExpressionPreview: UIImageView {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat) {
-        let textView = UITextView(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width, height: 30))
+        let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width, height: 30))
         
-        textView.text = text
-        textView.textAlignment = .center
-        textView.font = UIFont(name: font, size: textSize)
-        textView.textColor = color
-        textView.layer.backgroundColor = UIColor.clear.cgColor
-        textView.autocorrectionType = .no
-        textView.isScrollEnabled = false
-        textView.center = CGPoint.init(x: x, y: y)
+        label.text = text
+        label.textAlignment = .center
+        label.font = UIFont(name: font, size: textSize)
+        label.textColor = color
+        label.layer.backgroundColor = UIColor.clear.cgColor
+        label.center = CGPoint.init(x: x, y: y)
         
-        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
-        textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
-        textView.setNeedsDisplay()
+        let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
+        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
+        label.setNeedsDisplay()
         
-        self.addSubview(textView)
+        self.addSubview(label)
     }
 }
