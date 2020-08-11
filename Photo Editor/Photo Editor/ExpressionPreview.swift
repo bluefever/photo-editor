@@ -55,6 +55,12 @@ open class ExpressionPreview: UIView {
                         }
                     }
                 }
+            } else {
+              let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
+              
+                self.addSubview(imageView)
+                self.sendSubviewToBack(imageView)
             }
             
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
@@ -90,6 +96,7 @@ open class ExpressionPreview: UIView {
         let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width, height: 30))
         
         label.text = text
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont(name: font, size: textSize)
         label.textColor = color

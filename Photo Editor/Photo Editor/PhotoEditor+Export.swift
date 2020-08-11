@@ -162,6 +162,8 @@ extension PhotoEditorViewController {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
                 setBackgroundImage(image: bgImage)
+            } else {
+                setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
             }
             
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
