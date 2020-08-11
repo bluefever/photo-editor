@@ -102,11 +102,9 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        print(exportExpression())
-//        photoEditorDelegate?.doneEditing(expression: exportExpression()!)
-//        self.dismiss(animated: true, completion: nil)
+        photoEditorDelegate?.doneEditing(expression: exportExpression()!)
+        self.dismiss(animated: true, completion: nil)
     }
-    
 
     @IBAction func backgroundButtonPressed(_ sender: Any) {
         addBackgroundViewController()
