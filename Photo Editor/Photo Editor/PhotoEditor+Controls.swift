@@ -102,10 +102,16 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        photoEditorDelegate?.doneEditing(expression: exportExpression()!)
+        hideToolbar(hide: true)
+        cancelButton.isHidden = true
+        
+        let snapshot = self.view.toImage()
+        let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
+        
+        photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail!)
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func backgroundButtonPressed(_ sender: Any) {
         addBackgroundViewController()
     }

@@ -40,6 +40,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var font1Button: UIButton!
     @IBOutlet weak var font2Button: UIButton!
     @IBOutlet weak var font3Button: UIButton!

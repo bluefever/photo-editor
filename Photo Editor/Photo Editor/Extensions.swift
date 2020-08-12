@@ -29,6 +29,14 @@ extension UIImage {
         return image
     }
     
+   func cropToRect(rect: CGRect!) -> UIImage? {
+        let scaledRect = CGRect(x: rect.origin.x * self.scale, y: rect.origin.y * self.scale, width: rect.size.width * self.scale, height: rect.size.height * self.scale);
+        
+        let imageRef = self.cgImage!.cropping(to: scaledRect);
+        let result = UIImage(cgImage: imageRef!, scale: self.scale, orientation: self.imageOrientation)
+        
+        return result;
+    }
 }
 
 extension UIColor {
