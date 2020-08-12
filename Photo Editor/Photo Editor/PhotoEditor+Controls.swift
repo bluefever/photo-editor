@@ -117,21 +117,25 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func onStylePressed(sender: UIButton) {
+        setFontStyleButton(fontIndex: sender.tag)
+    }
+    
+    func setFontStyleButton (fontIndex: Int) {
         font1Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         font2Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         font3Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         font4Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         
-        if (sender.tag ==  0) {
+        if (fontIndex == 0) {
             font1Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(Int(textSizeSlider.value)))
-        } else if (sender.tag ==  1) {
+        } else if (fontIndex == 1) {
             font2Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
-        }else if (sender.tag ==  2) {
+        }else if (fontIndex == 2) {
             font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "sweetpurple", size: CGFloat(Int(textSizeSlider.value)))
-        } else if (sender.tag ==  3) {
+        } else if (fontIndex == 3) {
             font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "ZillaSlabHighlight-Bold", size: CGFloat(Int(textSizeSlider.value)))
         }

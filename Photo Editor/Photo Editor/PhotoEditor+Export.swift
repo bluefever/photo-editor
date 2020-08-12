@@ -220,5 +220,7 @@ extension PhotoEditorViewController {
         addGestures(view: textView)
         textSizeSlider.value = Float(textSize)
         activeTextView = textView
+        
+        setFontStyleButton(fontIndex: fontIndex(fontName: font))
     }
 }

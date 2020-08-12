@@ -31,4 +31,17 @@ extension PhotoEditorViewController {
             }
         }
     }
+    
+    func fontIndex (fontName: String) -> Int {
+        switch fontName {
+        case "BowlbyOneSC-Regular":
+            return 1
+        case "sweetpurple":
+            return 2
+        case "ZillaSlabHighlight-Bold":
+            return 3
+        default:
+            return 0
+        }
+    }
 }
