@@ -26,9 +26,6 @@
                                 <rect key="frame" x="133" y="618" width="109" height="37"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
                                 <state key="normal" title="Pick Image"/>
-                                <connections>
-                                    <action selector="pickImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vn4-ox-Mta"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

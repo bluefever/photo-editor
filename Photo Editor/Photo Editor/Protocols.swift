@@ -32,7 +32,7 @@ import UIKit
  - didSelectImage
  - stickersViewDidDisappear
  */
-protocol GifsStickersViewControllerDelegate {
+@objc public protocol  GifsStickersViewControllerDelegate {
     /**
      - Parameter image: selected Gif from GifsStickersViewController
      */

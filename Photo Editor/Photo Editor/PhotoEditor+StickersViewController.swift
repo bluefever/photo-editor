@@ -42,11 +42,11 @@ extension PhotoEditorViewController {
 }
 
 extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
-    func onLoadMore() {
+    public func onLoadMore() {
         gifsStickersViewController!.loadMoreData()
     }
     
-    func didSelectGif(gif: String, width: Int, height: Int) {
+    public func didSelectGif(gif: String, width: Int, height: Int) {
         self.removeStickersView()
         
         var imageView: UIImageView? = nil
@@ -77,7 +77,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
         }
     }
     
-    func stickersViewDidDisappear() {
+    public func stickersViewDidDisappear() {
         gifsStickersVCIsVisible = false
         hideToolbar(hide: false)
     }

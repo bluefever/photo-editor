@@ -10,7 +10,7 @@ import UIKit
 import CollectionViewWaterfallLayout
 import TTSegmentedControl
 
-class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate {
+public final class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentedView: TTSegmentedControl!
@@ -42,7 +42,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         return topPadding!
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
@@ -195,7 +195,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         gifsCollectionView.keyboardDismissMode =  UIScrollView.KeyboardDismissMode.onDrag
     }
     
-    func loadMoreData() {
+    public func loadMoreData() {
         if (segmentedView.currentIndex == 0) {
             stickersApiManager.loadMore()
         } else {
@@ -203,12 +203,12 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 0.6) { [weak self] in
@@ -222,7 +222,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         }
     }
     
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         stickersCollectionView.frame = CGRect(x: 0,
                                               y: 0,
@@ -238,7 +238,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
                                         height: scrollView.frame.size.height)
     }
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -295,6 +295,7 @@ class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate 
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
             self.removeFromParent()
+            self.dismiss(animated: false, completion: nil)
             self.gifsStickersViewControllerDelegate?.stickersViewDidDisappear()
         })
     }
