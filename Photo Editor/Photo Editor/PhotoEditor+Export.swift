@@ -10,7 +10,7 @@ import UIKit
 
 struct GifImage {
     let image: UIImageView
-    let url: String
+    var url: String
     
     init(image: UIImageView, url: String) {
         self.image = image
