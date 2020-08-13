@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import TTSegmentedControl
 
 class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var segmentedView: UISegmentedControl!
+    @IBOutlet weak var segmentedView: TTSegmentedControl!
     
     var collectionView: UICollectionView!
     var imagesCollectionView: UICollectionView!
@@ -27,6 +28,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var bottomPadding: CGFloat {
         var topPadding:CGFloat? = 0
+        
         if #available(iOS 11.0, *) {
             let window = UIApplication.shared.keyWindow
             topPadding = window?.safeAreaInsets.top
@@ -40,15 +42,28 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         
         configureCollectionViews()
         scrollView.showsHorizontalScrollIndicator = false
-        
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-        
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         
-        segmentedView.setTitle("IMAGES", forSegmentAt: 0)
-        segmentedView.setTitle("COLORS", forSegmentAt: 1)
+        segmentedView.itemTitles = ["IMAGES", "COLORS"]
+        segmentedView.selectedTextFont = UIFont.init(name: "Nunito-ExtraBold", size: 15)!
+        segmentedView.defaultTextFont = UIFont.init(name: "Nunito-SemiBold", size: 15)!
+        
+        segmentedView.didSelectItemWith = { (index, title) -> () in
+            if index == 0 {
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        self.scrollView.contentOffset = CGPoint(x: 0, y:0);
+                    }, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        self.scrollView.contentOffset = CGPoint(x:self.scrollView.frame.size.width, y:0);
+                    }, completion: nil)
+                }
+            }
+        }
         
         self.view.layer.cornerRadius = 20
         self.view.clipsToBounds = true
@@ -73,25 +88,6 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    @IBAction func segmentedControlButtonClickAction(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                    self.scrollView.contentOffset = CGPoint(x: 0, y:0);
-                }, completion: nil)
-            }
-            
-        }
-        else {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                    self.scrollView.contentOffset = CGPoint(x:self.scrollView.frame.size.width, y:0);
-                }, completion: nil)
-            }
-            
-        }
-    }
-    
     func configureCollectionViews() {
         let frame = CGRect(x: scrollView.frame.size.width,
                            y: 0,
@@ -101,7 +97,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: bottomPadding, right: 12)
-        let width = (CGFloat) ((screenSize.width - 36) / 4.0)
+        let width = (CGFloat) ((screenSize.width - 44) / 4.0)
         layout.itemSize = CGSize(width: width, height: width)
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -162,24 +158,25 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
             self.view.frame = CGRect(x: 0,
                                      y: yComponent,
                                      width: frame.width,
-                                     height: UIScreen.main.bounds.height - self.bottomPadding)
+                                     height: UIScreen.main.bounds.height)
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         collectionView.frame = CGRect(x: scrollView.frame.size.width,
-                                     y: 0,
-                                     width: UIScreen.main.bounds.width,
-                                     height: view.frame.height - 100)
+                                      y: 0,
+                                      width: UIScreen.main.bounds.width,
+                                      height: scrollView.frame.size.height)
         
         imagesCollectionView.frame = CGRect(x: 0,
-                                           y: 0,
-                                           width: UIScreen.main.bounds.width,
-                                           height: view.frame.height - 100)
+                                            y: 0,
+                                            width: UIScreen.main.bounds.width,
+                                            height: scrollView.frame.size.height)
         
         scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
-                                        height: scrollView.frame.size.height - 100)
+                                        height: scrollView.frame.size.height)
     }
     
     override func didReceiveMemoryWarning() {
@@ -260,7 +257,7 @@ extension BackgroundViewController: UIScrollViewDelegate {
         if (sender.tag == 1) {
             let pageWidth = scrollView.bounds.width
             let pageFraction = scrollView.contentOffset.x / pageWidth
-            segmentedView.selectedSegmentIndex = Int(round(pageFraction))
+            segmentedView.selectItemAt(index: Int(round(pageFraction)), animated: true)
         }
     }
 }
@@ -288,7 +285,7 @@ extension BackgroundViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

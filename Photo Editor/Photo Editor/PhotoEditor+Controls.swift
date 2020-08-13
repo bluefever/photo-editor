@@ -102,34 +102,42 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        let image = self.canvasView.toImage()
-        photoEditorDelegate?.doneEditing(image: image)
+        hideToolbar(hide: true)
+        cancelButton.isHidden = true
+        
+        let snapshot = self.view.toImage()
+        let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
+        
+        photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail!)
         self.dismiss(animated: true, completion: nil)
     }
     
-
     @IBAction func backgroundButtonPressed(_ sender: Any) {
         addBackgroundViewController()
     }
     
     @IBAction func onStylePressed(sender: UIButton) {
-        font1Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font2Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font3Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
-        font4Button.setTitleColor(UIColor.init(hexString: "#D0D0D0"), for: .normal)
+        setFontStyleButton(fontIndex: sender.tag)
+    }
+    
+    func setFontStyleButton (fontIndex: Int) {
+        font1Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font2Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font3Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        font4Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
         
-        if (sender.tag ==  0) {
-            font1Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "AppleSDGothicNeo-Regular", size: CGFloat(Int(textSizeSlider.value)))
-        } else if (sender.tag ==  1) {
-            font2Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "AmericanTypewriter", size: CGFloat(Int(textSizeSlider.value)))
-        }else if (sender.tag ==  2) {
-            font3Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "Arial-BoldMT", size: CGFloat(Int(textSizeSlider.value)))
-        } else if (sender.tag ==  3) {
-            font4Button.setTitleColor(UIColor.init(hexString: "#646464"), for: .normal)
-            lastTextViewFont = UIFont(name: "BradleyHandITCTT-Bold", size: CGFloat(Int(textSizeSlider.value)))
+        if (fontIndex == 0) {
+            font1Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(Int(textSizeSlider.value)))
+        } else if (fontIndex == 1) {
+            font2Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
+        }else if (fontIndex == 2) {
+            font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "sweetpurple", size: CGFloat(Int(textSizeSlider.value)))
+        } else if (fontIndex == 3) {
+            font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            lastTextViewFont = UIFont(name: "ZillaSlabHighlight-Bold", size: CGFloat(Int(textSizeSlider.value)))
         }
         
         activeTextView?.font = lastTextViewFont
@@ -161,12 +169,8 @@ extension PhotoEditorViewController {
                                                     width: UIScreen.main.bounds.width, height: 30))
             
             textView.textAlignment = .center
-            textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 30)
+            textView.font = UIFont(name: "HelveticaNeue-Medium", size: 30)
             textView.textColor = textColor
-            textView.layer.shadowColor = UIColor.black.cgColor
-            textView.layer.shadowOffset = CGSize(width: 1.0, height: 0.0)
-            textView.layer.shadowOpacity = 0.2
-            textView.layer.shadowRadius = 1.0
             textView.layer.backgroundColor = UIColor.clear.cgColor
             textView.autocorrectionType = .no
             textView.isScrollEnabled = false

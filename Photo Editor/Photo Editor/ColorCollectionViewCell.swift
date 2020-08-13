@@ -15,29 +15,29 @@ class ColorCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        colorView.layer.cornerRadius = colorView.frame.width / 2
-        colorView.clipsToBounds = true
-        colorView.layer.borderWidth = 1.0
-        colorView.layer.borderColor = UIColor.white.cgColor
-    }
-    
     override var isSelected: Bool {
         didSet {
             if isSelected {
                 let previouTransform =  colorView.transform
                 UIView.animate(withDuration: 0.2,
                                animations: {
-                                self.colorView.transform = self.colorView.transform.scaledBy(x: 1.3, y: 1.3)
+                                self.colorView.transform = self.colorView.transform.scaledBy(x: 0.9, y: 0.9)
                 },
                                completion: { _ in
                                 UIView.animate(withDuration: 0.2) {
                                     self.colorView.transform  = previouTransform
                                 }
                 })
+                
+                self.colorView.layer.shadowColor = UIColor.black.cgColor
+                self.colorView.layer.shadowOpacity = 0.7
+                self.colorView.layer.shadowOffset = .zero
+                self.colorView.layer.shadowRadius = 6
+                self.colorView.layer.masksToBounds = false
+                self.colorView.clipsToBounds = false
             } else {
-                // animate deselection
+                self.colorView.layer.masksToBounds = true
+                self.colorView.clipsToBounds = true
             }
         }
     }

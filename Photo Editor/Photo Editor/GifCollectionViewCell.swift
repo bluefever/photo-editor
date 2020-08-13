@@ -1,5 +1,5 @@
 //
-//  EmojiCollectionViewCell.swift
+//  GifCollectionViewCell.swift
 //  Photo Editor
 //
 //  Created by Adam Podsiadlo on 21/07/2020.
@@ -15,7 +15,7 @@ class GifCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .white
         gifImageView.layer.cornerRadius = 10
         gifImageView.clipsToBounds = true
-        gifImageView.layer.borderColor = UIColor.init(hexString: "#979797").cgColor
+        gifImageView.layer.borderColor = UIColor.init(hexString: "#64a7fa").cgColor
         gifImageView.layer.borderWidth = 1
         gifImageView.layer.masksToBounds = true
     }

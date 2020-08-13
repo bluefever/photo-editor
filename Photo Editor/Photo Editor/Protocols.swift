@@ -16,9 +16,10 @@ import UIKit
 
 @objc public protocol PhotoEditorDelegate {
     /**
-     - Parameter image: edited Image
+     - Parameter expression: json expression data
+     - Parameter image: expression thumbnail
      */
-    func doneEditing(image: UIImage)
+     func doneEditing(expression: String, image: UIImage)
     /**
      StickersViewController did Disappear
      */
@@ -59,7 +60,7 @@ protocol BackgroundViewControllerDelegate {
     /**
      - Parameter image: selected image from BackgroundViewController
      */
-    func didSelectImageBackground(image: String)
+    func didSelectImageBackground(image: String, index: Int)
     /**
      BackgroundViewController did Disappear
      */

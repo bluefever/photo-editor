@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     func showPhotoEditor () {
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
-        photoEditor.image = UIImage(named: "test")
         
         //Colors for drawing and Text, If not set default values will be used
         //photoEditor.colors = [.red, .blue, .green]
@@ -26,13 +25,19 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        
+        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 0,\n      \"text\" : \"Asdasdad\",\n      \"textColor\" : \"#000000\",\n      \"textStyle\" : \"sweetpurple\",\n      \"textSize\" : 50,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 348.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 190\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media1.giphy.com\\/media\\/KFVSc4k41364FiMBOI\\/giphy.gif?cid=cac7b245a2d14dfd2ca7559e9f402f7e4d2c57113ad80b86&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 109.5,\n        \"y\" : 153.5\n      }\n    }\n  ],\n  \"backgroundImage\" : \"bg_11\"\n}"
         photoEditor.bgColors = bgColors
-        photoEditor.bgImages = bgImages
-        
+//        photoEditor.bgImages = bgImages
+        photoEditor.initialData = data
+//
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-        
+//
         present(photoEditor, animated: true, completion: nil)
+        
+        // Expression preview view
+//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+//        preview.data = data
+//        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,8 +49,8 @@ class ViewController: UIViewController {
 
 extension ViewController: PhotoEditorDelegate {
     
-    func doneEditing(image: UIImage) {
-        
+    func doneEditing(expression: String, image: UIImage) {
+        print(expression)
     }
     
     func canceledEditing() {

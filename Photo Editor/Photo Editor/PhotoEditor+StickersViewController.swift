@@ -53,6 +53,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
         
         if (!gifsImages.isEmpty &&  gifsImages.count > 4) {
             imageView = gifsImages[gifsImages.count - 1]
+            gifsSources[gifsSources.count - 1].url = gif
         } else {
             imageView = UIImageView()
         }
@@ -71,6 +72,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
                 self.canvasImageView.addSubview(image)
                 addGestures(view: image)
                 gifsImages.append(image)
+                gifsSources.append(GifImage(image: image, url: gif))
             }
         }
     }

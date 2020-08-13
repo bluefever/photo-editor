@@ -217,6 +217,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             if deleteView.frame.contains(point) { // Delete the view
                 if let imageView = view as? UIImageView {
                     if(gifsImages.contains(imageView)) {
+                        gifsSources.remove(at: gifsImages.index(of: imageView)!)
                         gifsImages.remove(at: gifsImages.index(of: imageView)!)
                     }
                 }

@@ -18,7 +18,7 @@ class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        backgroundViewControllerDelegate?.didSelectImageBackground(image: bgImages[indexPath.item])
+        backgroundViewControllerDelegate?.didSelectImageBackground(image: bgImages[indexPath.item], index: indexPath.item + 1)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

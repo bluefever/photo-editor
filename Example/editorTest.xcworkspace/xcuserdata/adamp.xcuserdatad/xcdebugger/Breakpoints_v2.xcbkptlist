@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0112BF38-5B21-47A0-87DC-8C8DD5B55876"
-            shouldBeEnabled = "Yes"
+            uuid = "C180D226-ACBD-4EB6-81F2-565D9391F2A1"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Photo Editor/Photo Editor/PhotoEditor+Controls.swift"
+            filePath = "../Photo Editor/Photo Editor/BackgroundViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "onStylePressed(sender:)"
-            landmarkType = "7">
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "bottomPadding"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
