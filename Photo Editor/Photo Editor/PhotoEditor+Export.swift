@@ -110,7 +110,7 @@ extension PhotoEditorViewController {
         if let textView = activeTextView {
             var textLayer = ExpressionLayer()
             textLayer.textColor = textView.textColor?.hexString
-            textLayer.textStyle = textView.font?.familyName
+            textLayer.textStyle = textView.font?.fontName
             textLayer.textSize = textView.font?.pointSize
             textLayer.zIndex = canvasImageView.subviews.index(of: textView)!
             textLayer.center = Point(x: textView.layer.position.x, y: textView.layer.position.y)
