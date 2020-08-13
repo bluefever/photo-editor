@@ -16,6 +16,8 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     @IBOutlet weak var segmentedView: TTSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @objc public var gifsStickersViewControllerDelegate : GifsStickersViewControllerDelegate?
+    
     var stickersCollectionView: UICollectionView!
     var gifsCollectionView: UICollectionView!
     
@@ -24,7 +26,6 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     
     var gifs: [GiphyObject] = []
     var stickers: [GiphyObject] = []
-    var gifsStickersViewControllerDelegate : GifsStickersViewControllerDelegate?
     
     var gifsApiManager: GiphyApiManager!
     var stickersApiManager: GiphyApiManager!
@@ -195,7 +196,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         gifsCollectionView.keyboardDismissMode =  UIScrollView.KeyboardDismissMode.onDrag
     }
     
-    public func loadMoreData() {
+    @objc public func loadMoreData() {
         if (segmentedView.currentIndex == 0) {
             stickersApiManager.loadMore()
         } else {
