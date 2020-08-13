@@ -313,7 +313,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
 
 extension GifsStickersViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ sender: UIScrollView) {
+    public func scrollViewDidScroll(_ sender: UIScrollView) {
         if (sender.tag == 1) {
             let pageWidth = scrollView.bounds.width
             let pageFraction = scrollView.contentOffset.x / pageWidth
