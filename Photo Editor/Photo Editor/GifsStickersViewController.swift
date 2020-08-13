@@ -15,8 +15,10 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentedView: TTSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var pageTileLabel: UILabel!
     
     @objc public var gifsStickersViewControllerDelegate : GifsStickersViewControllerDelegate?
+    @objc public var pageTitle: String?
     
     var stickersCollectionView: UICollectionView!
     var gifsCollectionView: UICollectionView!
@@ -47,6 +49,11 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
+        
+        if let title = pageTitle {
+            pageTileLabel.text = title
+        }
+        
         initGiphy()
         initSearchField()
         configureCollectionViews()

@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GifsStickersViewController" customModule="iOSPhotoEditor" customModuleProvider="target">
             <connections>
                 <outlet property="holdView" destination="caC-0e-fET" id="k8K-lS-zd3"/>
+                <outlet property="pageTileLabel" destination="72l-Pf-i7O" id="o9y-Z0-W6U"/>
                 <outlet property="scrollView" destination="389-Pb-g4p" id="MXL-UR-05e"/>
                 <outlet property="searchTextField" destination="LmG-Tw-Lp6" id="JrF-Kw-GFb"/>
                 <outlet property="segmentedView" destination="g4d-kj-j0w" id="aLX-BN-Hyi"/>
