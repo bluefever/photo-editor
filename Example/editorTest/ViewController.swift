@@ -25,19 +25,19 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 0,\n      \"text\" : \"Asdasdad\",\n      \"textColor\" : \"#000000\",\n      \"textStyle\" : \"sweetpurple\",\n      \"textSize\" : 50,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 348.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 190\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media1.giphy.com\\/media\\/KFVSc4k41364FiMBOI\\/giphy.gif?cid=cac7b245a2d14dfd2ca7559e9f402f7e4d2c57113ad80b86&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 109.5,\n        \"y\" : 153.5\n      }\n    }\n  ],\n  \"backgroundImage\" : \"bg_11\"\n}"
+        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 2,\n      \"text\" : \"Aasdsadasdsadasdasdsasa\",\n      \"textColor\" : \"#000000\",\n      \"textStyle\" : \"Helvetica Neue\",\n      \"textSize\" : 30,\n      \"center\" : {\n        \"x\" : 203,\n        \"y\" : 460.83333333333337\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 170\n      },\n      \"zIndex\" : 0,\n      \"transform\" : {\n        \"d\" : 2.1506565365123502,\n        \"b\" : -0.0064925077106293356,\n        \"ty\" : 0,\n        \"c\" : 0.0064925077106293356,\n        \"a\" : 2.1506565365123502,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media3.giphy.com\\/media\\/PnDRNekrgtHh5jXMna\\/giphy-downsized.gif?cid=cac7b245a3b86c8eb34b20d4f4359ae405701093046d12c8&rid=giphy-downsized.gif\",\n      \"center\" : {\n        \"x\" : 207.49999999999997,\n        \"y\" : 191.5\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 192\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 2.1685829726971892,\n        \"b\" : -0.0020858555627954536,\n        \"ty\" : 0,\n        \"c\" : 0.0020858555627954536,\n        \"a\" : 2.1685829726971892,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media3.giphy.com\\/media\\/9rtpurjbqiqZXbBBet\\/giphy.gif?cid=cac7b245a3b86c8eb34b20d4f4359ae405701093046d12c8&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 680.5\n      }\n    }\n  ]\n}"
         photoEditor.bgColors = bgColors
 //        photoEditor.bgImages = bgImages
-        photoEditor.initialData = data
+//        photoEditor.initialData = data
 //
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
 //
-        present(photoEditor, animated: true, completion: nil)
+//        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-//        preview.data = data
-//        self.view.addSubview(preview)
+        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        preview.data = data
+        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {

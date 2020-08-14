@@ -113,7 +113,8 @@ extension PhotoEditorViewController {
             textLayer.textStyle = textView.font?.familyName
             textLayer.textSize = textView.font?.pointSize
             textLayer.zIndex = canvasImageView.subviews.index(of: textView)!
-            textLayer.center = Point(x: textView.layer.position.x, y: textView.layer.position.y)
+            let center = self.view.convert(textView.center, from: canvasImageView)
+            textLayer.center = Point(x: center.x, y: center.y)
             textLayer.text = textView.text
             
             if (textLayer.text != nil && !textLayer.text!.isEmpty) {
@@ -125,7 +126,8 @@ extension PhotoEditorViewController {
             var gifLayer = ExpressionLayer()
             gifLayer.contentUrl = gif.url
             gifLayer.zIndex = canvasImageView.subviews.index(of: gif.image)!
-            gifLayer.center = Point(x: gif.image.layer.position.x, y: gif.image.layer.position.y)
+            let center = self.view.convert(gif.image.center, from: canvasImageView)
+            gifLayer.center = Point(x: center.x, y: center.y)
             gifLayer.size = Size(width: gif.image.bounds.width, height: gif.image.bounds.height)
             gifLayer.transform = Transform(a: gif.image.transform.a, b: gif.image.transform.b, c: gif.image.transform.c,d: gif.image.transform.d, tx: gif.image.transform.tx, ty: gif.image.transform.ty)
             
@@ -169,11 +171,13 @@ extension PhotoEditorViewController {
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
             
             for layer in expressionData.layers {
+                let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
+                
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: layer.center.x, y:layer.center.y)
+                                  x: center.x, y: center.y)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: layer.center.x, y: layer.center.y, size: CGSize.init(width: layer.size!.width, height: layer.size!.height),
+                    addGifObject(contentUrl: gifUrl, x: center.x, y: center.y, size: CGSize.init(width: layer.size!.width, height: layer.size!.height),
                                  transform: layer.transform!)
                 }
             }
