@@ -46,6 +46,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var font3Button: UIButton!
     @IBOutlet weak var font4Button: UIButton!
     
+    @IBOutlet weak var topGradientTopContraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomGradientBottomConstraint: NSLayoutConstraint!
+    
     @objc public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -166,6 +169,14 @@ public final class PhotoEditorViewController: UIViewController {
         
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            let topPadding = window?.safeAreaInsets.top
+            let bottomPadding = window?.safeAreaInsets.bottom
+            topGradientTopContraint.constant = -(topPadding ?? 0)
+            bottomGradientBottomConstraint.constant = -(bottomPadding ?? 0)
+        }
         
         if #available(iOS 11.0, *) {
             self.controlsView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

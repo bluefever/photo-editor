@@ -63,6 +63,7 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionViewCell", for: indexPath) as! ColorCollectionViewCell
         cell.colorView.backgroundColor = colors[indexPath.item]
+        cell.colorView.layer.cornerRadius = 0
         
         if (colors[indexPath.item].cgColor == initialColor?.cgColor) {
             cell.colorView.layer.shadowColor = UIColor.black.cgColor

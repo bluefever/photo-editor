@@ -28,10 +28,10 @@ class ViewController: UIViewController {
         let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 0,\n      \"text\" : \"Fsdfdsf\",\n      \"textColor\" : \"#FA6400\",\n      \"textStyle\" : \"ZillaSlabHighlight-Bold\",\n      \"textSize\" : 30,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 463.33333333333337\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 289\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media2.giphy.com\\/media\\/dX2tLjEPY9WYUamSNj\\/giphy.gif?cid=cac7b2450c5097dc4e86f9d3c24eec10aae7952a5bc713d0&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 208,\n        \"y\" : 281.5\n      }\n    }\n  ],\n  \"backgroundImage\" : \"bg_4\"\n}"
         photoEditor.bgColors = bgColors
 //        photoEditor.bgImages = bgImages
-        photoEditor.initialData = data
+//        photoEditor.initialData = data
 //
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-//
+////
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view

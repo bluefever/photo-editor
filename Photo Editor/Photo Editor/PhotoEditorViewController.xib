@@ -24,6 +24,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoEditorViewController" customModule="iOSPhotoEditor" customModuleProvider="target">
             <connections>
+                <outlet property="bottomGradientBottomConstraint" destination="fjO-MT-PEc" id="VBf-hK-4AU"/>
                 <outlet property="bottomToolbar" destination="87h-1G-t5q" id="Pzi-Dw-qOq"/>
                 <outlet property="cancelButton" destination="9an-1W-thw" id="x3o-d2-TiI"/>
                 <outlet property="canvasImageView" destination="n3p-yR-4xc" id="OED-1L-YMz"/>
@@ -44,6 +45,7 @@
                 <outlet property="imageViewHeightConstraint" destination="DdY-qb-dfp" id="ZY9-Em-cs4"/>
                 <outlet property="textButton" destination="0wH-LJ-SyD" id="ofN-bp-ZaE"/>
                 <outlet property="textSizeSlider" destination="BQv-YW-25H" id="rlX-nc-318"/>
+                <outlet property="topGradientTopContraint" destination="UId-3M-Alw" id="Ox7-Fk-LDq"/>
                 <outlet property="topToolbar" destination="3MS-N5-3xY" id="kzY-Ga-SoQ"/>
                 <outlet property="view" destination="HPk-Bg-V0q" id="eF4-Ac-Nav"/>
             </connections>
@@ -56,6 +58,23 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-u3-aQu">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvL-7W-xTR" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="160"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="92n-zm-Xuu"/>
+                    </constraints>
+                </view>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVD-kc-qwJ" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="702" width="414" height="160"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="aHb-kw-vEV"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-ZS-dct" userLabel="canvas">
                     <rect key="frame" x="0.0" y="114.33333333333331" width="414" height="667.33333333333348"/>
                     <subviews>
@@ -245,7 +264,7 @@
                     <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
                     <state key="normal" title="DONE">
-                        <color key="titleColor" red="0.39215686274509803" green="0.65490196078431373" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.30980392156862746" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -257,7 +276,7 @@
                     <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="19"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="POST">
-                        <color key="titleColor" red="0.39215686274509803" green="0.65490196078431373" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.30980392156862746" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="continueButtonPressed:" destination="-1" eventType="touchUpInside" id="ZrP-TR-stp"/>
@@ -388,11 +407,13 @@
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="2tC-2e-oA6"/>
                 <constraint firstItem="yAt-sK-1nK" firstAttribute="top" secondItem="S1Y-ZS-dct" secondAttribute="bottom" constant="25.333333333333258" id="3cR-st-tSo"/>
                 <constraint firstItem="yLU-ua-LOI" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="4x0-2r-qOk"/>
+                <constraint firstItem="hvL-7W-xTR" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="5WG-wJ-NmG"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="trailing" secondItem="ifv-kQ-pTz" secondAttribute="trailing" id="61R-uI-50l"/>
                 <constraint firstItem="KxU-y4-Jwh" firstAttribute="top" secondItem="9an-1W-thw" secondAttribute="top" id="7Dc-L9-Ug9"/>
                 <constraint firstItem="ifv-kQ-pTz" firstAttribute="leading" secondItem="ujW-Nd-FCr" secondAttribute="leading" id="7pT-iq-19T"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="AVJ-vW-Pko"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="Bok-Wu-cd0"/>
+                <constraint firstItem="hvL-7W-xTR" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="BwO-VW-xrD"/>
                 <constraint firstItem="n3p-yR-4xc" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" multiplier="0.74442" id="D4t-IV-zK3"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="DNK-DF-UwV"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="ifv-kQ-pTz" secondAttribute="bottom" id="HbP-wL-ivL"/>
@@ -400,12 +421,16 @@
                 <constraint firstAttribute="trailing" secondItem="HcY-sV-ehZ" secondAttribute="trailing" constant="12" id="SDJ-NN-3Pb"/>
                 <constraint firstItem="yAt-sK-1nK" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="TQJ-UJ-HEf"/>
                 <constraint firstItem="9an-1W-thw" firstAttribute="leading" secondItem="ujW-Nd-FCr" secondAttribute="leading" constant="12" id="TU9-Ue-Dsu"/>
+                <constraint firstItem="hvL-7W-xTR" firstAttribute="top" secondItem="ujW-Nd-FCr" secondAttribute="top" id="UId-3M-Alw"/>
                 <constraint firstItem="KxU-y4-Jwh" firstAttribute="bottom" secondItem="9an-1W-thw" secondAttribute="bottom" id="VR7-fl-Sy8"/>
                 <constraint firstItem="9an-1W-thw" firstAttribute="top" secondItem="ujW-Nd-FCr" secondAttribute="top" id="XZS-no-jFs"/>
                 <constraint firstAttribute="trailing" secondItem="KxU-y4-Jwh" secondAttribute="trailing" constant="12" id="Z0h-d5-J2Z"/>
+                <constraint firstItem="lVD-kc-qwJ" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="e7x-hK-6K4"/>
+                <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="lVD-kc-qwJ" secondAttribute="bottom" id="fjO-MT-PEc"/>
                 <constraint firstAttribute="trailing" secondItem="S1Y-ZS-dct" secondAttribute="trailing" id="jwU-EC-jaR"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="trailing" secondItem="KxU-y4-Jwh" secondAttribute="trailing" constant="12" id="kHR-dv-jWj"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="lCZ-Hj-EUs"/>
+                <constraint firstItem="lVD-kc-qwJ" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="lim-A0-006"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="yAt-sK-1nK" secondAttribute="bottom" constant="5" id="mMY-S1-ABe"/>
                 <constraint firstItem="HcY-sV-ehZ" firstAttribute="top" secondItem="9an-1W-thw" secondAttribute="top" id="mhB-77-mru"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" id="p5G-hY-2Uh"/>

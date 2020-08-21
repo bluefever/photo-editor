@@ -215,14 +215,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             let point = recognizer.location(in: self.view)
             
             if deleteView.frame.contains(point) { // Delete the view
-                if let imageView = view as? UIImageView {
-                    if(gifsImages.contains(imageView)) {
-                        gifsSources.remove(at: gifsImages.index(of: imageView)!)
-                        gifsImages.remove(at: gifsImages.index(of: imageView)!)
-                    }
-                }
-                
                 view.removeFromSuperview()
+                
+                clearAfterRemove(view: view)
+                
                 if #available(iOS 10.0, *) {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
@@ -232,6 +228,23 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     view.center = self.canvasImageView.center
                 })
                 
+            }
+        }
+    }
+    
+    func clearAfterRemove (view: UIView) {
+        if (view is UITextView) {
+            activeTextView = nil
+            textColor = UIColor.black
+            colorsCollectionView.reloadData()
+            textSizeSlider.value = 30
+            setFontStyleButton(fontIndex: 0)
+        }
+        
+        if let imageView = view as? UIImageView {
+            if(gifsImages.contains(imageView)) {
+                gifsSources.remove(at: gifsImages.index(of: imageView)!)
+                gifsImages.remove(at: gifsImages.index(of: imageView)!)
             }
         }
     }
