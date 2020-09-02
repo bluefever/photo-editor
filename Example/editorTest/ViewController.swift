@@ -25,19 +25,21 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let data = "{\n  \"layers\" : [\n    {\n      \"zIndex\" : 0,\n      \"text\" : \"Fsdfdsf\",\n      \"textColor\" : \"#FA6400\",\n      \"textStyle\" : \"ZillaSlabHighlight-Bold\",\n      \"textSize\" : 30,\n      \"center\" : {\n        \"x\" : 207,\n        \"y\" : 463.33333333333337\n      }\n    },\n    {\n      \"size\" : {\n        \"width\" : 190,\n        \"height\" : 289\n      },\n      \"zIndex\" : 1,\n      \"transform\" : {\n        \"d\" : 1,\n        \"b\" : 0,\n        \"ty\" : 0,\n        \"c\" : 0,\n        \"a\" : 1,\n        \"tx\" : 0\n      },\n      \"contentUrl\" : \"https:\\/\\/media2.giphy.com\\/media\\/dX2tLjEPY9WYUamSNj\\/giphy.gif?cid=cac7b2450c5097dc4e86f9d3c24eec10aae7952a5bc713d0&rid=giphy.gif\",\n      \"center\" : {\n        \"x\" : 208,\n        \"y\" : 281.5\n      }\n    }\n  ],\n  \"backgroundImage\" : \"bg_4\"\n}"
+        let dataXSMAX = "{\"layers\":[{\"zIndex\":0,\"text\":\"Testing xs max\",\"textColor\":\"#000000\",\"textStyle\":\"HelveticaNeue-Medium\",\"textSize\":30,\"center\":{\"x\":207,\"y\":463.50000000000006}},{\"size\":{\"width\":190,\"height\":204},\"zIndex\":1,\"transform\":{\"d\":1.7434262806440555,\"b\":0.20130353044768798,\"ty\":0,\"c\":-0.20130353044768798,\"a\":1.7434262806440555,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/L0xABGZ2xQ2v5wq4ld\\/giphy.gif?cid=cac7b245f15d84b4d34caedca4432c72c5d0b9dfbed2140e&rid=giphy.gif\",\"center\":{\"x\":111.33331298828119,\"y\":167.83332824707043}},{\"size\":{\"width\":190,\"height\":124},\"zIndex\":2,\"transform\":{\"d\":-0.038622025806129265,\"b\":2.01691546498978,\"ty\":0,\"c\":-2.01691546498978,\"a\":-0.038622025806129265,\"tx\":0},\"contentUrl\":\"https:\\/\\/media0.giphy.com\\/media\\/NI4FNMb4tJEYM\\/giphy.gif?cid=cac7b245d36426c41415695caa971f445f2efa7832a95a87&rid=giphy.gif\",\"center\":{\"x\":281.33332824707014,\"y\":697.49998474121094}}],\"originalFrame\":{\"width\":414,\"height\":896}}"
+        
+        let dataIphone8 = "{\"layers\":[{\"zIndex\":0,\"text\":\"Testing xs max\",\"textColor\":\"#000000\",\"textStyle\":\"HelveticaNeue-Medium\",\"textSize\":30,\"center\":{\"x\":109.5,\"y\":102.33333333333331}},{\"size\":{\"width\":172.10144927536231,\"height\":92.308035714285722},\"zIndex\":1,\"transform\":{\"d\":-0.038622025806129258,\"b\":2.01691546498978,\"ty\":0,\"c\":-2.01691546498978,\"a\":-0.038622025806129258,\"tx\":0},\"contentUrl\":\"https:\\/\\/media0.giphy.com\\/media\\/NI4FNMb4tJEYM\\/giphy.gif?cid=cac7b245d36426c41415695caa971f445f2efa7832a95a87&rid=giphy.gif\",\"center\":{\"x\":89.830913267273615,\"y\":527.37257048629579}}],\"originalFrame\":{\"width\":375,\"height\":667}}"
+        
         photoEditor.bgColors = bgColors
 //        photoEditor.bgImages = bgImages
-//        photoEditor.initialData = data
+        photoEditor.initialData = dataXSMAX
 //
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-////
-        present(photoEditor, animated: true, completion: nil)
+//        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-//        preview.data = data
-//        self.view.addSubview(preview)
+        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: 400, height: 400))
+        preview.data = dataXSMAX
+        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {

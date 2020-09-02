@@ -40,6 +40,10 @@ open class ExpressionPreview: UIView {
         }
         
         if var expressionData = expression {
+            let bounds = self.bounds
+            let scaleX = bounds.width / expressionData.originalFrame!.width
+            let scaleY = bounds.height / expressionData.originalFrame!.height
+            
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
@@ -61,9 +65,9 @@ open class ExpressionPreview: UIView {
             for layer in expressionData.layers {
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: layer.center.x, y:layer.center.y)
+                                  x: layer.center.x * scaleX, y:layer.center.y * scaleY)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: layer.center.x, y: layer.center.y, size: CGSize.init(width: layer.size!.width, height: layer.size!.height),
+                    addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
                 }
             }

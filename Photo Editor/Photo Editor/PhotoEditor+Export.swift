@@ -85,12 +85,24 @@ struct ExpressionLayer: Codable, Hashable {
     }
 }
 
+struct OriginalFrame: Codable, Hashable {
+    var width: CGFloat
+    var height: CGFloat
+    
+    init(height: CGFloat = 0, width: CGFloat = 0) {
+        self.height = height
+        self.width = width
+    }
+}
+
 public struct Expression: Codable, Hashable {
     var backgroundColor: String?
     var backgroundImage: String?
+    var originalFrame: OriginalFrame?
     var layers: [ExpressionLayer]
     
-    init(backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
+    init(originalFrame: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
+        self.originalFrame = originalFrame
         self.backgroundColor = backgroundColor
         self.backgroundImage = backgroundImage
         self.layers = layers
@@ -100,6 +112,9 @@ public struct Expression: Codable, Hashable {
 extension PhotoEditorViewController {
     public func exportExpression () -> String? {
         var expression = Expression()
+        
+        expression.originalFrame = OriginalFrame.init(height: UIScreen.main.bounds.height, width:
+            UIScreen.main.bounds.width)
         
         if let imageName = imageBgName {
             expression.backgroundImage = imageName
@@ -138,7 +153,7 @@ extension PhotoEditorViewController {
         
         do {
             let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
+            
             
             let data = try encoder.encode(expression)
             jsonData = String(data: data, encoding: .utf8)
@@ -160,6 +175,10 @@ extension PhotoEditorViewController {
         }
         
         if var expressionData = expression {
+            let bounds = UIScreen.main.bounds
+            let scaleX = bounds.width / expressionData.originalFrame!.width
+            let scaleY = bounds.height / expressionData.originalFrame!.height
+            
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
@@ -175,9 +194,9 @@ extension PhotoEditorViewController {
                 
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: center.x, y: center.y)
+                                  x: center.x * scaleX, y: center.y * scaleY)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: center.x, y: center.y, size: CGSize.init(width: layer.size!.width, height: layer.size!.height),
+                    addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
                 }
             }
