@@ -176,8 +176,13 @@ extension PhotoEditorViewController {
         
         if var expressionData = expression {
             let bounds = UIScreen.main.bounds
-            let scaleX = bounds.width / expressionData.originalFrame!.width
-            let scaleY = bounds.height / expressionData.originalFrame!.height
+            var scaleX = CGFloat(1)
+            var scaleY = CGFloat(1)
+            
+            if (expressionData.originalFrame != nil) {
+                scaleX = bounds.width / expressionData.originalFrame!.width
+                scaleY = bounds.height / expressionData.originalFrame!.height
+            }
             
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
@@ -193,8 +198,19 @@ extension PhotoEditorViewController {
                 let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
                 
                 if let text = layer.text {
+                    var centerX = CGFloat(1)
+                    var centerY = CGFloat(1)
+                    
+                    if (expressionData.originalFrame != nil) {
+                        centerX = center.x * scaleX
+                        centerY = center.y * scaleY
+                    } else {
+                        centerX = self.canvasImageView.bounds.width / 2
+                        centerY = self.canvasImageView.bounds.height / 2
+                    }
+                    
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: center.x * scaleX, y: center.y * scaleY)
+                                  x: centerX, y: centerY)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
@@ -234,7 +250,7 @@ extension PhotoEditorViewController {
         textView.isScrollEnabled = false
         textView.delegate = self
         textView.center = CGPoint.init(x: x, y: y)
-        
+
         let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
         textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
         textView.setNeedsDisplay()
