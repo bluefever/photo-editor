@@ -73,8 +73,8 @@ open class ExpressionPreview: UIView {
                     var centerY = CGFloat(1)
                     
                     if (expressionData.originalFrame != nil) {
-                        centerX = center.x * scaleX
-                        centerY = center.y * scaleY
+                        centerX = layer.center.x * scaleX
+                        centerY = layer.center.y * scaleY
                     } else {
                         centerX = self.bounds.width / 2
                         centerY = self.bounds.height / 2
