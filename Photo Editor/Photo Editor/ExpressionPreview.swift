@@ -54,13 +54,13 @@ open class ExpressionPreview: UIView {
             } else if let bgImage = expressionData.backgroundImage {
                 let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 imageView.image = UIImage(named: bgImage, in: Bundle(for: type(of: self)), compatibleWith: nil)!
-                
+                imageView.contentMode = .scaleAspectFill
                 self.addSubview(imageView)
                 self.sendSubviewToBack(imageView)
             } else {
                 let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
-                
+                imageView.contentMode = .scaleAspectFill
                 self.addSubview(imageView)
                 self.sendSubviewToBack(imageView)
             }
