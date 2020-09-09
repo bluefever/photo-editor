@@ -22,4 +22,5 @@ with the ability to scale and rotate objects
   s.dependency "SwiftyGif"
   s.dependency "CollectionViewWaterfallLayout"
   s.dependency "TTSegmentedControl"
+  s.dependency "UITextView+Placeholder"
 end

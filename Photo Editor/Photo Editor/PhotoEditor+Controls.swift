@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import UITextView_Placeholder
 
 // MARK: - Control
 public enum control: String {
@@ -105,6 +106,11 @@ extension PhotoEditorViewController {
         hideToolbar(hide: true)
         cancelButton.isHidden = true
         
+        if (activeTextView != nil && activeTextView!.text!.isEmpty) {
+            activeTextView?.removeFromSuperview()
+            activeTextView = nil
+        }
+        
         let snapshot = self.view.toImage()
         let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
         
@@ -169,15 +175,21 @@ extension PhotoEditorViewController {
                                                     width: UIScreen.main.bounds.width, height: 30))
             
             textView.textAlignment = .center
-            textView.font = UIFont(name: "HelveticaNeue-Medium", size: 30)
+            textView.font = UIFont(name: "HelveticaNeue-Medium", size: 25)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
             textView.autocorrectionType = .no
             textView.isScrollEnabled = false
             textView.delegate = self
+            textView.placeholder = "inspiring message from blue…"
+            textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
             self.canvasImageView.addSubview(textView)
             addGestures(view: textView)
             textView.becomeFirstResponder()
+            
+            let oldFrame = textView.frame
+            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         } else {
             activeTextView?.becomeFirstResponder()
         }

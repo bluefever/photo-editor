@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder
 
 public final class PhotoEditorViewController: UIViewController {
     

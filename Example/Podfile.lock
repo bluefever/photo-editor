@@ -4,8 +4,10 @@ PODS:
     - CollectionViewWaterfallLayout
     - SwiftyGif
     - TTSegmentedControl
+    - "UITextView+Placeholder"
   - SwiftyGif (5.3.0)
   - TTSegmentedControl (0.4.10)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - iOSPhotoEditor (from `../`)
@@ -15,6 +17,7 @@ SPEC REPOS:
     - CollectionViewWaterfallLayout
     - SwiftyGif
     - TTSegmentedControl
+    - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
   iOSPhotoEditor:
@@ -22,9 +25,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CollectionViewWaterfallLayout: 4399ba01be265fff4da1ed1d607130fe009780e4
-  iOSPhotoEditor: 6ed40624032d857294c54522e4c53aec0c811ecb
+  iOSPhotoEditor: c81f86ee1df269af6e53ed1be242e96091a5ad95
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
 PODFILE CHECKSUM: ea06b1d06d0409ebea265171df70afd29804d0c8
 
