@@ -106,10 +106,6 @@ extension PhotoEditorViewController {
         hideToolbar(hide: true)
         cancelButton.isHidden = true
         
-        if (activeTextView != nil) {
-            activeTextView?.placeholder = ""
-        }
-        
         let snapshot = self.view.toImage()
         let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
         
@@ -167,6 +163,10 @@ extension PhotoEditorViewController {
         canvasImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
+        
+        if (activeTextView != nil && activeTextView!.text.isEmpty) {
+            activeTextView?.isHidden = true
+        }
     }
     
     func openTextTool () {
@@ -197,6 +197,7 @@ extension PhotoEditorViewController {
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         } else {
             activeTextView?.becomeFirstResponder()
+            activeTextView?.isHidden = false
         }
     }
     
