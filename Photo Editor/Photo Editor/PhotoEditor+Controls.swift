@@ -106,9 +106,8 @@ extension PhotoEditorViewController {
         hideToolbar(hide: true)
         cancelButton.isHidden = true
         
-        if (activeTextView != nil && activeTextView!.text!.isEmpty) {
-            activeTextView?.removeFromSuperview()
-            activeTextView = nil
+        if (activeTextView != nil) {
+            activeTextView?.placeholder = ""
         }
         
         let snapshot = self.view.toImage()
