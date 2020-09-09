@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import KMPlaceholderTextView
 
 struct GifImage {
     let image: UIImageView
@@ -258,7 +259,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(textView)
         addGestures(view: textView)
         textSizeSlider.value = Float(textSize)
-        activeTextView = textView
+        activeTextView = textView as! KMPlaceholderTextView
         
         setFontStyleButton(fontIndex: fontIndex(fontName: font))
     }

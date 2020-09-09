@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import KMPlaceholderTextView
 
 extension PhotoEditorViewController: UITextViewDelegate {
     
@@ -27,7 +28,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
-        activeTextView = textView
+        activeTextView = (textView as! KMPlaceholderTextView)
         textView.superview?.bringSubviewToFront(textView)
         UIView.animate(withDuration: 0.3,
                        animations: {

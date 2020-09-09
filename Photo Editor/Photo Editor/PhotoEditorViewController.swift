@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UITextView_Placeholder
+import KMPlaceholderTextView
 
 public final class PhotoEditorViewController: UIViewController {
     
@@ -91,7 +91,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
     var lastTextViewFont:UIFont?
-    var activeTextView: UITextView?
+    var activeTextView: KMPlaceholderTextView?
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
     var gifsImages: [UIImageView] = []
@@ -146,6 +146,7 @@ public final class PhotoEditorViewController: UIViewController {
         if let textView = activeTextView {
             lastTextViewFont = lastTextViewFont?.withSize(CGFloat(Int(textSizeSlider.value)))
             textView.font = lastTextViewFont
+            
             let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
             
             textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width,

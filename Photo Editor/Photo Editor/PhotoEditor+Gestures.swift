@@ -237,7 +237,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             activeTextView = nil
             textColor = UIColor.black
             colorsCollectionView.reloadData()
-            textSizeSlider.value = 30
+            textSizeSlider.value = 20
             setFontStyleButton(fontIndex: 0)
         }
         
