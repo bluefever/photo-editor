@@ -11,14 +11,14 @@
         <array key="BowlbyOneSC-Regular.ttf">
             <string>BowlbyOneSC-Regular</string>
         </array>
+        <array key="NaomisHand-Regular.ttf">
+            <string>NaomisHand-Regular</string>
+        </array>
         <array key="Nunito-SemiBold.ttf">
             <string>Nunito-SemiBold</string>
         </array>
         <array key="ZillaSlabHighlight-Bold.ttf">
             <string>ZillaSlabHighlight-Bold</string>
-        </array>
-        <array key="sweetpurple.ttf">
-            <string>sweetpurple</string>
         </array>
     </customFonts>
     <objects>
@@ -295,7 +295,7 @@
                                             <rect key="frame" x="12" y="14" width="390" height="22"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-Wn-cCw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="22"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="22"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                     <state key="normal" title="Style">
                                                         <color key="titleColor" red="0.30588235294117649" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -305,7 +305,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8C-d0-su9">
-                                                    <rect key="frame" x="93.333333333333314" y="0.0" width="131" height="22"/>
+                                                    <rect key="frame" x="84" y="0.0" width="117.33333333333331" height="22"/>
                                                     <fontDescription key="fontDescription" name="BowlbyOneSC-Regular" family="Bowlby One SC" pointSize="18"/>
                                                     <state key="normal" title="Style">
                                                         <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,8 +315,8 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etu-NV-YIy">
-                                                    <rect key="frame" x="224.33333333333337" y="0.0" width="70" height="22"/>
-                                                    <fontDescription key="fontDescription" name="sweetpurple" family="sweet purple" pointSize="18"/>
+                                                    <rect key="frame" x="201.33333333333334" y="0.0" width="102.66666666666666" height="22"/>
+                                                    <fontDescription key="fontDescription" name="NaomisHand-Regular" family="Naomis Hand" pointSize="40"/>
                                                     <state key="normal" title="Style">
                                                         <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -325,7 +325,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68i-As-SxQ">
-                                                    <rect key="frame" x="294.33333333333331" y="0.0" width="95.666666666666686" height="22"/>
+                                                    <rect key="frame" x="304" y="0.0" width="86" height="22"/>
                                                     <fontDescription key="fontDescription" name="ZillaSlabHighlight-Bold" family="Zilla Slab Highlight" pointSize="18"/>
                                                     <state key="normal" title="Style">
                                                         <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -163,6 +163,7 @@
 		059EA7231EACB8790072C0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		059EA7261EACB8790072C0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		059EA7281EACB8790072C0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96027FA7250B6E08003C7DC6 /* NaomisHand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NaomisHand-Regular.ttf"; sourceTree = "<group>"; };
 		960ED6AE24DBCC7F002D3B85 /* default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg.png; sourceTree = "<group>"; };
 		960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb.png; sourceTree = "<group>"; };
 		960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_thumb@2x.png"; sourceTree = "<group>"; };
@@ -225,7 +226,6 @@
 		961104ED24E2C3BB0021D4D7 /* bg_36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_36.png; sourceTree = "<group>"; };
 		961104EE24E2C3BB0021D4D7 /* bg_49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_49.png; sourceTree = "<group>"; };
 		961104EF24E2C3BB0021D4D7 /* bg_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_15.png; sourceTree = "<group>"; };
-		9611052724E2D0060021D4D7 /* sweetpurple.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sweetpurple.ttf; sourceTree = "<group>"; };
 		9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BowlbyOneSC-Regular.ttf"; sourceTree = "<group>"; };
 		9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZillaSlabHighlight-Bold.ttf"; sourceTree = "<group>"; };
 		963AE9B124C6D1EC0043F791 /* GifCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -304,7 +304,6 @@
 				96F9690324E177690081A0DB /* CustomTextField.swift */,
 				9611043224E2695B0021D4D7 /* ExpressionPreview.swift */,
 				9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */,
-				9611052724E2D0060021D4D7 /* sweetpurple.ttf */,
 				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
 				960ED6B124DBCC7F002D3B85 /* default_bg.@3x.png */,
 				960ED6AE24DBCC7F002D3B85 /* default_bg.png */,
@@ -314,6 +313,7 @@
 				964F1C6F24C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift */,
 				964F1C6D24C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift */,
 				0565130F1EF489B4009EA38F /* UIImage+Size.swift */,
+				96027FA7250B6E08003C7DC6 /* NaomisHand-Regular.ttf */,
 				056513101EF489B4009EA38F /* UIImageView+Alpha.swift */,
 				96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */,
 				056513111EF489B4009EA38F /* UIView+Image.swift */,
