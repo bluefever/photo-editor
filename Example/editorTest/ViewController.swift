@@ -30,9 +30,9 @@ class ViewController: UIViewController {
         let dataIphone8 = "{\"layers\":[{\"zIndex\":0,\"text\":\"Testing xs max\",\"textColor\":\"#000000\",\"textStyle\":\"HelveticaNeue-Medium\",\"textSize\":30,\"center\":{\"x\":109.5,\"y\":102.33333333333331}},{\"size\":{\"width\":172.10144927536231,\"height\":92.308035714285722},\"zIndex\":1,\"transform\":{\"d\":-0.038622025806129258,\"b\":2.01691546498978,\"ty\":0,\"c\":-2.01691546498978,\"a\":-0.038622025806129258,\"tx\":0},\"contentUrl\":\"https:\\/\\/media0.giphy.com\\/media\\/NI4FNMb4tJEYM\\/giphy.gif?cid=cac7b245d36426c41415695caa971f445f2efa7832a95a87&rid=giphy.gif\",\"center\":{\"x\":89.830913267273615,\"y\":527.37257048629579}}],\"originalFrame\":{\"width\":375,\"height\":667}, \"backgroundImage\": \"bg_21\"}"
         
         photoEditor.bgColors = bgColors
-//        photoEditor.bgImages = bgImages
-//        photoEditor.initialData = dataXSMAX
-//
+        photoEditor.bgImages = bgImages
+        photoEditor.initialData = dataXSMAX
+
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
         present(photoEditor, animated: true, completion: nil)
         

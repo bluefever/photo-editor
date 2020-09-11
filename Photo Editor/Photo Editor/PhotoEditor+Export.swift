@@ -239,13 +239,16 @@ extension PhotoEditorViewController {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat) {
-        let textView = UITextView(frame: CGRect(x: 0, y: canvasImageView.center.y, width: UIScreen.main.bounds.width, height: 30))
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: canvasImageView.center.y, width: UIScreen.main.bounds.width, height: 30))
         
         textColor = color
         textView.text = text
         textView.textAlignment = .center
         textView.font = UIFont(name: font, size: textSize)
         textView.textColor = color
+        textView.placeholder = "inspiring message from blue..."
+        textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
+        textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
         textView.layer.backgroundColor = UIColor.clear.cgColor
         textView.autocorrectionType = .no
         textView.isScrollEnabled = false
@@ -259,7 +262,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(textView)
         addGestures(view: textView)
         textSizeSlider.value = Float(textSize)
-        activeTextView = textView as! KMPlaceholderTextView
+        activeTextView = textView
         
         setFontStyleButton(fontIndex: fontIndex(fontName: font))
     }
