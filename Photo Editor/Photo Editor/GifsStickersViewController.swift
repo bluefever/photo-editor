@@ -110,17 +110,11 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     
     @IBAction func onSearchChanged(_ sender: UITextField) {
         if let searchText = sender.text {
-            if (segmentedView.currentIndex == 0) {
-                stickersApiManager.searchGif(phrase: searchText)
-            } else {
-                gifsApiManager.searchGif(phrase: searchText)
-            }
+            stickersApiManager.searchGif(phrase: searchText)
+            gifsApiManager.searchGif(phrase: searchText)
         } else {
-            if (segmentedView.currentIndex == 0) {
-                stickersApiManager.fetchTrendingPage()
-            } else {
-                gifsApiManager.fetchTrendingPage()
-            }
+            stickersApiManager.fetchTrendingPage()
+            gifsApiManager.fetchTrendingPage()
         }
     }
     
@@ -133,7 +127,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         searchTextField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
     }
     
-   @IBAction func onReturn() {
+    @IBAction func onReturn() {
         self.searchTextField.resignFirstResponder()
     }
     
