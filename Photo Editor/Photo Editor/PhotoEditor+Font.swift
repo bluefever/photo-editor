@@ -11,7 +11,7 @@ import UIKit
 
 extension PhotoEditorViewController {
     static var fonts = ["Nunito-ExtraBold", "Nunito-SemiBold", "Nunito-Black",
-                        "NaomisHand-Regular", "ZillaSlabHighlight-Bold",
+                        "ShadowsIntoLight", "ZillaSlabHighlight-Bold",
                         "BowlbyOneSC-Regular"]
     
     //Resources don't load in main bundle we have to register the font
@@ -36,7 +36,7 @@ extension PhotoEditorViewController {
         switch fontName {
         case "BowlbyOneSC-Regular":
             return 1
-        case "NaomisHand-Regular":
+        case "ShadowsIntoLight":
             return 2
         case "ZillaSlabHighlight-Bold":
             return 3

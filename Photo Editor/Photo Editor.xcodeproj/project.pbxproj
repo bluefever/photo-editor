@@ -163,7 +163,6 @@
 		059EA7231EACB8790072C0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		059EA7261EACB8790072C0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		059EA7281EACB8790072C0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96027FA7250B6E08003C7DC6 /* NaomisHand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NaomisHand-Regular.ttf"; sourceTree = "<group>"; };
 		960ED6AE24DBCC7F002D3B85 /* default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg.png; sourceTree = "<group>"; };
 		960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb.png; sourceTree = "<group>"; };
 		960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_thumb@2x.png"; sourceTree = "<group>"; };
@@ -237,6 +236,7 @@
 		964F1C7024C5E3AB00F96C62 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		964F1C7124C5E3AB00F96C62 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		965AC65E2512005F0053B06D /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShadowsIntoLight.ttf; sourceTree = "<group>"; };
 		96618BA424D99E8600128708 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		96618BBF24D9A31100128708 /* icon_sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sticker.png; sourceTree = "<group>"; };
 		96618BC024D9A31100128708 /* icon_sticker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sticker@2x.png"; sourceTree = "<group>"; };
@@ -309,11 +309,11 @@
 				960ED6AE24DBCC7F002D3B85 /* default_bg.png */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
 				960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */,
+				965AC65E2512005F0053B06D /* ShadowsIntoLight.ttf */,
 				960ED6B324DBCC7F002D3B85 /* icon_thumb@3x.png */,
 				964F1C6F24C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift */,
 				964F1C6D24C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift */,
 				0565130F1EF489B4009EA38F /* UIImage+Size.swift */,
-				96027FA7250B6E08003C7DC6 /* NaomisHand-Regular.ttf */,
 				056513101EF489B4009EA38F /* UIImageView+Alpha.swift */,
 				96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */,
 				056513111EF489B4009EA38F /* UIView+Image.swift */,

@@ -135,7 +135,7 @@ extension PhotoEditorViewController {
             lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
         }else if (fontIndex == 2) {
             font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "NaomisHand-Regular", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "ShadowsIntoLight", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 3) {
             font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
             lastTextViewFont = UIFont(name: "ZillaSlabHighlight-Bold", size: CGFloat(Int(textSizeSlider.value)))
