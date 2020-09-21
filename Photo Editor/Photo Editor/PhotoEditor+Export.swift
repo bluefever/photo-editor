@@ -239,14 +239,14 @@ extension PhotoEditorViewController {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat) {
-        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: canvasImageView.center.y, width: UIScreen.main.bounds.width, height: 30))
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: canvasImageView.center.y - 40, width: UIScreen.main.bounds.width, height: 90))
         
         textColor = color
         textView.text = text
         textView.textAlignment = .center
         textView.font = UIFont(name: font, size: textSize)
         textView.textColor = color
-        textView.placeholder = "inspiring message from blue..."
+        textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
         textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
         textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
         textView.layer.backgroundColor = UIColor.clear.cgColor
@@ -255,8 +255,8 @@ extension PhotoEditorViewController {
         textView.delegate = self
         textView.center = CGPoint.init(x: x, y: y)
 
-        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
-        textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
+        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
+        textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
         self.canvasImageView.addSubview(textView)

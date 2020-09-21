@@ -55,7 +55,7 @@
                                         <constraint firstAttribute="height" constant="24" id="jjH-Ms-a7X"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72l-Pf-i7O">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun Stuff" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72l-Pf-i7O">
                                     <rect key="frame" x="12" y="41" width="351" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="mpk-Az-Jmi"/>

@@ -98,7 +98,7 @@ class GiphyApiManager {
             apiType = ApiType.trending
         }
         
-        var url = "https://api.giphy.com/v1/\(giphyType.toSring())/\(apiType.toSring())?api_key=K60P8olEveFJVYWFp87IlgqT4CmXcMUe"
+        var url = "https://api.giphy.com/v1/\(giphyType.toSring())/\(apiType.toSring())?api_key=K60P8olEveFJVYWFp87IlgqT4CmXcMUe&rating=pg-13"
         
         if let query = search {
             url = url + "&q=" + query

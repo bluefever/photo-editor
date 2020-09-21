@@ -45,7 +45,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         
-        segmentedView.itemTitles = ["IMAGES", "COLORS"]
+        segmentedView.itemTitles = ["TEMPLATES", "COLORS"]
         segmentedView.selectedTextFont = UIFont.init(name: "Nunito-ExtraBold", size: 15)!
         segmentedView.defaultTextFont = UIFont.init(name: "Nunito-SemiBold", size: 15)!
         

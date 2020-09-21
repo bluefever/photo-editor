@@ -147,9 +147,9 @@ public final class PhotoEditorViewController: UIViewController {
             lastTextViewFont = lastTextViewFont?.withSize(CGFloat(Int(textSizeSlider.value)))
             textView.font = lastTextViewFont
             
-            let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
+            let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
             
-            textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width,
+            textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
                                           height: sizeToFit.height)
             textView.setNeedsDisplay()
         }

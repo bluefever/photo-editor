@@ -34,14 +34,14 @@ extension PhotoEditorViewController {
             closeTextTool()
         }
         
-        let refreshAlert = UIAlertController(title: "Abandon your Expression", message: "Leaving mid-edit just deletes your in-progress Expression.", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: "Abandon your Note?", message: "Leaving now will delete this note forever.", preferredStyle: UIAlertController.Style.alert)
         
-        refreshAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .default, handler: { (action: UIAlertAction!) in
             self.photoEditorDelegate?.canceledEditing()
             self.dismiss(animated: true, completion: nil)
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .cancel, handler: { (action: UIAlertAction!) in
             refreshAlert.dismiss(animated: true, completion: nil)
         }))
         
@@ -143,9 +143,11 @@ extension PhotoEditorViewController {
         
         activeTextView?.font = lastTextViewFont
         
-        let oldFrame = activeTextView!.frame
-        let sizeToFit = activeTextView!.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-        activeTextView!.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+        if let textView = activeTextView {
+            let oldFrame = textView.frame
+            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+        }
     }
     
     //MAKR: helper methods
@@ -174,8 +176,8 @@ extension PhotoEditorViewController {
         // For V1 only one text is available, to use multiple texts remove if / else case
         if (activeTextView == nil || !self.canvasImageView.subviews.contains(activeTextView!)) {
             isTyping = true
-            let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: canvasImageView.center.y,
-                                                               width: UIScreen.main.bounds.width, height: 30))
+            let textView = KMPlaceholderTextView(frame: CGRect(x: 20, y: canvasImageView.center.y,
+                                                               width: UIScreen.main.bounds.width - 40, height: 90))
             
             textView.textAlignment = .center
             textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
@@ -184,7 +186,7 @@ extension PhotoEditorViewController {
             textView.autocorrectionType = .no
             textView.isScrollEnabled = false
             textView.delegate = self
-            textView.placeholder = "inspiring message from blue..."
+            textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
             textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             self.canvasImageView.addSubview(textView)
@@ -193,8 +195,7 @@ extension PhotoEditorViewController {
             
             
             let oldFrame = textView.frame
-            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+            textView.frame.size = CGSize(width: oldFrame.width, height: 90)
         } else {
             activeTextView?.becomeFirstResponder()
             activeTextView?.isHidden = false
