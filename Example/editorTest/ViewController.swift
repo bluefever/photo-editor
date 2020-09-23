@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         photoEditor.bgColors = bgColors
         photoEditor.bgImages = bgImages
-        photoEditor.initialData = dataXSMAX
+//        photoEditor.initialData = dataXSMAX
 
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
         present(photoEditor, animated: true, completion: nil)

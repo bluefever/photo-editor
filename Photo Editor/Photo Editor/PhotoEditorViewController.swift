@@ -196,6 +196,7 @@ public final class PhotoEditorViewController: UIViewController {
         paintSafeAreaBottomInset(withColor: .white)
         
         textSizeSlider.setThumbImage(UIImage(named: "icon_thumb", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
+        textSizeSlider.value = 20
         
         setBackgroundImage(image: (UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!))
     }
