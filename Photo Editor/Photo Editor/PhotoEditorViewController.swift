@@ -158,7 +158,7 @@ public final class PhotoEditorViewController: UIViewController {
     func prepareBackgrounds() {
         let bundle = Bundle(for: PhotoEditorViewController.self)
         
-        for index in 1...62 {
+        for index in 1...79 {
             bgImages.append(bundle.url(forResource: "bg_\(index)", withExtension: "png")!.absoluteString)
         }
     }
