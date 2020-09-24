@@ -35,14 +35,21 @@ extension PhotoEditorViewController: UITextViewDelegate {
                         textView.transform = CGAffineTransform.identity
                         textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
                                                   y:  UIScreen.main.bounds.height / 5)
-        }, completion: nil)
+                       }, completion: nil)
         
+        if let recognizers = activeTextView!.gestureRecognizers {
+            for recognizer in recognizers {
+                if let recognizer = recognizer as? UIPanGestureRecognizer {
+                    textView.removeGestureRecognizer(recognizer)
+                }
+            }
+        }
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
-            else {
-                return
+        else {
+            return
         }
         // For V1 multiple texts are disabled - uncomment to handle multiple textView
         //activeTextView = nil
@@ -51,7 +58,13 @@ extension PhotoEditorViewController: UITextViewDelegate {
                        animations: {
                         textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
-        }, completion: nil)
+                       }, completion: nil)
+        
+        let panGesture = UIPanGestureRecognizer(target: self,
+                                                action: #selector(PhotoEditorViewController.panGesture))
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
+        panGesture.delegate = self        
+        textView.addGestureRecognizer(panGesture)
     }
-    
 }

@@ -110,7 +110,13 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     }
                 }
             } else {
-                scaleEffect(view: view)
+//                scaleEffect(view: view)
+            }
+            
+            if view is UITextView {
+                if (!isTyping) {
+                    openTextTool()
+                }
             }
         }
     }

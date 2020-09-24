@@ -172,7 +172,6 @@ extension PhotoEditorViewController {
     }
     
     func openTextTool () {
-        hideToolbar(hide: true)
         // For V1 only one text is available, to use multiple texts remove if / else case
         if (activeTextView == nil || !self.canvasImageView.subviews.contains(activeTextView!)) {
             isTyping = true
