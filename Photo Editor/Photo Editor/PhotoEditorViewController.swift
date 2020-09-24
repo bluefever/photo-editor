@@ -96,6 +96,7 @@ public final class PhotoEditorViewController: UIViewController {
     var isTyping: Bool = false
     var gifsImages: [UIImageView] = []
     var gifsSources: [GifImage] = []
+    var retiredBackgrounds: [Int] = [11, 15, 19, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 35,36,37,38, 50, 52, 53, 57, 59]
     
     var gifsStickersViewController: GifsStickersViewController!
     var backgroundViewController: BackgroundViewController!
@@ -158,9 +159,13 @@ public final class PhotoEditorViewController: UIViewController {
     func prepareBackgrounds() {
         let bundle = Bundle(for: PhotoEditorViewController.self)
         
-        for index in 1...79 {
-            bgImages.append(bundle.url(forResource: "bg_\(index)", withExtension: "png")!.absoluteString)
+        for index in 1...111 {
+            if (!retiredBackgrounds.contains(index)) {
+                bgImages.append(bundle.url(forResource: "bg_\(index)", withExtension: "png")!.absoluteString)
+            }
         }
+        
+        bgImages.shuffle()
     }
     
     func prepareUI() {
