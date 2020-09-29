@@ -96,7 +96,7 @@ public final class PhotoEditorViewController: UIViewController {
     var isTyping: Bool = false
     var gifsImages: [UIImageView] = []
     var gifsSources: [GifImage] = []
-    var retiredBackgrounds: [Int] = [11, 15, 19, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 35,36,37,38, 50, 52, 53, 57, 59]
+    var retiredBackgrounds: [Int] = [11, 15, 19, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 35,36,37,38, 50, 52, 53, 57, 59, 70, 71, 72, 73, 74]
     
     var gifsStickersViewController: GifsStickersViewController!
     var backgroundViewController: BackgroundViewController!
