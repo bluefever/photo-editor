@@ -50,7 +50,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                             if view is KMPlaceholderTextView {
                                 let textView = view as! KMPlaceholderTextView
 
-                                if textView.font!.pointSize * recognizer.scale < 50 {
+                                if textView.font!.pointSize * recognizer.scale > 10 && textView.font!.pointSize * recognizer.scale < 50 {
                                     let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
                                     textView.font = font
                                     let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
