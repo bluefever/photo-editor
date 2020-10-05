@@ -187,7 +187,7 @@ extension PhotoEditorViewController {
                 colorsCollectionView.reloadData()
             }
             
-            let textView = KMPlaceholderTextView(frame: CGRect(x: 20, y: canvasImageView.center.y,
+            let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
                                                                width: UIScreen.main.bounds.width - 40, height: 90))
             textView.textAlignment = .center
             textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
@@ -199,8 +199,14 @@ extension PhotoEditorViewController {
             textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
             textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
-            self.canvasImageView.addSubview(textView)
-            addGestures(view: textView)
+            
+            
+            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y,
+                                             width: UIScreen.main.bounds.width - 40, height: 90))
+            self.canvasImageView.addSubview(view)
+            view.addSubview(textView)
+//            view.backgroundColor = UIColor.red
+            addGestures(view: view)
             textView.becomeFirstResponder()
             
             let oldFrame = textView.frame
