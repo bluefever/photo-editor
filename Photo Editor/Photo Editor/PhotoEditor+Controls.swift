@@ -145,7 +145,12 @@ extension PhotoEditorViewController {
         
         if let textView = activeTextView {
             let oldFrame = textView.frame
-            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+            var sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+            
+            if (textView.text.count == 0) {
+                sizeToFit.height = 90
+            }
+            
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
@@ -172,12 +177,18 @@ extension PhotoEditorViewController {
     }
     
     func openTextTool () {
-        // For V1 only one text is available, to use multiple texts remove if / else case
         if (activeTextView == nil || !self.canvasImageView.subviews.contains(activeTextView!)) {
             isTyping = true
+            textSizeSlider.value = 20
+            textColor = UIColor.black
+            setFontStyleButton(fontIndex: 0)
+            if (colorsCollectionViewDelegate != nil) {
+                colorsCollectionViewDelegate.initialColor = UIColor.black
+                colorsCollectionView.reloadData()
+            }
+            
             let textView = KMPlaceholderTextView(frame: CGRect(x: 20, y: canvasImageView.center.y,
                                                                width: UIScreen.main.bounds.width - 40, height: 90))
-            
             textView.textAlignment = .center
             textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
             textView.textColor = textColor
@@ -191,7 +202,6 @@ extension PhotoEditorViewController {
             self.canvasImageView.addSubview(textView)
             addGestures(view: textView)
             textView.becomeFirstResponder()
-            
             
             let oldFrame = textView.frame
             textView.frame.size = CGSize(width: oldFrame.width, height: 90)

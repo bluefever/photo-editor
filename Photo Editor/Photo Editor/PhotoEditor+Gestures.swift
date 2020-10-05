@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-
+import KMPlaceholderTextView
 import UIKit
 
 extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
@@ -46,36 +45,36 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      */
     @objc func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
         // For V1 only gifs and stickers can be scaled
-        if recognizer.view is UIImageView {
+        
             if let view = recognizer.view {
-                //            if view is UITextView {
-                //                let textView = view as! UITextView
-                //
-                //                if textView.font!.pointSize * recognizer.scale < 90 {
-                //                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
-                //                    textView.font = font
-                //                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
-                //                                                                 height:CGFloat.greatestFiniteMagnitude))
-                //                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
-                //                                                  height: sizeToFit.height)
-                //                } else {
-                //                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
-                //                                                                 height:CGFloat.greatestFiniteMagnitude))
-                //                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
-                //                                                  height: sizeToFit.height)
-                //                }
-                //
-                //
-                //                textView.setNeedsDisplay()
-                //            } else {
+                            if view is UITextView {
+//                                let textView = view as! KMPlaceholderTextView
+//                
+//                                if textView.font!.pointSize * recognizer.scale < 90 {
+//                                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
+//                                    textView.font = font
+//                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
+//                                                                                 height:CGFloat.greatestFiniteMagnitude))
+//                                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
+//                                                                  height: sizeToFit.height)
+//                                } else {
+//                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
+//                                                                                 height:CGFloat.greatestFiniteMagnitude))
+//                                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
+//                                                                  height: sizeToFit.height)
+//                                }
+//                
+//                
+//                                textView.setNeedsDisplay()
+                            } else {
                 let transform:CGAffineTransform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
                 
                 if (scale(from: view.transform) < 10 || scale(from: view.transform) > scale(from: transform)) {
                     view.transform = transform
                 }
-                //            }
+                            }
                 recognizer.scale = 1
-            }
+            
         }
     }
     
@@ -83,12 +82,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      UIRotationGestureRecognizer - Rotating Objects
      */
     @objc func rotationGesture(_ recognizer: UIRotationGestureRecognizer) {
-        // For V1 only gifs and stickers can be scaled
-        if recognizer.view is UIImageView {
-            if let view = recognizer.view {
-                view.transform = view.transform.rotated(by: recognizer.rotation)
-                recognizer.rotation = 0
-            }
+        if let view = recognizer.view {
+            view.transform = view.transform.rotated(by: recognizer.rotation)
+            recognizer.rotation = 0
         }
     }
     
@@ -113,8 +109,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
 //                scaleEffect(view: view)
             }
             
-            if view is UITextView {
+            if view is KMPlaceholderTextView {
                 if (!isTyping) {
+                    activeTextView = (view as! KMPlaceholderTextView)
                     openTextTool()
                 }
             }

@@ -19,6 +19,11 @@ extension PhotoEditorViewController: UITextViewDelegate {
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
+        
+        if (textView.text.count == 0) {
+            let oldFrame = textView.frame
+            textView.frame.size = CGSize(width: oldFrame.width, height: 90)
+        }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
         isTyping = true
@@ -28,6 +33,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
+        
+        if (textView.text.count != 0) {
+            colorsCollectionViewDelegate.initialColor = textView.textColor
+            self.colorsCollectionView.reloadData()
+            textSizeSlider.value = Float(textView.font!.pointSize)
+            setFontStyleButton(fontIndex: fontIndex(fontName: textView.font!.fontName))
+        }
+        
         activeTextView = (textView as! KMPlaceholderTextView)
         textView.superview?.bringSubviewToFront(textView)
         UIView.animate(withDuration: 0.3,
@@ -35,7 +48,21 @@ extension PhotoEditorViewController: UITextViewDelegate {
                         textView.transform = CGAffineTransform.identity
                         textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
                                                   y:  UIScreen.main.bounds.height / 5)
-                       }, completion: nil)
+                       }, completion: {_ in
+                        var sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height:CGFloat.greatestFiniteMagnitude))
+                        
+                        if (textView.text.count == 0) {
+                            sizeToFit.height = 90
+                        }
+                        
+                        textView.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+                        
+                        UIView.animate(withDuration: 0.1,
+                                       animations: {
+                                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
+                                                                  y:  UIScreen.main.bounds.height / 5)
+                                       }, completion: nil)
+                       })
         
         if let recognizers = activeTextView!.gestureRecognizers {
             for recognizer in recognizers {
@@ -51,12 +78,18 @@ extension PhotoEditorViewController: UITextViewDelegate {
         else {
             return
         }
-        // For V1 multiple texts are disabled - uncomment to handle multiple textView
-        //activeTextView = nil
+        
+        activeTextView = nil
+        
+        if (textView.text.count == 0) {
+            textView.removeFromSuperview()
+            return
+        }
+        
         textView.font = self.lastTextViewFont!
+
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
                        }, completion: nil)
         

@@ -123,20 +123,25 @@ extension PhotoEditorViewController {
             expression.backgroundColor = imageBg.backgroundColor?.hexString
         }
         
-        if let textView = activeTextView {
-            var textLayer = ExpressionLayer()
-            textLayer.textColor = textView.textColor?.hexString
-            textLayer.textStyle = textView.font?.fontName
-            textLayer.textSize = textView.font?.pointSize
-            textLayer.zIndex = canvasImageView.subviews.index(of: textView)!
-            let center = self.view.convert(textView.center, from: canvasImageView)
-            textLayer.center = Point(x: center.x, y: center.y)
-            textLayer.text = textView.text
-            
-            if (textLayer.text != nil && !textLayer.text!.isEmpty) {
-                expression.layers.append(textLayer)
+        for view in canvasImageView.subviews {
+            if view is KMPlaceholderTextView {
+                let textView = (view as! KMPlaceholderTextView)
+                
+                var textLayer = ExpressionLayer()
+                textLayer.textColor = textView.textColor?.hexString
+                textLayer.textStyle = textView.font?.fontName
+                textLayer.textSize = textView.font?.pointSize
+                textLayer.zIndex = canvasImageView.subviews.index(of: textView)!
+                let center = self.view.convert(textView.center, from: canvasImageView)
+                textLayer.center = Point(x: center.x, y: center.y)
+                textLayer.text = textView.text
+                
+                if (textLayer.text != nil && !textLayer.text!.isEmpty) {
+                    expression.layers.append(textLayer)
+                }
             }
         }
+        
         
         for gif in gifsSources {
             var gifLayer = ExpressionLayer()
