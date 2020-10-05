@@ -47,25 +47,25 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         // For V1 only gifs and stickers can be scaled
         
             if let view = recognizer.view {
-                            if view is UITextView {
-//                                let textView = view as! KMPlaceholderTextView
-//                
-//                                if textView.font!.pointSize * recognizer.scale < 90 {
-//                                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
-//                                    textView.font = font
-//                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
-//                                                                                 height:CGFloat.greatestFiniteMagnitude))
-//                                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
-//                                                                  height: sizeToFit.height)
-//                                } else {
-//                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
-//                                                                                 height:CGFloat.greatestFiniteMagnitude))
-//                                    textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
-//                                                                  height: sizeToFit.height)
-//                                }
-//                
-//                
-//                                textView.setNeedsDisplay()
+                            if view is KMPlaceholderTextView {
+                                let textView = view as! KMPlaceholderTextView
+
+                                if textView.font!.pointSize * recognizer.scale < 50 {
+                                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
+                                    textView.font = font
+                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                                 height:CGFloat.greatestFiniteMagnitude))
+                                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                  height: sizeToFit.height)
+                                } else {
+                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                                 height:CGFloat.greatestFiniteMagnitude))
+                                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                  height: sizeToFit.height)
+                                }
+
+
+                                textView.setNeedsDisplay()
                             } else {
                 let transform:CGAffineTransform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
                 
