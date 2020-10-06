@@ -24,6 +24,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         if (textView.text.count == 0) {
             let oldFrame = textView.frame
             textView.frame.size = CGSize(width: oldFrame.width, height: 90)
+            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: 90)
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
@@ -44,34 +45,21 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         activeTextView = (textView as! KMPlaceholderTextView)
         textView.superview?.bringSubviewToFront(textView)
+        canvasImageView.bringSubviewToFront(textView.superview!)
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
                         textView.superview!.center = CGPoint(x: UIScreen.main.bounds.width / 2,
                                                   y:  UIScreen.main.bounds.height / 5)
-                       }, completion: {_ in
-//                        var sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.width - 40, height:CGFloat.greatestFiniteMagnitude))
-//
-//                        if (textView.text.count == 0) {
-//                            sizeToFit.height = 90
-//                        }
-//
-//                        textView.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
-                        
-//                        UIView.animate(withDuration: 0.1,
-//                                       animations: {
-//                                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
-//                                                                  y:  UIScreen.main.bounds.height / 5)
-//                                       }, completion: nil)
-                       })
+                       }, completion: nil)
         
-//        if let recognizers = activeTextView!.gestureRecognizers {
-//            for recognizer in recognizers {
-//                if let recognizer = recognizer as? UIPanGestureRecognizer {
-//                    textView.removeGestureRecognizer(recognizer)
-//                }
-//            }
-//        }
+        if let recognizers = activeTextView!.superview!.gestureRecognizers {
+            for recognizer in recognizers {
+                if let recognizer = recognizer as? UIPanGestureRecognizer {
+                    activeTextView!.superview!.removeGestureRecognizer(recognizer)
+                }
+            }
+        }
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
@@ -91,14 +79,15 @@ extension PhotoEditorViewController: UITextViewDelegate {
 
         UIView.animate(withDuration: 0.3,
                        animations: {
+                        textView.superview!.transform = self.lastTextViewTransform!
                         textView.superview!.center = self.lastTextViewTransCenter!
                        }, completion: nil)
         
-//        let panGesture = UIPanGestureRecognizer(target: self,
-//                                                action: #selector(PhotoEditorViewController.panGesture))
-//        panGesture.minimumNumberOfTouches = 1
-//        panGesture.maximumNumberOfTouches = 1
-//        panGesture.delegate = self
-//        textView.addGestureRecognizer(panGesture)
+        let panGesture = UIPanGestureRecognizer(target: self,
+                                                action: #selector(PhotoEditorViewController.panGesture))
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
+        panGesture.delegate = self
+        textView.superview!.addGestureRecognizer(panGesture)
     }
 }

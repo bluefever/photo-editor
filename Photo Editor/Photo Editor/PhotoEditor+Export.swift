@@ -124,17 +124,18 @@ extension PhotoEditorViewController {
         }
         
         for view in canvasImageView.subviews {
-            if view is KMPlaceholderTextView {
-                let textView = (view as! KMPlaceholderTextView)
+            if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
+                let textView = (view.subviews[0] as! KMPlaceholderTextView)
                 
                 var textLayer = ExpressionLayer()
                 textLayer.textColor = textView.textColor?.hexString
                 textLayer.textStyle = textView.font?.fontName
                 textLayer.textSize = textView.font?.pointSize
-                textLayer.zIndex = canvasImageView.subviews.index(of: textView)!
-                let center = self.view.convert(textView.center, from: canvasImageView)
+                textLayer.zIndex = canvasImageView.subviews.index(of: view)!
+                let center = self.view.convert(textView.superview!.center, from: canvasImageView)
                 textLayer.center = Point(x: center.x, y: center.y)
                 textLayer.text = textView.text
+                textLayer.transform = Transform(a: view.transform.a, b: view.transform.b, c: view.transform.c,d: view.transform.d, tx: view.transform.tx, ty: view.transform.ty)
                 
                 if (textLayer.text != nil && !textLayer.text!.isEmpty) {
                     expression.layers.append(textLayer)
@@ -216,7 +217,7 @@ extension PhotoEditorViewController {
                     }
                     
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: centerX, y: centerY)
+                                  x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
@@ -243,8 +244,8 @@ extension PhotoEditorViewController {
         gifsSources.append(GifImage(image: imageView, url: contentUrl))
     }
     
-    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat) {
-        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: canvasImageView.center.y - 40, width: UIScreen.main.bounds.width, height: 90))
+    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat, transform: Transform?) {
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
         textColor = color
         textView.text = text
@@ -258,17 +259,22 @@ extension PhotoEditorViewController {
         textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
-        textView.center = CGPoint.init(x: x, y: y)
 
         let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
-        textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height)
+        
+        textView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
-        self.canvasImageView.addSubview(textView)
-        addGestures(view: textView)
-        textSizeSlider.value = Float(textSize)
-        activeTextView = textView
+
+        let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
         
-        setFontStyleButton(fontIndex: fontIndex(fontName: font))
+        view.center = CGPoint.init(x: x, y: y)
+        view.addSubview(textView)
+        if let trans = transform  {
+            view.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
+        }
+        
+        self.canvasImageView.addSubview(view)
+        addGestures(view: view)
     }
 }

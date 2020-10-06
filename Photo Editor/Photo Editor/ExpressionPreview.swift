@@ -81,7 +81,7 @@ open class ExpressionPreview: UIView {
                     }
                     
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: centerX, y: centerY)
+                                  x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
@@ -105,7 +105,7 @@ open class ExpressionPreview: UIView {
         self.addSubview(imageView)
     }
     
-    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat) {
+    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat, transform: Transform?) {
         let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
         
         label.text = text
@@ -115,6 +115,10 @@ open class ExpressionPreview: UIView {
         label.textColor = color
         label.layer.backgroundColor = UIColor.clear.cgColor
         label.center = CGPoint.init(x: x, y: y)
+        
+        if let trans = transform  {
+            label.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
+        }
         
         let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
         label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)

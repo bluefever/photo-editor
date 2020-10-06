@@ -152,6 +152,7 @@ extension PhotoEditorViewController {
             }
             
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
     
@@ -205,7 +206,6 @@ extension PhotoEditorViewController {
                                              width: UIScreen.main.bounds.width - 40, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
-//            view.backgroundColor = UIColor.red
             addGestures(view: view)
             textView.becomeFirstResponder()
             

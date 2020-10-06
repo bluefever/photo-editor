@@ -46,34 +46,34 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     @objc func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
         // For V1 only gifs and stickers can be scaled
         
-            if let view = recognizer.view {
-                            if view is KMPlaceholderTextView {
-                                let textView = view as! KMPlaceholderTextView
-
-                                if textView.font!.pointSize * recognizer.scale > 10 && textView.font!.pointSize * recognizer.scale < 50 {
-                                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
-                                    textView.font = font
-                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
-                                                                                 height:CGFloat.greatestFiniteMagnitude))
-                                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
-                                                                  height: sizeToFit.height)
-                                } else {
-                                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
-                                                                                 height:CGFloat.greatestFiniteMagnitude))
-                                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
-                                                                  height: sizeToFit.height)
-                                }
-
-
-                                textView.setNeedsDisplay()
-                            } else {
+        if let view = recognizer.view {
+            if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
+                let textView = view.subviews[0] as! KMPlaceholderTextView
+                
+                if textView.font!.pointSize * recognizer.scale > 10 && textView.font!.pointSize * recognizer.scale < 50 {
+                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
+                    textView.font = font
+                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                 height:CGFloat.greatestFiniteMagnitude))
+                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                  height: sizeToFit.height)
+                } else {
+                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                                 height:CGFloat.greatestFiniteMagnitude))
+                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
+                                                  height: sizeToFit.height)
+                }
+                
+                
+                textView.setNeedsDisplay()
+            } else {
                 let transform:CGAffineTransform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
                 
                 if (scale(from: view.transform) < 10 || scale(from: view.transform) > scale(from: transform)) {
                     view.transform = transform
                 }
-                            }
-                recognizer.scale = 1
+            }
+            recognizer.scale = 1
             
         }
     }
@@ -106,14 +106,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     }
                 }
             } else {
-//                scaleEffect(view: view)
-            }
-            
-            if view is KMPlaceholderTextView {
-                if (!isTyping) {
-                    activeTextView = (view as! KMPlaceholderTextView)
-                    openTextTool()
-                }
+                canvasImageView.bringSubviewToFront(view)
             }
         }
     }
@@ -160,12 +153,12 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         UIView.animate(withDuration: 0.2,
                        animations: {
                         view.transform = view.transform.scaledBy(x: 1.2, y: 1.2)
-        },
+                       },
                        completion: { _ in
                         UIView.animate(withDuration: 0.2) {
                             view.transform  = previouTransform
                         }
-        })
+                       })
     }
     
     /**
@@ -199,7 +192,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     view.center = recognizer.location(in: self.canvasImageView)
                 })
             }
-                //View is going out of deleteView
+            //View is going out of deleteView
             else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(pointToSuperView) {
                 //Scale to original Size
                 UIView.animate(withDuration: 0.3, animations: {
