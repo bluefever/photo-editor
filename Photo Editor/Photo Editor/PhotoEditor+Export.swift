@@ -194,7 +194,19 @@ extension PhotoEditorViewController {
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                setBackgroundImage(image: UIImage(named: bgImage, in: Bundle(for: type(of: self)), compatibleWith: nil)!)
+                var bgUrl: String?
+                
+                for url in bgImages {
+                    if (url.matchingStrings(regex: bgImage + ".png").count > 0) {
+                        bgUrl = url
+                    }
+                }
+                
+                if let url = bgUrl {
+                    imageBg.load(url: url)
+                } else {
+                    setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
+                }
             } else {
                 setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
             }
