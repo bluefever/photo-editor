@@ -29,7 +29,20 @@ class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColle
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
         cell.image.layer.cornerRadius = 14
         cell.image.clipsToBounds = true
-        cell.image.load(url: bgImages[indexPath.item])
+        cell.image.image = nil
+        cell.image.tag = indexPath.item
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: URL(string: self!.bgImages[indexPath.item])!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        if (indexPath.item == cell.image.tag) {
+                            cell.image.image = image
+                        }
+                    }
+                }
+            }
+        }
         return cell
     }
     

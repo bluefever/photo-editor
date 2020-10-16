@@ -10,13 +10,4 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        image.image = nil;
-    }
 }
