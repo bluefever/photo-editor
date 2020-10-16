@@ -57,7 +57,7 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
     
     func didSelectImageBackground(image: String, index: Int) {
         self.removeBackgroundView()
-        let matches = image.matchingStrings(regex: "bg_([0-9]).png")
+        let matches = image.matchingStrings(regex: "bg_([0-9]+).png")
         
         if (matches.count == 1 && matches[0].count == 2) {
             self.setBackgroundImage(image: image, index: Int(matches[0][1])!)
