@@ -9,6 +9,8 @@ import Foundation
 
 open class ExpressionPreview: UIView {
     @objc open var data: String? = nil
+    @objc open var bgImages: [String] = []
+    
     var imported: Bool = false
     
     public override init(frame: CGRect) {
@@ -53,16 +55,25 @@ open class ExpressionPreview: UIView {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
                 let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-                imageView.image = UIImage(named: bgImage, in: Bundle(for: type(of: self)), compatibleWith: nil)!
+                var bgUrl: String?
+                
+                for url in bgImages {
+                    if (url.matchingStrings(regex: bgImage + ".png").count > 0) {
+                        bgUrl = url
+                    }
+                }
+                
                 imageView.contentMode = .scaleAspectFill
-                self.addSubview(imageView)
-                self.sendSubviewToBack(imageView)
+                
+                if let url = bgUrl {
+                    imageView.load(url: url)
+                    self.addSubview(imageView)
+                    self.sendSubviewToBack(imageView)
+                } else {
+                    addDefaultBg()
+                }
             } else {
-                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-                imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
-                imageView.contentMode = .scaleAspectFill
-                self.addSubview(imageView)
-                self.sendSubviewToBack(imageView)
+                addDefaultBg()
             }
             
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
@@ -88,6 +99,14 @@ open class ExpressionPreview: UIView {
                 }
             }
         }
+    }
+    
+    func addDefaultBg () {
+        let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
+        imageView.contentMode = .scaleAspectFill
+        self.addSubview(imageView)
+        self.sendSubviewToBack(imageView)
     }
     
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {

@@ -57,11 +57,11 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
     
     func didSelectImageBackground(image: String, index: Int) {
         self.removeBackgroundView()
-        let filename = (image as NSString).lastPathComponent
-        let pathPrefix = (filename as NSString).deletingPathExtension
-        let imageIndex = pathPrefix.replacingOccurrences(of: "bg_", with: "")
+        let matches = image.matchingStrings(regex: "bg_([0-9]).png")
         
-        self.setBackgroundImage(image: image, index: Int(imageIndex)!)
+        if (matches.count == 1 && matches[0].count == 2) {
+            self.setBackgroundImage(image: image, index: Int(matches[0][1])!)
+        }
     }
     
     func backgroundViewDidDisappear() {
