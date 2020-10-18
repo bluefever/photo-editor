@@ -8,7 +8,7 @@
 import UIKit
 
 class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
     
     var bgImages: [String] = []
@@ -31,18 +31,8 @@ class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColle
         cell.image.clipsToBounds = true
         cell.image.image = nil
         cell.image.tag = indexPath.item
+        cell.image.loadImage(urlString: bgImages[indexPath.item])
         
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: URL(string: self!.bgImages[indexPath.item])!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        if (indexPath.item == cell.image.tag) {
-                            cell.image.image = image
-                        }
-                    }
-                }
-            }
-        }
         return cell
     }
     
