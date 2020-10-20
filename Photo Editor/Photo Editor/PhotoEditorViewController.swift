@@ -67,6 +67,10 @@ public final class PhotoEditorViewController: UIViewController {
      Array of Background Images that the user will choose from
      */
     @objc public var bgImages : [String] = []
+    /**
+     Initial background template
+     */
+    @objc public var initialBg : String?
     
     /**
     Json data to import expression
@@ -161,6 +165,14 @@ public final class PhotoEditorViewController: UIViewController {
     
     func prepareBackgrounds() {
         bgImages.shuffle()
+        
+        if let background = initialBg {
+            let matches = background.matchingStrings(regex: "bg_([0-9]+).png")
+            
+            if (matches.count == 1 && matches[0].count == 2) {
+                setBackgroundImage(image: background, index: Int(matches[0][1])!)
+            }
+        }
     }
     
     func prepareUI() {
