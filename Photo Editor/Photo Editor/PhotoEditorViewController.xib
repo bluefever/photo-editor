@@ -77,16 +77,16 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-ZS-dct" userLabel="canvas">
-                    <rect key="frame" x="0.0" y="114.33333333333331" width="414" height="667.33333333333348"/>
+                    <rect key="frame" x="0.0" y="114" width="414" height="668"/>
                     <subviews>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5rw-9v-ExQ">
-                            <rect key="frame" x="0.0" y="0.33333333333337123" width="414" height="667"/>
+                            <rect key="frame" x="0.0" y="0.66666666666668561" width="414" height="667"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="667" id="DdY-qb-dfp"/>
                             </constraints>
                         </imageView>
                         <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-yR-4xc">
-                            <rect key="frame" x="0.0" y="0.33333333333337123" width="414" height="667"/>
+                            <rect key="frame" x="0.0" y="-2" width="414" height="672"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -106,10 +106,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MS-N5-3xY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="RSV-Dw-76F"/>
+                                <constraint firstAttribute="height" constant="64" id="RSV-Dw-76F"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-Q5-djd">
@@ -260,11 +260,11 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-y4-Jwh">
-                    <rect key="frame" x="352" y="44" width="50" height="36"/>
+                    <rect key="frame" x="347" y="44" width="55" height="36"/>
                     <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="19"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
-                    <state key="normal" title="NEXT">
+                    <state key="normal" title="DONE">
                         <color key="titleColor" red="0.30980392156862746" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
                     </state>
@@ -273,10 +273,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcY-sV-ehZ">
-                    <rect key="frame" x="347" y="44" width="55" height="36"/>
+                    <rect key="frame" x="352" y="44" width="50" height="36"/>
                     <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="19"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="DONE">
+                    <state key="normal" title="POST">
                         <color key="titleColor" red="0.30980392156862746" green="0.31764705882352939" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -407,7 +407,7 @@
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="2tC-2e-oA6"/>
-                <constraint firstItem="yAt-sK-1nK" firstAttribute="top" secondItem="S1Y-ZS-dct" secondAttribute="bottom" constant="25.333333333333258" id="3cR-st-tSo"/>
+                <constraint firstItem="yAt-sK-1nK" firstAttribute="top" secondItem="S1Y-ZS-dct" secondAttribute="bottom" constant="25" id="3cR-st-tSo"/>
                 <constraint firstItem="yLU-ua-LOI" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="4x0-2r-qOk"/>
                 <constraint firstItem="hvL-7W-xTR" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="5WG-wJ-NmG"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="trailing" secondItem="ifv-kQ-pTz" secondAttribute="trailing" id="61R-uI-50l"/>
@@ -416,7 +416,7 @@
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="AVJ-vW-Pko"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="Bok-Wu-cd0"/>
                 <constraint firstItem="hvL-7W-xTR" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="BwO-VW-xrD"/>
-                <constraint firstItem="n3p-yR-4xc" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" multiplier="0.74442" id="D4t-IV-zK3"/>
+                <constraint firstItem="n3p-yR-4xc" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" multiplier="0.75" id="D4t-IV-zK3"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="DNK-DF-UwV"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="ifv-kQ-pTz" secondAttribute="bottom" id="HbP-wL-ivL"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="yLU-ua-LOI" secondAttribute="bottom" id="Jda-IL-kRB"/>

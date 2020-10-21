@@ -50,7 +50,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
                         textView.superview!.center = CGPoint(x: UIScreen.main.bounds.width / 2,
-                                                  y:  UIScreen.main.bounds.height / 5)
+                                                             y:  UIScreen.main.bounds.height / 5)
                        }, completion: nil)
         
         if let recognizers = activeTextView!.superview!.gestureRecognizers {
@@ -60,6 +60,9 @@ extension PhotoEditorViewController: UITextViewDelegate {
                 }
             }
         }
+        
+        onTextToolOpen()
+        canvasImageView.superview?.bringSubviewToFront(activeTextView!)
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
@@ -72,11 +75,12 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         if (textView.text.count == 0) {
             textView.removeFromSuperview()
+            onTextToolClose()
             return
         }
         
         textView.font = self.lastTextViewFont!
-
+        
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = self.lastTextViewTransform!
@@ -89,5 +93,53 @@ extension PhotoEditorViewController: UITextViewDelegate {
         panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         textView.superview!.addGestureRecognizer(panGesture)
+        
+        onTextToolClose()
+    }
+    
+    public func onTextToolOpen() {
+        doneButton.setTitleColor(UIColor.white, for: .normal)
+        cancelButton.isHidden = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
+        canvasImageView.addGestureRecognizer(tapGesture)
+        
+        let opacityCanvas = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        opacityCanvas.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        opacityCanvas.tag = 100
+        canvasImageView.insertSubview(opacityCanvas, at: 0)
+        
+        var topPadding:CGFloat? = 0
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            topPadding = window?.safeAreaInsets.top
+        }
+        
+        let opacityTopToolbar = UIView.init(frame: CGRect.init(x: 0, y: 0, width: topToolbar.frame.width, height: topToolbar.frame.height + topPadding!))
+        opacityTopToolbar.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        opacityTopToolbar.tag = 100
+        
+        
+        self.view.insertSubview(opacityTopToolbar, at: 5)
+        self.view.superview?.bringSubviewToFront(topToolbar)
+    }
+    
+    public func onTextToolClose() {
+        doneButton.setTitleColor(UIColor.white, for: .normal)
+        cancelButton.isHidden = false
+        
+        if let recognizers = canvasImageView!.superview!.gestureRecognizers {
+            for recognizer in recognizers {
+                if let recognizer = recognizer as? UITapGestureRecognizer {
+                    canvasImageView!.superview!.removeGestureRecognizer(recognizer)
+                }
+            }
+        }
+        
+        let opacityCanvas = canvasImageView.viewWithTag(100)
+        opacityCanvas!.removeFromSuperview()
+        
+        let opacityTopToolbar = self.view.viewWithTag(100)
+        opacityTopToolbar!.removeFromSuperview()
     }
 }
