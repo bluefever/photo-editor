@@ -26,8 +26,21 @@ public enum control: String {
 }
 
 extension PhotoEditorViewController {
-    
-    //MARK: Top Toolbar
+    @IBAction func onTopTextButtonTapped(_ sender: UIButton) {
+        switch(sender.tag) {
+        case 0:
+            selectTextSize()
+            break
+        case 1:
+            selectTextStyle()
+            break
+        case 2:
+            selectTextColor()
+            break
+        default:
+            return
+        }
+    }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         if(self.isTyping) {
@@ -66,6 +79,7 @@ extension PhotoEditorViewController {
         canvasImageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
         colorPickerView.isHidden = false
+        topTextControl.isHidden = false
         hideToolbar(hide: true)
     }
     
@@ -168,6 +182,7 @@ extension PhotoEditorViewController {
         view.endEditing(true)
         doneButton.isHidden = true
         colorPickerView.isHidden = true
+        topTextControl.isHidden = true
         canvasImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
@@ -198,7 +213,7 @@ extension PhotoEditorViewController {
             textView.isScrollEnabled = false
             textView.delegate = self
             textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
-            textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
+            textView.placeholderColor = UIColor.init(hexString: "#fff")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
@@ -237,5 +252,41 @@ extension PhotoEditorViewController {
                 textButton.isHidden = true
             }
         }
+    }
+    
+    func selectTextSize() {
+        topTextSizeButton.setImage((UIImage(named: "size_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = false
+        bottomStyleContainer.isHidden = true
+        bottomColorContainer.isHidden = true
+        topTextSizeButton.addShadow()
+        topTextStyleButton.removeShadow()
+        topTextColorButton.removeShadow()
+    }
+    
+    func selectTextStyle() {
+        topTextSizeButton.setImage((UIImage(named: "size_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = true
+        bottomStyleContainer.isHidden = false
+        bottomColorContainer.isHidden = true
+        topTextSizeButton.removeShadow()
+        topTextStyleButton.addShadow()
+        topTextColorButton.removeShadow()
+    }
+    
+    func selectTextColor() {
+        topTextSizeButton.setImage((UIImage(named: "size_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = true
+        bottomStyleContainer.isHidden = true
+        bottomColorContainer.isHidden = false
+        topTextSizeButton.removeShadow()
+        topTextStyleButton.removeShadow()
+        topTextColorButton.addShadow()
     }
 }

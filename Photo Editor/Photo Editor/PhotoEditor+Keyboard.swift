@@ -21,6 +21,7 @@ extension PhotoEditorViewController {
         if isTyping {
             doneButton.isHidden = false
             colorPickerView.isHidden = false
+            topTextControl.isHidden = false
         }
     }
     

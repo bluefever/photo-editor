@@ -265,7 +265,7 @@ extension PhotoEditorViewController {
         textView.font = UIFont(name: font, size: textSize)
         textView.textColor = color
         textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
-        textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
+        textView.placeholderColor = UIColor.init(hexString: "#fff")
         textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
         textView.layer.backgroundColor = UIColor.clear.cgColor
         textView.autocorrectionType = .no

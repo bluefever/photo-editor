@@ -10,7 +10,7 @@ import UIKit
 var imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
-
+    
     func loadImage(urlString: String) {
         
         if let cacheImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
@@ -34,7 +34,7 @@ extension UIImageView {
                 self.image = image
             }
         }.resume()
-
+        
     }
 }
 
@@ -60,7 +60,7 @@ extension UIImage {
         return image
     }
     
-   func cropToRect(rect: CGRect!) -> UIImage? {
+    func cropToRect(rect: CGRect!) -> UIImage? {
         let scaledRect = CGRect(x: rect.origin.x * self.scale, y: rect.origin.y * self.scale, width: rect.size.width * self.scale, height: rect.size.height * self.scale);
         
         let imageRef = self.cgImage!.cropping(to: scaledRect);
@@ -177,5 +177,20 @@ extension String {
                     : ""
             }
         }
+    }
+}
+
+extension UIButton {
+    func addShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowRadius = 4.0
+        self.layer.masksToBounds = false
+    }
+    
+    func removeShadow() {
+        self.layer.shadowColor = UIColor.clear.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
 }

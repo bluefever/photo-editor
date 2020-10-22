@@ -28,6 +28,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
+        selectTextStyle()
+        
         isTyping = true
         continueButton.isHidden = true
         doneButton.isHidden = false
@@ -120,7 +122,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         opacityTopToolbar.tag = 100
         
         
-        self.view.insertSubview(opacityTopToolbar, at: 5)
+        self.view.insertSubview(opacityTopToolbar, at: 4)
         self.view.superview?.bringSubviewToFront(topToolbar)
     }
     

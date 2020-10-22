@@ -7,316 +7,352 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		024E9CAE1B6C773853E0553187853EC1 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 717367DB6022BFA88D6D7BEAD7B4ABF3 /* Nunito-Black.ttf */; };
+		02809C0283D6FA1A9656B0663F83022A /* PhotoCropEditorBorder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0240FDFEC55307D79B06EC4B000A64D9 /* PhotoCropEditorBorder@3x.png */; };
 		03B6D237E16948EE9A04DF850F594267 /* CollectionViewWaterfallLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BD2F6CC5E6245CB7FF11B54E91BC5C /* CollectionViewWaterfallLayout-dummy.m */; };
-		0CD1EA72B443468D2B4E18F775AFDFE2 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4398D5139A56A84D3C16DF0EC5E /* UIImage+Crop.swift */; };
+		0C230A88016F0474D08BC7536D30EFE1 /* color_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1138F2308FFEE172BBC518D19D531B0F /* color_off@2x.png */; };
 		0D78B3551E40812B8DBE7B0A3C195166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		10CA1FD1EEF15AC435777994ED9AC86D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		1339A499BB0E6F5B7C56E402C9978EA4 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F08EC467BFB154472E60A7D61F56E0C /* Nunito-SemiBold.ttf */; };
-		16CA1BF65F9D3C019E4E7595F77AB90E /* GifCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD76D5B1B66E1C8773165C6A548C9C /* GifCollectionViewCell.swift */; };
-		17ADA72FE7184C569631C9C77D745BAF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080CA7B0B32E74E24C526227F44E33D /* Extensions.swift */; };
-		1B051AAD5693E8C269B583E9567C32BE /* icon_text.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D244C2BA5D4B3CABF74E93F10E40E6 /* icon_text.png */; };
+		1094AE1D8D11C43D612F26383730F486 /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E5C361055041E47BD5F239A1149D68 /* GifsStickersViewController.swift */; };
+		18188BD54BFE3D2FB25F7882C70B2764 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FD48BDCB944834E9D93910E1508D8B /* CustomTextField.swift */; };
+		18EF00FCB4A41EA1B4E245D6852A78AE /* KMPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18379A822CB666A0560DEDAEDFAB63D5 /* KMPlaceholderTextView.framework */; };
+		1E22DCECC09BB5A8622215CFE674C84E /* PhotoEditor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A7792DE18F5058D07EE79E49715947 /* PhotoEditor+Gestures.swift */; };
 		1EE9E5A700E63BD57BEF10D683341A0C /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B138A109DC0C457E134BA08984DA9 /* SwiftyGifManager.swift */; };
-		25157FF16EC9EF62761D52BF453E9E51 /* PhotoEditor+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3361262C2821D76DCD937659274EA1A /* PhotoEditor+Keyboard.swift */; };
-		27B2B3F1D779CD79AD8944012D708FB8 /* PhotoEditor+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10386CC9722CB8832BC1A616B737ACA7 /* PhotoEditor+Crop.swift */; };
-		27F50B32EEBB682FD058C66596CD4F44 /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA09EC5724905E50F4290030EF4BBBC /* SwiftyGif.framework */; };
-		2A5B03B1459438C4E3098EA11DA3112E /* icon_thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61FC7EBE2E211361070FA67508B55EEC /* icon_thumb@3x.png */; };
-		301EC734A2006DE378A05BC88A3701F6 /* icon_sticker@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2E34A5C1571B9BAD3BF0EE3FF0DEA /* icon_sticker@3x.png */; };
-		34B9D5312653605DECCDAF7495AF05D1 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E328A21D3F255084B89A923734E647 /* ImageCollectionViewCell.xib */; };
-		353161FDB86393EDCD8AABBD775B0BDF /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EFE357D04B842CE343BA3C4A1BD81 /* GifsStickersViewController.swift */; };
+		222B3FE06E126C2D08CF88802BD61798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3FD9C3466F9A9C0F51B5872B49FB6D /* LaunchScreen.storyboard */; };
+		22F6EEF869C45675B89E20044102BBDA /* PhotoEditor+Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7397F9ABC6B20F998E418A526FAD05 /* PhotoEditor+Controls.swift */; };
+		23DE35831B9E28E5B36C05FE80B291EC /* PhotoEditor+Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE54C88F0D2F9226DF58A7A498C80B0 /* PhotoEditor+Export.swift */; };
+		25008448B80390DBA7D1D03BC4759137 /* PhotoEditor+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F80CA23C7C89F0F5CC5130FFE9BD4A /* PhotoEditor+Crop.swift */; };
+		2780216FD62FAE95A52077DF732F181A /* ImageCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F2FB48F033AC6A6DC16541C26128E /* ImageCollectionViewDelegate.swift */; };
+		2E3ACDEFED7D82DC06829BB21F083B8F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839214C89D59BFFA824A31E1BA4CC3AB /* Protocols.swift */; };
+		30E5E5848CE711C5470DEB073E5D85EC /* icon_thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB9E3DEE2FF0EC4FF86B6AC459888CE /* icon_thumb@3x.png */; };
+		35867B4518DE116180ECDD466DCA8D44 /* text_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82FA3D8BDB66BD91C3004ACBDCC27AAA /* text_off@3x.png */; };
+		3A88F3AE4A11ED3E34E0E3ABE61629C9 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 474392C63A1F4B8C7531C08318548D96 /* Nunito-Black.ttf */; };
+		3C0C7919D8C5DAE5179D857A61813E22 /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ECB3E4171A2A4A93BB0BE5FF01C987E /* PhotoCropEditorBorder.png */; };
 		3C2428B509C3F07B67ED6FA0D8A3B21C /* Pods-editorTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF4A3392CC7C3DB9D1052BAE2C37A78 /* Pods-editorTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D181CA35682E8B3A27710E1576CD6A2 /* PhotoEditor+Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0E9D02727589E5F4E14680AA8E487 /* PhotoEditor+Export.swift */; };
-		3EE5F76F03AE2DDBEB6F12905580C8C8 /* BowlbyOneSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F220886878ECC5AB6BA498B53D535 /* BowlbyOneSC-Regular.ttf */; };
-		3FA9AF0C9C22CFD1A2BD074B8BA45320 /* PhotoEditor+Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC7A6ABE1E0E8874D4C6B575FBD0E8 /* PhotoEditor+Controls.swift */; };
 		426CFE8DF80F73238AE3D9DD8F494C8A /* KMPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0DC34628C53A5200070ACC3CE496F7 /* KMPlaceholderTextView-dummy.m */; };
 		44826C94AC2E1EC02CA56BCB3BEC249D /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1FB44607CA2776395435260D96180 /* KMPlaceholderTextView.swift */; };
 		45C87BF8F436388A396FB2C643378885 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA398D5A12FA5919F393F99BA8ADF578 /* UIImage+SwiftyGif.swift */; };
-		47EB1527412B1EE755CF410C87DCFAFE /* PhotoEditor+BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD23AF69C4C462456E620451C055884 /* PhotoEditor+BackgroundViewController.swift */; };
-		4866B875C1DC0961A78837BAD84D3C45 /* KMPlaceholderTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18379A822CB666A0560DEDAEDFAB63D5 /* KMPlaceholderTextView.framework */; };
+		49712FECA8B54A8B73D5ADB991B5B31A /* icon_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 151EE0B1A8A90D5B33F11D86F6A687A4 /* icon_text@2x.png */; };
+		4A18648BC82A6F071E496F9A42A60F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF5E6EE22283AF987DE640D314663 /* LaunchScreen.storyboard */; };
+		4C18157FA64573DD2B7B553647CD9BBE /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D784FCFAA42B0FEAA98070661F04E3 /* ColorCollectionViewCell.swift */; };
 		4C5DA85066112D5F37C80941FD024315 /* CollectionViewWaterfallLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5160A2B357D7985876809FC1F2EF2C0F /* CollectionViewWaterfallLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CC93DB4B77D100ED64626A46EA0DE43 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4790A249CE574DFB24CE606ED9899E3D /* icon_back@2x.png */; };
-		4DFDA481C4E9657CD6097FFADC18BE37 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143FCEED6D63B0A6AA2922A52B21750E /* PhotoEditorViewController.swift */; };
+		4CF92538D8E2D9659D08C6D3DBE43AF2 /* GiphyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C507D8F8033455A34B1B3C4E26498 /* GiphyApiManager.swift */; };
+		4E27DFEF84C60DBE3B48F98FD833156B /* size_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB50279112925044A53FBFC70AA9C1E /* size_on@3x.png */; };
+		5042848BB13EF674117C803D8D00D098 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EF719FCB3CF09BE5ABFB29692B2C10 /* ColorCollectionViewCell.xib */; };
+		51E7413218270C72EEF75EA3D4D5A4EA /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA6B6299DF3D98B0D4E2E9EBE6B4531 /* UIView+Image.swift */; };
 		52468AF818BB368FE6B1BFFAB18453B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E002A9E2888A632435FD768B3CD49A1F /* UIKit.framework */; };
-		5263BCFCE00F219F9E3350F8F8023F3D /* icon_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A655269F454C1FC6F06C95C083AD666 /* icon_back@3x.png */; };
 		52F155828964F50922A4657178B69495 /* Pods-editorTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A60ABAC501BE41BB6BC5BEF1A81DB /* Pods-editorTest-dummy.m */; };
-		532749A6D6E0AD65F6DE8A2898C0F0ED /* TTSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC71B6E751F8D1226D22B84E99C04F6 /* TTSegmentedControl.framework */; };
-		5601DBBA105FCA866EA64C1F647AEE2A /* GifsStickersViewController+GiphyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5047F0CDB8E474A15405F5A5B5931 /* GifsStickersViewController+GiphyApi.swift */; };
-		565AE60B1E48CC61C321EBF2635D3911 /* CollectionViewWaterfallLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD0D625BFFF8DF927E9B74A21313220 /* CollectionViewWaterfallLayout.framework */; };
 		570485E1151453BD0E5FED208E56C756 /* TTSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB592D680F13DB8655DD687FEB4635F /* TTSegmentedControl-dummy.m */; };
+		5AE79FF20EA3B52CA798133DA32F03F1 /* icon_sticker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADF1C27A2999174E9E5C964216E6FD2 /* icon_sticker@2x.png */; };
+		5C3BC8B433074BEB698434865115FA99 /* ExpressionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D8C4782E92DA4A483227439A37224 /* ExpressionPreview.swift */; };
 		5E15F97881DAA1FCA5F8927D0EA61967 /* SwiftyGif.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9ED42C992FBBC7B8B366D70FC86FC4 /* SwiftyGif.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E9E362B77869D0AA12669E37BD062F6 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C8946AE0CBEA01298D4D9C52784605 /* ColorCollectionViewCell.xib */; };
-		623F36902323853C55D940D44FE9EAEB /* PhotoEditor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5F1353C95A55D074057A14A92E07B /* PhotoEditor+Gestures.swift */; };
+		5EFB1AABBF90B8C0E6C0D7943128C8B0 /* PhotoEditor+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39531FC70044A355C6A1736838205DF8 /* PhotoEditor+Font.swift */; };
+		5F0ACE5F4D578DE7091C0E0AEE123705 /* iOSPhotoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6572F3577ED9FB5035A768CCDD0318 /* iOSPhotoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62E539D5547DC4CFEA68F9E9C09D6528 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F0753F13CEE809AAD9CE21581ECBDF /* UIImage+Size.swift */; };
+		631BA35D14FE970A0574E41D7424B1DE /* icon_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 89DBF9D32DCF4639F81D624701596D09 /* icon_text.png */; };
+		635C48CF002BBDEE0F1A4F4272BD1FC2 /* iOSPhotoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9B9FE1E43BDBF4E0A596F5E7DC0049 /* iOSPhotoEditor-dummy.m */; };
+		64EE8D58CAFF56EA82E4D688410D39B8 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7A5CDE99D16A10B41D10A4CBCFCD1 /* CropView.swift */; };
+		6655DDA19DD29168E4E94139A8F2501F /* GifsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EF490DF738A0D81D0F6628D5480922 /* GifsCollectionViewDelegate.swift */; };
 		67551064A06E18FD42E55C9EA4B3157A /* CollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE17350B226A585E3D2750F18C155FF4 /* CollectionViewWaterfallLayout.swift */; };
-		6883C57651D05A88F4F86CA7D4CA4140 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D92E715FD727C6A3DCDC6ED4DB21768 /* icon_back.png */; };
-		6BA74DEDF753F141DAA6B629863810F4 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F807732DEC9B9E438AE763802456B /* ColorCollectionViewCell.swift */; };
+		6839FBBEA7E786A0A5DCA442225559E4 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA188C7946534641714A3F731850A0B8 /* ShadowsIntoLight.ttf */; };
+		6A1596C56E6CFDC067162DA1B0034FA5 /* size_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9F8AB7C416D6943263F0C9D79691F4 /* size_off@2x.png */; };
+		6CB060EA644D94C0D1E889D0EBA9D0EF /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F7B01BE3B85A0C2B49860696A6FDA /* Nunito-ExtraBold.ttf */; };
+		6CD4B0EA259AC959BE63B04146A46458 /* GifCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B5D69AC72ECFB1A037AFA584C7ED91 /* GifCollectionViewCell.swift */; };
+		6F4C612401C4A139636AEECCC2FDBF65 /* text_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A5BD062941F064520153B6E8E1EF3FA /* text_on@3x.png */; };
 		7054EEB1CB3DD574C77BB2A5818FD46B /* SwiftyGif-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB279C51D6E94AC1328BA50DD8E02767 /* SwiftyGif-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70D708743EC99531279F48730DEEDA79 /* PhotoEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A14A1E5968206D1533B0848AFE6951 /* PhotoEditorViewController.xib */; };
-		715A311DCF95DC854BB59AF20D21B502 /* PhotoEditor+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD71AE22A6992C8CBFFF724C2EE667 /* PhotoEditor+UITextView.swift */; };
-		75FAEC2E878E9299168451C067843918 /* ImageCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4C623E9923E40D01E389B1A07F62D /* ImageCollectionViewDelegate.swift */; };
-		7E323C50CBB0738641AB4A0D5C68D8B8 /* TouchableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F01C06C2B2E3CA4C746BA0AA70FF1C /* TouchableStackView.swift */; };
-		7F3FF33F78AAE4D5C56A1660DD0D6697 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E3DA60A7E5AE4F45708FFD1D68478 /* Protocols.swift */; };
+		731429DF59067CD7C759D46AE25A3EAF /* size_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 80418141C229D20E337C03830D542917 /* size_off.png */; };
+		7475F01101FE7DE6532BB235F4AFA631 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E1824092BA67FCB3A7185C1875CBFE /* icon_back.png */; };
+		758DB74FC8E6877769C91C9183C874C8 /* icon_canvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3D79BD274B99BBEE5A2D0AF31945BE /* icon_canvas@2x.png */; };
+		77952CA421C16013AF365E1A43ED517D /* size_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DB120654CC610DED11393A029A5A86 /* size_off@3x.png */; };
+		787112801C693B4B07F4CBFF99B7CDD3 /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F95C0D2CA085B1895785730148A4D6A /* GifsStickersViewController.xib */; };
+		79D7C9D73A960475728AFEACB5BF87E3 /* icon_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F7ECC4A51B4D1A5E1FF5052AC80598F /* icon_thumb@2x.png */; };
+		7A4986F85D9ED198B62ED40CF07DDAB1 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B7D8EDCC88FF37134327BBB55CAF83 /* BackgroundViewController.xib */; };
+		7C7C04143C17144C098C6917C0B99898 /* color_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD4161731C5967AD3730B01F89F562A1 /* color_off@3x.png */; };
+		7EFA81230D94EEF398B16EB1F155FCAD /* PhotoEditor+BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654DB892C6984C4E09D10CFDAF149CA0 /* PhotoEditor+BackgroundViewController.swift */; };
+		7F605563B1491BED9285077AA19CCFA7 /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DFD0444B5D42B5972429AC570788BE /* CropRectView.swift */; };
+		7F6695F9980F402801D9914E880987C5 /* color_off.png in Resources */ = {isa = PBXBuildFile; fileRef = D6A89F2A1D0BF90CED1FF50BB959BDE1 /* color_off.png */; };
+		7FD2AE6F99C50287CD6AFFC3FE6EF391 /* size_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5CC165AC14D5BE7CA8027B0E7B65FF /* size_on.png */; };
+		819FE24EDCC6AAD397E71F2F65888BC0 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EB09BBAC3B8BC90CCB394EFC14CFEE /* StickerCollectionViewCell.swift */; };
+		81D40E8285BD63118B51A3142E803F6A /* TTSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC71B6E751F8D1226D22B84E99C04F6 /* TTSegmentedControl.framework */; };
+		844EEBEC86175CE79C709B1029066597 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CEF72EEFFAC0F421D0CA79370F1E81B /* Nunito-SemiBold.ttf */; };
+		8688AABB08A74F8B283DA5CE76084EC9 /* color_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A148CA5BCD94F4B54B07CFF07797486A /* color_on@2x.png */; };
+		86C908C9C18140B8BF0A7F79B435738C /* SwiftyGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA09EC5724905E50F4290030EF4BBBC /* SwiftyGif.framework */; };
 		8744112C42263685CD0F3F5B28109ED6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		878EF0C81A43C029E5E8A926F3220134 /* icon_text@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 711F744D50F5B513F15C69EA63CB7738 /* icon_text@3x.png */; };
-		8B841A0AAC8E8D28879B33EA800ADA5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0735AFF6818321811505AE7418B3C6 /* LaunchScreen.storyboard */; };
-		8E4004114787622D833A9EB2851DC8F3 /* ExpressionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5073D0287BB366F3B4EF299634A7D78B /* ExpressionPreview.swift */; };
-		8F63ED47AD01ABBBB8094AA99B429241 /* icon_sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8094B0B10DA4AEFFDDCC4D504D4B051 /* icon_sticker.png */; };
-		9091458807E016881DAC790B90458E93 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD853C00F918DB4E4D614A0410BA8AA3 /* StickerCollectionViewCell.xib */; };
-		9169D29D0525142CE60FB4A241EF9A0B /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E822F6CB554D88A4415C8C609B03CA8 /* StickerCollectionViewCell.swift */; };
-		9271DDC2124BF0827F14FE516A7676B1 /* PhotoEditor+StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276E5C44C6681F08732BA2BECB46EFF /* PhotoEditor+StickersViewController.swift */; };
-		93B87FF0618DD60316A369E2A819B8A5 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A7BD2F8BE0D9C7AB38B59182340F9D /* ImageCollectionViewCell.swift */; };
-		95038C3B938986519DAC81565EFFBE7E /* PhotoCropEditorBorder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C03ACC7329B6F06658055AE0AAACFC0 /* PhotoCropEditorBorder@3x.png */; };
-		98FF7E207282A526978832204B063F88 /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A747F91E17EE773BDDD8AC2C7BFDC87 /* PhotoCropEditorBorder.png */; };
+		88067461D385F96C83B1E7FFAB795FAF /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1391985DBCCDADDBAFAF1687994DD5 /* icon_back@2x.png */; };
+		8CF0D469FEDC18A65EF2DBCE6417188E /* BowlbyOneSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E10F6E5B4294D00E23646D41324A739D /* BowlbyOneSC-Regular.ttf */; };
+		91306A51A3571BFED034849E527EE198 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8472BD91CBA6EC3EA919E4E3086168DD /* BackgroundViewController.swift */; };
+		94A1273B826A9C361695ACD2CB19ECF0 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D32863C7B70EFD561E1DE5A618046 /* CropViewController.swift */; };
+		9692BC408BCE9926EB9563BDF844B9D6 /* icon_sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FB62A9339953C691CA200515CA97D74 /* icon_sticker.png */; };
+		981E354967A5317E1DA4EEB326355A05 /* PhotoEditor+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6102ADFCC1A6D8E7CE1641F573520D3 /* PhotoEditor+Keyboard.swift */; };
+		99AE9015914446C9A3D0E5FA42C5FFC2 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A5F7492B710EEE75F95E9DC27DE0CB /* ImageCollectionViewCell.swift */; };
 		9B3351B6715281EE4A8E4AA0AFC0F239 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E002A9E2888A632435FD768B3CD49A1F /* UIKit.framework */; };
 		9D1418FA3CE3767345C1B3816C106E73 /* KMPlaceholderTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38504688793821E05D6116379459938C /* KMPlaceholderTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E5B90B98DF4812AC50B1957F002E318 /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BFBD34DF6BF1E29F2EACF9889706A3 /* UIImageView+Alpha.swift */; };
+		9D7212FEAA1BC1F181A7758C163D333B /* color_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 509E30A5484B1BD2E6C6EC459B6BCB96 /* color_on@3x.png */; };
+		9DD696E0A3584184A8BD9F16F1DAAC11 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E54BFF0C5EB2BA1DFE178C6B2727CD /* ColorsCollectionViewDelegate.swift */; };
 		A09F0F4D482B6831F4BEB5F3FAB0E30E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		A4C1ED1817DCB282ABBD65EBF82D9382 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EE7E2418B9C01FA828B7947EF040411 /* Nunito-ExtraBold.ttf */; };
+		A432AAF9ADE1262AF4402E5AD5CDD504 /* PhotoEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08269D94CEA2E818E9D3F6702D2AC2AA /* PhotoEditorViewController.xib */; };
+		A61B08262F9F696E90F0504876E2BEA4 /* size_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E883AE09B3FE98250B38271EA167F31 /* size_on@2x.png */; };
+		A725334E523A5C8F8B84A4E2ADBC7180 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37BCC7EDF5231FD784A6B6381A25C56 /* UIImage+Crop.swift */; };
 		A9E70330524A80D4D04AF50A838666F5 /* SwiftyGif-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EA87AC9A8D49DEE23B4FBB68FFE8A /* SwiftyGif-dummy.m */; };
-		AA19D6EB6F194C1C57E9932E98071DDC /* icon_canvas@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A51D164C7112D0B5380A1B8B77B181 /* icon_canvas@3x.png */; };
 		ABFAAA724F3075044AE2352E66F0AB37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		AE884C268A04F402F1B44556A32EB690 /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1256F20BC355CEB60B5C76E308BF2CD /* CropRectView.swift */; };
-		AEF775C839A04E8E81FB0C03A74A7BD9 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8B3993F6EE6BF1BE46C4C1667A49F0 /* BackgroundViewController.xib */; };
-		AEFA04F21C878C680934B207AE2A931A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABA59357E0BFD38C873D9991F1F95B /* GradientView.swift */; };
+		ACE56BD45A2194CC6FD3DCA1AF3DAED9 /* text_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 746F3C7E08ECECB5AFC562E394434AB7 /* text_off.png */; };
+		AD906B6F6417F2B939D5AC92B0A52583 /* PhotoEditor+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C54D96A206CD3D83838F3066102DB /* PhotoEditor+Drawing.swift */; };
+		AED52DDFE514BB9217C07182919C498C /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30170AE3400F41169B1D5679A2B56C /* PhotoEditorViewController.swift */; };
 		AF6FF1855E227D3C93BB642FFB68EBB6 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C570BE02C3449D22FCA9828E3ED50E /* UIImageView+SwiftyGif.swift */; };
-		B6751D42B90099C55A8A944CFFF7AC6C /* icon_sticker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FE61C81DE1E2F7BB80E71ED5997DAC4 /* icon_sticker@2x.png */; };
-		B87D9EC6D30DF3BEFF19FDC347061456 /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DBCF208A520F602EED094E8348AB42 /* GifCollectionViewCell.xib */; };
-		B9FB68AC5008003FB863AE527E89D63B /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3E5FF7E6274C223F453323DE5DB22 /* BackgroundViewController.swift */; };
+		B9ED752BAE701C74FEDFBB08D83FD3C5 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA34106B9865D20D05E1BB1217593DF /* StickerCollectionViewCell.xib */; };
 		BC577B59B7057730E65F75303B9BE628 /* TTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AA6281E400E6556F0AEFE99BDC808 /* TTSegmentedControl.swift */; };
-		BD9B522D13BA8D757CC4A1097617EE78 /* default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DEBCA78963345B57D7FC034CDD64E /* default_bg.png */; };
-		BEEFABD63A8CDB4E7288603D22D0B73A /* icon_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F8DCF4149287C9E95E94B3D673F7E2 /* icon_text@2x.png */; };
-		BF7C98D1839C7C80FB32801BABB4E384 /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 924B17D22037AB674FDBD3797BCBE344 /* PhotoCropEditorBorder@2x.png */; };
-		C135F72680977497C5FDF256D2F5C2D8 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100E5219E013388FBDA933BC8F3940F /* ColorsCollectionViewDelegate.swift */; };
-		C4FB5DF6D00E88CAA9A408127301219A /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D5E0DA3E5A9A5190E854980CA44162 /* GifsStickersViewController.xib */; };
-		CA6053BC71A6F6876282EC08C750D497 /* icon_canvas.png in Resources */ = {isa = PBXBuildFile; fileRef = D0552F3261F6DB8C8EFB64A66F427EFD /* icon_canvas.png */; };
-		CA60C8B64734526400A84B3B63FC7C44 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CAEB370F562448129B3936ECC667BB /* CropViewController.swift */; };
-		CB05FCE9D4DD7F69E770E399115E1C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D8AD202B89A87C37B976441549E353 /* LaunchScreen.storyboard */; };
-		CDAEEB06F3DACCC3525FEC9DCCFC95CC /* icon_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5849D973E6DF083017FC06CEA37E7 /* icon_thumb.png */; };
-		CDB4EADB5E4A6A7BE9A90AE59BC08A68 /* ShadowsIntoLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD6BF688FFD8EE711325DCCADFEBD1FC /* ShadowsIntoLight.ttf */; };
-		DA47DF7290EB03DA37ED7AF4D6796A9A /* icon_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9EECA244FECC8608C29851C7CEBCF6 /* icon_thumb@2x.png */; };
-		DBC8804179212F37D6722AA91E2F07D9 /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8388291600C1237B26908FFDEF6710AF /* UIView+Image.swift */; };
+		C4EC23F5775DDB7B02689BD82C7B7C2D /* CollectionViewWaterfallLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD0D625BFFF8DF927E9B74A21313220 /* CollectionViewWaterfallLayout.framework */; };
+		C515578AEBF457B9D67ACC759BDC0937 /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFB5AA14BD7735A0006E22B16716FF1 /* PhotoCropEditorBorder@2x.png */; };
+		C5741E0CAECBB07A7B20F2DE4109A45D /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = DC001EC9FE5CD6CA1329183B56B30871 /* icon_delete.png */; };
+		C8C8AF039371345AB04D7C40D6253372 /* color_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8B51AA60460C0743F323C8C341DBEA /* color_on.png */; };
+		C913B54C5700F665AE0B87DA043C3A9A /* text_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A36F3EA8A620F2FED64676BBE2D9E0 /* text_on@2x.png */; };
+		CA52333F2AD955A5CCB067C795776371 /* icon_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D723553CDA704D058C415FC6A54D67 /* icon_thumb.png */; };
+		CB9B5B995689B7CD5F8F3198D8BFDD7E /* icon_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9C012E128EA383A6001E66DD097AABC /* icon_back@3x.png */; };
+		CFED1C28058D262035FA8A730929FA67 /* text_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0B559B8EA9C2A7F90E8FE2357D06FE /* text_on.png */; };
+		D0BA52124BFBDA6B8727A442A51CC625 /* PhotoEditor+StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFD25EE416B3F880F4208122D6FCAF /* PhotoEditor+StickersViewController.swift */; };
+		D21CD6399C09991CB711EA1FF7950666 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4D193DBBCA4A3FF93F8BB6FD7B9C88 /* ImageCollectionViewCell.xib */; };
+		DB4C127C9B96D6A36A8C88532B5138B6 /* icon_text@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23C6A92A5AB4FE2F800C6299624F9994 /* icon_text@3x.png */; };
 		DBCEE2EFABC3C5AB1F9CE0262B8179E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
-		DEEB6CF59F64B94F1BBCF07098152895 /* ZillaSlabHighlight-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACBA1A91B508C7AE0DD52AB6F5F5DE39 /* ZillaSlabHighlight-Bold.ttf */; };
-		E13F9CED1408534E89E90A89E49B7B64 /* GifsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B17553C9BAF8C1F2A050BB5BEC05DD0 /* GifsCollectionViewDelegate.swift */; };
-		E518216E891DB89BFEE74FBC2CE590EB /* PhotoEditor+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA226821BD05725C082E983AB244AB59 /* PhotoEditor+Font.swift */; };
-		E726DCE6A654DDA1F3126FCE6130615D /* icon_canvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4D5AF0028EDBF200E62BB3DB65334 /* icon_canvas@2x.png */; };
-		EA1A98E5DA58A223119DE94677386BD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FDD70C45A13C910A60E3150B732E7 /* CustomTextField.swift */; };
-		EF3A32157FFDF4AAC56ECFCD5433AC77 /* iOSPhotoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B298AE48213669E96C78DA4D1FF381A /* iOSPhotoEditor-dummy.m */; };
-		F0AE4BE8E3CB17CF16380A6D08F96B27 /* iOSPhotoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF694C203A118AF584EE601AB2D76F6 /* iOSPhotoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1A9FDA1CFFCF00207C4499A3B993ECD /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D5422DE9FB3A7116E85EC090CE58F6 /* CropView.swift */; };
+		DC592D9B100082906025DC583AA6392B /* TouchableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4180CA0D126C25F3645983905D61E1F /* TouchableStackView.swift */; };
+		E2CF8464FFE9FCAF05F2BD78B0354D29 /* text_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0102E52DC320127F8FD13A34F2D200F /* text_off@2x.png */; };
+		E6E2B4B70895C79BF9003E407DF52F0B /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFCFD79C4CA5C6D241E9A5C9000898 /* UIImageView+Alpha.swift */; };
+		E70510D32C058B21F3D9D510DD760D84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */; };
+		E8BFFCE2A46E1FF69A8A382CA8E7BF78 /* icon_sticker@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 258877CD9D8CE1B2549AA49BC25E2414 /* icon_sticker@3x.png */; };
+		F27CF43D19A1E3DDFF2362A3100AABEF /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06BAE647E29F5996E045DD9475E098 /* ResizeControl.swift */; };
 		F3B8612A3269ECC2EE0C846468FED44A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E002A9E2888A632435FD768B3CD49A1F /* UIKit.framework */; };
-		F53EEFD46118D9473B8F049A66D702A5 /* PhotoEditor+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB628E3C867E44A448F36A4D7746ABC /* PhotoEditor+Drawing.swift */; };
-		F7F4C374B63DD59A3858088565BA1D3C /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BBA7E0B2411D38CB828B399F551431 /* icon_delete.png */; };
+		F493B27B108EF0268B554C8DB0F334FA /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF7B7A4C97BDFA80A5A12E2DA45A93A /* GifCollectionViewCell.xib */; };
+		F56170450ED29642BF31E66719BC946C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAF73C191B236327C10A73C0BAEFD7 /* Extensions.swift */; };
+		F5CB8981691E32BA9335192691B99E92 /* icon_canvas@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6058BA1C2FBE272A4EB96F2D7E4920D1 /* icon_canvas@3x.png */; };
+		F6890968874923F8F41206C2895E85A4 /* GifsStickersViewController+GiphyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F37156F3E2F685CC53A0DD4A893AEDF /* GifsStickersViewController+GiphyApi.swift */; };
+		F68F0B7250C5971AE09B4871F521AF9A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5C0227194AFCEA9FA8B7E3D238C06 /* GradientView.swift */; };
 		F823DE4D20BE0F245F3604114DA384FE /* TTSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 597F73DEB04C6799669BD28824A7C75F /* TTSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8C5027CAFBA0DB8B1FE540156838A69 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DA2D01A9A135CAE175B92E05C4F3E /* UIImage+Size.swift */; };
-		FCD49064A225AA88459DFB42334E4B50 /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2465633CE23BC614D3C799FC774981A1 /* ResizeControl.swift */; };
-		FE5D133D21E42FD4CC500ED704580387 /* GiphyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B098A9964680943FC489B9182C19BFD0 /* GiphyApiManager.swift */; };
+		F923FD1F285FAEAD69C6324C9D9CF0A9 /* icon_canvas.png in Resources */ = {isa = PBXBuildFile; fileRef = 5939D0BE931DA2E4BFA147C140758B97 /* icon_canvas.png */; };
+		FC3A7AD042C9A6C4D4161553A80B0859 /* ZillaSlabHighlight-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC949228E4CF792FF88A235181BCBF99 /* ZillaSlabHighlight-Bold.ttf */; };
+		FEA82A4885F5268E721F4B27C2379781 /* PhotoEditor+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE21B3BC7C9F4689DAB6FC166C2B10F /* PhotoEditor+UITextView.swift */; };
+		FEF7608158F81D18BCB171104FBC220C /* default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8DEEF940D124DABC2EC780E072D6C9 /* default_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		128E98843865032ED8259E0D63511E2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7EDDD2274166465BA682E6A29700B496;
-			remoteInfo = TTSegmentedControl;
-		};
-		22A0FAC145AEC091D87DCD55F8D33E6E /* PBXContainerItemProxy */ = {
+		0365FF7AE6C606DBB6394025881BEBE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 79AB4C2480419605A17F9288AAB7AAF0;
 			remoteInfo = CollectionViewWaterfallLayout;
 		};
-		5813E949B1307E0AC84269287BD3A4DB /* PBXContainerItemProxy */ = {
+		5E3A78A31C29E8678F0422DD2E946E44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 15AEBAFA43912F898FC2E1A73025C946;
 			remoteInfo = SwiftyGif;
 		};
-		5AF7235CD43B93C8F6AB12E8AE0310C7 /* PBXContainerItemProxy */ = {
+		684181913CECAA26AC9FDA6B93F62402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79AB4C2480419605A17F9288AAB7AAF0;
+			remoteInfo = CollectionViewWaterfallLayout;
+		};
+		6F83163C384F67E00E652F0DD7AAC586 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2CBBDDE9729D72CBCA5AEAA0FAA019AD;
 			remoteInfo = KMPlaceholderTextView;
 		};
-		7890C533929CEC2FB4C25544FE2A6795 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CBBDDE9729D72CBCA5AEAA0FAA019AD;
-			remoteInfo = KMPlaceholderTextView;
-		};
-		8C6C35E15A86BE741AF49193C253CCB3 /* PBXContainerItemProxy */ = {
+		769B03F812906C4A9AE5AAAA41B75798 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 15AEBAFA43912F898FC2E1A73025C946;
 			remoteInfo = SwiftyGif;
 		};
-		9E24B2928F99EFBFFFE5C9C6174C8314 /* PBXContainerItemProxy */ = {
+		8A743A9443B2A0EA739C29CE03DBDBC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7EDDD2274166465BA682E6A29700B496;
 			remoteInfo = TTSegmentedControl;
 		};
-		AD8569328DCCBA135682583DA269795D /* PBXContainerItemProxy */ = {
+		A1AF985F465BFB42740437E7DF632A2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EDDD2274166465BA682E6A29700B496;
+			remoteInfo = TTSegmentedControl;
+		};
+		DF0AB19A83E4BA752E572CD951D90A69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CBBDDE9729D72CBCA5AEAA0FAA019AD;
+			remoteInfo = KMPlaceholderTextView;
+		};
+		EBEB0BBC44D2345C6AE7976F683984E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 707750498984B8376E2CCAB25DD030AC;
 			remoteInfo = iOSPhotoEditor;
 		};
-		F5641AF1CCEBD56ABA638A00CE936920 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79AB4C2480419605A17F9288AAB7AAF0;
-			remoteInfo = CollectionViewWaterfallLayout;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B5849D973E6DF083017FC06CEA37E7 /* icon_thumb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_thumb.png; path = "Photo Editor/Photo Editor/icon_thumb.png"; sourceTree = "<group>"; };
-		02C8946AE0CBEA01298D4D9C52784605 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ColorCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.xib"; sourceTree = "<group>"; };
-		04DBCF208A520F602EED094E8348AB42 /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GifCollectionViewCell.xib; path = "Photo Editor/Photo Editor/GifCollectionViewCell.xib"; sourceTree = "<group>"; };
-		079A468D7656E908B0A6CA3FFC56B2AE /* iOSPhotoEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-prefix.pch"; sourceTree = "<group>"; };
+		00EB09BBAC3B8BC90CCB394EFC14CFEE /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.swift"; sourceTree = "<group>"; };
+		0240FDFEC55307D79B06EC4B000A64D9 /* PhotoCropEditorBorder@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@3x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@3x.png"; sourceTree = "<group>"; };
 		07AF653665BE1B2A325581F99D2E1640 /* KMPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KMPlaceholderTextView.framework; path = KMPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08269D94CEA2E818E9D3F6702D2AC2AA /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PhotoEditorViewController.xib; path = "Photo Editor/Photo Editor/PhotoEditorViewController.xib"; sourceTree = "<group>"; };
 		08EF4C75763BEC35731EC9FFF358E1DD /* Pods-editorTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-editorTest-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0B17553C9BAF8C1F2A050BB5BEC05DD0 /* GifsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/GifsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		09AFCFD79C4CA5C6D241E9A5C9000898 /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Alpha.swift"; path = "Photo Editor/Photo Editor/UIImageView+Alpha.swift"; sourceTree = "<group>"; };
+		0AF5C0227194AFCEA9FA8B7E3D238C06 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "Photo Editor/Photo Editor/GradientView.swift"; sourceTree = "<group>"; };
 		0C0DC34628C53A5200070ACC3CE496F7 /* KMPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KMPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
-		0F9DEBCA78963345B57D7FC034CDD64E /* default_bg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = default_bg.png; path = "Photo Editor/Photo Editor/default_bg.png"; sourceTree = "<group>"; };
-		10386CC9722CB8832BC1A616B737ACA7 /* PhotoEditor+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Crop.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Crop.swift"; sourceTree = "<group>"; };
+		0D5CC165AC14D5BE7CA8027B0E7B65FF /* size_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = size_on.png; path = "Photo Editor/Photo Editor/size_on.png"; sourceTree = "<group>"; };
+		0F9B9FE1E43BDBF4E0A596F5E7DC0049 /* iOSPhotoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSPhotoEditor-dummy.m"; sourceTree = "<group>"; };
 		113292211F03414588E7A3EEECF99ABD /* KMPlaceholderTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPlaceholderTextView-prefix.pch"; sourceTree = "<group>"; };
-		143FCEED6D63B0A6AA2922A52B21750E /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoEditorViewController.swift; path = "Photo Editor/Photo Editor/PhotoEditorViewController.swift"; sourceTree = "<group>"; };
-		14EC7A6ABE1E0E8874D4C6B575FBD0E8 /* PhotoEditor+Controls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Controls.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Controls.swift"; sourceTree = "<group>"; };
+		1138F2308FFEE172BBC518D19D531B0F /* color_off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "color_off@2x.png"; path = "Photo Editor/Photo Editor/color_off@2x.png"; sourceTree = "<group>"; };
+		14E1824092BA67FCB3A7185C1875CBFE /* icon_back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_back.png; path = "Photo Editor/Photo Editor/icon_back.png"; sourceTree = "<group>"; };
+		151EE0B1A8A90D5B33F11D86F6A687A4 /* icon_text@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_text@2x.png"; path = "Photo Editor/Photo Editor/icon_text@2x.png"; sourceTree = "<group>"; };
+		16EF719FCB3CF09BE5ABFB29692B2C10 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ColorCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.xib"; sourceTree = "<group>"; };
+		16FAF73C191B236327C10A73C0BAEFD7 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Photo Editor/Photo Editor/Extensions.swift"; sourceTree = "<group>"; };
 		18379A822CB666A0560DEDAEDFAB63D5 /* KMPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18BD76D5B1B66E1C8773165C6A548C9C /* GifCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifCollectionViewCell.swift; path = "Photo Editor/Photo Editor/GifCollectionViewCell.swift"; sourceTree = "<group>"; };
-		1A655269F454C1FC6F06C95C083AD666 /* icon_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_back@3x.png"; path = "Photo Editor/Photo Editor/icon_back@3x.png"; sourceTree = "<group>"; };
-		1DB0E9D02727589E5F4E14680AA8E487 /* PhotoEditor+Export.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Export.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Export.swift"; sourceTree = "<group>"; };
-		1E822F6CB554D88A4415C8C609B03CA8 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.swift"; sourceTree = "<group>"; };
 		1F912EE55A2A0139FB19B9FE21970BCE /* CollectionViewWaterfallLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionViewWaterfallLayout-Info.plist"; sourceTree = "<group>"; };
-		22D5422DE9FB3A7116E85EC090CE58F6 /* CropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropView.swift; path = "Photo Editor/Photo Editor/CropView.swift"; sourceTree = "<group>"; };
+		1FA6B6299DF3D98B0D4E2E9EBE6B4531 /* UIView+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Image.swift"; path = "Photo Editor/Photo Editor/UIView+Image.swift"; sourceTree = "<group>"; };
+		1FF7B7A4C97BDFA80A5A12E2DA45A93A /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GifCollectionViewCell.xib; path = "Photo Editor/Photo Editor/GifCollectionViewCell.xib"; sourceTree = "<group>"; };
+		23A36F3EA8A620F2FED64676BBE2D9E0 /* text_on@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "text_on@2x.png"; path = "Photo Editor/Photo Editor/text_on@2x.png"; sourceTree = "<group>"; };
+		23C6A92A5AB4FE2F800C6299624F9994 /* icon_text@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_text@3x.png"; path = "Photo Editor/Photo Editor/icon_text@3x.png"; sourceTree = "<group>"; };
 		24333634A319C504280D252B05E70E52 /* TTSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TTSegmentedControl.modulemap; sourceTree = "<group>"; };
-		2465633CE23BC614D3C799FC774981A1 /* ResizeControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResizeControl.swift; path = "Photo Editor/Photo Editor/ResizeControl.swift"; sourceTree = "<group>"; };
-		24BBA7E0B2411D38CB828B399F551431 /* icon_delete.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_delete.png; path = "Photo Editor/Photo Editor/icon_delete.png"; sourceTree = "<group>"; };
-		25893BDE5020F7E17FC92AEFDD4F8ABE /* iOSPhotoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSPhotoEditor.modulemap; sourceTree = "<group>"; };
-		259FDD70C45A13C910A60E3150B732E7 /* CustomTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "Photo Editor/Photo Editor/CustomTextField.swift"; sourceTree = "<group>"; };
-		25D5E0DA3E5A9A5190E854980CA44162 /* GifsStickersViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GifsStickersViewController.xib; path = "Photo Editor/Photo Editor/GifsStickersViewController.xib"; sourceTree = "<group>"; };
+		258877CD9D8CE1B2549AA49BC25E2414 /* icon_sticker@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_sticker@3x.png"; path = "Photo Editor/Photo Editor/icon_sticker@3x.png"; sourceTree = "<group>"; };
+		262D8C4782E92DA4A483227439A37224 /* ExpressionPreview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpressionPreview.swift; path = "Photo Editor/Photo Editor/ExpressionPreview.swift"; sourceTree = "<group>"; };
 		269DE1483C9569A83E50BA10ACD19BE5 /* Pods-editorTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-editorTest-acknowledgements.plist"; sourceTree = "<group>"; };
-		2CE4D5AF0028EDBF200E62BB3DB65334 /* icon_canvas@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_canvas@2x.png"; path = "Photo Editor/Photo Editor/icon_canvas@2x.png"; sourceTree = "<group>"; };
+		2B3AAA0D251CABEBF25F1BAD25F312A7 /* iOSPhotoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSPhotoEditor.modulemap; sourceTree = "<group>"; };
+		2CA34106B9865D20D05E1BB1217593DF /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.xib"; sourceTree = "<group>"; };
+		2F37156F3E2F685CC53A0DD4A893AEDF /* GifsStickersViewController+GiphyApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GifsStickersViewController+GiphyApi.swift"; path = "Photo Editor/Photo Editor/GifsStickersViewController+GiphyApi.swift"; sourceTree = "<group>"; };
+		2F95C0D2CA085B1895785730148A4D6A /* GifsStickersViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GifsStickersViewController.xib; path = "Photo Editor/Photo Editor/GifsStickersViewController.xib"; sourceTree = "<group>"; };
 		2FE1FB44607CA2776395435260D96180 /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KMPlaceholderTextView.swift; path = KMPlaceholderTextView/KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 		324A840E829F0A98060F77B2C3554F84 /* CollectionViewWaterfallLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionViewWaterfallLayout-prefix.pch"; sourceTree = "<group>"; };
+		33E54BFF0C5EB2BA1DFE178C6B2727CD /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ColorsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		3504861AF07D3806AEE42C29304236EB /* Pods-editorTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-editorTest.debug.xcconfig"; sourceTree = "<group>"; };
 		3697E912CC7CC96B0DFAD85F4156AEA2 /* TTSegmentedControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTSegmentedControl.debug.xcconfig; sourceTree = "<group>"; };
 		377B2C6F48147362B3F62AEF906C65CC /* KMPlaceholderTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPlaceholderTextView.release.xcconfig; sourceTree = "<group>"; };
 		38504688793821E05D6116379459938C /* KMPlaceholderTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KMPlaceholderTextView-umbrella.h"; sourceTree = "<group>"; };
 		386A1278AEFED54F45398A34C3F861B2 /* KMPlaceholderTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KMPlaceholderTextView.debug.xcconfig; sourceTree = "<group>"; };
 		38C570BE02C3449D22FCA9828E3ED50E /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+SwiftyGif.swift"; path = "SwiftyGif/UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
-		39F5F1353C95A55D074057A14A92E07B /* PhotoEditor+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Gestures.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Gestures.swift"; sourceTree = "<group>"; };
+		38E5C361055041E47BD5F239A1149D68 /* GifsStickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifsStickersViewController.swift; path = "Photo Editor/Photo Editor/GifsStickersViewController.swift"; sourceTree = "<group>"; };
+		39531FC70044A355C6A1736838205DF8 /* PhotoEditor+Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Font.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Font.swift"; sourceTree = "<group>"; };
 		3A3478416F1F501112FD71700662A698 /* Pods-editorTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-editorTest-frameworks.sh"; sourceTree = "<group>"; };
-		3B298AE48213669E96C78DA4D1FF381A /* iOSPhotoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSPhotoEditor-dummy.m"; sourceTree = "<group>"; };
-		3B6F220886878ECC5AB6BA498B53D535 /* BowlbyOneSC-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "BowlbyOneSC-Regular.ttf"; path = "Photo Editor/Photo Editor/BowlbyOneSC-Regular.ttf"; sourceTree = "<group>"; };
+		3D4D193DBBCA4A3FF93F8BB6FD7B9C88 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ImageCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ImageCollectionViewCell.xib"; sourceTree = "<group>"; };
+		3DE21B3BC7C9F4689DAB6FC166C2B10F /* PhotoEditor+UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+UITextView.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+UITextView.swift"; sourceTree = "<group>"; };
 		3EDDB9C4433CD2BC6F45E2218EA2E926 /* SwiftyGif-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyGif-prefix.pch"; sourceTree = "<group>"; };
-		40E328A21D3F255084B89A923734E647 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ImageCollectionViewCell.xib; path = "Photo Editor/Photo Editor/ImageCollectionViewCell.xib"; sourceTree = "<group>"; };
 		40EA016F33CD98B33C16CFB9F870913F /* Pods-editorTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-editorTest.modulemap"; sourceTree = "<group>"; };
-		41F8DCF4149287C9E95E94B3D673F7E2 /* icon_text@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_text@2x.png"; path = "Photo Editor/Photo Editor/icon_text@2x.png"; sourceTree = "<group>"; };
-		430D571EA8C26820F61F8F404E0B9786 /* iOSPhotoEditor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = iOSPhotoEditor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4790A249CE574DFB24CE606ED9899E3D /* icon_back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_back@2x.png"; path = "Photo Editor/Photo Editor/icon_back@2x.png"; sourceTree = "<group>"; };
-		47F01C06C2B2E3CA4C746BA0AA70FF1C /* TouchableStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TouchableStackView.swift; path = "Photo Editor/Photo Editor/TouchableStackView.swift"; sourceTree = "<group>"; };
-		49A51D164C7112D0B5380A1B8B77B181 /* icon_canvas@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_canvas@3x.png"; path = "Photo Editor/Photo Editor/icon_canvas@3x.png"; sourceTree = "<group>"; };
-		4AF3E5FF7E6274C223F453323DE5DB22 /* BackgroundViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackgroundViewController.swift; path = "Photo Editor/Photo Editor/BackgroundViewController.swift"; sourceTree = "<group>"; };
-		4B6DA2D01A9A135CAE175B92E05C4F3E /* UIImage+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Photo Editor/Photo Editor/UIImage+Size.swift"; sourceTree = "<group>"; };
-		4EC2E34A5C1571B9BAD3BF0EE3FF0DEA /* icon_sticker@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_sticker@3x.png"; path = "Photo Editor/Photo Editor/icon_sticker@3x.png"; sourceTree = "<group>"; };
+		40EF490DF738A0D81D0F6628D5480922 /* GifsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/GifsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		474392C63A1F4B8C7531C08318548D96 /* Nunito-Black.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-Black.ttf"; path = "Photo Editor/Photo Editor/Nunito-Black.ttf"; sourceTree = "<group>"; };
+		4A06BAE647E29F5996E045DD9475E098 /* ResizeControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResizeControl.swift; path = "Photo Editor/Photo Editor/ResizeControl.swift"; sourceTree = "<group>"; };
+		4B3D79BD274B99BBEE5A2D0AF31945BE /* icon_canvas@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_canvas@2x.png"; path = "Photo Editor/Photo Editor/icon_canvas@2x.png"; sourceTree = "<group>"; };
+		4C8AF5E6EE22283AF987DE640D314663 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Photo Editor/Photo Editor/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		4FEF81E01459B19B168A877660E02546 /* TTSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTSegmentedControl.framework; path = TTSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5073D0287BB366F3B4EF299634A7D78B /* ExpressionPreview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpressionPreview.swift; path = "Photo Editor/Photo Editor/ExpressionPreview.swift"; sourceTree = "<group>"; };
+		509E30A5484B1BD2E6C6EC459B6BCB96 /* color_on@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "color_on@3x.png"; path = "Photo Editor/Photo Editor/color_on@3x.png"; sourceTree = "<group>"; };
 		513CBF8A7CA170FBC8E648F54F191585 /* CollectionViewWaterfallLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionViewWaterfallLayout.modulemap; sourceTree = "<group>"; };
 		5160A2B357D7985876809FC1F2EF2C0F /* CollectionViewWaterfallLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionViewWaterfallLayout-umbrella.h"; sourceTree = "<group>"; };
+		56B7D8EDCC88FF37134327BBB55CAF83 /* BackgroundViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = BackgroundViewController.xib; path = "Photo Editor/Photo Editor/BackgroundViewController.xib"; sourceTree = "<group>"; };
+		5939D0BE931DA2E4BFA147C140758B97 /* icon_canvas.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_canvas.png; path = "Photo Editor/Photo Editor/icon_canvas.png"; sourceTree = "<group>"; };
 		597F73DEB04C6799669BD28824A7C75F /* TTSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
-		5C03ACC7329B6F06658055AE0AAACFC0 /* PhotoCropEditorBorder@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@3x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@3x.png"; sourceTree = "<group>"; };
-		5EE7E2418B9C01FA828B7947EF040411 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-ExtraBold.ttf"; path = "Photo Editor/Photo Editor/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
-		5F08EC467BFB154472E60A7D61F56E0C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-SemiBold.ttf"; path = "Photo Editor/Photo Editor/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
-		608EFE357D04B842CE343BA3C4A1BD81 /* GifsStickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifsStickersViewController.swift; path = "Photo Editor/Photo Editor/GifsStickersViewController.swift"; sourceTree = "<group>"; };
-		61FC7EBE2E211361070FA67508B55EEC /* icon_thumb@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_thumb@3x.png"; path = "Photo Editor/Photo Editor/icon_thumb@3x.png"; sourceTree = "<group>"; };
-		624E3DA60A7E5AE4F45708FFD1D68478 /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = "Photo Editor/Photo Editor/Protocols.swift"; sourceTree = "<group>"; };
+		5E83AD25C2192F5C6F890F87ED802DEB /* iOSPhotoEditor.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = iOSPhotoEditor.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6058BA1C2FBE272A4EB96F2D7E4920D1 /* icon_canvas@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_canvas@3x.png"; path = "Photo Editor/Photo Editor/icon_canvas@3x.png"; sourceTree = "<group>"; };
+		60FE42DC59B54A3121B3A0058DEB1AB8 /* iOSPhotoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.release.xcconfig; sourceTree = "<group>"; };
+		62A579006FA48E2BA3ADC5438E1A6680 /* iOSPhotoEditor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSPhotoEditor-Info.plist"; sourceTree = "<group>"; };
 		635F061D09D2EB77A67112E5487035F5 /* TTSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		654DB892C6984C4E09D10CFDAF149CA0 /* PhotoEditor+BackgroundViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+BackgroundViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+BackgroundViewController.swift"; sourceTree = "<group>"; };
+		659C507D8F8033455A34B1B3C4E26498 /* GiphyApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GiphyApiManager.swift; path = "Photo Editor/Photo Editor/GiphyApiManager.swift"; sourceTree = "<group>"; };
+		65DFD0444B5D42B5972429AC570788BE /* CropRectView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropRectView.swift; path = "Photo Editor/Photo Editor/CropRectView.swift"; sourceTree = "<group>"; };
+		6A3F7B01BE3B85A0C2B49860696A6FDA /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-ExtraBold.ttf"; path = "Photo Editor/Photo Editor/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6A5BD062941F064520153B6E8E1EF3FA /* text_on@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "text_on@3x.png"; path = "Photo Editor/Photo Editor/text_on@3x.png"; sourceTree = "<group>"; };
+		6D0B559B8EA9C2A7F90E8FE2357D06FE /* text_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = text_on.png; path = "Photo Editor/Photo Editor/text_on.png"; sourceTree = "<group>"; };
 		6D9ED42C992FBBC7B8B366D70FC86FC4 /* SwiftyGif.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyGif.h; path = SwiftyGif/SwiftyGif.h; sourceTree = "<group>"; };
-		6FE61C81DE1E2F7BB80E71ED5997DAC4 /* icon_sticker@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_sticker@2x.png"; path = "Photo Editor/Photo Editor/icon_sticker@2x.png"; sourceTree = "<group>"; };
-		7080CA7B0B32E74E24C526227F44E33D /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Photo Editor/Photo Editor/Extensions.swift"; sourceTree = "<group>"; };
-		70DD71AE22A6992C8CBFFF724C2EE667 /* PhotoEditor+UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+UITextView.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+UITextView.swift"; sourceTree = "<group>"; };
-		711F744D50F5B513F15C69EA63CB7738 /* icon_text@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_text@3x.png"; path = "Photo Editor/Photo Editor/icon_text@3x.png"; sourceTree = "<group>"; };
-		717367DB6022BFA88D6D7BEAD7B4ABF3 /* Nunito-Black.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-Black.ttf"; path = "Photo Editor/Photo Editor/Nunito-Black.ttf"; sourceTree = "<group>"; };
-		75CAEB370F562448129B3936ECC667BB /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = "Photo Editor/Photo Editor/CropViewController.swift"; sourceTree = "<group>"; };
+		6D9F8AB7C416D6943263F0C9D79691F4 /* size_off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "size_off@2x.png"; path = "Photo Editor/Photo Editor/size_off@2x.png"; sourceTree = "<group>"; };
+		6E883AE09B3FE98250B38271EA167F31 /* size_on@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "size_on@2x.png"; path = "Photo Editor/Photo Editor/size_on@2x.png"; sourceTree = "<group>"; };
+		6F7ECC4A51B4D1A5E1FF5052AC80598F /* icon_thumb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_thumb@2x.png"; path = "Photo Editor/Photo Editor/icon_thumb@2x.png"; sourceTree = "<group>"; };
+		746F3C7E08ECECB5AFC562E394434AB7 /* text_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = text_off.png; path = "Photo Editor/Photo Editor/text_off.png"; sourceTree = "<group>"; };
 		766B138A109DC0C457E134BA08984DA9 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyGifManager.swift; path = SwiftyGif/SwiftyGifManager.swift; sourceTree = "<group>"; };
-		7727D14B7581B051B951810C61423A68 /* iOSPhotoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.release.xcconfig; sourceTree = "<group>"; };
-		7A747F91E17EE773BDDD8AC2C7BFDC87 /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PhotoCropEditorBorder.png; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder.png"; sourceTree = "<group>"; };
-		7A8F807732DEC9B9E438AE763802456B /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.swift"; sourceTree = "<group>"; };
 		7AD67EFB9A7864151301DC2890207AA2 /* SwiftyGif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyGif.framework; path = SwiftyGif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B1391985DBCCDADDBAFAF1687994DD5 /* icon_back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_back@2x.png"; path = "Photo Editor/Photo Editor/icon_back@2x.png"; sourceTree = "<group>"; };
 		7B714F02459DC8D7D23596ED4C50EC77 /* CollectionViewWaterfallLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionViewWaterfallLayout.debug.xcconfig; sourceTree = "<group>"; };
-		7D92E715FD727C6A3DCDC6ED4DB21768 /* icon_back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_back.png; path = "Photo Editor/Photo Editor/icon_back.png"; sourceTree = "<group>"; };
+		7CEF72EEFFAC0F421D0CA79370F1E81B /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Nunito-SemiBold.ttf"; path = "Photo Editor/Photo Editor/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		7E591F35298273BDFEC88C0DC42A0AA8 /* Pods-editorTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-editorTest-Info.plist"; sourceTree = "<group>"; };
-		8388291600C1237B26908FFDEF6710AF /* UIView+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Image.swift"; path = "Photo Editor/Photo Editor/UIView+Image.swift"; sourceTree = "<group>"; };
-		87A7BD2F8BE0D9C7AB38B59182340F9D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ImageCollectionViewCell.swift"; sourceTree = "<group>"; };
-		88B536D69C818A851B0A88C44246C822 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		8AC5047F0CDB8E474A15405F5A5B5931 /* GifsStickersViewController+GiphyApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GifsStickersViewController+GiphyApi.swift"; path = "Photo Editor/Photo Editor/GifsStickersViewController+GiphyApi.swift"; sourceTree = "<group>"; };
-		8BD5230324C1E2CA24B875A21EBF945D /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
+		7E7397F9ABC6B20F998E418A526FAD05 /* PhotoEditor+Controls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Controls.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Controls.swift"; sourceTree = "<group>"; };
+		80418141C229D20E337C03830D542917 /* size_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = size_off.png; path = "Photo Editor/Photo Editor/size_off.png"; sourceTree = "<group>"; };
+		82FA3D8BDB66BD91C3004ACBDCC27AAA /* text_off@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "text_off@3x.png"; path = "Photo Editor/Photo Editor/text_off@3x.png"; sourceTree = "<group>"; };
+		839214C89D59BFFA824A31E1BA4CC3AB /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = "Photo Editor/Photo Editor/Protocols.swift"; sourceTree = "<group>"; };
+		8472BD91CBA6EC3EA919E4E3086168DD /* BackgroundViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackgroundViewController.swift; path = "Photo Editor/Photo Editor/BackgroundViewController.swift"; sourceTree = "<group>"; };
+		8490B09C3A776ABF439858F8298879B1 /* iOSPhotoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.debug.xcconfig; sourceTree = "<group>"; };
+		87EFD25EE416B3F880F4208122D6FCAF /* PhotoEditor+StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+StickersViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+StickersViewController.swift"; sourceTree = "<group>"; };
+		88FD48BDCB944834E9D93910E1508D8B /* CustomTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "Photo Editor/Photo Editor/CustomTextField.swift"; sourceTree = "<group>"; };
+		89DBF9D32DCF4639F81D624701596D09 /* icon_text.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_text.png; path = "Photo Editor/Photo Editor/icon_text.png"; sourceTree = "<group>"; };
+		8AF7A5CDE99D16A10B41D10A4CBCFCD1 /* CropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropView.swift; path = "Photo Editor/Photo Editor/CropView.swift"; sourceTree = "<group>"; };
 		8DF4A3392CC7C3DB9D1052BAE2C37A78 /* Pods-editorTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-editorTest-umbrella.h"; sourceTree = "<group>"; };
-		924B17D22037AB674FDBD3797BCBE344 /* PhotoCropEditorBorder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@2x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@2x.png"; sourceTree = "<group>"; };
-		9276E5C44C6681F08732BA2BECB46EFF /* PhotoEditor+StickersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+StickersViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+StickersViewController.swift"; sourceTree = "<group>"; };
+		8E5F2FB48F033AC6A6DC16541C26128E /* ImageCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ImageCollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		92B5D69AC72ECFB1A037AFA584C7ED91 /* GifCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GifCollectionViewCell.swift; path = "Photo Editor/Photo Editor/GifCollectionViewCell.swift"; sourceTree = "<group>"; };
 		949226EAA1806A72C05A004AAAE1F440 /* TTSegmentedControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTSegmentedControl.release.xcconfig; sourceTree = "<group>"; };
+		94F80CA23C7C89F0F5CC5130FFE9BD4A /* PhotoEditor+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Crop.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Crop.swift"; sourceTree = "<group>"; };
+		9AE54C88F0D2F9226DF58A7A498C80B0 /* PhotoEditor+Export.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Export.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Export.swift"; sourceTree = "<group>"; };
 		9B0FC04ABAC5AFF725DD702769F68811 /* TTSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TTSegmentedControl-Info.plist"; sourceTree = "<group>"; };
 		9BD0D625BFFF8DF927E9B74A21313220 /* CollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollectionViewWaterfallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D797876E7D7847D34E701A3B8B1A0FB /* Pods_editorTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_editorTest.framework; path = "Pods-editorTest.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DB628E3C867E44A448F36A4D7746ABC /* PhotoEditor+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Drawing.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Drawing.swift"; sourceTree = "<group>"; };
+		9ECB3E4171A2A4A93BB0BE5FF01C987E /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PhotoCropEditorBorder.png; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder.png"; sourceTree = "<group>"; };
 		9F1EFAFBD72DA2A7BBC8C2B1B6C7E5B6 /* KMPlaceholderTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KMPlaceholderTextView-Info.plist"; sourceTree = "<group>"; };
-		A0D244C2BA5D4B3CABF74E93F10E40E6 /* icon_text.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_text.png; path = "Photo Editor/Photo Editor/icon_text.png"; sourceTree = "<group>"; };
-		A100E5219E013388FBDA933BC8F3940F /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorsCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ColorsCollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		A1A14A1E5968206D1533B0848AFE6951 /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PhotoEditorViewController.xib; path = "Photo Editor/Photo Editor/PhotoEditorViewController.xib"; sourceTree = "<group>"; };
+		9FB62A9339953C691CA200515CA97D74 /* icon_sticker.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_sticker.png; path = "Photo Editor/Photo Editor/icon_sticker.png"; sourceTree = "<group>"; };
+		A148CA5BCD94F4B54B07CFF07797486A /* color_on@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "color_on@2x.png"; path = "Photo Editor/Photo Editor/color_on@2x.png"; sourceTree = "<group>"; };
+		A5D784FCFAA42B0FEAA98070661F04E3 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ColorCollectionViewCell.swift"; sourceTree = "<group>"; };
+		AA188C7946534641714A3F731850A0B8 /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = ShadowsIntoLight.ttf; path = "Photo Editor/Photo Editor/ShadowsIntoLight.ttf"; sourceTree = "<group>"; };
 		AA730025EE1810DE2722E40100025ACE /* CollectionViewWaterfallLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionViewWaterfallLayout.release.xcconfig; sourceTree = "<group>"; };
-		AAD23AF69C4C462456E620451C055884 /* PhotoEditor+BackgroundViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+BackgroundViewController.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+BackgroundViewController.swift"; sourceTree = "<group>"; };
 		AB279C51D6E94AC1328BA50DD8E02767 /* SwiftyGif-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyGif-umbrella.h"; sourceTree = "<group>"; };
-		ACBA1A91B508C7AE0DD52AB6F5F5DE39 /* ZillaSlabHighlight-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "ZillaSlabHighlight-Bold.ttf"; path = "Photo Editor/Photo Editor/ZillaSlabHighlight-Bold.ttf"; sourceTree = "<group>"; };
-		AD6BF688FFD8EE711325DCCADFEBD1FC /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = ShadowsIntoLight.ttf; path = "Photo Editor/Photo Editor/ShadowsIntoLight.ttf"; sourceTree = "<group>"; };
 		AE17350B226A585E3D2750F18C155FF4 /* CollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
-		AEA4C623E9923E40D01E389B1A07F62D /* ImageCollectionViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewDelegate.swift; path = "Photo Editor/Photo Editor/ImageCollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		B098A9964680943FC489B9182C19BFD0 /* GiphyApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GiphyApiManager.swift; path = "Photo Editor/Photo Editor/GiphyApiManager.swift"; sourceTree = "<group>"; };
 		B1B969C9BD18FD5F56962B32618FCA7B /* KMPlaceholderTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KMPlaceholderTextView.modulemap; sourceTree = "<group>"; };
 		B2BD2F6CC5E6245CB7FF11B54E91BC5C /* CollectionViewWaterfallLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionViewWaterfallLayout-dummy.m"; sourceTree = "<group>"; };
-		B3F52256709DA8D6BF36C1E33E28DBCB /* iOSPhotoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSPhotoEditor.debug.xcconfig; sourceTree = "<group>"; };
 		B3FD532FD30A6BEC7D219A2D5FEBD6A3 /* SwiftyGif.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyGif.modulemap; sourceTree = "<group>"; };
-		BA9EECA244FECC8608C29851C7CEBCF6 /* icon_thumb@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_thumb@2x.png"; path = "Photo Editor/Photo Editor/icon_thumb@2x.png"; sourceTree = "<group>"; };
+		B5A91A3733B72E9E231976E1CDDA3B9C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC71B6E751F8D1226D22B84E99C04F6 /* TTSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF694C203A118AF584EE601AB2D76F6 /* iOSPhotoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-umbrella.h"; sourceTree = "<group>"; };
-		BD853C00F918DB4E4D614A0410BA8AA3 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.xib"; sourceTree = "<group>"; };
+		BC949228E4CF792FF88A235181BCBF99 /* ZillaSlabHighlight-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "ZillaSlabHighlight-Bold.ttf"; path = "Photo Editor/Photo Editor/ZillaSlabHighlight-Bold.ttf"; sourceTree = "<group>"; };
 		BD8DFA7D96E29F7DD71BFAE22E11720E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C65DFD6B2AC8AECFF433BD3529535BD0 /* iOSPhotoEditor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iOSPhotoEditor-Info.plist"; sourceTree = "<group>"; };
-		C8094B0B10DA4AEFFDDCC4D504D4B051 /* icon_sticker.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_sticker.png; path = "Photo Editor/Photo Editor/icon_sticker.png"; sourceTree = "<group>"; };
-		CAABA59357E0BFD38C873D9991F1F95B /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "Photo Editor/Photo Editor/GradientView.swift"; sourceTree = "<group>"; };
+		C0102E52DC320127F8FD13A34F2D200F /* text_off@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "text_off@2x.png"; path = "Photo Editor/Photo Editor/text_off@2x.png"; sourceTree = "<group>"; };
+		C0A7792DE18F5058D07EE79E49715947 /* PhotoEditor+Gestures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Gestures.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Gestures.swift"; sourceTree = "<group>"; };
+		C0D723553CDA704D058C415FC6A54D67 /* icon_thumb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_thumb.png; path = "Photo Editor/Photo Editor/icon_thumb.png"; sourceTree = "<group>"; };
+		C10FF249385EAD75DBF5E21837B8ABD7 /* iOSPhotoEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-prefix.pch"; sourceTree = "<group>"; };
+		C4180CA0D126C25F3645983905D61E1F /* TouchableStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TouchableStackView.swift; path = "Photo Editor/Photo Editor/TouchableStackView.swift"; sourceTree = "<group>"; };
+		C7A5F7492B710EEE75F95E9DC27DE0CB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = "Photo Editor/Photo Editor/ImageCollectionViewCell.swift"; sourceTree = "<group>"; };
+		CAB50279112925044A53FBFC70AA9C1E /* size_on@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "size_on@3x.png"; path = "Photo Editor/Photo Editor/size_on@3x.png"; sourceTree = "<group>"; };
+		CADF1C27A2999174E9E5C964216E6FD2 /* icon_sticker@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_sticker@2x.png"; path = "Photo Editor/Photo Editor/icon_sticker@2x.png"; sourceTree = "<group>"; };
+		CB8C54D96A206CD3D83838F3066102DB /* PhotoEditor+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Drawing.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Drawing.swift"; sourceTree = "<group>"; };
 		CBB592D680F13DB8655DD687FEB4635F /* TTSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTSegmentedControl-dummy.m"; sourceTree = "<group>"; };
-		CC8B3993F6EE6BF1BE46C4C1667A49F0 /* BackgroundViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = BackgroundViewController.xib; path = "Photo Editor/Photo Editor/BackgroundViewController.xib"; sourceTree = "<group>"; };
 		CF34798AE8213715A3AEDDF098F83047 /* CollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollectionViewWaterfallLayout.framework; path = CollectionViewWaterfallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFA09EC5724905E50F4290030EF4BBBC /* SwiftyGif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyGif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0552F3261F6DB8C8EFB64A66F427EFD /* icon_canvas.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_canvas.png; path = "Photo Editor/Photo Editor/icon_canvas.png"; sourceTree = "<group>"; };
 		D1AAE45F72F2840FF2596D93F88DBFCE /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSPhotoEditor.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4BFBD34DF6BF1E29F2EACF9889706A3 /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Alpha.swift"; path = "Photo Editor/Photo Editor/UIImageView+Alpha.swift"; sourceTree = "<group>"; };
-		D65CE4398D5139A56A84D3C16DF0EC5E /* UIImage+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Crop.swift"; path = "Photo Editor/Photo Editor/UIImage+Crop.swift"; sourceTree = "<group>"; };
-		D9D8AD202B89A87C37B976441549E353 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Photo Editor/Photo Editor/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		DA226821BD05725C082E983AB244AB59 /* PhotoEditor+Font.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Font.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Font.swift"; sourceTree = "<group>"; };
-		DE56E12996425BD4FD6F06447EA233C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2555417F4D2BF942A768A472947E6E7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D58D32863C7B70EFD561E1DE5A618046 /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = "Photo Editor/Photo Editor/CropViewController.swift"; sourceTree = "<group>"; };
+		D6102ADFCC1A6D8E7CE1641F573520D3 /* PhotoEditor+Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Keyboard.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Keyboard.swift"; sourceTree = "<group>"; };
+		D6A89F2A1D0BF90CED1FF50BB959BDE1 /* color_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = color_off.png; path = "Photo Editor/Photo Editor/color_off.png"; sourceTree = "<group>"; };
+		DC001EC9FE5CD6CA1329183B56B30871 /* icon_delete.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_delete.png; path = "Photo Editor/Photo Editor/icon_delete.png"; sourceTree = "<group>"; };
+		DEB9E3DEE2FF0EC4FF86B6AC459888CE /* icon_thumb@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_thumb@3x.png"; path = "Photo Editor/Photo Editor/icon_thumb@3x.png"; sourceTree = "<group>"; };
+		DEFB5AA14BD7735A0006E22B16716FF1 /* PhotoCropEditorBorder@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PhotoCropEditorBorder@2x.png"; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder@2x.png"; sourceTree = "<group>"; };
 		E002A9E2888A632435FD768B3CD49A1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E10F6E5B4294D00E23646D41324A739D /* BowlbyOneSC-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "BowlbyOneSC-Regular.ttf"; path = "Photo Editor/Photo Editor/BowlbyOneSC-Regular.ttf"; sourceTree = "<group>"; };
 		E36AA6281E400E6556F0AEFE99BDC808 /* TTSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TTSegmentedControl.swift; path = TTSegmentedControl/TTSegmentedControl.swift; sourceTree = "<group>"; };
+		E3E488F91691E53FCA762751626370AB /* LICENSE.md */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.md; sourceTree = "<group>"; };
 		E3F33CED5E91387DA8BE5249B3CEC238 /* Pods-editorTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-editorTest.release.xcconfig"; sourceTree = "<group>"; };
 		E64A60ABAC501BE41BB6BC5BEF1A81DB /* Pods-editorTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-editorTest-dummy.m"; sourceTree = "<group>"; };
 		E8FE06633C8CA754985D8DCA7C4886A2 /* SwiftyGif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyGif.debug.xcconfig; sourceTree = "<group>"; };
+		E9C012E128EA383A6001E66DD097AABC /* icon_back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_back@3x.png"; path = "Photo Editor/Photo Editor/icon_back@3x.png"; sourceTree = "<group>"; };
 		EA398D5A12FA5919F393F99BA8ADF578 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+SwiftyGif.swift"; path = "SwiftyGif/UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		EA6572F3577ED9FB5035A768CCDD0318 /* iOSPhotoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSPhotoEditor-umbrella.h"; sourceTree = "<group>"; };
 		EAE6D0140E20B2C61A58BD9E26D4BCFD /* SwiftyGif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyGif.release.xcconfig; sourceTree = "<group>"; };
+		EB8DEEF940D124DABC2EC780E072D6C9 /* default_bg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = default_bg.png; path = "Photo Editor/Photo Editor/default_bg.png"; sourceTree = "<group>"; };
 		EC6EA87AC9A8D49DEE23B4FBB68FFE8A /* SwiftyGif-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyGif-dummy.m"; sourceTree = "<group>"; };
-		F1256F20BC355CEB60B5C76E308BF2CD /* CropRectView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropRectView.swift; path = "Photo Editor/Photo Editor/CropRectView.swift"; sourceTree = "<group>"; };
-		F3361262C2821D76DCD937659274EA1A /* PhotoEditor+Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PhotoEditor+Keyboard.swift"; path = "Photo Editor/Photo Editor/PhotoEditor+Keyboard.swift"; sourceTree = "<group>"; };
+		EF30170AE3400F41169B1D5679A2B56C /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoEditorViewController.swift; path = "Photo Editor/Photo Editor/PhotoEditorViewController.swift"; sourceTree = "<group>"; };
+		F0DB120654CC610DED11393A029A5A86 /* size_off@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "size_off@3x.png"; path = "Photo Editor/Photo Editor/size_off@3x.png"; sourceTree = "<group>"; };
+		F37BCC7EDF5231FD784A6B6381A25C56 /* UIImage+Crop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Crop.swift"; path = "Photo Editor/Photo Editor/UIImage+Crop.swift"; sourceTree = "<group>"; };
+		F3F0753F13CEE809AAD9CE21581ECBDF /* UIImage+Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Photo Editor/Photo Editor/UIImage+Size.swift"; sourceTree = "<group>"; };
 		F582B3AA1064F7ED107232907C890A13 /* SwiftyGif-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyGif-Info.plist"; sourceTree = "<group>"; };
+		FC8B51AA60460C0743F323C8C341DBEA /* color_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = color_on.png; path = "Photo Editor/Photo Editor/color_on.png"; sourceTree = "<group>"; };
+		FD4161731C5967AD3730B01F89F562A1 /* color_off@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "color_off@3x.png"; path = "Photo Editor/Photo Editor/color_off@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,15 +399,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DF4BB7D6A164B8B9FA7A39AC98280A3 /* Frameworks */ = {
+		AF5B7FDE5C3B2C79FE0C10E1DA3E863F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				565AE60B1E48CC61C321EBF2635D3911 /* CollectionViewWaterfallLayout.framework in Frameworks */,
-				10CA1FD1EEF15AC435777994ED9AC86D /* Foundation.framework in Frameworks */,
-				4866B875C1DC0961A78837BAD84D3C45 /* KMPlaceholderTextView.framework in Frameworks */,
-				27F50B32EEBB682FD058C66596CD4F44 /* SwiftyGif.framework in Frameworks */,
-				532749A6D6E0AD65F6DE8A2898C0F0ED /* TTSegmentedControl.framework in Frameworks */,
+				C4EC23F5775DDB7B02689BD82C7B7C2D /* CollectionViewWaterfallLayout.framework in Frameworks */,
+				E70510D32C058B21F3D9D510DD760D84 /* Foundation.framework in Frameworks */,
+				18EF00FCB4A41EA1B4E245D6852A78AE /* KMPlaceholderTextView.framework in Frameworks */,
+				86C908C9C18140B8BF0A7F79B435738C /* SwiftyGif.framework in Frameworks */,
+				81D40E8285BD63118B51A3142E803F6A /* TTSegmentedControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,32 +442,17 @@
 		251A350EB689B9DF8BEDD5887E4A5A15 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				825912892EF06A9F9CE68C4DFD5D009F /* iOSPhotoEditor */,
+				6A9F1ADCD7AA3D71FC4E5CD3BE43CE53 /* iOSPhotoEditor */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		2D872D9CBE400481D980EBA429D72806 /* Support Files */ = {
+		48CB430E801820AE8416152DB9731261 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				25893BDE5020F7E17FC92AEFDD4F8ABE /* iOSPhotoEditor.modulemap */,
-				3B298AE48213669E96C78DA4D1FF381A /* iOSPhotoEditor-dummy.m */,
-				C65DFD6B2AC8AECFF433BD3529535BD0 /* iOSPhotoEditor-Info.plist */,
-				079A468D7656E908B0A6CA3FFC56B2AE /* iOSPhotoEditor-prefix.pch */,
-				BBF694C203A118AF584EE601AB2D76F6 /* iOSPhotoEditor-umbrella.h */,
-				B3F52256709DA8D6BF36C1E33E28DBCB /* iOSPhotoEditor.debug.xcconfig */,
-				7727D14B7581B051B951810C61423A68 /* iOSPhotoEditor.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/iOSPhotoEditor";
-			sourceTree = "<group>";
-		};
-		40A9F1E4B1497A51DE4874173C099E53 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				430D571EA8C26820F61F8F404E0B9786 /* iOSPhotoEditor.podspec */,
-				8BD5230324C1E2CA24B875A21EBF945D /* LICENSE.md */,
-				88B536D69C818A851B0A88C44246C822 /* README.md */,
+				5E83AD25C2192F5C6F890F87ED802DEB /* iOSPhotoEditor.podspec */,
+				E3E488F91691E53FCA762751626370AB /* LICENSE.md */,
+				D2555417F4D2BF942A768A472947E6E7 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -479,6 +500,113 @@
 			path = SwiftyGif;
 			sourceTree = "<group>";
 		};
+		69A8E3B003FDD16B5B2798DD00A84002 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56B7D8EDCC88FF37134327BBB55CAF83 /* BackgroundViewController.xib */,
+				E10F6E5B4294D00E23646D41324A739D /* BowlbyOneSC-Regular.ttf */,
+				D6A89F2A1D0BF90CED1FF50BB959BDE1 /* color_off.png */,
+				1138F2308FFEE172BBC518D19D531B0F /* color_off@2x.png */,
+				FD4161731C5967AD3730B01F89F562A1 /* color_off@3x.png */,
+				FC8B51AA60460C0743F323C8C341DBEA /* color_on.png */,
+				A148CA5BCD94F4B54B07CFF07797486A /* color_on@2x.png */,
+				509E30A5484B1BD2E6C6EC459B6BCB96 /* color_on@3x.png */,
+				16EF719FCB3CF09BE5ABFB29692B2C10 /* ColorCollectionViewCell.xib */,
+				EB8DEEF940D124DABC2EC780E072D6C9 /* default_bg.png */,
+				1FF7B7A4C97BDFA80A5A12E2DA45A93A /* GifCollectionViewCell.xib */,
+				2F95C0D2CA085B1895785730148A4D6A /* GifsStickersViewController.xib */,
+				14E1824092BA67FCB3A7185C1875CBFE /* icon_back.png */,
+				7B1391985DBCCDADDBAFAF1687994DD5 /* icon_back@2x.png */,
+				E9C012E128EA383A6001E66DD097AABC /* icon_back@3x.png */,
+				5939D0BE931DA2E4BFA147C140758B97 /* icon_canvas.png */,
+				4B3D79BD274B99BBEE5A2D0AF31945BE /* icon_canvas@2x.png */,
+				6058BA1C2FBE272A4EB96F2D7E4920D1 /* icon_canvas@3x.png */,
+				DC001EC9FE5CD6CA1329183B56B30871 /* icon_delete.png */,
+				9FB62A9339953C691CA200515CA97D74 /* icon_sticker.png */,
+				CADF1C27A2999174E9E5C964216E6FD2 /* icon_sticker@2x.png */,
+				258877CD9D8CE1B2549AA49BC25E2414 /* icon_sticker@3x.png */,
+				89DBF9D32DCF4639F81D624701596D09 /* icon_text.png */,
+				151EE0B1A8A90D5B33F11D86F6A687A4 /* icon_text@2x.png */,
+				23C6A92A5AB4FE2F800C6299624F9994 /* icon_text@3x.png */,
+				C0D723553CDA704D058C415FC6A54D67 /* icon_thumb.png */,
+				6F7ECC4A51B4D1A5E1FF5052AC80598F /* icon_thumb@2x.png */,
+				DEB9E3DEE2FF0EC4FF86B6AC459888CE /* icon_thumb@3x.png */,
+				3D4D193DBBCA4A3FF93F8BB6FD7B9C88 /* ImageCollectionViewCell.xib */,
+				5E3FD9C3466F9A9C0F51B5872B49FB6D /* LaunchScreen.storyboard */,
+				4C8AF5E6EE22283AF987DE640D314663 /* LaunchScreen.storyboard */,
+				474392C63A1F4B8C7531C08318548D96 /* Nunito-Black.ttf */,
+				6A3F7B01BE3B85A0C2B49860696A6FDA /* Nunito-ExtraBold.ttf */,
+				7CEF72EEFFAC0F421D0CA79370F1E81B /* Nunito-SemiBold.ttf */,
+				9ECB3E4171A2A4A93BB0BE5FF01C987E /* PhotoCropEditorBorder.png */,
+				DEFB5AA14BD7735A0006E22B16716FF1 /* PhotoCropEditorBorder@2x.png */,
+				0240FDFEC55307D79B06EC4B000A64D9 /* PhotoCropEditorBorder@3x.png */,
+				08269D94CEA2E818E9D3F6702D2AC2AA /* PhotoEditorViewController.xib */,
+				AA188C7946534641714A3F731850A0B8 /* ShadowsIntoLight.ttf */,
+				80418141C229D20E337C03830D542917 /* size_off.png */,
+				6D9F8AB7C416D6943263F0C9D79691F4 /* size_off@2x.png */,
+				F0DB120654CC610DED11393A029A5A86 /* size_off@3x.png */,
+				0D5CC165AC14D5BE7CA8027B0E7B65FF /* size_on.png */,
+				6E883AE09B3FE98250B38271EA167F31 /* size_on@2x.png */,
+				CAB50279112925044A53FBFC70AA9C1E /* size_on@3x.png */,
+				2CA34106B9865D20D05E1BB1217593DF /* StickerCollectionViewCell.xib */,
+				746F3C7E08ECECB5AFC562E394434AB7 /* text_off.png */,
+				C0102E52DC320127F8FD13A34F2D200F /* text_off@2x.png */,
+				82FA3D8BDB66BD91C3004ACBDCC27AAA /* text_off@3x.png */,
+				6D0B559B8EA9C2A7F90E8FE2357D06FE /* text_on.png */,
+				23A36F3EA8A620F2FED64676BBE2D9E0 /* text_on@2x.png */,
+				6A5BD062941F064520153B6E8E1EF3FA /* text_on@3x.png */,
+				BC949228E4CF792FF88A235181BCBF99 /* ZillaSlabHighlight-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A9F1ADCD7AA3D71FC4E5CD3BE43CE53 /* iOSPhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				8472BD91CBA6EC3EA919E4E3086168DD /* BackgroundViewController.swift */,
+				A5D784FCFAA42B0FEAA98070661F04E3 /* ColorCollectionViewCell.swift */,
+				33E54BFF0C5EB2BA1DFE178C6B2727CD /* ColorsCollectionViewDelegate.swift */,
+				65DFD0444B5D42B5972429AC570788BE /* CropRectView.swift */,
+				8AF7A5CDE99D16A10B41D10A4CBCFCD1 /* CropView.swift */,
+				D58D32863C7B70EFD561E1DE5A618046 /* CropViewController.swift */,
+				88FD48BDCB944834E9D93910E1508D8B /* CustomTextField.swift */,
+				262D8C4782E92DA4A483227439A37224 /* ExpressionPreview.swift */,
+				16FAF73C191B236327C10A73C0BAEFD7 /* Extensions.swift */,
+				92B5D69AC72ECFB1A037AFA584C7ED91 /* GifCollectionViewCell.swift */,
+				40EF490DF738A0D81D0F6628D5480922 /* GifsCollectionViewDelegate.swift */,
+				38E5C361055041E47BD5F239A1149D68 /* GifsStickersViewController.swift */,
+				2F37156F3E2F685CC53A0DD4A893AEDF /* GifsStickersViewController+GiphyApi.swift */,
+				659C507D8F8033455A34B1B3C4E26498 /* GiphyApiManager.swift */,
+				0AF5C0227194AFCEA9FA8B7E3D238C06 /* GradientView.swift */,
+				C7A5F7492B710EEE75F95E9DC27DE0CB /* ImageCollectionViewCell.swift */,
+				8E5F2FB48F033AC6A6DC16541C26128E /* ImageCollectionViewDelegate.swift */,
+				654DB892C6984C4E09D10CFDAF149CA0 /* PhotoEditor+BackgroundViewController.swift */,
+				7E7397F9ABC6B20F998E418A526FAD05 /* PhotoEditor+Controls.swift */,
+				94F80CA23C7C89F0F5CC5130FFE9BD4A /* PhotoEditor+Crop.swift */,
+				CB8C54D96A206CD3D83838F3066102DB /* PhotoEditor+Drawing.swift */,
+				9AE54C88F0D2F9226DF58A7A498C80B0 /* PhotoEditor+Export.swift */,
+				39531FC70044A355C6A1736838205DF8 /* PhotoEditor+Font.swift */,
+				C0A7792DE18F5058D07EE79E49715947 /* PhotoEditor+Gestures.swift */,
+				D6102ADFCC1A6D8E7CE1641F573520D3 /* PhotoEditor+Keyboard.swift */,
+				87EFD25EE416B3F880F4208122D6FCAF /* PhotoEditor+StickersViewController.swift */,
+				3DE21B3BC7C9F4689DAB6FC166C2B10F /* PhotoEditor+UITextView.swift */,
+				EF30170AE3400F41169B1D5679A2B56C /* PhotoEditorViewController.swift */,
+				839214C89D59BFFA824A31E1BA4CC3AB /* Protocols.swift */,
+				4A06BAE647E29F5996E045DD9475E098 /* ResizeControl.swift */,
+				00EB09BBAC3B8BC90CCB394EFC14CFEE /* StickerCollectionViewCell.swift */,
+				C4180CA0D126C25F3645983905D61E1F /* TouchableStackView.swift */,
+				F37BCC7EDF5231FD784A6B6381A25C56 /* UIImage+Crop.swift */,
+				F3F0753F13CEE809AAD9CE21581ECBDF /* UIImage+Size.swift */,
+				09AFCFD79C4CA5C6D241E9A5C9000898 /* UIImageView+Alpha.swift */,
+				1FA6B6299DF3D98B0D4E2E9EBE6B4531 /* UIView+Image.swift */,
+				48CB430E801820AE8416152DB9731261 /* Pod */,
+				69A8E3B003FDD16B5B2798DD00A84002 /* Resources */,
+				BAC372F992C4655C657BD20BF757788A /* Support Files */,
+			);
+			name = iOSPhotoEditor;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		792CB0045FF6DC46B322766983E67C17 /* KMPlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,53 +615,6 @@
 			);
 			name = KMPlaceholderTextView;
 			path = KMPlaceholderTextView;
-			sourceTree = "<group>";
-		};
-		825912892EF06A9F9CE68C4DFD5D009F /* iOSPhotoEditor */ = {
-			isa = PBXGroup;
-			children = (
-				4AF3E5FF7E6274C223F453323DE5DB22 /* BackgroundViewController.swift */,
-				7A8F807732DEC9B9E438AE763802456B /* ColorCollectionViewCell.swift */,
-				A100E5219E013388FBDA933BC8F3940F /* ColorsCollectionViewDelegate.swift */,
-				F1256F20BC355CEB60B5C76E308BF2CD /* CropRectView.swift */,
-				22D5422DE9FB3A7116E85EC090CE58F6 /* CropView.swift */,
-				75CAEB370F562448129B3936ECC667BB /* CropViewController.swift */,
-				259FDD70C45A13C910A60E3150B732E7 /* CustomTextField.swift */,
-				5073D0287BB366F3B4EF299634A7D78B /* ExpressionPreview.swift */,
-				7080CA7B0B32E74E24C526227F44E33D /* Extensions.swift */,
-				18BD76D5B1B66E1C8773165C6A548C9C /* GifCollectionViewCell.swift */,
-				0B17553C9BAF8C1F2A050BB5BEC05DD0 /* GifsCollectionViewDelegate.swift */,
-				608EFE357D04B842CE343BA3C4A1BD81 /* GifsStickersViewController.swift */,
-				8AC5047F0CDB8E474A15405F5A5B5931 /* GifsStickersViewController+GiphyApi.swift */,
-				B098A9964680943FC489B9182C19BFD0 /* GiphyApiManager.swift */,
-				CAABA59357E0BFD38C873D9991F1F95B /* GradientView.swift */,
-				87A7BD2F8BE0D9C7AB38B59182340F9D /* ImageCollectionViewCell.swift */,
-				AEA4C623E9923E40D01E389B1A07F62D /* ImageCollectionViewDelegate.swift */,
-				AAD23AF69C4C462456E620451C055884 /* PhotoEditor+BackgroundViewController.swift */,
-				14EC7A6ABE1E0E8874D4C6B575FBD0E8 /* PhotoEditor+Controls.swift */,
-				10386CC9722CB8832BC1A616B737ACA7 /* PhotoEditor+Crop.swift */,
-				9DB628E3C867E44A448F36A4D7746ABC /* PhotoEditor+Drawing.swift */,
-				1DB0E9D02727589E5F4E14680AA8E487 /* PhotoEditor+Export.swift */,
-				DA226821BD05725C082E983AB244AB59 /* PhotoEditor+Font.swift */,
-				39F5F1353C95A55D074057A14A92E07B /* PhotoEditor+Gestures.swift */,
-				F3361262C2821D76DCD937659274EA1A /* PhotoEditor+Keyboard.swift */,
-				9276E5C44C6681F08732BA2BECB46EFF /* PhotoEditor+StickersViewController.swift */,
-				70DD71AE22A6992C8CBFFF724C2EE667 /* PhotoEditor+UITextView.swift */,
-				143FCEED6D63B0A6AA2922A52B21750E /* PhotoEditorViewController.swift */,
-				624E3DA60A7E5AE4F45708FFD1D68478 /* Protocols.swift */,
-				2465633CE23BC614D3C799FC774981A1 /* ResizeControl.swift */,
-				1E822F6CB554D88A4415C8C609B03CA8 /* StickerCollectionViewCell.swift */,
-				47F01C06C2B2E3CA4C746BA0AA70FF1C /* TouchableStackView.swift */,
-				D65CE4398D5139A56A84D3C16DF0EC5E /* UIImage+Crop.swift */,
-				4B6DA2D01A9A135CAE175B92E05C4F3E /* UIImage+Size.swift */,
-				D4BFBD34DF6BF1E29F2EACF9889706A3 /* UIImageView+Alpha.swift */,
-				8388291600C1237B26908FFDEF6710AF /* UIView+Image.swift */,
-				40A9F1E4B1497A51DE4874173C099E53 /* Pod */,
-				E7F2248FDFD5384093A53F17862976E8 /* Resources */,
-				2D872D9CBE400481D980EBA429D72806 /* Support Files */,
-			);
-			name = iOSPhotoEditor;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		A633D4ACE44EF82C8C72D37F5796C084 /* CollectionViewWaterfallLayout */ = {
@@ -581,6 +662,21 @@
 			path = "../Target Support Files/TTSegmentedControl";
 			sourceTree = "<group>";
 		};
+		BAC372F992C4655C657BD20BF757788A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B3AAA0D251CABEBF25F1BAD25F312A7 /* iOSPhotoEditor.modulemap */,
+				0F9B9FE1E43BDBF4E0A596F5E7DC0049 /* iOSPhotoEditor-dummy.m */,
+				62A579006FA48E2BA3ADC5438E1A6680 /* iOSPhotoEditor-Info.plist */,
+				C10FF249385EAD75DBF5E21837B8ABD7 /* iOSPhotoEditor-prefix.pch */,
+				EA6572F3577ED9FB5035A768CCDD0318 /* iOSPhotoEditor-umbrella.h */,
+				8490B09C3A776ABF439858F8298879B1 /* iOSPhotoEditor.debug.xcconfig */,
+				60FE42DC59B54A3121B3A0058DEB1AB8 /* iOSPhotoEditor.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/iOSPhotoEditor";
+			sourceTree = "<group>";
+		};
 		C168CF44D23AA6E6A001DB198DA18469 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,48 +717,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftyGif";
-			sourceTree = "<group>";
-		};
-		E7F2248FDFD5384093A53F17862976E8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CC8B3993F6EE6BF1BE46C4C1667A49F0 /* BackgroundViewController.xib */,
-				3B6F220886878ECC5AB6BA498B53D535 /* BowlbyOneSC-Regular.ttf */,
-				02C8946AE0CBEA01298D4D9C52784605 /* ColorCollectionViewCell.xib */,
-				0F9DEBCA78963345B57D7FC034CDD64E /* default_bg.png */,
-				04DBCF208A520F602EED094E8348AB42 /* GifCollectionViewCell.xib */,
-				25D5E0DA3E5A9A5190E854980CA44162 /* GifsStickersViewController.xib */,
-				7D92E715FD727C6A3DCDC6ED4DB21768 /* icon_back.png */,
-				4790A249CE574DFB24CE606ED9899E3D /* icon_back@2x.png */,
-				1A655269F454C1FC6F06C95C083AD666 /* icon_back@3x.png */,
-				D0552F3261F6DB8C8EFB64A66F427EFD /* icon_canvas.png */,
-				2CE4D5AF0028EDBF200E62BB3DB65334 /* icon_canvas@2x.png */,
-				49A51D164C7112D0B5380A1B8B77B181 /* icon_canvas@3x.png */,
-				24BBA7E0B2411D38CB828B399F551431 /* icon_delete.png */,
-				C8094B0B10DA4AEFFDDCC4D504D4B051 /* icon_sticker.png */,
-				6FE61C81DE1E2F7BB80E71ED5997DAC4 /* icon_sticker@2x.png */,
-				4EC2E34A5C1571B9BAD3BF0EE3FF0DEA /* icon_sticker@3x.png */,
-				A0D244C2BA5D4B3CABF74E93F10E40E6 /* icon_text.png */,
-				41F8DCF4149287C9E95E94B3D673F7E2 /* icon_text@2x.png */,
-				711F744D50F5B513F15C69EA63CB7738 /* icon_text@3x.png */,
-				00B5849D973E6DF083017FC06CEA37E7 /* icon_thumb.png */,
-				BA9EECA244FECC8608C29851C7CEBCF6 /* icon_thumb@2x.png */,
-				61FC7EBE2E211361070FA67508B55EEC /* icon_thumb@3x.png */,
-				40E328A21D3F255084B89A923734E647 /* ImageCollectionViewCell.xib */,
-				CF0735AFF6818321811505AE7418B3C6 /* LaunchScreen.storyboard */,
-				D9D8AD202B89A87C37B976441549E353 /* LaunchScreen.storyboard */,
-				717367DB6022BFA88D6D7BEAD7B4ABF3 /* Nunito-Black.ttf */,
-				5EE7E2418B9C01FA828B7947EF040411 /* Nunito-ExtraBold.ttf */,
-				5F08EC467BFB154472E60A7D61F56E0C /* Nunito-SemiBold.ttf */,
-				7A747F91E17EE773BDDD8AC2C7BFDC87 /* PhotoCropEditorBorder.png */,
-				924B17D22037AB674FDBD3797BCBE344 /* PhotoCropEditorBorder@2x.png */,
-				5C03ACC7329B6F06658055AE0AAACFC0 /* PhotoCropEditorBorder@3x.png */,
-				A1A14A1E5968206D1533B0848AFE6951 /* PhotoEditorViewController.xib */,
-				AD6BF688FFD8EE711325DCCADFEBD1FC /* ShadowsIntoLight.ttf */,
-				BD853C00F918DB4E4D614A0410BA8AA3 /* StickerCollectionViewCell.xib */,
-				ACBA1A91B508C7AE0DD52AB6F5F5DE39 /* ZillaSlabHighlight-Bold.ttf */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		F1C6F743B3B6DED51232DDF55CE906DC /* Targets Support Files */ = {
@@ -713,11 +767,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE9F146FAB81AB1574B463FCCE07231D /* Headers */ = {
+		B4500F657C00642A0647399DA7B5BA06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0AE4BE8E3CB17CF16380A6D08F96B27 /* iOSPhotoEditor-umbrella.h in Headers */,
+				5F0ACE5F4D578DE7091C0E0AEE123705 /* iOSPhotoEditor-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,11 +842,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B71312879031120BAEB67E2F7CE98B6D /* PBXTargetDependency */,
-				B74459243C0D6A82EE37E4EE1E70F303 /* PBXTargetDependency */,
-				F63CD0C92B44808691D059375A5E03D7 /* PBXTargetDependency */,
-				8A5D37100D64EF2D46DFAD205B94FE24 /* PBXTargetDependency */,
-				084AB828E1AB2AEA2001C76D00C9DDC0 /* PBXTargetDependency */,
+				EEB1E1AB93A16CAB2C3212882492BAA9 /* PBXTargetDependency */,
+				8D723D61F9B2E49680A2C5BB601AC3BE /* PBXTargetDependency */,
+				0DE26FD7EFC374B56092C9ED7AF1DBBB /* PBXTargetDependency */,
+				8B0C0D29BFA1DA24054E525AF87FFC8B /* PBXTargetDependency */,
+				3E669983215625C6049D5C43D677020D /* PBXTargetDependency */,
 			);
 			name = "Pods-editorTest";
 			productName = "Pods-editorTest";
@@ -801,20 +855,20 @@
 		};
 		707750498984B8376E2CCAB25DD030AC /* iOSPhotoEditor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6CB38131B9D41C185AD97BF0DE16F0CC /* Build configuration list for PBXNativeTarget "iOSPhotoEditor" */;
+			buildConfigurationList = BA5C1FC6C865176AF4D6AC5CAB8E69CE /* Build configuration list for PBXNativeTarget "iOSPhotoEditor" */;
 			buildPhases = (
-				BE9F146FAB81AB1574B463FCCE07231D /* Headers */,
-				4614AF919A1C8E745FBE8364C093C043 /* Sources */,
-				8DF4BB7D6A164B8B9FA7A39AC98280A3 /* Frameworks */,
-				755B2F7C1D498E069FB53777ED362200 /* Resources */,
+				B4500F657C00642A0647399DA7B5BA06 /* Headers */,
+				575FE2C79A36B06BD1B36E868BE48DC1 /* Sources */,
+				AF5B7FDE5C3B2C79FE0C10E1DA3E863F /* Frameworks */,
+				AF4DEB70A5EC80825CED4E1923FA664A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A7C27BD84C064434047EC51BDB36E309 /* PBXTargetDependency */,
-				0AA8A376BA1F0360FF29851D82922146 /* PBXTargetDependency */,
-				FC9B16B2A60546E8ADFF95BDEEAD8B6E /* PBXTargetDependency */,
-				54153B14C4E455042CAB8FF0EE00D36E /* PBXTargetDependency */,
+				DEDBB3A90B914A0CF81AEA3A0ECC08A6 /* PBXTargetDependency */,
+				9E30951C74B6AF79E5D10B13A4137A14 /* PBXTargetDependency */,
+				7691273C91468167433A035BECDCDFC2 /* PBXTargetDependency */,
+				E7AB9DCC44843721DA1CCF78CB58031C /* PBXTargetDependency */,
 			);
 			name = iOSPhotoEditor;
 			productName = iOSPhotoEditor;
@@ -918,52 +972,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		755B2F7C1D498E069FB53777ED362200 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEF775C839A04E8E81FB0C03A74A7BD9 /* BackgroundViewController.xib in Resources */,
-				3EE5F76F03AE2DDBEB6F12905580C8C8 /* BowlbyOneSC-Regular.ttf in Resources */,
-				5E9E362B77869D0AA12669E37BD062F6 /* ColorCollectionViewCell.xib in Resources */,
-				BD9B522D13BA8D757CC4A1097617EE78 /* default_bg.png in Resources */,
-				B87D9EC6D30DF3BEFF19FDC347061456 /* GifCollectionViewCell.xib in Resources */,
-				C4FB5DF6D00E88CAA9A408127301219A /* GifsStickersViewController.xib in Resources */,
-				6883C57651D05A88F4F86CA7D4CA4140 /* icon_back.png in Resources */,
-				4CC93DB4B77D100ED64626A46EA0DE43 /* icon_back@2x.png in Resources */,
-				5263BCFCE00F219F9E3350F8F8023F3D /* icon_back@3x.png in Resources */,
-				CA6053BC71A6F6876282EC08C750D497 /* icon_canvas.png in Resources */,
-				E726DCE6A654DDA1F3126FCE6130615D /* icon_canvas@2x.png in Resources */,
-				AA19D6EB6F194C1C57E9932E98071DDC /* icon_canvas@3x.png in Resources */,
-				F7F4C374B63DD59A3858088565BA1D3C /* icon_delete.png in Resources */,
-				8F63ED47AD01ABBBB8094AA99B429241 /* icon_sticker.png in Resources */,
-				B6751D42B90099C55A8A944CFFF7AC6C /* icon_sticker@2x.png in Resources */,
-				301EC734A2006DE378A05BC88A3701F6 /* icon_sticker@3x.png in Resources */,
-				1B051AAD5693E8C269B583E9567C32BE /* icon_text.png in Resources */,
-				BEEFABD63A8CDB4E7288603D22D0B73A /* icon_text@2x.png in Resources */,
-				878EF0C81A43C029E5E8A926F3220134 /* icon_text@3x.png in Resources */,
-				CDAEEB06F3DACCC3525FEC9DCCFC95CC /* icon_thumb.png in Resources */,
-				DA47DF7290EB03DA37ED7AF4D6796A9A /* icon_thumb@2x.png in Resources */,
-				2A5B03B1459438C4E3098EA11DA3112E /* icon_thumb@3x.png in Resources */,
-				34B9D5312653605DECCDAF7495AF05D1 /* ImageCollectionViewCell.xib in Resources */,
-				8B841A0AAC8E8D28879B33EA800ADA5E /* LaunchScreen.storyboard in Resources */,
-				CB05FCE9D4DD7F69E770E399115E1C5A /* LaunchScreen.storyboard in Resources */,
-				024E9CAE1B6C773853E0553187853EC1 /* Nunito-Black.ttf in Resources */,
-				A4C1ED1817DCB282ABBD65EBF82D9382 /* Nunito-ExtraBold.ttf in Resources */,
-				1339A499BB0E6F5B7C56E402C9978EA4 /* Nunito-SemiBold.ttf in Resources */,
-				98FF7E207282A526978832204B063F88 /* PhotoCropEditorBorder.png in Resources */,
-				BF7C98D1839C7C80FB32801BABB4E384 /* PhotoCropEditorBorder@2x.png in Resources */,
-				95038C3B938986519DAC81565EFFBE7E /* PhotoCropEditorBorder@3x.png in Resources */,
-				70D708743EC99531279F48730DEEDA79 /* PhotoEditorViewController.xib in Resources */,
-				CDB4EADB5E4A6A7BE9A90AE59BC08A68 /* ShadowsIntoLight.ttf in Resources */,
-				9091458807E016881DAC790B90458E93 /* StickerCollectionViewCell.xib in Resources */,
-				DEEB6CF59F64B94F1BBCF07098152895 /* ZillaSlabHighlight-Bold.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		951C04517B930070518DADFAEA910EE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF4DEB70A5EC80825CED4E1923FA664A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4986F85D9ED198B62ED40CF07DDAB1 /* BackgroundViewController.xib in Resources */,
+				8CF0D469FEDC18A65EF2DBCE6417188E /* BowlbyOneSC-Regular.ttf in Resources */,
+				7F6695F9980F402801D9914E880987C5 /* color_off.png in Resources */,
+				0C230A88016F0474D08BC7536D30EFE1 /* color_off@2x.png in Resources */,
+				7C7C04143C17144C098C6917C0B99898 /* color_off@3x.png in Resources */,
+				C8C8AF039371345AB04D7C40D6253372 /* color_on.png in Resources */,
+				8688AABB08A74F8B283DA5CE76084EC9 /* color_on@2x.png in Resources */,
+				9D7212FEAA1BC1F181A7758C163D333B /* color_on@3x.png in Resources */,
+				5042848BB13EF674117C803D8D00D098 /* ColorCollectionViewCell.xib in Resources */,
+				FEF7608158F81D18BCB171104FBC220C /* default_bg.png in Resources */,
+				F493B27B108EF0268B554C8DB0F334FA /* GifCollectionViewCell.xib in Resources */,
+				787112801C693B4B07F4CBFF99B7CDD3 /* GifsStickersViewController.xib in Resources */,
+				7475F01101FE7DE6532BB235F4AFA631 /* icon_back.png in Resources */,
+				88067461D385F96C83B1E7FFAB795FAF /* icon_back@2x.png in Resources */,
+				CB9B5B995689B7CD5F8F3198D8BFDD7E /* icon_back@3x.png in Resources */,
+				F923FD1F285FAEAD69C6324C9D9CF0A9 /* icon_canvas.png in Resources */,
+				758DB74FC8E6877769C91C9183C874C8 /* icon_canvas@2x.png in Resources */,
+				F5CB8981691E32BA9335192691B99E92 /* icon_canvas@3x.png in Resources */,
+				C5741E0CAECBB07A7B20F2DE4109A45D /* icon_delete.png in Resources */,
+				9692BC408BCE9926EB9563BDF844B9D6 /* icon_sticker.png in Resources */,
+				5AE79FF20EA3B52CA798133DA32F03F1 /* icon_sticker@2x.png in Resources */,
+				E8BFFCE2A46E1FF69A8A382CA8E7BF78 /* icon_sticker@3x.png in Resources */,
+				631BA35D14FE970A0574E41D7424B1DE /* icon_text.png in Resources */,
+				49712FECA8B54A8B73D5ADB991B5B31A /* icon_text@2x.png in Resources */,
+				DB4C127C9B96D6A36A8C88532B5138B6 /* icon_text@3x.png in Resources */,
+				CA52333F2AD955A5CCB067C795776371 /* icon_thumb.png in Resources */,
+				79D7C9D73A960475728AFEACB5BF87E3 /* icon_thumb@2x.png in Resources */,
+				30E5E5848CE711C5470DEB073E5D85EC /* icon_thumb@3x.png in Resources */,
+				D21CD6399C09991CB711EA1FF7950666 /* ImageCollectionViewCell.xib in Resources */,
+				222B3FE06E126C2D08CF88802BD61798 /* LaunchScreen.storyboard in Resources */,
+				4A18648BC82A6F071E496F9A42A60F67 /* LaunchScreen.storyboard in Resources */,
+				3A88F3AE4A11ED3E34E0E3ABE61629C9 /* Nunito-Black.ttf in Resources */,
+				6CB060EA644D94C0D1E889D0EBA9D0EF /* Nunito-ExtraBold.ttf in Resources */,
+				844EEBEC86175CE79C709B1029066597 /* Nunito-SemiBold.ttf in Resources */,
+				3C0C7919D8C5DAE5179D857A61813E22 /* PhotoCropEditorBorder.png in Resources */,
+				C515578AEBF457B9D67ACC759BDC0937 /* PhotoCropEditorBorder@2x.png in Resources */,
+				02809C0283D6FA1A9656B0663F83022A /* PhotoCropEditorBorder@3x.png in Resources */,
+				A432AAF9ADE1262AF4402E5AD5CDD504 /* PhotoEditorViewController.xib in Resources */,
+				6839FBBEA7E786A0A5DCA442225559E4 /* ShadowsIntoLight.ttf in Resources */,
+				731429DF59067CD7C759D46AE25A3EAF /* size_off.png in Resources */,
+				6A1596C56E6CFDC067162DA1B0034FA5 /* size_off@2x.png in Resources */,
+				77952CA421C16013AF365E1A43ED517D /* size_off@3x.png in Resources */,
+				7FD2AE6F99C50287CD6AFFC3FE6EF391 /* size_on.png in Resources */,
+				A61B08262F9F696E90F0504876E2BEA4 /* size_on@2x.png in Resources */,
+				4E27DFEF84C60DBE3B48F98FD833156B /* size_on@3x.png in Resources */,
+				B9ED752BAE701C74FEDFBB08D83FD3C5 /* StickerCollectionViewCell.xib in Resources */,
+				ACE56BD45A2194CC6FD3DCA1AF3DAED9 /* text_off.png in Resources */,
+				E2CF8464FFE9FCAF05F2BD78B0354D29 /* text_off@2x.png in Resources */,
+				35867B4518DE116180ECDD466DCA8D44 /* text_off@3x.png in Resources */,
+				CFED1C28058D262035FA8A730929FA67 /* text_on.png in Resources */,
+				C913B54C5700F665AE0B87DA043C3A9A /* text_on@2x.png in Resources */,
+				6F4C612401C4A139636AEECCC2FDBF65 /* text_on@3x.png in Resources */,
+				FC3A7AD042C9A6C4D4161553A80B0859 /* ZillaSlabHighlight-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,47 +1070,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4614AF919A1C8E745FBE8364C093C043 /* Sources */ = {
+		575FE2C79A36B06BD1B36E868BE48DC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9FB68AC5008003FB863AE527E89D63B /* BackgroundViewController.swift in Sources */,
-				6BA74DEDF753F141DAA6B629863810F4 /* ColorCollectionViewCell.swift in Sources */,
-				C135F72680977497C5FDF256D2F5C2D8 /* ColorsCollectionViewDelegate.swift in Sources */,
-				AE884C268A04F402F1B44556A32EB690 /* CropRectView.swift in Sources */,
-				F1A9FDA1CFFCF00207C4499A3B993ECD /* CropView.swift in Sources */,
-				CA60C8B64734526400A84B3B63FC7C44 /* CropViewController.swift in Sources */,
-				EA1A98E5DA58A223119DE94677386BD5 /* CustomTextField.swift in Sources */,
-				8E4004114787622D833A9EB2851DC8F3 /* ExpressionPreview.swift in Sources */,
-				17ADA72FE7184C569631C9C77D745BAF /* Extensions.swift in Sources */,
-				16CA1BF65F9D3C019E4E7595F77AB90E /* GifCollectionViewCell.swift in Sources */,
-				E13F9CED1408534E89E90A89E49B7B64 /* GifsCollectionViewDelegate.swift in Sources */,
-				5601DBBA105FCA866EA64C1F647AEE2A /* GifsStickersViewController+GiphyApi.swift in Sources */,
-				353161FDB86393EDCD8AABBD775B0BDF /* GifsStickersViewController.swift in Sources */,
-				FE5D133D21E42FD4CC500ED704580387 /* GiphyApiManager.swift in Sources */,
-				AEFA04F21C878C680934B207AE2A931A /* GradientView.swift in Sources */,
-				93B87FF0618DD60316A369E2A819B8A5 /* ImageCollectionViewCell.swift in Sources */,
-				75FAEC2E878E9299168451C067843918 /* ImageCollectionViewDelegate.swift in Sources */,
-				EF3A32157FFDF4AAC56ECFCD5433AC77 /* iOSPhotoEditor-dummy.m in Sources */,
-				47EB1527412B1EE755CF410C87DCFAFE /* PhotoEditor+BackgroundViewController.swift in Sources */,
-				3FA9AF0C9C22CFD1A2BD074B8BA45320 /* PhotoEditor+Controls.swift in Sources */,
-				27B2B3F1D779CD79AD8944012D708FB8 /* PhotoEditor+Crop.swift in Sources */,
-				F53EEFD46118D9473B8F049A66D702A5 /* PhotoEditor+Drawing.swift in Sources */,
-				3D181CA35682E8B3A27710E1576CD6A2 /* PhotoEditor+Export.swift in Sources */,
-				E518216E891DB89BFEE74FBC2CE590EB /* PhotoEditor+Font.swift in Sources */,
-				623F36902323853C55D940D44FE9EAEB /* PhotoEditor+Gestures.swift in Sources */,
-				25157FF16EC9EF62761D52BF453E9E51 /* PhotoEditor+Keyboard.swift in Sources */,
-				9271DDC2124BF0827F14FE516A7676B1 /* PhotoEditor+StickersViewController.swift in Sources */,
-				715A311DCF95DC854BB59AF20D21B502 /* PhotoEditor+UITextView.swift in Sources */,
-				4DFDA481C4E9657CD6097FFADC18BE37 /* PhotoEditorViewController.swift in Sources */,
-				7F3FF33F78AAE4D5C56A1660DD0D6697 /* Protocols.swift in Sources */,
-				FCD49064A225AA88459DFB42334E4B50 /* ResizeControl.swift in Sources */,
-				9169D29D0525142CE60FB4A241EF9A0B /* StickerCollectionViewCell.swift in Sources */,
-				7E323C50CBB0738641AB4A0D5C68D8B8 /* TouchableStackView.swift in Sources */,
-				0CD1EA72B443468D2B4E18F775AFDFE2 /* UIImage+Crop.swift in Sources */,
-				F8C5027CAFBA0DB8B1FE540156838A69 /* UIImage+Size.swift in Sources */,
-				9E5B90B98DF4812AC50B1957F002E318 /* UIImageView+Alpha.swift in Sources */,
-				DBC8804179212F37D6722AA91E2F07D9 /* UIView+Image.swift in Sources */,
+				91306A51A3571BFED034849E527EE198 /* BackgroundViewController.swift in Sources */,
+				4C18157FA64573DD2B7B553647CD9BBE /* ColorCollectionViewCell.swift in Sources */,
+				9DD696E0A3584184A8BD9F16F1DAAC11 /* ColorsCollectionViewDelegate.swift in Sources */,
+				7F605563B1491BED9285077AA19CCFA7 /* CropRectView.swift in Sources */,
+				64EE8D58CAFF56EA82E4D688410D39B8 /* CropView.swift in Sources */,
+				94A1273B826A9C361695ACD2CB19ECF0 /* CropViewController.swift in Sources */,
+				18188BD54BFE3D2FB25F7882C70B2764 /* CustomTextField.swift in Sources */,
+				5C3BC8B433074BEB698434865115FA99 /* ExpressionPreview.swift in Sources */,
+				F56170450ED29642BF31E66719BC946C /* Extensions.swift in Sources */,
+				6CD4B0EA259AC959BE63B04146A46458 /* GifCollectionViewCell.swift in Sources */,
+				6655DDA19DD29168E4E94139A8F2501F /* GifsCollectionViewDelegate.swift in Sources */,
+				F6890968874923F8F41206C2895E85A4 /* GifsStickersViewController+GiphyApi.swift in Sources */,
+				1094AE1D8D11C43D612F26383730F486 /* GifsStickersViewController.swift in Sources */,
+				4CF92538D8E2D9659D08C6D3DBE43AF2 /* GiphyApiManager.swift in Sources */,
+				F68F0B7250C5971AE09B4871F521AF9A /* GradientView.swift in Sources */,
+				99AE9015914446C9A3D0E5FA42C5FFC2 /* ImageCollectionViewCell.swift in Sources */,
+				2780216FD62FAE95A52077DF732F181A /* ImageCollectionViewDelegate.swift in Sources */,
+				635C48CF002BBDEE0F1A4F4272BD1FC2 /* iOSPhotoEditor-dummy.m in Sources */,
+				7EFA81230D94EEF398B16EB1F155FCAD /* PhotoEditor+BackgroundViewController.swift in Sources */,
+				22F6EEF869C45675B89E20044102BBDA /* PhotoEditor+Controls.swift in Sources */,
+				25008448B80390DBA7D1D03BC4759137 /* PhotoEditor+Crop.swift in Sources */,
+				AD906B6F6417F2B939D5AC92B0A52583 /* PhotoEditor+Drawing.swift in Sources */,
+				23DE35831B9E28E5B36C05FE80B291EC /* PhotoEditor+Export.swift in Sources */,
+				5EFB1AABBF90B8C0E6C0D7943128C8B0 /* PhotoEditor+Font.swift in Sources */,
+				1E22DCECC09BB5A8622215CFE674C84E /* PhotoEditor+Gestures.swift in Sources */,
+				981E354967A5317E1DA4EEB326355A05 /* PhotoEditor+Keyboard.swift in Sources */,
+				D0BA52124BFBDA6B8727A442A51CC625 /* PhotoEditor+StickersViewController.swift in Sources */,
+				FEA82A4885F5268E721F4B27C2379781 /* PhotoEditor+UITextView.swift in Sources */,
+				AED52DDFE514BB9217C07182919C498C /* PhotoEditorViewController.swift in Sources */,
+				2E3ACDEFED7D82DC06829BB21F083B8F /* Protocols.swift in Sources */,
+				F27CF43D19A1E3DDFF2362A3100AABEF /* ResizeControl.swift in Sources */,
+				819FE24EDCC6AAD397E71F2F65888BC0 /* StickerCollectionViewCell.swift in Sources */,
+				DC592D9B100082906025DC583AA6392B /* TouchableStackView.swift in Sources */,
+				A725334E523A5C8F8B84A4E2ADBC7180 /* UIImage+Crop.swift in Sources */,
+				62E539D5547DC4CFEA68F9E9C09D6528 /* UIImage+Size.swift in Sources */,
+				E6E2B4B70895C79BF9003E407DF52F0B /* UIImageView+Alpha.swift in Sources */,
+				51E7413218270C72EEF75EA3D4D5A4EA /* UIView+Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,67 +1135,67 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		084AB828E1AB2AEA2001C76D00C9DDC0 /* PBXTargetDependency */ = {
+		0DE26FD7EFC374B56092C9ED7AF1DBBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyGif;
+			target = 15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */;
+			targetProxy = 5E3A78A31C29E8678F0422DD2E946E44 /* PBXContainerItemProxy */;
+		};
+		3E669983215625C6049D5C43D677020D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iOSPhotoEditor;
 			target = 707750498984B8376E2CCAB25DD030AC /* iOSPhotoEditor */;
-			targetProxy = AD8569328DCCBA135682583DA269795D /* PBXContainerItemProxy */;
+			targetProxy = EBEB0BBC44D2345C6AE7976F683984E0 /* PBXContainerItemProxy */;
 		};
-		0AA8A376BA1F0360FF29851D82922146 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KMPlaceholderTextView;
-			target = 2CBBDDE9729D72CBCA5AEAA0FAA019AD /* KMPlaceholderTextView */;
-			targetProxy = 7890C533929CEC2FB4C25544FE2A6795 /* PBXContainerItemProxy */;
-		};
-		54153B14C4E455042CAB8FF0EE00D36E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TTSegmentedControl;
-			target = 7EDDD2274166465BA682E6A29700B496 /* TTSegmentedControl */;
-			targetProxy = 9E24B2928F99EFBFFFE5C9C6174C8314 /* PBXContainerItemProxy */;
-		};
-		8A5D37100D64EF2D46DFAD205B94FE24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TTSegmentedControl;
-			target = 7EDDD2274166465BA682E6A29700B496 /* TTSegmentedControl */;
-			targetProxy = 128E98843865032ED8259E0D63511E2A /* PBXContainerItemProxy */;
-		};
-		A7C27BD84C064434047EC51BDB36E309 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CollectionViewWaterfallLayout;
-			target = 79AB4C2480419605A17F9288AAB7AAF0 /* CollectionViewWaterfallLayout */;
-			targetProxy = F5641AF1CCEBD56ABA638A00CE936920 /* PBXContainerItemProxy */;
-		};
-		B71312879031120BAEB67E2F7CE98B6D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CollectionViewWaterfallLayout;
-			target = 79AB4C2480419605A17F9288AAB7AAF0 /* CollectionViewWaterfallLayout */;
-			targetProxy = 22A0FAC145AEC091D87DCD55F8D33E6E /* PBXContainerItemProxy */;
-		};
-		B74459243C0D6A82EE37E4EE1E70F303 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KMPlaceholderTextView;
-			target = 2CBBDDE9729D72CBCA5AEAA0FAA019AD /* KMPlaceholderTextView */;
-			targetProxy = 5AF7235CD43B93C8F6AB12E8AE0310C7 /* PBXContainerItemProxy */;
-		};
-		F63CD0C92B44808691D059375A5E03D7 /* PBXTargetDependency */ = {
+		7691273C91468167433A035BECDCDFC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyGif;
 			target = 15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */;
-			targetProxy = 5813E949B1307E0AC84269287BD3A4DB /* PBXContainerItemProxy */;
+			targetProxy = 769B03F812906C4A9AE5AAAA41B75798 /* PBXContainerItemProxy */;
 		};
-		FC9B16B2A60546E8ADFF95BDEEAD8B6E /* PBXTargetDependency */ = {
+		8B0C0D29BFA1DA24054E525AF87FFC8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyGif;
-			target = 15AEBAFA43912F898FC2E1A73025C946 /* SwiftyGif */;
-			targetProxy = 8C6C35E15A86BE741AF49193C253CCB3 /* PBXContainerItemProxy */;
+			name = TTSegmentedControl;
+			target = 7EDDD2274166465BA682E6A29700B496 /* TTSegmentedControl */;
+			targetProxy = 8A743A9443B2A0EA739C29CE03DBDBC8 /* PBXContainerItemProxy */;
+		};
+		8D723D61F9B2E49680A2C5BB601AC3BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMPlaceholderTextView;
+			target = 2CBBDDE9729D72CBCA5AEAA0FAA019AD /* KMPlaceholderTextView */;
+			targetProxy = DF0AB19A83E4BA752E572CD951D90A69 /* PBXContainerItemProxy */;
+		};
+		9E30951C74B6AF79E5D10B13A4137A14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMPlaceholderTextView;
+			target = 2CBBDDE9729D72CBCA5AEAA0FAA019AD /* KMPlaceholderTextView */;
+			targetProxy = 6F83163C384F67E00E652F0DD7AAC586 /* PBXContainerItemProxy */;
+		};
+		DEDBB3A90B914A0CF81AEA3A0ECC08A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CollectionViewWaterfallLayout;
+			target = 79AB4C2480419605A17F9288AAB7AAF0 /* CollectionViewWaterfallLayout */;
+			targetProxy = 684181913CECAA26AC9FDA6B93F62402 /* PBXContainerItemProxy */;
+		};
+		E7AB9DCC44843721DA1CCF78CB58031C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TTSegmentedControl;
+			target = 7EDDD2274166465BA682E6A29700B496 /* TTSegmentedControl */;
+			targetProxy = A1AF985F465BFB42740437E7DF632A2A /* PBXContainerItemProxy */;
+		};
+		EEB1E1AB93A16CAB2C3212882492BAA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CollectionViewWaterfallLayout;
+			target = 79AB4C2480419605A17F9288AAB7AAF0 /* CollectionViewWaterfallLayout */;
+			targetProxy = 0365FF7AE6C606DBB6394025881BEBE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF0735AFF6818321811505AE7418B3C6 /* LaunchScreen.storyboard */ = {
+		5E3FD9C3466F9A9C0F51B5872B49FB6D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE56E12996425BD4FD6F06447EA233C3 /* LaunchScreen.storyboard */,
+				B5A91A3733B72E9E231976E1CDDA3B9C /* LaunchScreen.storyboard */,
 			);
 			name = LaunchScreen.storyboard;
 			path = "Photo Editor/Photo Editor";
@@ -1286,36 +1358,6 @@
 			};
 			name = Debug;
 		};
-		7BE815A47D7CF48227A0BA12AF63A059 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F52256709DA8D6BF36C1E33E28DBCB /* iOSPhotoEditor.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor.modulemap";
-				PRODUCT_MODULE_NAME = iOSPhotoEditor;
-				PRODUCT_NAME = iOSPhotoEditor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		94D793DB8972DD731F6D0B0E6BE80AC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 386A1278AEFED54F45398A34C3F861B2 /* KMPlaceholderTextView.debug.xcconfig */;
@@ -1407,37 +1449,6 @@
 			};
 			name = Release;
 		};
-		BE22875FF003380D69DA260DA32626F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7727D14B7581B051B951810C61423A68 /* iOSPhotoEditor.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor.modulemap";
-				PRODUCT_MODULE_NAME = iOSPhotoEditor;
-				PRODUCT_NAME = iOSPhotoEditor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		C14E932D4C3EFCC589F7DEABCEC18F22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1496,6 +1507,67 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C77326409DC702087F11CA96BE3D74B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8490B09C3A776ABF439858F8298879B1 /* iOSPhotoEditor.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor.modulemap";
+				PRODUCT_MODULE_NAME = iOSPhotoEditor;
+				PRODUCT_NAME = iOSPhotoEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D88D6803060313C6AC6B9D887A589123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60FE42DC59B54A3121B3A0058DEB1AB8 /* iOSPhotoEditor.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iOSPhotoEditor/iOSPhotoEditor.modulemap";
+				PRODUCT_MODULE_NAME = iOSPhotoEditor;
+				PRODUCT_NAME = iOSPhotoEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1683,11 +1755,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CB38131B9D41C185AD97BF0DE16F0CC /* Build configuration list for PBXNativeTarget "iOSPhotoEditor" */ = {
+		BA5C1FC6C865176AF4D6AC5CAB8E69CE /* Build configuration list for PBXNativeTarget "iOSPhotoEditor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7BE815A47D7CF48227A0BA12AF63A059 /* Debug */,
-				BE22875FF003380D69DA260DA32626F0 /* Release */,
+				C77326409DC702087F11CA96BE3D74B2 /* Debug */,
+				D88D6803060313C6AC6B9D887A589123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
