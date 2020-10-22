@@ -76,6 +76,9 @@
 		96618BD624D9A31200128708 /* icon_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BCA24D9A31200128708 /* icon_text.png */; };
 		96618BDA24D9B60000128708 /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BD924D9B5FF00128708 /* icon_delete.png */; };
 		9698534424C6D52D0004167C /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9698534324C6D52D0004167C /* GifCollectionViewCell.xib */; };
+		969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D232F2541A50800695C90 /* FastInMyCar.ttf */; };
+		969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D235C2541AA1C00695C90 /* Cheria.ttf */; };
+		969D237C2541AB3D00695C90 /* SundayMorningRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */; };
 		96C9D47924C6C36100BB803D /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */; };
 		96C9D47B24C6C36700BB803D /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */; };
 		96EF93B4254050D600915EFD /* color_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EF93AE254050D500915EFD /* color_off@2x.png */; };
@@ -158,7 +161,6 @@
 		964F1C7024C5E3AB00F96C62 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		964F1C7124C5E3AB00F96C62 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		965AC65E2512005F0053B06D /* ShadowsIntoLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShadowsIntoLight.ttf; sourceTree = "<group>"; };
 		96618BA424D99E8600128708 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		96618BBF24D9A31100128708 /* icon_sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sticker.png; sourceTree = "<group>"; };
 		96618BC024D9A31100128708 /* icon_sticker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sticker@2x.png"; sourceTree = "<group>"; };
@@ -176,6 +178,9 @@
 		96618BDB24DA831800128708 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		96618BDC24DAAB0D00128708 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		9698534324C6D52D0004167C /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCollectionViewCell.xib; sourceTree = "<group>"; };
+		969D232F2541A50800695C90 /* FastInMyCar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastInMyCar.ttf; sourceTree = "<group>"; };
+		969D235C2541AA1C00695C90 /* Cheria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cheria.ttf; sourceTree = "<group>"; };
+		969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SundayMorningRegular.ttf; sourceTree = "<group>"; };
 		96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsStickersViewController.swift; sourceTree = "<group>"; };
 		96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifsStickersViewController.xib; sourceTree = "<group>"; };
 		96EF93AE254050D500915EFD /* color_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_off@2x.png"; sourceTree = "<group>"; };
@@ -245,10 +250,11 @@
 				9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */,
 				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
 				960ED6AE24DBCC7F002D3B85 /* default_bg.png */,
+				969D232F2541A50800695C90 /* FastInMyCar.ttf */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
 				960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */,
-				965AC65E2512005F0053B06D /* ShadowsIntoLight.ttf */,
 				960ED6B324DBCC7F002D3B85 /* icon_thumb@3x.png */,
+				969D235C2541AA1C00695C90 /* Cheria.ttf */,
 				964F1C6F24C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift */,
 				964F1C6D24C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift */,
 				0565130F1EF489B4009EA38F /* UIImage+Size.swift */,
@@ -294,6 +300,7 @@
 				96618BC324D9A31100128708 /* icon_sticker@3x.png */,
 				96618BCA24D9A31200128708 /* icon_text.png */,
 				96618BC624D9A31100128708 /* icon_text@2x.png */,
+				969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */,
 				96618BC124D9A31100128708 /* icon_text@3x.png */,
 				0565133E1EF489CD009EA38F /* PhotoEditor+Gestures.swift */,
 				0565133F1EF489CD009EA38F /* PhotoEditor+Drawing.swift */,
@@ -391,10 +398,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EF93C1254050E800915EFD /* text_on@2x.png in Resources */,
+				969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */,
 				960B0EAE2541968800C5DA4B /* icon_align_center@3x.png in Resources */,
 				960B0EAD2541968800C5DA4B /* icon_align_left@3x.png in Resources */,
 				96EF93C5254050E800915EFD /* text_on.png in Resources */,
 				96618BBE24D99FD200128708 /* Nunito-ExtraBold.ttf in Resources */,
+				969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */,
 				960ED6B924DBCC7F002D3B85 /* icon_thumb@3x.png in Resources */,
 				964F1C2524C5B3F900F96C62 /* PhotoEditorViewController.xib in Resources */,
 				96EF93CF254050EF00915EFD /* size_on@3x.png in Resources */,
@@ -416,6 +425,7 @@
 				96618BD024D9A31200128708 /* icon_back@3x.png in Resources */,
 				96618BD124D9A31200128708 /* icon_canvas.png in Resources */,
 				96EF93B5254050D600915EFD /* color_on.png in Resources */,
+				969D237C2541AB3D00695C90 /* SundayMorningRegular.ttf in Resources */,
 				96EF93D0254050EF00915EFD /* size_on.png in Resources */,
 				96618BD524D9A31200128708 /* icon_canvas@2x.png in Resources */,
 				96618BCE24D9A31200128708 /* icon_canvas@3x.png in Resources */,

@@ -42,10 +42,6 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var font1Button: UIButton!
-    @IBOutlet weak var font2Button: UIButton!
-    @IBOutlet weak var font3Button: UIButton!
-    @IBOutlet weak var font4Button: UIButton!
     @IBOutlet weak var topTextSizeButton: UIButton!
     @IBOutlet weak var topTextStyleButton: UIButton!
     @IBOutlet weak var topTextColorButton: UIButton!
@@ -180,18 +176,23 @@ public final class PhotoEditorViewController: UIViewController {
     
     func prepareUI() {
         styleFont1Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont1Button.backgroundColor = UIColor.white
         styleFont1Button.addShadow()
         styleFont2Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont2Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         styleFont2Button.addShadow()
         styleFont3Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont3Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         styleFont3Button.addShadow()
         styleFont4Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont4Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         styleFont4Button.addShadow()
         styleFont5Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont5Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         styleFont5Button.addShadow()
         styleFont6Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont6Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         styleFont6Button.addShadow()
-        styleAlignButton.layer.cornerRadius = styleFont1Button.frame.size.height / 2
         styleAlignButton.addShadow()
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2

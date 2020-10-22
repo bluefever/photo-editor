@@ -11,14 +11,13 @@ import UIKit
 
 extension PhotoEditorViewController {
     static var fonts = ["Nunito-ExtraBold", "Nunito-SemiBold", "Nunito-Black",
-                        "ShadowsIntoLight", "ZillaSlabHighlight-Bold",
-                        "BowlbyOneSC-Regular"]
+                        "ShadowsIntoLight", "Cheria", "SundayMorningRegular", "FastInMyCar", "ZillaSlabHighlight-Bold", "BowlbyOneSC-Regular"]
     
     //Resources don't load in main bundle we have to register the font
     func registerFont() {
         for font in PhotoEditorViewController.fonts {
             let bundle = Bundle(for: PhotoEditorViewController.self)
-            let url =  bundle.url(forResource: font, withExtension: "ttf")
+            let url = bundle.url(forResource: font, withExtension: "ttf")
             
             guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
                 return
@@ -36,10 +35,14 @@ extension PhotoEditorViewController {
         switch fontName {
         case "BowlbyOneSC-Regular":
             return 1
-        case "ShadowsIntoLight":
+        case "Cheria":
             return 2
-        case "ZillaSlabHighlight-Bold":
+        case "SundayMorningRegular":
             return 3
+        case "FastInMyCar":
+            return 4
+        case "ZillaSlabHighlight-Bold":
+            return 5
         default:
             return 0
         }

@@ -43,6 +43,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
             self.colorsCollectionView.reloadData()
             textSizeSlider.value = Float(textView.font!.pointSize)
             setFontStyleButton(fontIndex: fontIndex(fontName: textView.font!.fontName))
+            setAlignButton(align: textView.textAlignment)
         }
         
         activeTextView = (textView as! KMPlaceholderTextView)

@@ -6,8 +6,31 @@
 //
 
 import UIKit
+import KMPlaceholderTextView
 
 var imageCache = NSCache<AnyObject, AnyObject>()
+
+extension KMPlaceholderTextView {
+    func alignmentToString() -> String {
+        if (textAlignment == .center) {
+            return "center"
+        } else if (textAlignment == .left) {
+            return "left"
+        }
+
+        return "right"
+    }
+    
+    func alignmentFromString(alignment: String?) {
+        if (alignment == "right") {
+            textAlignment = .right
+        } else if (alignment == "left") {
+            textAlignment = .left
+        }
+
+        textAlignment = .center
+    }
+}
 
 extension UIImageView {
     

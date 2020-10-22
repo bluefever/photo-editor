@@ -67,11 +67,12 @@ struct ExpressionLayer: Codable, Hashable {
     var text: String?
     var textColor: String?
     var textStyle: String?
+    var textAlign: String?
     var textSize: CGFloat?
     var contentUrl: String?
     
     init(size: Size? = nil, center: Point = Point(), aspectRatio: Int? = nil, zIndex: Int = 0, angle: Int? = nil,
-         text: String? = nil, textColor: String? = nil, textSize: CGFloat? = nil, textStyle: String? = nil, contentUrl: String? = nil, transform: Transform? = nil) {
+         text: String? = nil, textColor: String? = nil, textSize: CGFloat? = nil, textStyle: String? = nil, textAlign: String? = nil, contentUrl: String? = nil, transform: Transform? = nil) {
         self.size = size
         self.center = center
         self.aspectRatio = aspectRatio
@@ -83,6 +84,7 @@ struct ExpressionLayer: Codable, Hashable {
         self.textSize = textSize
         self.contentUrl = contentUrl
         self.transform = transform
+        self.textAlign = textAlign
     }
 }
 
@@ -131,6 +133,7 @@ extension PhotoEditorViewController {
                 textLayer.textColor = textView.textColor?.hexString
                 textLayer.textStyle = textView.font?.fontName
                 textLayer.textSize = textView.font?.pointSize
+                textLayer.textAlign = textView.alignmentToString()
                 textLayer.zIndex = canvasImageView.subviews.index(of: view)!
                 let center = self.view.convert(textView.superview!.center, from: canvasImageView)
                 textLayer.center = Point(x: center.x, y: center.y)
@@ -228,8 +231,7 @@ extension PhotoEditorViewController {
                         centerY = self.canvasImageView.bounds.height / 2
                     }
                     
-                    addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
-                                  x: centerX, y: centerY, transform: layer.transform)
+                    addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign, x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
                                  transform: layer.transform!)
@@ -247,7 +249,7 @@ extension PhotoEditorViewController {
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
+        
         imageView.transform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
         
         self.canvasImageView.addSubview(imageView)
@@ -256,13 +258,13 @@ extension PhotoEditorViewController {
         gifsSources.append(GifImage(image: imageView, url: contentUrl))
     }
     
-    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat, transform: Transform?) {
+    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
         textColor = color
         textView.text = text
-        textView.textAlignment = .center
         textView.font = UIFont(name: font, size: textSize)
+        textView.alignmentFromString(alignment: textAlignment)
         textView.textColor = color
         textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
         textView.placeholderColor = UIColor.init(hexString: "#fff")
@@ -271,6 +273,10 @@ extension PhotoEditorViewController {
         textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
+        
+        
+    
+        
 
         let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
         
