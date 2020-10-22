@@ -26,9 +26,9 @@ extension KMPlaceholderTextView {
             textAlignment = .right
         } else if (alignment == "left") {
             textAlignment = .left
+        } else {
+            textAlignment = .center
         }
-
-        textAlignment = .center
     }
 }
 

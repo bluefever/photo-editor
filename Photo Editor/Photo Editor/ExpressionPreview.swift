@@ -147,7 +147,7 @@ open class ExpressionPreview: UIView {
     }
     
     func alignmentFromString (alignment: String?) -> NSTextAlignment {
-        if (alignment == "let") {
+        if (alignment == "left") {
             return .left
         } else if (alignment == "right") {
             return .right
