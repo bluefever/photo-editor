@@ -125,7 +125,7 @@ open class ExpressionPreview: UIView {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
-        let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
+        let label = UILabel(frame: CGRect(x: 20, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
         
         label.text = text
         label.numberOfLines = 0
