@@ -14,20 +14,18 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
     /**
      UIPanGestureRecognizer - Moving Objects
-     Selecting transparent parts of the imageview won't move the object
      */
     @objc func panGesture(_ recognizer: UIPanGestureRecognizer) {
+        if (isTyping) {
+            return
+        }
+        
         if let view = recognizer.view {
             if view is UIImageView {
-                //Tap only on visible parts on the image
                 if recognizer.state == .began {
                     for imageView in subImageViews(view: canvasImageView) {
                         let location = recognizer.location(in: imageView)
-                        let alpha = imageView.alphaAtPoint(location)
-                        if alpha > 0 {
                             imageViewToPan = imageView
-                            break
-                        }
                     }
                 }
                 if imageViewToPan != nil {
@@ -91,19 +89,19 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     /**
      UITapGestureRecognizer - Taping on Objects
      Will make scale scale Effect
-     Selecting transparent parts of the imageview won't move the object
      */
     @objc func tapGesture(_ recognizer: UITapGestureRecognizer) {
+        if (isTyping) {
+            closeTextTool()
+            return
+        }
+        
         if let view = recognizer.view {
             if view is UIImageView {
                 //Tap only on visible parts on the image
                 for imageView in subImageViews(view: canvasImageView) {
                     let location = recognizer.location(in: imageView)
-                    let alpha = imageView.alphaAtPoint(location)
-                    if alpha > 0 {
-                        scaleEffect(view: imageView)
-                        break
-                    }
+                    scaleEffect(view: imageView)
                 }
             } else {
                 canvasImageView.bringSubviewToFront(view)
@@ -235,6 +233,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             colorsCollectionView.reloadData()
             textSizeSlider.value = 20
             setFontStyleButton(fontIndex: 0)
+            setAlignButton(align: .left)
         }
         
         if let imageView = view as? UIImageView {

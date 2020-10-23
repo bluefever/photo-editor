@@ -26,8 +26,21 @@ public enum control: String {
 }
 
 extension PhotoEditorViewController {
-    
-    //MARK: Top Toolbar
+    @IBAction func onTopTextButtonTapped(_ sender: UIButton) {
+        switch(sender.tag) {
+        case 0:
+            selectTextSize()
+            break
+        case 1:
+            selectTextStyle()
+            break
+        case 2:
+            selectTextColor()
+            break
+        default:
+            return
+        }
+    }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         if(self.isTyping) {
@@ -66,6 +79,7 @@ extension PhotoEditorViewController {
         canvasImageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
         colorPickerView.isHidden = false
+        topTextControl.isHidden = false
         hideToolbar(hide: true)
     }
     
@@ -121,23 +135,74 @@ extension PhotoEditorViewController {
         setFontStyleButton(fontIndex: sender.tag)
     }
     
+    @IBAction func onAlignPressed(sender: UIButton) {
+        if let textView = activeTextView {
+            if (textView.textAlignment == .center) {
+                styleAlignButton.setImage((UIImage(named: "icon_align_right", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+                textView.textAlignment = .right
+            } else if (textView.textAlignment == .left) {
+                styleAlignButton.setImage((UIImage(named: "icon_align_center", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+                textView.textAlignment = .center
+            } else if (textView.textAlignment == .right) {
+                styleAlignButton.setImage((UIImage(named: "icon_align_left", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+                textView.textAlignment = .left
+            }
+        }
+    }
+    
+    func setAlignButton(align: NSTextAlignment) {
+        if (align == .center) {
+            styleAlignButton.setImage((UIImage(named: "icon_align_center", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        } else if (align == .left) {
+            styleAlignButton.setImage((UIImage(named: "icon_align_left", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        } else if (align == .right) {
+            styleAlignButton.setImage((UIImage(named: "icon_align_right", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        }
+    }
+    
     func setFontStyleButton (fontIndex: Int) {
-        font1Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
-        font2Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
-        font3Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
-        font4Button.setTitleColor(UIColor.init(hexString: "#c1c1d1"), for: .normal)
+        styleFont1Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont1Button.setTitleColor(UIColor.white, for: .normal)
+        
+        styleFont2Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont2Button.setTitleColor(UIColor.white, for: .normal)
+        
+        styleFont3Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont3Button.setTitleColor(UIColor.white, for: .normal)
+        
+        styleFont4Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont4Button.setTitleColor(UIColor.white, for: .normal)
+        
+        styleFont5Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont5Button.setTitleColor(UIColor.white, for: .normal)
+        
+        styleFont6Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont6Button.setTitleColor(UIColor.white, for: .normal)
+        
         
         if (fontIndex == 0) {
-            font1Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            styleFont1Button.backgroundColor = UIColor.white
+            styleFont1Button.setTitleColor(UIColor.black, for: .normal)
             lastTextViewFont = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 1) {
-            font2Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            styleFont2Button.backgroundColor = UIColor.white
+            styleFont2Button.setTitleColor(UIColor.black, for: .normal)
             lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
-        }else if (fontIndex == 2) {
-            font3Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
-            lastTextViewFont = UIFont(name: "ShadowsIntoLight", size: CGFloat(Int(textSizeSlider.value)))
+        } else if (fontIndex == 2) {
+            styleFont3Button.backgroundColor = UIColor.white
+            styleFont3Button.setTitleColor(UIColor.black, for: .normal)
+            lastTextViewFont = UIFont(name: "Cheria", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 3) {
-            font4Button.setTitleColor(UIColor.init(hexString: "#4e5156"), for: .normal)
+            styleFont4Button.backgroundColor = UIColor.white
+            styleFont4Button.setTitleColor(UIColor.black, for: .normal)
+            lastTextViewFont = UIFont(name: "SundayMorningRegular", size: CGFloat(Int(textSizeSlider.value)))
+        } else if (fontIndex == 4) {
+            styleFont5Button.backgroundColor = UIColor.white
+            styleFont5Button.setTitleColor(UIColor.black, for: .normal)
+            lastTextViewFont = UIFont(name: "FastInMyCar", size: CGFloat(Int(textSizeSlider.value)))
+        } else if (fontIndex == 5) {
+            styleFont6Button.backgroundColor = UIColor.white
+            styleFont6Button.setTitleColor(UIColor.black, for: .normal)
             lastTextViewFont = UIFont(name: "ZillaSlabHighlight-Bold", size: CGFloat(Int(textSizeSlider.value)))
         }
         
@@ -168,6 +233,7 @@ extension PhotoEditorViewController {
         view.endEditing(true)
         doneButton.isHidden = true
         colorPickerView.isHidden = true
+        topTextControl.isHidden = true
         canvasImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
@@ -183,6 +249,7 @@ extension PhotoEditorViewController {
             textSizeSlider.value = 20
             textColor = UIColor.black
             setFontStyleButton(fontIndex: 0)
+            setAlignButton(align: .left)
             if (colorsCollectionViewDelegate != nil) {
                 colorsCollectionViewDelegate.initialColor = UIColor.black
                 colorsCollectionView.reloadData()
@@ -190,7 +257,7 @@ extension PhotoEditorViewController {
             
             let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
                                                                width: UIScreen.main.bounds.width - 40, height: 90))
-            textView.textAlignment = .center
+            textView.textAlignment = .left
             textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
@@ -198,11 +265,11 @@ extension PhotoEditorViewController {
             textView.isScrollEnabled = false
             textView.delegate = self
             textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
-            textView.placeholderColor = UIColor.init(hexString: "#c1c1d1")
+            textView.placeholderColor = UIColor.init(hexString: "#fff")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
-            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y,
+            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y - topToolbar.frame.height,
                                              width: UIScreen.main.bounds.width - 40, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
@@ -237,5 +304,41 @@ extension PhotoEditorViewController {
                 textButton.isHidden = true
             }
         }
+    }
+    
+    func selectTextSize() {
+        topTextSizeButton.setImage((UIImage(named: "size_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = false
+        bottomStyleContainer.isHidden = true
+        bottomColorContainer.isHidden = true
+        topTextSizeButton.addShadow()
+        topTextStyleButton.removeShadow()
+        topTextColorButton.removeShadow()
+    }
+    
+    func selectTextStyle() {
+        topTextSizeButton.setImage((UIImage(named: "size_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = true
+        bottomStyleContainer.isHidden = false
+        bottomColorContainer.isHidden = true
+        topTextSizeButton.removeShadow()
+        topTextStyleButton.addShadow()
+        topTextColorButton.removeShadow()
+    }
+    
+    func selectTextColor() {
+        topTextSizeButton.setImage((UIImage(named: "size_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextStyleButton.setImage((UIImage(named: "text_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        topTextColorButton.setImage((UIImage(named: "color_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
+        bottomSizeContainer.isHidden = true
+        bottomStyleContainer.isHidden = true
+        bottomColorContainer.isHidden = false
+        topTextSizeButton.removeShadow()
+        topTextStyleButton.removeShadow()
+        topTextColorButton.addShadow()
     }
 }

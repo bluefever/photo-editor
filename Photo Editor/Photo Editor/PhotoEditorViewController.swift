@@ -42,10 +42,21 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var font1Button: UIButton!
-    @IBOutlet weak var font2Button: UIButton!
-    @IBOutlet weak var font3Button: UIButton!
-    @IBOutlet weak var font4Button: UIButton!
+    @IBOutlet weak var topTextSizeButton: UIButton!
+    @IBOutlet weak var topTextStyleButton: UIButton!
+    @IBOutlet weak var topTextColorButton: UIButton!
+    @IBOutlet weak var topTextControl: UIStackView!
+    @IBOutlet weak var bottomStyleContainer: UIView!
+    @IBOutlet weak var bottomColorContainer: UIView!
+    @IBOutlet weak var bottomSizeContainer: UIView!
+    @IBOutlet weak var styleFont1Button: UIButton!
+    @IBOutlet weak var styleFont2Button: UIButton!
+    @IBOutlet weak var styleFont3Button: UIButton!
+    @IBOutlet weak var styleFont4Button: UIButton!
+    @IBOutlet weak var styleFont5Button: UIButton!
+    @IBOutlet weak var styleFont6Button: UIButton!
+    @IBOutlet weak var styleAlignButton: UIButton!
+    
     
     @IBOutlet weak var topGradientTopContraint: NSLayoutConstraint!
     @IBOutlet weak var bottomGradientBottomConstraint: NSLayoutConstraint!
@@ -176,6 +187,26 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func prepareUI() {
+        styleFont1Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont1Button.backgroundColor = UIColor.white
+        styleFont1Button.addShadow()
+        styleFont2Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont2Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont2Button.addShadow()
+        styleFont3Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont3Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont3Button.addShadow()
+        styleFont4Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont4Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont4Button.addShadow()
+        styleFont5Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont5Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont5Button.addShadow()
+        styleFont6Button.layer.cornerRadius = styleFont1Button.frame.size.height / 2
+        styleFont6Button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        styleFont6Button.addShadow()
+        styleAlignButton.addShadow()
+        
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -209,14 +240,24 @@ public final class PhotoEditorViewController: UIViewController {
         
         textSizeSlider.setThumbImage(UIImage(named: "icon_thumb", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
         textSizeSlider.value = 20
+        textSizeSlider.minimumTrackTintColor = UIColor.white
+        
+        textSizeSlider.maximumTrackTintColor = UIColor.init(hexString: "#c1c1d1")
         
         setBackgroundImage(image: (UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!))
+        
+        prepareTopTextButtons()
+    }
+    
+    
+    func prepareTopTextButtons() {
+        topTextSizeButton.addShadow()
     }
     
     func configureCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = (UIScreen.main.bounds.width - 24) / 10
-        layout.itemSize = CGSize(width: width, height: 45)
+        layout.itemSize = CGSize(width: width, height: 28)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0

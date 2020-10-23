@@ -91,7 +91,7 @@ open class ExpressionPreview: UIView {
                         centerY = self.bounds.height / 2
                     }
                     
-                    addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!,
+                    addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY),
@@ -124,12 +124,12 @@ open class ExpressionPreview: UIView {
         self.addSubview(imageView)
     }
     
-    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, x: CGFloat, y: CGFloat, transform: Transform?) {
+    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
         let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
         
         label.text = text
         label.numberOfLines = 0
-        label.textAlignment = .center
+        label.textAlignment = alignmentFromString(alignment: textAlignment)
         label.font = UIFont(name: font, size: textSize)
         label.textColor = color
         label.layer.backgroundColor = UIColor.clear.cgColor
@@ -144,5 +144,15 @@ open class ExpressionPreview: UIView {
         label.setNeedsDisplay()
         
         self.addSubview(label)
+    }
+    
+    func alignmentFromString (alignment: String?) -> NSTextAlignment {
+        if (alignment == "left") {
+            return .left
+        } else if (alignment == "right") {
+            return .right
+        }
+        
+        return .center
     }
 }
