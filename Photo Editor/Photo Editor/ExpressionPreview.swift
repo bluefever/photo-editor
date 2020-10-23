@@ -140,7 +140,7 @@ open class ExpressionPreview: UIView {
         }
         
         let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
-        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
+        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height)
         label.setNeedsDisplay()
         
         self.addSubview(label)
