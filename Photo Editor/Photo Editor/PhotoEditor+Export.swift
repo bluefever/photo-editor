@@ -280,7 +280,6 @@ extension PhotoEditorViewController {
         textView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
-
         let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
         
         view.center = CGPoint.init(x: x, y: y)
