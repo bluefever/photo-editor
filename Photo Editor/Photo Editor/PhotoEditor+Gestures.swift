@@ -23,9 +23,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if let view = recognizer.view {
             if view is UIImageView {
                 if recognizer.state == .began {
-                    for imageView in subImageViews(view: canvasImageView) {
-                        let location = recognizer.location(in: imageView)
-                            imageViewToPan = imageView
+                    if let view = recognizer.view {
+                        if canvasImageView.subviews.contains(view) {
+                            imageViewToPan = (view as! UIImageView)
+                        }
                     }
                 }
                 if imageViewToPan != nil {
@@ -98,10 +99,11 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         
         if let view = recognizer.view {
             if view is UIImageView {
-                //Tap only on visible parts on the image
-                for imageView in subImageViews(view: canvasImageView) {
-                    let location = recognizer.location(in: imageView)
-                    scaleEffect(view: imageView)
+                if let view = recognizer.view {
+                    if canvasImageView.subviews.contains(view) {
+                        scaleEffect(view: view)
+                        
+                    }
                 }
             } else {
                 canvasImageView.bringSubviewToFront(view)

@@ -66,6 +66,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
             image.frame.size = CGSize(width: width, height: height)
             image.center = canvasImageView.center
             image.layer.cornerRadius = 10
+            image.clipsToBounds = true
             
             if (!gifsImages.contains(image)) {
                 self.canvasImageView.addSubview(image)
