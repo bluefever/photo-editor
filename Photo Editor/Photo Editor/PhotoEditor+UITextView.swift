@@ -111,14 +111,9 @@ extension PhotoEditorViewController: UITextViewDelegate {
         opacityCanvas.tag = 100
         canvasImageView.insertSubview(opacityCanvas, at: 0)
         
-        var topPadding:CGFloat? = 0
+        let canvasImageViewFrame = canvasImageView.superview?.convert(canvasImageView.frame.origin, to: nil)
         
-        if #available(iOS 11.0, *) {
-            let window = UIApplication.shared.keyWindow
-            topPadding = window?.safeAreaInsets.top
-        }
-        
-        let opacityTopToolbar = UIView.init(frame: CGRect.init(x: 0, y: 0, width: topToolbar.frame.width, height: topToolbar.frame.height + topPadding!))
+        let opacityTopToolbar = UIView.init(frame: CGRect.init(x: 0, y: 0, width: topToolbar.frame.width, height: canvasImageViewFrame!.y))
         opacityTopToolbar.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         opacityTopToolbar.tag = 100
         

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KMPlaceholderTextView
 
 open class ExpressionPreview: UIView {
     @objc open var data: String? = nil
@@ -124,26 +125,57 @@ open class ExpressionPreview: UIView {
         self.addSubview(imageView)
     }
     
+//    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
+//        let label = UILabel(frame: CGRect(x: 20, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
+//        
+//        label.text = text
+//        label.numberOfLines = 0
+//        label.textAlignment = alignmentFromString(alignment: textAlignment)
+//        label.font = UIFont(name: font, size: textSize)
+//        label.textColor = color
+//        label.layer.backgroundColor = UIColor.clear.cgColor
+//        label.center = CGPoint.init(x: x, y: y)
+//        
+//        if let trans = transform  {
+//            label.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
+//        }
+//        
+//        let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
+//        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height)
+//        label.setNeedsDisplay()
+//        
+//        self.addSubview(label)
+//    }
+    
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
-        let label = UILabel(frame: CGRect(x: 0, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
-        label.text = text
-        label.numberOfLines = 0
-        label.textAlignment = alignmentFromString(alignment: textAlignment)
-        label.font = UIFont(name: font, size: textSize)
-        label.textColor = color
-        label.layer.backgroundColor = UIColor.clear.cgColor
-        label.center = CGPoint.init(x: x, y: y)
+        textView.text = text
+        textView.font = UIFont(name: font, size: textSize)
+        textView.alignmentFromString(alignment: textAlignment)
+        textView.textColor = color
+        textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
+        textView.placeholderColor = UIColor.init(hexString: "#fff")
+        textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
+        textView.layer.backgroundColor = UIColor.clear.cgColor
+        textView.autocorrectionType = .no
+        textView.isScrollEnabled = false
+        textView.isUserInteractionEnabled = false
+
+        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
         
+        textView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+        textView.setNeedsDisplay()
+        
+        let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
+        
+        view.center = CGPoint.init(x: x, y: y)
+        view.addSubview(textView)
         if let trans = transform  {
-            label.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
+            view.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
         }
         
-        let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
-        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width, height: sizeToFit.height)
-        label.setNeedsDisplay()
-        
-        self.addSubview(label)
+        self.addSubview(view)
     }
     
     func alignmentFromString (alignment: String?) -> NSTextAlignment {
