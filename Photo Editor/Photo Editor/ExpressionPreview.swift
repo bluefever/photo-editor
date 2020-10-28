@@ -125,28 +125,6 @@ open class ExpressionPreview: UIView {
         self.addSubview(imageView)
     }
     
-//    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
-//        let label = UILabel(frame: CGRect(x: 20, y: self.center.y, width: UIScreen.main.bounds.width - 40, height: 30))
-//        
-//        label.text = text
-//        label.numberOfLines = 0
-//        label.textAlignment = alignmentFromString(alignment: textAlignment)
-//        label.font = UIFont(name: font, size: textSize)
-//        label.textColor = color
-//        label.layer.backgroundColor = UIColor.clear.cgColor
-//        label.center = CGPoint.init(x: x, y: y)
-//        
-//        if let trans = transform  {
-//            label.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
-//        }
-//        
-//        let sizeToFit = label.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
-//        label.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height)
-//        label.setNeedsDisplay()
-//        
-//        self.addSubview(label)
-//    }
-    
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
