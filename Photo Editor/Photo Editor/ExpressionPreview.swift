@@ -114,6 +114,7 @@ open class ExpressionPreview: UIView {
         let imageView: UIImageView = UIImageView()
         let loader = UIActivityIndicatorView.init(style: .gray)
         
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = size
@@ -147,6 +148,7 @@ open class ExpressionPreview: UIView {
         
         let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
         
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.center = CGPoint.init(x: x, y: y)
         view.addSubview(textView)
         if let trans = transform  {
