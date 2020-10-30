@@ -234,13 +234,13 @@ extension PhotoEditorViewController {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign, x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
                     addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
-                                 transform: layer.transform!)
+                                 transform: layer.transform!, scaleX: scaleX, scaleY: scaleY)
                 }
             }
         }
     }
     
-    func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
+    func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform, scaleX: CGFloat, scaleY: CGFloat) {
         let imageView: UIImageView = UIImageView()
         let loader = UIActivityIndicatorView.init(style: .gray)
         
@@ -251,7 +251,10 @@ extension PhotoEditorViewController {
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
-        imageView.transform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
+        let cgTransform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
+        
+        cgTransform.scaledBy(x: scaleX, y: scaleY)
+        imageView.transform = cgTransform
         
         self.canvasImageView.addSubview(imageView)
         addGestures(view: imageView)
