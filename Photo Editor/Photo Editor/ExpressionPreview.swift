@@ -95,8 +95,7 @@ open class ExpressionPreview: UIView {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY),
-                                 transform: layer.transform!)
+                    addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY), transform: layer.transform!, scaleX: scaleX, scaleY: scaleY)
                 }
             }
         }
@@ -110,19 +109,22 @@ open class ExpressionPreview: UIView {
         self.sendSubviewToBack(imageView)
     }
     
-    func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
+    func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform, scaleX: CGFloat, scaleY: CGFloat) {
         let imageView: UIImageView = UIImageView()
         let loader = UIActivityIndicatorView.init(style: .gray)
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.transform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
         
+        let cgTransform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
+        
+        cgTransform.scaledBy(x: scaleX, y: scaleY)
+        imageView.transform = cgTransform
+                
         self.addSubview(imageView)
     }
     
@@ -148,7 +150,6 @@ open class ExpressionPreview: UIView {
         
         let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.center = CGPoint.init(x: x, y: y)
         view.addSubview(textView)
         if let trans = transform  {
