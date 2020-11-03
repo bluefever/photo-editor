@@ -31,15 +31,9 @@ open class ExpressionPreview: UIView {
         }
     }
     
-    func pointToAspectFill(for point: Point, in view: UIImageView) -> CGPoint {
-        guard let img = view.image else {
-            return CGPoint.zero
-        }
-
-        let imgSize = img.size
-        let viewSize = view.frame.size
-        let aspectRatio = imgSize.width / viewSize.width
-        let yOffset = ((imgSize.height / aspectRatio) - viewSize.height) / 2.0
+    func pointToAspectFill(for point: Point, in bgSize: OriginalFrame) -> CGPoint {
+        let aspectRatio = bgSize.width / self.frame.width
+        let yOffset = ((bgSize.height / aspectRatio) - self.frame.height) / 2.0
         
         return CGPoint(
             x: (point.x / aspectRatio),
@@ -109,8 +103,8 @@ open class ExpressionPreview: UIView {
                 
                 
                 if let convertedPoint = layer.convertedPoint {
-                    centerX = pointToAspectFill(for: convertedPoint, in: imageBg!).x
-                    centerY = pointToAspectFill(for: convertedPoint, in: imageBg!).y
+                    centerX = pointToAspectFill(for: convertedPoint, in: (expression?.backgroundSize)!).x
+                    centerY = pointToAspectFill(for: convertedPoint, in: (expression?.backgroundSize)!).y
                 }
                 
                 if let text = layer.text {
