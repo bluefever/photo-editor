@@ -34,14 +34,14 @@ class ViewController: UIViewController {
 //        photoEditor.initialData = dataXSMAX
         photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
+        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
 //        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
 //        preview.data = dataXSMAX
 ////
-//        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
+////        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
 //        self.view.addSubview(preview)
     }
     

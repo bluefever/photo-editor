@@ -61,6 +61,7 @@ struct ExpressionLayer: Codable, Hashable {
     var size: Size?
     var transform: Transform?
     var center: Point
+    var convertedPoint: Point?
     var aspectRatio: Int?
     var zIndex: Int
     var angle: Int?
@@ -71,7 +72,7 @@ struct ExpressionLayer: Codable, Hashable {
     var textSize: CGFloat?
     var contentUrl: String?
     
-    init(size: Size? = nil, center: Point = Point(), aspectRatio: Int? = nil, zIndex: Int = 0, angle: Int? = nil,
+    init(size: Size? = nil, center: Point = Point(), convertedPoint: Point? = nil, aspectRatio: Int? = nil, zIndex: Int = 0, angle: Int? = nil,
          text: String? = nil, textColor: String? = nil, textSize: CGFloat? = nil, textStyle: String? = nil, textAlign: String? = nil, contentUrl: String? = nil, transform: Transform? = nil) {
         self.size = size
         self.center = center
@@ -85,6 +86,7 @@ struct ExpressionLayer: Codable, Hashable {
         self.contentUrl = contentUrl
         self.transform = transform
         self.textAlign = textAlign
+        self.convertedPoint = convertedPoint
     }
 }
 
@@ -113,6 +115,36 @@ public struct Expression: Codable, Hashable {
 }
 
 extension PhotoEditorViewController {
+    func aspectFillPoint(for point: CGPoint, in view: UIImageView) -> CGPoint {
+        guard let img = view.image else {
+            return CGPoint.zero
+        }
+
+        let imgSize = img.size
+        let viewSize = view.frame.size
+        let aspectRatio = imgSize.width / viewSize.width
+        let yOffset = ((imgSize.height / aspectRatio) - viewSize.height) / 2.0
+        
+        return CGPoint(
+            x: (point.x * aspectRatio),
+            y: (point.y + yOffset) * aspectRatio)
+    }
+    
+    func pointToAspectFill(for point: Point, in view: UIImageView) -> CGPoint {
+        guard let img = view.image else {
+            return CGPoint.zero
+        }
+
+        let imgSize = img.size
+        let viewSize = view.frame.size
+        let aspectRatio = imgSize.width / viewSize.width
+        let yOffset = ((imgSize.height / aspectRatio) - viewSize.height) / 2.0
+        
+        return CGPoint(
+            x: (point.x / aspectRatio),
+            y: (point.y / aspectRatio) - yOffset)
+    }
+    
     public func exportExpression () -> String? {
         var expression = Expression()
         
@@ -136,6 +168,8 @@ extension PhotoEditorViewController {
                 textLayer.textAlign = textView.alignmentToString()
                 textLayer.zIndex = canvasImageView.subviews.index(of: view)!
                 let center = self.view.convert(textView.superview!.center, from: canvasImageView)
+                let convertedPoint = aspectFillPoint(for: center, in: imageBg)
+                textLayer.convertedPoint = Point(x: convertedPoint.x, y: convertedPoint.y)
                 textLayer.center = Point(x: center.x, y: center.y)
                 textLayer.text = textView.text
                 textLayer.transform = Transform(a: view.transform.a, b: view.transform.b, c: view.transform.c,d: view.transform.d, tx: view.transform.tx, ty: view.transform.ty)
@@ -152,6 +186,8 @@ extension PhotoEditorViewController {
             gifLayer.contentUrl = gif.url
             gifLayer.zIndex = canvasImageView.subviews.index(of: gif.image)!
             let center = self.view.convert(gif.image.center, from: canvasImageView)
+            let convertedPoint = aspectFillPoint(for: center, in: imageBg)
+            gifLayer.convertedPoint = Point(x: convertedPoint.x, y: convertedPoint.y)
             gifLayer.center = Point(x: center.x, y: center.y)
             gifLayer.size = Size(width: gif.image.bounds.width, height: gif.image.bounds.height)
             gifLayer.transform = Transform(a: gif.image.transform.a, b: gif.image.transform.b, c: gif.image.transform.c,d: gif.image.transform.d, tx: gif.image.transform.tx, ty: gif.image.transform.ty)
@@ -217,7 +253,8 @@ extension PhotoEditorViewController {
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
             
             for layer in expressionData.layers {
-                let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
+                let convertedPoint = pointToAspectFill(for: layer.convertedPoint!, in: imageBg)
+                let center = self.view.convert(CGPoint.init(x: convertedPoint.x, y: convertedPoint.y), to: canvasImageView)
                 
                 if let text = layer.text {
                     var centerX = CGFloat(1)
