@@ -255,12 +255,13 @@ extension PhotoEditorViewController {
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
             
             for layer in expressionData.layers {
+                let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
                 var centerX = CGFloat(1)
                 var centerY = CGFloat(1)
                 
                 if (expressionData.originalFrame != nil) {
-                    centerX = layer.center.x * scaleX
-                    centerY = layer.center.y * scaleY
+                    centerX = center.x * scaleX
+                    centerY = center.y * scaleY
                 } else {
                     centerX = self.canvasImageView.bounds.width / 2
                     centerY = self.canvasImageView.bounds.height / 2
@@ -269,10 +270,10 @@ extension PhotoEditorViewController {
                
                 if let backgroundSize = expression?.backgroundSize {
                     let aspectPoint = pointToAspectFill(for: layer.center, in: backgroundSize)
-                    let center = self.view.convert(CGPoint.init(x: aspectPoint.x, y: aspectPoint.y), to: canvasImageView)
+                    let centerAspect = self.view.convert(CGPoint.init(x: aspectPoint.x, y: aspectPoint.y), to: canvasImageView)
                     
-                    centerX = center.x
-                    centerY = center.y
+                    centerX = centerAspect.x
+                    centerY = centerAspect.y
                 }
                 
                 if let text = layer.text {

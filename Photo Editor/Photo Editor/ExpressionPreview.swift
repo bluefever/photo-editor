@@ -144,7 +144,7 @@ open class ExpressionPreview: UIView {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
         textView.text = text
-        textView.font = UIFont(name: "ZillaSlabHighlight-Bold", size: textSize)
+        textView.font = UIFont(name: font, size: textSize)
         textView.alignmentFromString(alignment: textAlignment)
         textView.textColor = color
         textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
