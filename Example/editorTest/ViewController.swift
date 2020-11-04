@@ -25,23 +25,24 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let dataXSMAX =       "{\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":157,\"y\":214},\"textSize\":20,\"text\":\"ABCD\",\"textAlign\":\"left\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"zIndex\":3,\"textStyle\":\"HelveticaNeue-Medium\",\"textAlign\":\"left\",\"center\":{\"x\":138.50000000000003,\"y\":436},\"textSize\":48.645255435653823,\"text\":\"ROTATE\",\"textColor\":\"#000000\",\"transform\":{\"d\":0.65870712317434199,\"b\":-0.75239944569316597,\"ty\":0,\"c\":0.75239944569316597,\"a\":0.65870712317434199,\"tx\":0}}],\"originalFrame\":{\"width\":414,\"height\":896}, \"backgroundImage\": \"bg_2\"}"
+        let dataXSMAX =       "{\"layers\":[{\"zIndex\":0,\"textStyle\":\"ZillaSlabHighlight-Bold\",\"center\":{\"x\":201.33332824707031,\"y\":146.66667175292969},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Asdasdasdasdasdasd\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"size\":{\"width\":190,\"height\":190},\"zIndex\":1,\"transform\":{\"d\":1.3513035389150252,\"b\":-0.85909046914171194,\"ty\":0,\"c\":0.85909046914171194,\"a\":1.3513035389150252,\"tx\":0},\"contentUrl\":\"https:\\/\\/media0.giphy.com\\/media\\/YQG834ZaTPgMlK9qdp\\/giphy.gif?cid=cac7b245s8n93jrq9016thm3pi9pcfg6zg88poh3hk0zmfpu&rid=giphy.gif\",\"center\":{\"x\":207.66667175292974,\"y\":691}}],\"originalFrame\":{\"width\":414,\"height\":896}}"
+
     
         
-        let dataIphone8 = "{\"layers\":[{\"zIndex\":0,\"text\":\"Testing xs max\",\"textColor\":\"#000000\",\"textStyle\":\"HelveticaNeue-Medium\",\"textSize\":30,\"center\":{\"x\":109.5,\"y\":102.33333333333331}},{\"size\":{\"width\":172.10144927536231,\"height\":92.308035714285722},\"zIndex\":1,\"transform\":{\"d\":-0.038622025806129258,\"b\":2.01691546498978,\"ty\":0,\"c\":-2.01691546498978,\"a\":-0.038622025806129258,\"tx\":0},\"contentUrl\":\"https:\\/\\/media0.giphy.com\\/media\\/NI4FNMb4tJEYM\\/giphy.gif?cid=cac7b245d36426c41415695caa971f445f2efa7832a95a87&rid=giphy.gif\",\"center\":{\"x\":89.830913267273615,\"y\":527.37257048629579}}],\"originalFrame\":{\"width\":375,\"height\":667}, \"backgroundImage\": \"bg_21\"}"
+        let dataIphone8 = "{\"backgroundSize\":{\"width\":1242,\"height\":2688},\"originalFrame\":{\"width\":375,\"height\":667},\"backgroundImage\":\"bg_66\",\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":1043.28,\"y\":944.904},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Jkhjkjljlj\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"size\":{\"width\":170,\"height\":170},\"zIndex\":1,\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/i340Scmnq6MZZpqsX8\\/giphy.gif?cid=cac7b245uupuvy175su915b3lada4t0pvowexn2gaygdfypy&rid=giphy.gif\",\"center\":{\"x\":882.64799999999991,\"y\":1199.9279999999999}},{\"size\":{\"width\":170,\"height\":102},\"zIndex\":2,\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/l0HlvtIPzPdt2usKs\\/giphy.gif?cid=cac7b245rkcd4mapvnoqeidxqduvumkkhebv0thjwy42h9f9&rid=giphy.gif\",\"center\":{\"x\":293.11199999999997,\"y\":540.84000000000003}},{\"size\":{\"width\":170,\"height\":170},\"zIndex\":3,\"transform\":{\"d\":2.0654916565646579,\"b\":0.027353271355441459,\"ty\":0,\"c\":-0.027353271355441459,\"a\":2.0654916565646579,\"tx\":0},\"contentUrl\":\"https:\\/\\/media1.giphy.com\\/media\\/3o6Ztgqvc8lPSy1jFK\\/giphy.gif?cid=cac7b245rkcd4mapvnoqeidxqduvumkkhebv0thjwy42h9f9&rid=giphy.gif\",\"center\":{\"x\":630.93599999999992,\"y\":1840.8000000000004}}]}"
         
-//        photoEditor.bgColors = bgColors
-//        photoEditor.initialData = dataXSMAX
+        photoEditor.bgColors = bgColors
+        photoEditor.initialData = dataXSMAX
         photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
+//        photoEditor.initialBgUrl = "http`s://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-//        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-//        preview.data = dataXSMAX
-////
-////        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_2.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
+        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        preview.data = dataXSMAX
+//
+        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
 //        self.view.addSubview(preview)
     }
     

@@ -101,17 +101,16 @@ open class ExpressionPreview: UIView {
                     centerY = self.bounds.height / 2
                 }
                 
-                
-                if let convertedPoint = layer.convertedPoint {
-                    centerX = pointToAspectFill(for: convertedPoint, in: (expression?.backgroundSize)!).x
-                    centerY = pointToAspectFill(for: convertedPoint, in: (expression?.backgroundSize)!).y
+                if let backgroundSize = expression?.backgroundSize {
+                    centerX = pointToAspectFill(for: layer.center, in: backgroundSize).x
+                    centerY = pointToAspectFill(for: layer.center, in: backgroundSize).y
                 }
                 
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY), transform: layer.transform!)
+                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height), transform: layer.transform!)
                 }
             }
         }
@@ -130,7 +129,7 @@ open class ExpressionPreview: UIView {
         let loader = UIActivityIndicatorView.init(style: .gray)
         
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10
@@ -145,7 +144,7 @@ open class ExpressionPreview: UIView {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
         
         textView.text = text
-        textView.font = UIFont(name: font, size: textSize)
+        textView.font = UIFont(name: "ZillaSlabHighlight-Bold", size: textSize)
         textView.alignmentFromString(alignment: textAlignment)
         textView.textColor = color
         textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."

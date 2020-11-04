@@ -33,7 +33,6 @@ extension KMPlaceholderTextView {
 }
 
 extension UIImageView {
-    
     func loadImage(urlString: String) {
         
         if let cacheImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
@@ -57,7 +56,6 @@ extension UIImageView {
                 self.image = image
             }
         }.resume()
-        
     }
 }
 
