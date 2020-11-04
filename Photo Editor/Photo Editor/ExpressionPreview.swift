@@ -31,8 +31,18 @@ open class ExpressionPreview: UIView {
         }
     }
     
+    func pointToAspectFill(for point: Point, in bgSize: OriginalFrame) -> CGPoint {
+        let aspectRatio = bgSize.width / self.frame.width
+        let yOffset = ((bgSize.height / aspectRatio) - self.frame.height) / 2.0
+        
+        return CGPoint(
+            x: (point.x / aspectRatio),
+            y: (point.y / aspectRatio) - yOffset)
+    }
+    
     func importExpression () {
         self.clipsToBounds = true
+        var imageBg: UIImageView? = nil
         let jsonData = data!.data(using: .utf8)!
         var expression: Expression? = nil
         
@@ -55,7 +65,7 @@ open class ExpressionPreview: UIView {
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                imageBg = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 var bgUrl: String?
                 
                 for url in bgImages {
@@ -64,12 +74,12 @@ open class ExpressionPreview: UIView {
                     }
                 }
                 
-                imageView.contentMode = .scaleAspectFill
+                imageBg!.contentMode = .scaleAspectFill
                 
                 if let url = bgUrl {
-                    imageView.load(url: url)
-                    self.addSubview(imageView)
-                    self.sendSubviewToBack(imageView)
+                    imageBg!.load(url: url)
+                    self.addSubview(imageBg!)
+                    self.sendSubviewToBack(imageBg!)
                 } else {
                     addDefaultBg()
                 }
@@ -80,23 +90,27 @@ open class ExpressionPreview: UIView {
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
             
             for layer in expressionData.layers {
+                var centerX = CGFloat(1)
+                var centerY = CGFloat(1)
+                
+                if (expressionData.originalFrame != nil) {
+                    centerX = layer.center.x * scaleX
+                    centerY = layer.center.y * scaleY
+                } else {
+                    centerX = self.bounds.width / 2
+                    centerY = self.bounds.height / 2
+                }
+                
+                if let backgroundSize = expression?.backgroundSize {
+                    centerX = pointToAspectFill(for: layer.center, in: backgroundSize).x
+                    centerY = pointToAspectFill(for: layer.center, in: backgroundSize).y
+                }
+                
                 if let text = layer.text {
-                    var centerX = CGFloat(1)
-                    var centerY = CGFloat(1)
-                    
-                    if (expressionData.originalFrame != nil) {
-                        centerX = layer.center.x * scaleX
-                        centerY = layer.center.y * scaleY
-                    } else {
-                        centerX = self.bounds.width / 2
-                        centerY = self.bounds.height / 2
-                    }
-                    
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: layer.center.x * scaleX, y: layer.center.y * scaleY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height * scaleY),
-                                 transform: layer.transform!)
+                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width, height: layer.size!.height), transform: layer.transform!)
                 }
             }
         }
@@ -115,13 +129,14 @@ open class ExpressionPreview: UIView {
         let loader = UIActivityIndicatorView.init(style: .gray)
         
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.transform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
         
+        imageView.transform = CGAffineTransform.init(a: transform.a, b: transform.b, c: transform.c, d: transform.d, tx: transform.tx, ty: transform.ty)
+                
         self.addSubview(imageView)
     }
     

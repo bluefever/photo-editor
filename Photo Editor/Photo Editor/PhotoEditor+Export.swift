@@ -101,11 +101,13 @@ struct OriginalFrame: Codable, Hashable {
 public struct Expression: Codable, Hashable {
     var backgroundColor: String?
     var backgroundImage: String?
+    var backgroundSize: OriginalFrame?
     var originalFrame: OriginalFrame?
     var layers: [ExpressionLayer]
     
-    init(originalFrame: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
+    init(originalFrame: OriginalFrame? = nil, backgroundSize: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
         self.originalFrame = originalFrame
+        self.backgroundSize = backgroundSize
         self.backgroundColor = backgroundColor
         self.backgroundImage = backgroundImage
         self.layers = layers
@@ -113,6 +115,30 @@ public struct Expression: Codable, Hashable {
 }
 
 extension PhotoEditorViewController {
+    func pointFromAspectFill(for point: CGPoint, in view: UIImageView) -> Point {
+        guard let img = view.image else {
+            return Point.init(x: point.x, y: point.y)
+        }
+
+        let imgSize = img.size
+        let viewSize = view.frame.size
+        let aspectRatio = imgSize.width / viewSize.width
+        let yOffset = ((imgSize.height / aspectRatio) - viewSize.height) / 2.0
+        
+        return Point.init(
+            x: (point.x * aspectRatio),
+            y: (point.y + yOffset) * aspectRatio)
+    }
+    
+    func pointToAspectFill(for point: Point, in bgSize: OriginalFrame) -> Point {
+        let aspectRatio = bgSize.width / self.view.frame.width
+        let yOffset = ((bgSize.height / aspectRatio) - self.view.frame.height) / 2.0
+        
+        return Point.init(
+            x: (point.x / aspectRatio),
+            y: (point.y / aspectRatio) - yOffset)
+    }
+    
     public func exportExpression () -> String? {
         var expression = Expression()
         
@@ -121,6 +147,7 @@ extension PhotoEditorViewController {
         
         if let imageName = imageBgName {
             expression.backgroundImage = imageName
+            expression.backgroundSize = OriginalFrame.init(height: imageBg.image!.size.height, width: imageBg.image!.size.width)
         } else {
             expression.backgroundColor = imageBg.backgroundColor?.hexString
         }
@@ -128,6 +155,7 @@ extension PhotoEditorViewController {
         for view in canvasImageView.subviews {
             if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
                 let textView = (view.subviews[0] as! KMPlaceholderTextView)
+                let center = self.view.convert(textView.superview!.center, from: canvasImageView)
                 
                 var textLayer = ExpressionLayer()
                 textLayer.textColor = textView.textColor?.hexString
@@ -135,10 +163,14 @@ extension PhotoEditorViewController {
                 textLayer.textSize = textView.font?.pointSize
                 textLayer.textAlign = textView.alignmentToString()
                 textLayer.zIndex = canvasImageView.subviews.index(of: view)!
-                let center = self.view.convert(textView.superview!.center, from: canvasImageView)
-                textLayer.center = Point(x: center.x, y: center.y)
                 textLayer.text = textView.text
                 textLayer.transform = Transform(a: view.transform.a, b: view.transform.b, c: view.transform.c,d: view.transform.d, tx: view.transform.tx, ty: view.transform.ty)
+                
+                if (expression.backgroundImage != nil) {
+                    textLayer.center = pointFromAspectFill(for: center, in: imageBg)
+                } else {
+                    textLayer.center = Point(x: center.x, y: center.y)
+                }
                 
                 if (textLayer.text != nil && !textLayer.text!.isEmpty) {
                     expression.layers.append(textLayer)
@@ -149,12 +181,18 @@ extension PhotoEditorViewController {
         
         for gif in gifsSources {
             var gifLayer = ExpressionLayer()
+            let center = self.view.convert(gif.image.center, from: canvasImageView)
+            
             gifLayer.contentUrl = gif.url
             gifLayer.zIndex = canvasImageView.subviews.index(of: gif.image)!
-            let center = self.view.convert(gif.image.center, from: canvasImageView)
-            gifLayer.center = Point(x: center.x, y: center.y)
             gifLayer.size = Size(width: gif.image.bounds.width, height: gif.image.bounds.height)
             gifLayer.transform = Transform(a: gif.image.transform.a, b: gif.image.transform.b, c: gif.image.transform.c,d: gif.image.transform.d, tx: gif.image.transform.tx, ty: gif.image.transform.ty)
+            
+            if (expression.backgroundImage != nil) {
+                gifLayer.center = pointFromAspectFill(for: center, in: imageBg)
+            } else {
+                gifLayer.center = Point(x: center.x, y: center.y)
+            }
             
             expression.layers.append(gifLayer)
         }
@@ -193,7 +231,7 @@ extension PhotoEditorViewController {
                 scaleX = bounds.width / expressionData.originalFrame!.width
                 scaleY = bounds.height / expressionData.originalFrame!.height
             }
-            
+
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
@@ -218,22 +256,30 @@ extension PhotoEditorViewController {
             
             for layer in expressionData.layers {
                 let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
+                var centerX = CGFloat(1)
+                var centerY = CGFloat(1)
+                
+                if (expressionData.originalFrame != nil) {
+                    centerX = center.x * scaleX
+                    centerY = center.y * scaleY
+                } else {
+                    centerX = self.canvasImageView.bounds.width / 2
+                    centerY = self.canvasImageView.bounds.height / 2
+                }
+                
+               
+                if let backgroundSize = expression?.backgroundSize {
+                    let aspectPoint = pointToAspectFill(for: layer.center, in: backgroundSize)
+                    let centerAspect = self.view.convert(CGPoint.init(x: aspectPoint.x, y: aspectPoint.y), to: canvasImageView)
+                    
+                    centerX = centerAspect.x
+                    centerY = centerAspect.y
+                }
                 
                 if let text = layer.text {
-                    var centerX = CGFloat(1)
-                    var centerY = CGFloat(1)
-                    
-                    if (expressionData.originalFrame != nil) {
-                        centerX = center.x * scaleX
-                        centerY = center.y * scaleY
-                    } else {
-                        centerX = self.canvasImageView.bounds.width / 2
-                        centerY = self.canvasImageView.bounds.height / 2
-                    }
-                    
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign, x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: center.x * scaleX, y: center.y * scaleY, size: CGSize.init(width: layer.size!.width  * scaleX, height: layer.size!.height * scaleY),
+                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width, height: layer.size!.height),
                                  transform: layer.transform!)
                 }
             }
@@ -245,7 +291,7 @@ extension PhotoEditorViewController {
         let loader = UIActivityIndicatorView.init(style: .gray)
         
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10

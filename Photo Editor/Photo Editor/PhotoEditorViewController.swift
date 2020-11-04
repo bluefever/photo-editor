@@ -114,6 +114,8 @@ public final class PhotoEditorViewController: UIViewController {
     
     var gifsStickersViewController: GifsStickersViewController!
     var backgroundViewController: BackgroundViewController!
+    var renderCount: Int = 0
+    var imported: Bool = false
     
     //Register Custom font before we load XIB
     public override func loadView() {
@@ -147,14 +149,22 @@ public final class PhotoEditorViewController: UIViewController {
         
         backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
         hideControls()
-        
-        if let expression = initialData {
-            importExpression(data: expression)
-        } else {
-            openTextTool()
-        }
-        
         configureCollectionView()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        renderCount += 1
+        
+        if (renderCount > 1 && !imported) {
+            imported = true
+            
+            if let expression = initialData {
+                importExpression(data: expression)
+            } else {
+                openTextTool()
+            }
+        }
     }
     
     @IBAction func slider(_ sender: Any) {
