@@ -291,7 +291,7 @@ extension PhotoEditorViewController {
         let loader = UIActivityIndicatorView.init(style: .gray)
         
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10

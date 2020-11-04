@@ -25,21 +25,21 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let note =       "{\"backgroundSize\":{\"width\":1242,\"height\":2688},\"originalFrame\":{\"width\":375,\"height\":667},\"backgroundImage\":\"bg_66\",\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":1043.28,\"y\":943.24800000000005},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Dasdasdasdasdasd\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}}]}"
+        let note =       "{\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":187.5,\"y\":318},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Asdasdasdasda\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"size\":{\"width\":170,\"height\":221},\"zIndex\":1,\"transform\":{\"d\":1.8462539438695713,\"b\":0,\"ty\":0,\"c\":0,\"a\":1.8462539438695713,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/9bc43u6nFOxgpfoPyF\\/giphy.gif?cid=cac7b245wett1h8dwqzgrpw01948k376wmihm65a6wcgvhu9&rid=giphy.gif\",\"center\":{\"x\":258,\"y\":474.49999999999994}}],\"backgroundColor\":\"#739FEE\",\"originalFrame\":{\"width\":375,\"height\":667}}"
 
         photoEditor.bgColors = bgColors
         photoEditor.initialData = note
-        photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
+        photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-//        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
+//        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
         let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         preview.data = note
 //
-        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_66.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
-        self.view.addSubview(preview)
+        preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
+//        self.view.addSubview(preview)
     }
     
     override func viewDidAppear(_ animated: Bool) {

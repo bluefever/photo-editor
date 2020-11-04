@@ -110,7 +110,7 @@ open class ExpressionPreview: UIView {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize!, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
                 } else if let gifUrl = layer.contentUrl {
-                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width * scaleX, height: layer.size!.height), transform: layer.transform!)
+                    addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width, height: layer.size!.height), transform: layer.transform!)
                 }
             }
         }
