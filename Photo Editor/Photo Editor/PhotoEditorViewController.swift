@@ -61,6 +61,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var topGradientTopContraint: NSLayoutConstraint!
     @IBOutlet weak var bottomGradientBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var centerHorizontalView: UIView!
+    @IBOutlet weak var centerVerticalView: UIView!
+    
     @objc public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from

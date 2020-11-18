@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,6 +39,8 @@
                 <outlet property="cancelButton" destination="9an-1W-thw" id="x3o-d2-TiI"/>
                 <outlet property="canvasImageView" destination="n3p-yR-4xc" id="OED-1L-YMz"/>
                 <outlet property="canvasView" destination="S1Y-ZS-dct" id="p6I-kg-UUU"/>
+                <outlet property="centerHorizontalView" destination="G4e-zN-9D8" id="LRf-zP-zeA"/>
+                <outlet property="centerVerticalView" destination="IcU-T1-dJM" id="XaP-XV-rcf"/>
                 <outlet property="colorPickerView" destination="ifv-kQ-pTz" id="PsY-r3-Ld5"/>
                 <outlet property="colorPickerViewBottomConstraint" destination="HbP-wL-ivL" id="JdT-19-nSs"/>
                 <outlet property="colorsCollectionView" destination="GaQ-XR-asZ" id="1rf-hU-0nn"/>
@@ -91,6 +93,20 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
                     </userDefinedRuntimeAttributes>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcU-T1-dJM">
+                    <rect key="frame" x="0.0" y="367" width="414" height="2"/>
+                    <color key="backgroundColor" red="0.39215686274509803" green="0.65490196078431373" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="2Pa-M2-iFm"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4e-zN-9D8">
+                    <rect key="frame" x="206" y="0.0" width="2" height="736"/>
+                    <color key="backgroundColor" red="0.39215686274509803" green="0.65490196078431373" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="ujf-Jh-N1r"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-ZS-dct" userLabel="canvas">
                     <rect key="frame" x="0.0" y="80" width="414" height="576"/>
@@ -596,20 +612,25 @@
                 <constraint firstItem="KxU-y4-Jwh" firstAttribute="top" secondItem="9an-1W-thw" secondAttribute="top" id="7Dc-L9-Ug9"/>
                 <constraint firstItem="ifv-kQ-pTz" firstAttribute="leading" secondItem="ujW-Nd-FCr" secondAttribute="leading" id="7pT-iq-19T"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="AVJ-vW-Pko"/>
+                <constraint firstItem="IcU-T1-dJM" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="Aqd-vZ-7AQ"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="Bok-Wu-cd0"/>
                 <constraint firstItem="hvL-7W-xTR" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="BwO-VW-xrD"/>
                 <constraint firstItem="n3p-yR-4xc" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" multiplier="0.75" id="D4t-IV-zK3"/>
                 <constraint firstItem="q4u-u3-aQu" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="DNK-DF-UwV"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="ifv-kQ-pTz" secondAttribute="bottom" id="HbP-wL-ivL"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="yLU-ua-LOI" secondAttribute="bottom" id="Jda-IL-kRB"/>
+                <constraint firstItem="G4e-zN-9D8" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" id="R9F-Ba-DOr"/>
                 <constraint firstAttribute="trailing" secondItem="HcY-sV-ehZ" secondAttribute="trailing" constant="12" id="SDJ-NN-3Pb"/>
                 <constraint firstItem="yAt-sK-1nK" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="TQJ-UJ-HEf"/>
                 <constraint firstItem="9an-1W-thw" firstAttribute="leading" secondItem="ujW-Nd-FCr" secondAttribute="leading" constant="12" id="TU9-Ue-Dsu"/>
+                <constraint firstItem="G4e-zN-9D8" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="TxW-0y-bQt"/>
                 <constraint firstItem="hvL-7W-xTR" firstAttribute="top" secondItem="ujW-Nd-FCr" secondAttribute="top" id="UId-3M-Alw"/>
                 <constraint firstItem="KxU-y4-Jwh" firstAttribute="bottom" secondItem="9an-1W-thw" secondAttribute="bottom" id="VR7-fl-Sy8"/>
                 <constraint firstItem="9an-1W-thw" firstAttribute="top" secondItem="ujW-Nd-FCr" secondAttribute="top" id="XZS-no-jFs"/>
                 <constraint firstAttribute="trailing" secondItem="KxU-y4-Jwh" secondAttribute="trailing" constant="12" id="Z0h-d5-J2Z"/>
+                <constraint firstItem="IcU-T1-dJM" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="bEH-VN-6HD"/>
                 <constraint firstItem="lVD-kc-qwJ" firstAttribute="centerX" secondItem="ujW-Nd-FCr" secondAttribute="centerX" id="e7x-hK-6K4"/>
+                <constraint firstItem="G4e-zN-9D8" firstAttribute="centerY" secondItem="ujW-Nd-FCr" secondAttribute="centerY" id="fiH-k4-dbJ"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="bottom" secondItem="lVD-kc-qwJ" secondAttribute="bottom" id="fjO-MT-PEc"/>
                 <constraint firstAttribute="trailing" secondItem="S1Y-ZS-dct" secondAttribute="trailing" id="jwU-EC-jaR"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="trailing" secondItem="KxU-y4-Jwh" secondAttribute="trailing" constant="12" id="kHR-dv-jWj"/>
@@ -623,6 +644,7 @@
                 <constraint firstItem="yLU-ua-LOI" firstAttribute="width" secondItem="HPk-Bg-V0q" secondAttribute="width" id="tmT-qB-ad8"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="uyk-kx-vrC"/>
                 <constraint firstItem="ujW-Nd-FCr" firstAttribute="trailing" secondItem="HcY-sV-ehZ" secondAttribute="trailing" constant="12" id="wRr-7n-kx0"/>
+                <constraint firstItem="IcU-T1-dJM" firstAttribute="centerY" secondItem="ujW-Nd-FCr" secondAttribute="centerY" id="z42-LU-yYq"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
