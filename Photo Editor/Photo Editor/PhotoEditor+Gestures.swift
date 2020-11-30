@@ -46,34 +46,14 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         // For V1 only gifs and stickers can be scaled
         
         if let view = recognizer.view {
-//            if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
-//                let textView = view.subviews[0] as! KMPlaceholderTextView
-//
-//                if textView.font!.pointSize * recognizer.scale > 10 && textView.font!.pointSize * recognizer.scale < 50 {
-//                    let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
-//                    textView.font = font
-//                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
-//                                                                 height:CGFloat.greatestFiniteMagnitude))
-//                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
-//                                                  height: sizeToFit.height)
-//                } else {
-//                    let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40,
-//                                                                 height:CGFloat.greatestFiniteMagnitude))
-//                    textView.bounds.size = CGSize(width: UIScreen.main.bounds.size.width - 40,
-//                                                  height: sizeToFit.height)
-//                }
-//
-//
-//                textView.setNeedsDisplay()
-//            } else {
-                let transform:CGAffineTransform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
-                
-                if (scale(from: view.transform) < 10 || scale(from: view.transform) > scale(from: transform)) {
-                    view.transform = transform
-                }
-//            }
-            recognizer.scale = 1
             
+            let transform:CGAffineTransform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+            
+            if (scale(from: view.transform) < 10 || scale(from: view.transform) > scale(from: transform)) {
+                view.transform = transform
+            }
+        
+            recognizer.scale = 1
         }
     }
     
