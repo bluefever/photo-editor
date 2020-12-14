@@ -312,7 +312,7 @@ extension PhotoEditorViewController {
         topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
         bottomSizeContainer.isHidden = false
         bottomStyleContainer.isHidden = true
-        bottomColorContainer.isHidden = true
+//        bottomColorContainer.isHidden = true
         topTextSizeButton.addShadow()
         topTextStyleButton.removeShadow()
         topTextColorButton.removeShadow()
@@ -324,7 +324,7 @@ extension PhotoEditorViewController {
         topTextColorButton.setImage((UIImage(named: "color_off", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
         bottomSizeContainer.isHidden = true
         bottomStyleContainer.isHidden = false
-        bottomColorContainer.isHidden = true
+//        bottomColorContainer.isHidden = true
         topTextSizeButton.removeShadow()
         topTextStyleButton.addShadow()
         topTextColorButton.removeShadow()
@@ -336,7 +336,7 @@ extension PhotoEditorViewController {
         topTextColorButton.setImage((UIImage(named: "color_on", in: Bundle(for: type(of: self)), compatibleWith: nil)!), for: .normal)
         bottomSizeContainer.isHidden = true
         bottomStyleContainer.isHidden = true
-        bottomColorContainer.isHidden = false
+//        bottomColorContainer.isHidden = false
         topTextSizeButton.removeShadow()
         topTextStyleButton.removeShadow()
         topTextColorButton.addShadow()

@@ -130,14 +130,13 @@ public final class PhotoEditorViewController: UIView {
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
         
-        commonInit()
+//        commonInit()
     }
     
     private func commonInit() {
         registerFont()
         
         let bundle = Bundle(for: PhotoEditorViewController.self)
-        let url = bundle.url(forResource: "PhotoEditorViewController", withExtension: "ttf")
         
         bundle.loadNibNamed("PhotoEditorViewController", owner: PhotoEditorViewController.self, options: nil)
         addSubview(contentView)
