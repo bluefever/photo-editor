@@ -65,7 +65,7 @@ extension PhotoEditorViewController {
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
+                           animations: { self.layoutIfNeeded() },
                            completion: nil)
         }
     }

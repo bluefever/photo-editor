@@ -9,7 +9,8 @@
 import UIKit
 import KMPlaceholderTextView
 
-public final class PhotoEditorViewController: UIViewController {
+public final class PhotoEditorViewController: UIView {
+    @IBOutlet weak var contentView: UIView!
     
     //To hold background image
     @IBOutlet weak var imageBg: UIImageView!
@@ -120,14 +121,32 @@ public final class PhotoEditorViewController: UIViewController {
     var renderCount: Int = 0
     var imported: Bool = false
     
-    //Register Custom font before we load XIB
-    public override func loadView() {
-        registerFont()
-        super.loadView()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        commonInit()
     }
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
+    required init?(coder aCoder: NSCoder) {
+        super.init(coder: aCoder)
+        
+        commonInit()
+    }
+    
+    private func commonInit() {
+        registerFont()
+        
+        let bundle = Bundle(for: PhotoEditorViewController.self)
+        let url = bundle.url(forResource: "PhotoEditorViewController", withExtension: "ttf")
+        
+        bundle.loadNibNamed("PhotoEditorViewController", owner: PhotoEditorViewController.self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        onLoad()
+    }
+    
+    func onLoad() {
         
         prepareUI()
         prepareBackgrounds()
@@ -135,7 +154,7 @@ public final class PhotoEditorViewController: UIViewController {
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
         edgePan.delegate = self
-        self.view.addGestureRecognizer(edgePan)
+        self.addGestureRecognizer(edgePan)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow),
                                                name: UIResponder.keyboardDidShowNotification, object: nil)
@@ -154,9 +173,9 @@ public final class PhotoEditorViewController: UIViewController {
         hideControls()
         configureCollectionView()
     }
-    
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
         renderCount += 1
         
         if (renderCount > 1 && !imported) {
@@ -249,7 +268,7 @@ public final class PhotoEditorViewController: UIViewController {
             controlsView.layer.mask = maskLayer
         }
         
-        paintSafeAreaBottomInset(withColor: .white)
+//        paintSafeAreaBottomInset(withColor: .white)
         
         textSizeSlider.setThumbImage(UIImage(named: "icon_thumb", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
         textSizeSlider.value = 20
@@ -326,7 +345,7 @@ public final class PhotoEditorViewController: UIViewController {
         topToolbar.isHidden = hide
         bottomToolbar.isHidden = hide
         continueButton.isHidden = isTyping ? true : hide
-        view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
+        viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
     }
 }
 

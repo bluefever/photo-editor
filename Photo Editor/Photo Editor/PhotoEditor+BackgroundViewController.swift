@@ -23,12 +23,12 @@ extension PhotoEditorViewController {
             backgroundViewController.bgImages.append(image)
         }
         
-        self.addChild(backgroundViewController)
-        self.view.addSubview(backgroundViewController.view)
-        backgroundViewController.didMove(toParent: self)
-        let height = view.frame.height
-        let width  = view.frame.width
-        backgroundViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+//        self.addChild(backgroundViewController)
+//        self.view.addSubview(backgroundViewController.view)
+//        backgroundViewController.didMove(toParent: self)
+//        let height = view.frame.height
+//        let width  = view.frame.width
+//        backgroundViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
     }
     
     func removeBackgroundView() {

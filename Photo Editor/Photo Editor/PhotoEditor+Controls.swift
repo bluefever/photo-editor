@@ -51,14 +51,14 @@ extension PhotoEditorViewController {
         
         refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .default, handler: { (action: UIAlertAction!) in
             self.photoEditorDelegate?.canceledEditing()
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .cancel, handler: { (action: UIAlertAction!) in
             refreshAlert.dismiss(animated: true, completion: nil)
         }))
         
-        present(refreshAlert, animated: true, completion: nil)
+//        present(refreshAlert, animated: true, completion: nil)
         
     }
     
@@ -67,7 +67,7 @@ extension PhotoEditorViewController {
         controller.delegate = self
         controller.image = image
         let navController = UINavigationController(rootViewController: controller)
-        present(navController, animated: true, completion: nil)
+//        present(navController, animated: true, completion: nil)
     }
     
     @IBAction func stickersButtonTapped(_ sender: Any) {
@@ -103,7 +103,7 @@ extension PhotoEditorViewController {
             popoverController.barButtonItem = UIBarButtonItem(customView: sender)
         }
         
-        present(activity, animated: true, completion: nil)
+//        present(activity, animated: true, completion: nil)
         
     }
     
@@ -120,11 +120,11 @@ extension PhotoEditorViewController {
         hideToolbar(hide: true)
         cancelButton.isHidden = true
         
-        let snapshot = self.view.toImage()
+        let snapshot = self.toImage()
         let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
         
         photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail!)
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backgroundButtonPressed(_ sender: Any) {
@@ -226,11 +226,11 @@ extension PhotoEditorViewController {
     @objc func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+//        self.present(alert, animated: true, completion: nil)
     }
     
     func closeTextTool () {
-        view.endEditing(true)
+        endEditing(true)
         doneButton.isHidden = true
         colorPickerView.isHidden = true
         topTextControl.isHidden = true

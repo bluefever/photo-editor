@@ -131,8 +131,8 @@ extension PhotoEditorViewController {
     }
     
     func pointToAspectFill(for point: Point, in bgSize: OriginalFrame) -> Point {
-        let aspectRatio = bgSize.width / self.view.frame.width
-        let yOffset = ((bgSize.height / aspectRatio) - self.view.frame.height) / 2.0
+        let aspectRatio = bgSize.width / self.frame.width
+        let yOffset = ((bgSize.height / aspectRatio) - self.frame.height) / 2.0
         
         return Point.init(
             x: (point.x / aspectRatio),
@@ -155,7 +155,7 @@ extension PhotoEditorViewController {
         for view in canvasImageView.subviews {
             if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
                 let textView = (view.subviews[0] as! KMPlaceholderTextView)
-                let center = self.view.convert(textView.superview!.center, from: canvasImageView)
+                let center = self.convert(textView.superview!.center, from: canvasImageView)
                 
                 var textLayer = ExpressionLayer()
                 textLayer.textColor = textView.textColor?.hexString
@@ -181,7 +181,7 @@ extension PhotoEditorViewController {
         
         for gif in gifsSources {
             var gifLayer = ExpressionLayer()
-            let center = self.view.convert(gif.image.center, from: canvasImageView)
+            let center = self.convert(gif.image.center, from: canvasImageView)
             
             gifLayer.contentUrl = gif.url
             gifLayer.zIndex = canvasImageView.subviews.index(of: gif.image)!
@@ -255,7 +255,7 @@ extension PhotoEditorViewController {
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
             
             for layer in expressionData.layers {
-                let center = self.view.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
+                let center = self.convert(CGPoint.init(x: layer.center.x, y: layer.center.y), to: canvasImageView)
                 var centerX = CGFloat(1)
                 var centerY = CGFloat(1)
                 
@@ -270,7 +270,7 @@ extension PhotoEditorViewController {
                
                 if let backgroundSize = expression?.backgroundSize {
                     let aspectPoint = pointToAspectFill(for: layer.center, in: backgroundSize)
-                    let centerAspect = self.view.convert(CGPoint.init(x: aspectPoint.x, y: aspectPoint.y), to: canvasImageView)
+                    let centerAspect = self.convert(CGPoint.init(x: aspectPoint.x, y: aspectPoint.y), to: canvasImageView)
                     
                     centerX = centerAspect.x
                     centerY = centerAspect.y

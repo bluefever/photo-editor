@@ -14,12 +14,12 @@ extension PhotoEditorViewController {
         gifsStickersVCIsVisible = true
         gifsStickersViewController.gifsStickersViewControllerDelegate = self
         
-        self.addChild(gifsStickersViewController)
-        self.view.addSubview(gifsStickersViewController.view)
-        gifsStickersViewController.didMove(toParent: self)
-        let height = view.frame.height
-        let width  = view.frame.width
-        gifsStickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+//        self.addChild(gifsStickersViewController)
+//        self.view.addSubview(gifsStickersViewController.view)
+//        gifsStickersViewController.didMove(toParent: self)
+//        let height = view.frame.height
+//        let width  = view.frame.width
+//        gifsStickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
     }
     
     func removeStickersView() {

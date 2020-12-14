@@ -118,8 +118,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         opacityTopToolbar.tag = 100
         
         
-        self.view.insertSubview(opacityTopToolbar, at: 4)
-        self.view.superview?.bringSubviewToFront(topToolbar)
+        self.insertSubview(opacityTopToolbar, at: 4)
+        self.superview?.bringSubviewToFront(topToolbar)
     }
     
     public func onTextToolClose() {
@@ -137,7 +137,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         let opacityCanvas = canvasImageView.viewWithTag(100)
         opacityCanvas!.removeFromSuperview()
         
-        let opacityTopToolbar = self.view.viewWithTag(100)
+        let opacityTopToolbar = self.viewWithTag(100)
         opacityTopToolbar!.removeFromSuperview()
     }
 }

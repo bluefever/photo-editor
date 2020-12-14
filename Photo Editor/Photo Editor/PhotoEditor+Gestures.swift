@@ -115,9 +115,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     }
     
     // to Override Control Center screen edge pan from bottom
-    override public var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override public var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     /**
      Scale Effect
@@ -152,10 +152,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         deleteView.isHidden = false
         
         view.superview?.bringSubviewToFront(view)
-        let pointToSuperView = recognizer.location(in: self.view)
+        let pointToSuperView = recognizer.location(in: self)
         view.center = CGPoint(x: view.center.x + recognizer.translation(in: canvasImageView).x,
                               y: view.center.y + recognizer.translation(in: canvasImageView).y)
-        let center = self.view.convert(view.center, from: canvasImageView)
+        let center = self.convert(view.center, from: canvasImageView)
         
         if (view.center.x > UIScreen.main.bounds.width / 2 - 5 && view.center.x < UIScreen.main.bounds.width / 2 + 5) {
             view.center = CGPoint(x: canvasImageView.frame.width / 2,
@@ -205,7 +205,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             lastPanPoint = nil
             hideToolbar(hide: false)
             deleteView.isHidden = true
-            let point = recognizer.location(in: self.view)
+            let point = recognizer.location(in: self)
             
             if deleteView.frame.contains(point) { // Delete the view
                 view.removeFromSuperview()
