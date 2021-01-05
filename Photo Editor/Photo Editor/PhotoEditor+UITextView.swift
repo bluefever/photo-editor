@@ -92,8 +92,6 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         let panGesture = UIPanGestureRecognizer(target: self,
                                                 action: #selector(PhotoEditorViewController.panGesture))
-        panGesture.minimumNumberOfTouches = 1
-        panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         textView.superview!.addGestureRecognizer(panGesture)
         

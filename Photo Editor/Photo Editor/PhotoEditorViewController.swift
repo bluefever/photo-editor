@@ -23,6 +23,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
+    @IBOutlet weak var toolbars: TouchableStackView!
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
@@ -323,8 +324,9 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func hideToolbar(hide: Bool) {
-        topToolbar.isHidden = hide
-        bottomToolbar.isHidden = hide
+        toolbars.isHidden = hide
+//        topToolbar.isHidden = hide
+//        bottomToolbar.isHidden = hide
         continueButton.isHidden = isTyping ? true : hide
         view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
     }

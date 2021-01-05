@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
-        let note =       "{\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":187.5,\"y\":318},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Asdasdasdasda\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"size\":{\"width\":170,\"height\":221},\"zIndex\":1,\"transform\":{\"d\":1.8462539438695713,\"b\":0,\"ty\":0,\"c\":0,\"a\":1.8462539438695713,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/9bc43u6nFOxgpfoPyF\\/giphy.gif?cid=cac7b245wett1h8dwqzgrpw01948k376wmihm65a6wcgvhu9&rid=giphy.gif\",\"center\":{\"x\":258,\"y\":474.49999999999994}}],\"backgroundColor\":\"#739FEE\",\"originalFrame\":{\"width\":375,\"height\":667}}"
+        let note =       "{\"backgroundSize\":{\"width\":1242,\"height\":2688},\"originalFrame\":{\"width\":414,\"height\":736},\"backgroundImage\":\"bg_98\",\"layers\":[{\"zIndex\":0,\"textStyle\":\"HelveticaNeue-Medium\",\"center\":{\"x\":748.99996948242188,\"y\":1385.0000152587891},\"textAlign\":\"left\",\"textSize\":20,\"text\":\"Asdasdasdasda\",\"textColor\":\"#000000\",\"transform\":{\"d\":1,\"b\":0,\"ty\":0,\"c\":0,\"a\":1,\"tx\":0}},{\"size\":{\"width\":170,\"height\":221},\"zIndex\":1,\"transform\":{\"d\":1.8462539438695713,\"b\":0,\"ty\":0,\"c\":0,\"a\":1.8462539438695713,\"tx\":0},\"contentUrl\":\"https:\\/\\/media3.giphy.com\\/media\\/9bc43u6nFOxgpfoPyF\\/giphy.gif?cid=cac7b245wett1h8dwqzgrpw01948k376wmihm65a6wcgvhu9&rid=giphy.gif\",\"center\":{\"x\":621,\"y\":1344}}]}"
 
         photoEditor.bgColors = bgColors
         photoEditor.initialData = note

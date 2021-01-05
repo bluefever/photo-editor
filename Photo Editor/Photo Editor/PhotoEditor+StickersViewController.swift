@@ -25,6 +25,7 @@ extension PhotoEditorViewController {
     func removeStickersView() {
         gifsStickersVCIsVisible = false
         self.canvasImageView.isUserInteractionEnabled = true
+
         UIView.animate(withDuration: 0.3,
                        delay: 0,
                        options: UIView.AnimationOptions.curveEaseIn,
@@ -88,17 +89,13 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
         
         let panGesture = UIPanGestureRecognizer(target: self,
                                                 action: #selector(PhotoEditorViewController.panGesture))
-        panGesture.minimumNumberOfTouches = 1
-        panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         view.addGestureRecognizer(panGesture)
-        
-        
+
         let pinchGesture = UIPinchGestureRecognizer(target: self,
                                                     action: #selector(PhotoEditorViewController.pinchGesture))
         pinchGesture.delegate = self
         view.addGestureRecognizer(pinchGesture)
-        
         
         let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self,
                                                                     action:#selector(PhotoEditorViewController.rotationGesture) )
@@ -106,7 +103,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
         view.addGestureRecognizer(rotationGestureRecognizer)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
-        
+
         view.addGestureRecognizer(tapGesture)
     }
 }
