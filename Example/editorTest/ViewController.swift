@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 //        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-        let preview = ExpressionPreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 3))
+        let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 168, height: 241))
         preview.data = note
 //
         preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]

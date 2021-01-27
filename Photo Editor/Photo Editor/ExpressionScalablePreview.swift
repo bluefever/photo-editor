@@ -128,7 +128,7 @@ open class ExpressionScalablePreview: UIView {
         let loader = UIActivityIndicatorView.init(style: .gray)
         
         imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
         imageView.layer.cornerRadius = 10
