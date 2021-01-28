@@ -103,6 +103,9 @@ open class ExpressionScalablePreview: UIView {
                 if let backgroundSize = expression?.backgroundSize {
                     centerX = pointToAspectFill(for: layer.center, in: backgroundSize).x
                     centerY = pointToAspectFill(for: layer.center, in: backgroundSize).y
+                } else {
+                    centerX = pointToAspectFill(for: layer.center, in: expressionData.originalFrame!).x
+                    centerY = pointToAspectFill(for: layer.center, in: expressionData.originalFrame!).y
                 }
                 
                 if let text = layer.text {
