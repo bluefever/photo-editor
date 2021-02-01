@@ -93,20 +93,15 @@ open class ExpressionPreview: UIView {
                 var centerX = CGFloat(1)
                 var centerY = CGFloat(1)
                 
-                if (expressionData.originalFrame != nil) {
-                    centerX = layer.center.x * scaleX
-                    centerY = layer.center.y * scaleY
-                } else {
-                    centerX = self.bounds.width / 2
-                    centerY = self.bounds.height / 2
-                }
-                
                 if let backgroundSize = expression?.backgroundSize {
                     centerX = pointToAspectFill(for: layer.center, in: backgroundSize).x
                     centerY = pointToAspectFill(for: layer.center, in: backgroundSize).y
-                } else {
+                } else if (expressionData.originalFrame != nil) {
                     centerX = pointToAspectFill(for: layer.center, in: expressionData.originalFrame!).x
                     centerY = pointToAspectFill(for: layer.center, in: expressionData.originalFrame!).y
+                } else {
+                    centerX = self.bounds.width / 2
+                    centerY = self.bounds.height / 2
                 }
                 
                 
