@@ -68,7 +68,7 @@ open class ExpressionScalablePreview: UIView {
                 var bgUrl: String?
                 
                 for url in bgImages {
-                    if (url.matchingStrings(regex: bgImage + ".png").count > 0) {
+                    if (url.matchingStrings(regex: "backgrounds/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds%2F" + bgImage + ".png").count > 0) {
                         bgUrl = url
                     }
                 }
