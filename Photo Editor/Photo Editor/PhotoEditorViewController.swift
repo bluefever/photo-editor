@@ -192,7 +192,7 @@ public final class PhotoEditorViewController: UIViewController {
         bgImages.shuffle()
         
         if let background = initialBgUrl {
-            let matches = background.matchingStrings(regex: "bg_([0-9]+).png")
+            let matches = background.matchingStrings(regex: "([A-Za-z0-9]).png")
             
             if (matches.count == 1 && matches[0].count == 2) {
                 setBackgroundImage(image: background, index: Int(matches[0][1])!)
@@ -310,7 +310,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func setBackgroundImage(image: String, index: Int) {
-        imageBgName = "bg_\(index)"
+        imageBgName = "\(index)"
         
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: URL(string: image)!) {
