@@ -198,7 +198,7 @@ public final class PhotoEditorViewController: UIViewController {
                 self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds%2F", with: ""))
             } else {
                 let matches = background.matchingStrings(regex: "(/backgrounds/[a-zA-Z0-9_-]+).png")
-                
+
                 if (matches.count == 1 && matches[0].count == 2) {
                     self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds/", with: ""))
                 }

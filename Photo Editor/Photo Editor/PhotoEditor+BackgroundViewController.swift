@@ -63,7 +63,7 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
             self.setBackgroundImage(image: image, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds%2F", with: ""))
         } else {
             let matches = image.matchingStrings(regex: "(/backgrounds/[a-zA-Z0-9_-]+).png")
-            
+
             if (matches.count == 1 && matches[0].count == 2) {
                 self.setBackgroundImage(image: image, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds/", with: ""))
             }
