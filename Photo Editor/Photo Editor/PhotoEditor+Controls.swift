@@ -85,7 +85,7 @@ extension PhotoEditorViewController {
     
     @IBAction func textButtonTapped(_ sender: Any) {
         openTextTool()
-    }    
+    }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         closeTextTool()
@@ -121,7 +121,7 @@ extension PhotoEditorViewController {
         cancelButton.isHidden = true
         
         let snapshot = self.view.toImage()
-        let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.5 / 2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.5))
+        let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.7))
         
         photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail!)
         self.dismiss(animated: true, completion: nil)
