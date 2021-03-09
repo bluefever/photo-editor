@@ -165,8 +165,6 @@ public final class PhotoEditorViewController: UIViewController {
             
             if let expression = initialData {
                 importExpression(data: expression)
-            } else {
-                openTextTool()
             }
         }
     }
