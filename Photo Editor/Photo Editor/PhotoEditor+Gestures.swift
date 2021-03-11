@@ -91,6 +91,12 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         }
     }
     
+    @objc func swipeGesture(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.direction == .down {
+            closeTextTool()
+       }
+    }
+    
     /*
      Support Multiple Gesture at the same time
      */

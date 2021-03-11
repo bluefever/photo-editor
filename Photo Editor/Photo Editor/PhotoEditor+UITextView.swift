@@ -115,6 +115,9 @@ extension PhotoEditorViewController: UITextViewDelegate {
         opacityTopToolbar.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         opacityTopToolbar.tag = 100
         
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.swipeGesture))
+        swipeGesture.direction = .down
+        opacityCanvas.addGestureRecognizer(swipeGesture)
         
         self.view.insertSubview(opacityTopToolbar, at: 4)
         self.view.superview?.bringSubviewToFront(topToolbar)
