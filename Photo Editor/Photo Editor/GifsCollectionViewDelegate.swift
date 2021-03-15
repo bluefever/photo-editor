@@ -16,6 +16,10 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     let width = (CGFloat) ((UIScreen.main.bounds.size.width - 30) / 2.0)
     var data: [GiphyObject] = []
     
+    func randomizeContent() {
+        data.shuffle()
+    }
+    
     func setData(data: [GiphyObject]) {
         self.data = data
     }

@@ -174,8 +174,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
             UINib(nibName: "GifCollectionViewCell", bundle: Bundle(for: GifCollectionViewCell.self)),
             forCellWithReuseIdentifier: "GifCollectionViewCell")
         stickersCollectionView.keyboardDismissMode =  UIScrollView.KeyboardDismissMode.onDrag
-        
-        //-----------------------------------
+       
         let frameGifs = CGRect(x: scrollView.frame.size.width,
                                y: 0,
                                width: UIScreen.main.bounds.width,
@@ -196,6 +195,17 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
             UINib(nibName: "GifCollectionViewCell", bundle: Bundle(for: GifCollectionViewCell.self)),
             forCellWithReuseIdentifier: "GifCollectionViewCell")
         gifsCollectionView.keyboardDismissMode =  UIScrollView.KeyboardDismissMode.onDrag
+        
+        
+        if #available(iOS 10.0, *) {
+            let refreshControlStickers = UIRefreshControl()
+            refreshControlStickers.addTarget(self, action: #selector(randomizeContent), for: .valueChanged)
+            stickersCollectionView.refreshControl = refreshControlStickers
+            
+            let refreshControlGifs = UIRefreshControl()
+            refreshControlGifs.addTarget(self, action: #selector(randomizeContent), for: .valueChanged)
+            gifsCollectionView.refreshControl = refreshControlGifs
+        }
     }
     
     @objc public func loadMoreData() {
@@ -203,6 +213,20 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
             stickersApiManager.loadMore()
         } else {
             gifsApiManager.loadMore()
+        }
+    }
+    
+    @objc func randomizeContent(refreshControl: UIRefreshControl) {
+        if (segmentedView.currentIndex == 0) {
+            stickersDelegate.randomizeContent()
+            stickersCollectionView.reloadData()
+        } else {
+            gifsDelegate.randomizeContent()
+            gifsCollectionView.reloadData()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            refreshControl.endRefreshing()
         }
     }
     

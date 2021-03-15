@@ -86,6 +86,8 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
         
+        imagesCollectionView.bounces = false
+        collectionView.bounces = false
     }
     
     func configureCollectionViews() {
