@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FlipBook",
+        "repositoryURL": "https://github.com/bgayman/FlipBook.git",
+        "state": {
+          "branch": null,
+          "revision": "1e3104afc43eaf73dab706102a39d54e471cf51d",
+          "version": "1.5.10"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

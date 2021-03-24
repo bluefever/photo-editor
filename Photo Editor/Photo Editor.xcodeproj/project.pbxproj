@@ -352,6 +352,8 @@
 			dependencies = (
 			);
 			name = "Photo Editor";
+			packageProductDependencies = (
+			);
 			productName = "Photo Editor";
 			productReference = 059EA7191EACB8790072C0FE /* Photo Editor.app */;
 			productType = "com.apple.product-type.application";
@@ -383,6 +385,8 @@
 				Base,
 			);
 			mainGroup = 059EA7101EACB8780072C0FE;
+			packageReferences = (
+			);
 			productRefGroup = 059EA71A1EACB8790072C0FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

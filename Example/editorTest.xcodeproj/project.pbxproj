@@ -14,6 +14,7 @@
 		05D951DC1EBB868F00DC2299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D951DB1EBB868F00DC2299 /* Assets.xcassets */; };
 		05D951DF1EBB868F00DC2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D951DD1EBB868F00DC2299 /* LaunchScreen.storyboard */; };
 		1E8769B2C8BB5791725BA6E1 /* Pods_editorTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523415672FBA91B051BDB5FA /* Pods_editorTest.framework */; };
+		960871D72608AF4A005B6BE7 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960871D62608AF4A005B6BE7 /* data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		05D951DE1EBB868F00DC2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05D951E01EBB868F00DC2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523415672FBA91B051BDB5FA /* Pods_editorTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		960871D62608AF4A005B6BE7 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		9EEB4D5FF7C66761863E5E50 /* Pods-editorTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.release.xcconfig"; sourceTree = "<group>"; };
 		F2FE6D2857E80A528393FDF8 /* Pods-editorTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				05D951DB1EBB868F00DC2299 /* Assets.xcassets */,
 				05D951DD1EBB868F00DC2299 /* LaunchScreen.storyboard */,
 				05D951E01EBB868F00DC2299 /* Info.plist */,
+				960871D62608AF4A005B6BE7 /* data.swift */,
 			);
 			path = editorTest;
 			sourceTree = "<group>";
@@ -109,6 +112,8 @@
 			dependencies = (
 			);
 			name = editorTest;
+			packageProductDependencies = (
+			);
 			productName = editorTest;
 			productReference = 05D951D11EBB868F00DC2299 /* editorTest.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +145,8 @@
 				Base,
 			);
 			mainGroup = 05D951C81EBB868F00DC2299;
+			packageReferences = (
+			);
 			productRefGroup = 05D951D21EBB868F00DC2299 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05D951D71EBB868F00DC2299 /* ViewController.swift in Sources */,
+				960871D72608AF4A005B6BE7 /* data.swift in Sources */,
 				05D951D51EBB868F00DC2299 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +355,7 @@
 				DEVELOPMENT_TEAM = FVWB2RR9UB;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = editorTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamed.editorbf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,7 +374,7 @@
 				DEVELOPMENT_TEAM = FVWB2RR9UB;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = editorTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamed.editorbf;
 				PRODUCT_NAME = "$(TARGET_NAME)";

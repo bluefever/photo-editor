@@ -6,7 +6,7 @@ PODS:
     - SwiftyGif
     - TTSegmentedControl
   - KMPlaceholderTextView (1.4.0)
-  - SwiftyGif (5.3.0)
+  - SwiftyGif (5.4.0)
   - TTSegmentedControl (0.4.10)
 
 DEPENDENCIES:
@@ -27,7 +27,7 @@ SPEC CHECKSUMS:
   CollectionViewWaterfallLayout: 4399ba01be265fff4da1ed1d607130fe009780e4
   iOSPhotoEditor: 2987d02fb4702e7b7147412782e8071d67d8c383
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
 PODFILE CHECKSUM: ea06b1d06d0409ebea265171df70afd29804d0c8
