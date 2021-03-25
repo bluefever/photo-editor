@@ -262,7 +262,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         textSizeSlider.maximumTrackTintColor = UIColor.init(hexString: "#c1c1d1")
         
-        setBackgroundImage(image: (UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!))
+        setBackgroundImage(image: (UIImage(named: "default_bg.jpg", in: Bundle(for: type(of: self)), compatibleWith: nil)!))
         
         prepareTopTextButtons()
     }
