@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     func showPhotoEditor () {
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
-        
+        self.view.backgroundColor = .red
         let note =       "{ \"layers\": [ { \"zIndex\": 0, \"size\": { \"width\": 190, \"height\": 300 }, \"transform\": { \"d\": 0.7963274178455895, \"b\": 0, \"ty\": 0, \"c\": 0, \"a\": 0.7963274178455895, \"tx\": 0 }, \"contentUrl\": \"https://media1.giphy.com/media/3dkxUswaLHQ7C/giphy.gif?cid=cac7b245726bi2t1n80hk636c14dlf55057gbc71x7p4ii0r&rid=giphy.gif\", \"center\": { \"x\": 1135.869592860125, \"y\": 1609.2994800512347 } }, { \"zIndex\": 1, \"size\": { \"width\": 190, \"height\": 196 }, \"transform\": { \"d\": 1, \"b\": 0, \"ty\": 0, \"c\": 0, \"a\": 1, \"tx\": 0 }, \"contentUrl\": \"https://media2.giphy.com/media/WnCTbHZRwNXS6YtGXv/giphy.gif?cid=cac7b245ni8u9satud1ev53le6iyk7qpyvsbny0c660uunro&rid=giphy.gif\", \"center\": { \"x\": 600.241564322209, \"y\": 1168.4782608695652 } } ], \"backgroundSize\": { \"width\": 1500, \"height\": 2250 }, \"thumbnailUrl\": \"https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/images%2Fthumbnail_1614204483269.png?alt=media&token=0711b17e-fe1a-4300-a505-467ca245d5cc\", \"key\": \"639\", \"backgroundImage\": \"journal_cover_3\", \"originalFrame\": { \"width\": 414, \"height\": 896 } }"
         
         
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 //        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-production.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=b0498492-9a4a-4419-8dd4-16059cfe8b1b"
         //present(photoEditor, animated: true, completion: nil)
         
-        preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 190, height: 280))
+        preview = ExpressionScalablePreview.init(frame: CGRect.init(x:10, y: 100, width: 350, height: 510))
         preview!.data = note
         preview!.bgImages = ViewController.backgrounds
         self.view.addSubview(preview!)
@@ -41,32 +41,47 @@ class ViewController: UIViewController {
     }
     
     func addButton() {
-        let button:UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-        button.backgroundColor = .black
-        button.setTitle("Start", for: .normal)
-        button.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
-        self.view.addSubview(button)
-        
-        let button2:UIButton = UIButton(frame: CGRect(x: 200, y: 400, width: 100, height: 50))
-        button2.backgroundColor = .black
-        button2.setTitle("Stop", for: .normal)
-        button2.addTarget(self, action:#selector(self.buttonClickedStop), for: .touchUpInside)
-        self.view.addSubview(button2)
-        
+//        let button:UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+//        button.backgroundColor = .black
+//        button.setTitle("Start", for: .normal)
+//        button.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
+//        self.view.addSubview(button)
+//
+//        let button2:UIButton = UIButton(frame: CGRect(x: 200, y: 400, width: 100, height: 50))
+//        button2.backgroundColor = .black
+//        button2.setTitle("Stop", for: .normal)
+//        button2.addTarget(self, action:#selector(self.buttonClickedStop), for: .touchUpInside)
+//        self.view.addSubview(button2)
+//
         recordPages(index: 0)
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
+    }
+    
+    func saveJpg(_ image: UIImage, index: Int) {
+        if let pngData = image.pngData(),
+           let path = documentDirectoryPath()?.appendingPathComponent(String(index) + ".png") {
+            try? pngData.write(to: path)
+        }
     }
     
     func recordPages (index: Int) {
         print(index)
         if (index < 24) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self.preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 190, height: 280))
+                self.preview = ExpressionScalablePreview.init(frame: CGRect.init(x:10, y: 100, width: 350, height: 510))
                 self.preview!.data = ViewController.covers[index]
                 self.preview!.bgImages = ViewController.backgrounds
                 self.view.addSubview(self.preview!)
                 
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.buttonClicked()
+                    let snapshot = self.preview!.toImage()
+                    self.saveJpg(snapshot, index: index)    
                     self.recordPages(index: index + 1)
                 }
             }
@@ -123,5 +138,18 @@ extension ViewController: PhotoEditorDelegate {
     
     func canceledEditing() {
         print("Canceled")
+    }
+}
+
+extension UIView {
+    /**
+     Convert UIView to UIImage
+     */
+    func toImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return snapshotImageFromMyView!
     }
 }

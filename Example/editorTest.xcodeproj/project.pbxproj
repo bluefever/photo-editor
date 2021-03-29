@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		05D951DF1EBB868F00DC2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D951DD1EBB868F00DC2299 /* LaunchScreen.storyboard */; };
 		1E8769B2C8BB5791725BA6E1 /* Pods_editorTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523415672FBA91B051BDB5FA /* Pods_editorTest.framework */; };
 		960871D72608AF4A005B6BE7 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960871D62608AF4A005B6BE7 /* data.swift */; };
+		96BD2E7A260C984E00A9C871 /* FlipBook in Frameworks */ = {isa = PBXBuildFile; productRef = 96BD2E79260C984E00A9C871 /* FlipBook */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BD2E7A260C984E00A9C871 /* FlipBook in Frameworks */,
 				1E8769B2C8BB5791725BA6E1 /* Pods_editorTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +115,7 @@
 			);
 			name = editorTest;
 			packageProductDependencies = (
+				96BD2E79260C984E00A9C871 /* FlipBook */,
 			);
 			productName = editorTest;
 			productReference = 05D951D11EBB868F00DC2299 /* editorTest.app */;
@@ -146,6 +149,7 @@
 			);
 			mainGroup = 05D951C81EBB868F00DC2299;
 			packageReferences = (
+				96BD2E78260C984E00A9C871 /* XCRemoteSwiftPackageReference "FlipBook" */,
 			);
 			productRefGroup = 05D951D21EBB868F00DC2299 /* Products */;
 			projectDirPath = "";
@@ -339,7 +343,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -356,7 +361,10 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = editorTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamed.editorbf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -375,7 +383,10 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = editorTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamed.editorbf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -405,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		96BD2E78260C984E00A9C871 /* XCRemoteSwiftPackageReference "FlipBook" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bgayman/FlipBook.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96BD2E79260C984E00A9C871 /* FlipBook */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96BD2E78260C984E00A9C871 /* XCRemoteSwiftPackageReference "FlipBook" */;
+			productName = FlipBook;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 05D951C91EBB868F00DC2299 /* Project object */;
 }
