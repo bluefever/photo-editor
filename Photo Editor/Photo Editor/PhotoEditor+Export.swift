@@ -291,7 +291,7 @@ extension PhotoEditorViewController {
         if let expression = initialData {
             let exportData = exportExpression();
             
-            return expression == exportData
+            return expression != exportData
         }
         
         return imageBgName != nil || imageBg.backgroundColor != nil || canvasImageView.subviews.count > 0 || gifsSources.count > 0
