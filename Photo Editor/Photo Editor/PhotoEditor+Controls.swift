@@ -120,11 +120,14 @@ extension PhotoEditorViewController {
         hideToolbar(hide: true)
         cancelButton.isHidden = true
         
-        let snapshot = self.view.toImage()
-        let thumbnail = snapshot.resizeImage(image: snapshot, targetSize: CGSize(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.5))
-        
-        photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail)
-        self.dismiss(animated: true, completion: nil)
+        // Timeout to wait for hide UI elements
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+            let snapshot = self.view.toImage()
+            let thumbnail = snapshot.resizeImage(image: snapshot, targetSize: CGSize(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.5))
+            
+            photoEditorDelegate?.doneEditing(expression: self.exportExpression()!, image: thumbnail)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func backgroundButtonPressed(_ sender: Any) {
