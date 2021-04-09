@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         photoEditor.bgColors = bgColors
 //        photoEditor.initialData = note
-        photoEditor.bgImages = [""]
+        photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2F2210.png?alt=media&token=8466ec57-43a6-403c-92e5-ddb11d87aae6"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
 //        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"
         present(photoEditor, animated: true, completion: nil)
@@ -63,7 +63,7 @@ extension ViewController: PhotoEditorDelegate {
         print(expression)
     }
     
-    func canceledEditing() {
-        print("Canceled")
+    func canceledEditing(edited: Bool) {
+        print("Canceled", edited)
     }
 }

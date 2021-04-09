@@ -50,7 +50,7 @@ extension PhotoEditorViewController {
         let refreshAlert = UIAlertController(title: "Abandon your Note?", message: "Leaving now will delete this note forever.", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .default, handler: { (action: UIAlertAction!) in
-            self.photoEditorDelegate?.canceledEditing()
+            self.photoEditorDelegate?.canceledEditing(edited: self.isPageEdited())
             self.dismiss(animated: true, completion: nil)
         }))
         
@@ -121,9 +121,9 @@ extension PhotoEditorViewController {
         cancelButton.isHidden = true
         
         let snapshot = self.view.toImage()
-        let thumbnail = snapshot.cropToRect(rect: CGRect(x: Double(snapshot.size.width) * 0.1 / 2, y:Double(snapshot.size.height) * 0.2, width: Double(snapshot.size.width) * 0.9, height: Double(snapshot.size.height) * 0.7))
+        let thumbnail = snapshot.resizeImage(image: snapshot, targetSize: CGSize(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.5))
         
-        photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail!)
+        photoEditorDelegate?.doneEditing(expression: exportExpression()!, image: thumbnail)
         self.dismiss(animated: true, completion: nil)
     }
     

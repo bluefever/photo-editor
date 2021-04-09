@@ -287,6 +287,16 @@ extension PhotoEditorViewController {
         }
     }
     
+    public func isPageEdited () -> Bool {
+        if let expression = initialData {
+            let exportData = exportExpression();
+            
+            return expression == exportData
+        }
+        
+        return imageBgName != nil || imageBg.backgroundColor != nil || canvasImageView.subviews.count > 0 || gifsSources.count > 0
+    }
+    
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
         let imageView: UIImageView = UIImageView()
         let loader = UIActivityIndicatorView.init(style: .gray)
