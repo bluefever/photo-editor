@@ -290,8 +290,9 @@ extension PhotoEditorViewController {
     public func isPageEdited () -> Bool {
         if let expression = initialData {
             let exportData = exportExpression();
-            
-            return expression != exportData
+            if let exportExpression = exportData {
+                return expression != exportExpression.replacingOccurrences(of: "\\/", with: "/")
+            }
         }
         
         return imageBgName != nil || imageBg.backgroundColor != nil || canvasImageView.subviews.count > 0 || gifsSources.count > 0
