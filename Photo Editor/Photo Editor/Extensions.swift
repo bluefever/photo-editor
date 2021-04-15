@@ -50,10 +50,13 @@ extension UIImageView {
             
             guard let data = data else { return }
             let image = UIImage(data: data)
-            imageCache.setObject(image!, forKey: urlString as AnyObject)
             
-            DispatchQueue.main.async {
-                self.image = image
+            if let img = image {
+                imageCache.setObject(img, forKey: urlString as AnyObject)
+                
+                DispatchQueue.main.async {
+                    self.image = image
+                }
             }
         }.resume()
     }
