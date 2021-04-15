@@ -57,10 +57,25 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
     
     func didSelectImageBackground(image: String, index: Int) {
         self.removeBackgroundView()
-        let matches = image.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
+        var matches = image.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
         
         if (matches.count == 1 && matches[0].count == 2) {
             self.setBackgroundImage(image: image, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs%2F", with: ""))
+            return
+        } else {
+            let matches = image.matchingStrings(regex: "(/backgroundThumbs/[a-zA-Z0-9_-]+).png")
+
+            if (matches.count == 1 && matches[0].count == 2) {
+                self.setBackgroundImage(image: image, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs/", with: ""))
+                return
+            }
+        }
+        
+        //backward compability and local images
+        matches = image.matchingStrings(regex: "(/backgrounds%2F[a-zA-Z0-9_-]+).png")
+        
+        if (matches.count == 1 && matches[0].count == 2) {
+            self.setBackgroundImage(image: image, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds%2F", with: ""))
         } else {
             let matches = image.matchingStrings(regex: "(/backgrounds/[a-zA-Z0-9_-]+).png")
 
