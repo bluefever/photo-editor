@@ -59,10 +59,8 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
             imageView = UIImageView()
         }
         
-        let loader = UIActivityIndicatorView.init(style: .gray)
-        
         if let image = imageView {
-            image.setGifFromURL(URL.init(string: gif)!, customLoader: loader)
+            image.setGifFromURL(URL.init(string: gif)!)
             image.contentMode = .scaleAspectFit
             image.frame.size = CGSize(width: width, height: height)
             image.center = canvasImageView.center

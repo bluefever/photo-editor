@@ -127,9 +127,8 @@ open class ExpressionScalablePreview: UIView {
     
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
         let imageView: UIImageView = UIImageView()
-        let loader = UIActivityIndicatorView.init(style: .gray)
         
-        imageView.setGifFromURL(URL.init(string: contentUrl)!, customLoader: loader)
+        imageView.setGifFromURL(URL.init(string: contentUrl)!)
         imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
