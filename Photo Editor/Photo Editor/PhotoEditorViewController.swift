@@ -58,10 +58,6 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var styleFont6Button: UIButton!
     @IBOutlet weak var styleAlignButton: UIButton!
     
-    
-    @IBOutlet weak var topGradientTopContraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomGradientBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var centerHorizontalView: UIView!
     @IBOutlet weak var centerVerticalView: UIView!
     
@@ -225,6 +221,11 @@ public final class PhotoEditorViewController: UIViewController {
         styleFont6Button.addShadow()
         styleAlignButton.addShadow()
         
+        doneButton.layer.cornerRadius = continueButton.bounds.height / 2
+        doneButton.clipsToBounds = true
+        continueButton.layer.cornerRadius = continueButton.bounds.height / 2
+        continueButton.clipsToBounds = true
+        
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -233,13 +234,11 @@ public final class PhotoEditorViewController: UIViewController {
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true
         
-        if #available(iOS 11.0, *) {
-            let window = UIApplication.shared.keyWindow
-            let topPadding = window?.safeAreaInsets.top
-            let bottomPadding = window?.safeAreaInsets.bottom
-            topGradientTopContraint.constant = -(topPadding ?? 0)
-            bottomGradientBottomConstraint.constant = -(bottomPadding ?? 0)
-        }
+        controlsView.layer.shadowColor = UIColor.black.cgColor
+        controlsView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        controlsView.layer.shadowOpacity = 0.16
+        controlsView.layer.shadowRadius = 8.0
+        controlsView.layer.masksToBounds = false
         
         if #available(iOS 11.0, *) {
             self.controlsView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

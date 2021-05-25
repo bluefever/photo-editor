@@ -99,7 +99,6 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func onTextToolOpen() {
-        doneButton.setTitleColor(UIColor.white, for: .normal)
         cancelButton.isHidden = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         canvasImageView.addGestureRecognizer(tapGesture)
@@ -124,7 +123,6 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func onTextToolClose() {
-        doneButton.setTitleColor(UIColor.white, for: .normal)
         cancelButton.isHidden = false
         
         if let recognizers = canvasImageView!.superview!.gestureRecognizers {

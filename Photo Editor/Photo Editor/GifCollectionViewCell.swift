@@ -13,9 +13,9 @@ class GifCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .white
-        gifImageView.layer.cornerRadius = 10
+        gifImageView.layer.cornerRadius = 16
         gifImageView.clipsToBounds = true
-        gifImageView.layer.borderColor = UIColor.init(hexString: "#64a7fa").cgColor
+        gifImageView.layer.borderColor = UIColor.init(hexString: "#DFDFDF").cgColor
         gifImageView.layer.borderWidth = 1
         gifImageView.layer.masksToBounds = true
     }
