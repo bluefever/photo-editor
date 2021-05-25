@@ -320,6 +320,9 @@
                             <state key="normal" title="next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="continueButtonPressed:" destination="-1" eventType="touchUpInside" id="AEH-zi-FwP"/>
+                            </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-y4-Jwh">
                             <rect key="frame" x="33" y="-3" width="67" height="30"/>
