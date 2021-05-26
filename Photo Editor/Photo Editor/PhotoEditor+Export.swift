@@ -151,7 +151,7 @@ extension PhotoEditorViewController {
         } else if let color = imageBg.backgroundColor {
             expression.backgroundColor = color.hexString
         } else {
-            expression.backgroundImage = "default_v2"
+            expression.backgroundImage = "default_bg_v2"
         }
         
         for view in canvasImageView.subviews {
@@ -237,19 +237,23 @@ extension PhotoEditorViewController {
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                var bgUrl: String?
-                
-                for url in bgImages {
-                    if (url.matchingStrings(regex: "backgroundThumbs/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgroundThumbs%2F" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds%2F" + bgImage + ".png").count > 0) {
-                        bgUrl = url
+                if (bgImage != "default_v2") {
+                    var bgUrl: String?
+                    
+                    for url in bgImages {
+                        if (url.matchingStrings(regex: "backgroundThumbs/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgroundThumbs%2F" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds%2F" + bgImage + ".png").count > 0) {
+                            bgUrl = url
+                        }
                     }
-                }
-                
-                if let url = bgUrl {
-                    imageBg.load(url: url)
-                    imageBgName = bgImage
+                    
+                    if let url = bgUrl {
+                        imageBg.load(url: url)
+                        imageBgName = bgImage
+                    } else {
+                        setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
+                    }
                 } else {
-                    setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
+                    setBackgroundImage(image:  UIImage(named: "default_bg_v2", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
                 }
             } else {
                 setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)
