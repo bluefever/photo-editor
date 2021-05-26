@@ -53,39 +53,34 @@ open class ExpressionPreview: UIView {
         }
         
         if var expressionData = expression {
-            let bounds = self.bounds
-            var scaleX = CGFloat(1)
-            var scaleY = CGFloat(1)
-            
-            if (expressionData.originalFrame != nil) {
-                scaleX = bounds.width / expressionData.originalFrame!.width
-                scaleY = bounds.height / expressionData.originalFrame!.height
-            }
-            
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                imageBg = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-                var bgUrl: String?
-                
-                for url in bgImages {
-                    if (url.matchingStrings(regex: "backgroundThumbs/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgroundThumbs%2F" + bgImage + ".png").count > 0 ||
-                            url.matchingStrings(regex: "backgrounds/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds%2F" + bgImage + ".png").count > 0) {
-                        bgUrl = url
+                if (bgImage != "default_v2") {
+                    imageBg = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                    var bgUrl: String?
+                    
+                    for url in bgImages {
+                        if (url.matchingStrings(regex: "backgroundThumbs/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgroundThumbs%2F" + bgImage + ".png").count > 0 ||
+                                url.matchingStrings(regex: "backgrounds/" + bgImage + ".png").count > 0 || url.matchingStrings(regex: "backgrounds%2F" + bgImage + ".png").count > 0) {
+                            bgUrl = url
+                        }
                     }
-                }
-                
-                imageBg!.contentMode = .scaleAspectFill
-                
-                if let url = bgUrl {
-                    imageBg!.load(url: url)
-                    self.addSubview(imageBg!)
-                    self.sendSubviewToBack(imageBg!)
+                    
+                    imageBg!.contentMode = .scaleAspectFill
+                    
+                    if let url = bgUrl {
+                        imageBg!.load(url: url)
+                        self.addSubview(imageBg!)
+                        self.sendSubviewToBack(imageBg!)
+                    } else {
+                        addDefaultBg(v2: false)
+                    }
                 } else {
-                    addDefaultBg()
+                    addDefaultBg(v2: true)
                 }
             } else {
-                addDefaultBg()
+                addDefaultBg(v2: false)
             }
             
             expressionData.layers.sort{ $0.zIndex < $1.zIndex }
@@ -116,9 +111,9 @@ open class ExpressionPreview: UIView {
         }
     }
     
-    func addDefaultBg () {
+    func addDefaultBg (v2: Bool) {
         let imageView: UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        imageView.image = UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
+        imageView.image = UIImage(named: v2 ? "default_bg_v2" : "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!
         imageView.contentMode = .scaleAspectFill
         self.addSubview(imageView)
         self.sendSubviewToBack(imageView)

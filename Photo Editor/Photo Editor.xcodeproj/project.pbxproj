@@ -77,6 +77,7 @@
 		96824872265CC850004223A7 /* default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96824871265CC850004223A7 /* default_bg.png */; };
 		96824874265CDA78004223A7 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96824873265CD0EC004223A7 /* DMSans-Bold.ttf */; };
 		96824876265CDF13004223A7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96824875265CDF0C004223A7 /* Poppins-Bold.ttf */; };
+		96824878265E44C8004223A7 /* default_bg_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96824877265E44C8004223A7 /* default_bg_v2.png */; };
 		9698534424C6D52D0004167C /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9698534324C6D52D0004167C /* GifCollectionViewCell.xib */; };
 		969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D232F2541A50800695C90 /* FastInMyCar.ttf */; };
 		969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D235C2541AA1C00695C90 /* Cheria.ttf */; };
@@ -181,6 +182,7 @@
 		96824871265CC850004223A7 /* default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg.png; sourceTree = "<group>"; };
 		96824873265CD0EC004223A7 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		96824875265CDF0C004223A7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		96824877265E44C8004223A7 /* default_bg_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg_v2.png; sourceTree = "<group>"; };
 		9698534324C6D52D0004167C /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCollectionViewCell.xib; sourceTree = "<group>"; };
 		969D232F2541A50800695C90 /* FastInMyCar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastInMyCar.ttf; sourceTree = "<group>"; };
 		969D235C2541AA1C00695C90 /* Cheria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cheria.ttf; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				960ED6B324DBCC7F002D3B85 /* icon_thumb@3x.png */,
 				96824871265CC850004223A7 /* default_bg.png */,
 				969D235C2541AA1C00695C90 /* Cheria.ttf */,
+				96824877265E44C8004223A7 /* default_bg_v2.png */,
 				964F1C6F24C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift */,
 				964F1C6D24C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift */,
 				96824875265CDF0C004223A7 /* Poppins-Bold.ttf */,
@@ -427,6 +430,7 @@
 				96618BD424D9A31200128708 /* icon_back@2x.png in Resources */,
 				960B0EAC2541968800C5DA4B /* icon_align_right@2x.png in Resources */,
 				96618BDA24D9B60000128708 /* icon_delete.png in Resources */,
+				96824878265E44C8004223A7 /* default_bg_v2.png in Resources */,
 				96EF93CE254050EF00915EFD /* size_on@2x.png in Resources */,
 				96EF93D3254050EF00915EFD /* size_off@2x.png in Resources */,
 				960B0EA92541968800C5DA4B /* icon_align_right.png in Resources */,
