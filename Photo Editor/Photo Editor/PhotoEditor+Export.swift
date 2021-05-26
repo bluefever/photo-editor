@@ -148,8 +148,10 @@ extension PhotoEditorViewController {
         if let imageName = imageBgName {
             expression.backgroundImage = imageName
             expression.backgroundSize = OriginalFrame.init(height: imageBg.image!.size.height, width: imageBg.image!.size.width)
+        } else if let color = imageBg.backgroundColor {
+            expression.backgroundColor = color.hexString
         } else {
-            expression.backgroundColor = imageBg.backgroundColor?.hexString
+            expression.backgroundImage = "default_v2"
         }
         
         for view in canvasImageView.subviews {
