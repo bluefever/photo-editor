@@ -53,6 +53,15 @@ open class ExpressionPreview: UIView {
         }
         
         if var expressionData = expression {
+            let bounds = self.bounds
+            var scaleX = CGFloat(1)
+            var scaleY = CGFloat(1)
+            
+            if (expressionData.originalFrame != nil) {
+                scaleX = bounds.width / expressionData.originalFrame!.width
+                scaleY = bounds.height / expressionData.originalFrame!.height
+            }
+ 
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {

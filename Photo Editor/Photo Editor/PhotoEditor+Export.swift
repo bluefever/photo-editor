@@ -168,7 +168,7 @@ extension PhotoEditorViewController {
                 textLayer.text = textView.text
                 textLayer.transform = Transform(a: view.transform.a, b: view.transform.b, c: view.transform.c,d: view.transform.d, tx: view.transform.tx, ty: view.transform.ty)
                 
-                if (expression.backgroundImage != nil) {
+                if (expression.backgroundImage != nil && expression.backgroundImage != "default_bg_v2") {
                     textLayer.center = pointFromAspectFill(for: center, in: imageBg)
                 } else {
                     textLayer.center = Point(x: center.x, y: center.y)
@@ -190,7 +190,7 @@ extension PhotoEditorViewController {
             gifLayer.size = Size(width: gif.image.bounds.width, height: gif.image.bounds.height)
             gifLayer.transform = Transform(a: gif.image.transform.a, b: gif.image.transform.b, c: gif.image.transform.c,d: gif.image.transform.d, tx: gif.image.transform.tx, ty: gif.image.transform.ty)
             
-            if (expression.backgroundImage != nil) {
+            if (expression.backgroundImage != nil && expression.backgroundImage != "default_bg_v2") {
                 gifLayer.center = pointFromAspectFill(for: center, in: imageBg)
             } else {
                 gifLayer.center = Point(x: center.x, y: center.y)
