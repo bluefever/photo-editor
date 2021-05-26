@@ -645,7 +645,7 @@
         <image name="icon_align_center.png" width="30" height="30"/>
         <image name="icon_back.png" width="11" height="20"/>
         <image name="icon_canvas.png" width="20" height="20"/>
-        <image name="icon_delete.png" width="108" height="82"/>
+        <image name="icon_delete.png" width="46" height="46"/>
         <image name="icon_sticker.png" width="20" height="20"/>
         <image name="icon_text.png" width="20" height="20"/>
         <image name="size_off.png" width="31" height="30"/>

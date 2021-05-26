@@ -64,7 +64,7 @@ open class ExpressionScalablePreview: UIView {
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                if (bgImage != "default_v2") {
+                if (bgImage != "default_bg_v2") {
                     imageBg = UIImageView.init(frame: CGRect(x:0, y:0, width: bounds.width, height: bounds.height))
                     var bgUrl: String?
                     

@@ -73,11 +73,13 @@
 		96618BD424D9A31200128708 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BC824D9A31100128708 /* icon_back@2x.png */; };
 		96618BD524D9A31200128708 /* icon_canvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BC924D9A31200128708 /* icon_canvas@2x.png */; };
 		96618BD624D9A31200128708 /* icon_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BCA24D9A31200128708 /* icon_text.png */; };
-		96618BDA24D9B60000128708 /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BD924D9B5FF00128708 /* icon_delete.png */; };
 		96824872265CC850004223A7 /* default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96824871265CC850004223A7 /* default_bg.png */; };
 		96824874265CDA78004223A7 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96824873265CD0EC004223A7 /* DMSans-Bold.ttf */; };
 		96824876265CDF13004223A7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96824875265CDF0C004223A7 /* Poppins-Bold.ttf */; };
 		96824878265E44C8004223A7 /* default_bg_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96824877265E44C8004223A7 /* default_bg_v2.png */; };
+		9682487C265E71B2004223A7 /* icon_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96824879265E71B2004223A7 /* icon_delete@2x.png */; };
+		9682487D265E71B2004223A7 /* icon_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9682487A265E71B2004223A7 /* icon_delete@3x.png */; };
+		9682487E265E71B2004223A7 /* icon_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 9682487B265E71B2004223A7 /* icon_delete.png */; };
 		9698534424C6D52D0004167C /* GifCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9698534324C6D52D0004167C /* GifCollectionViewCell.xib */; };
 		969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D232F2541A50800695C90 /* FastInMyCar.ttf */; };
 		969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D235C2541AA1C00695C90 /* Cheria.ttf */; };
@@ -176,13 +178,15 @@
 		96618BC824D9A31100128708 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
 		96618BC924D9A31200128708 /* icon_canvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_canvas@2x.png"; sourceTree = "<group>"; };
 		96618BCA24D9A31200128708 /* icon_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_text.png; sourceTree = "<group>"; };
-		96618BD924D9B5FF00128708 /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
 		96618BDB24DA831800128708 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		96618BDC24DAAB0D00128708 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		96824871265CC850004223A7 /* default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg.png; sourceTree = "<group>"; };
 		96824873265CD0EC004223A7 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		96824875265CDF0C004223A7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		96824877265E44C8004223A7 /* default_bg_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg_v2.png; sourceTree = "<group>"; };
+		96824879265E71B2004223A7 /* icon_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_delete@2x.png"; sourceTree = "<group>"; };
+		9682487A265E71B2004223A7 /* icon_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_delete@3x.png"; sourceTree = "<group>"; };
+		9682487B265E71B2004223A7 /* icon_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_delete.png; sourceTree = "<group>"; };
 		9698534324C6D52D0004167C /* GifCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifCollectionViewCell.xib; sourceTree = "<group>"; };
 		969D232F2541A50800695C90 /* FastInMyCar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastInMyCar.ttf; sourceTree = "<group>"; };
 		969D235C2541AA1C00695C90 /* Cheria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cheria.ttf; sourceTree = "<group>"; };
@@ -264,6 +268,9 @@
 				96824877265E44C8004223A7 /* default_bg_v2.png */,
 				964F1C6F24C5E3AB00F96C62 /* ImageCollectionViewDelegate.swift */,
 				964F1C6D24C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift */,
+				9682487B265E71B2004223A7 /* icon_delete.png */,
+				96824879265E71B2004223A7 /* icon_delete@2x.png */,
+				9682487A265E71B2004223A7 /* icon_delete@3x.png */,
 				96824875265CDF0C004223A7 /* Poppins-Bold.ttf */,
 				0565130F1EF489B4009EA38F /* UIImage+Size.swift */,
 				056513101EF489B4009EA38F /* UIImageView+Alpha.swift */,
@@ -281,7 +288,6 @@
 				056513171EF489B4009EA38F /* UIImage+Crop.swift */,
 				056513181EF489B4009EA38F /* ResizeControl.swift */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
-				96618BD924D9B5FF00128708 /* icon_delete.png */,
 				96618BC724D9A31100128708 /* icon_back.png */,
 				96618BC824D9A31100128708 /* icon_back@2x.png */,
 				96618BC424D9A31100128708 /* icon_back@3x.png */,
@@ -412,6 +418,7 @@
 				969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */,
 				960B0EAE2541968800C5DA4B /* icon_align_center@3x.png in Resources */,
 				960B0EAD2541968800C5DA4B /* icon_align_left@3x.png in Resources */,
+				9682487E265E71B2004223A7 /* icon_delete.png in Resources */,
 				96EF93C5254050E800915EFD /* text_on.png in Resources */,
 				96618BBE24D99FD200128708 /* Nunito-ExtraBold.ttf in Resources */,
 				969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */,
@@ -421,6 +428,7 @@
 				960B0EAF2541968800C5DA4B /* icon_align_center@2x.png in Resources */,
 				96EF93C3254050E800915EFD /* text_off@3x.png in Resources */,
 				964F1C7924C5E3AB00F96C62 /* ImageCollectionViewCell.xib in Resources */,
+				9682487D265E71B2004223A7 /* icon_delete@3x.png in Resources */,
 				96EF93B6254050D600915EFD /* color_off@3x.png in Resources */,
 				059EA7271EACB8790072C0FE /* LaunchScreen.storyboard in Resources */,
 				960B0EB02541968800C5DA4B /* icon_align_left.png in Resources */,
@@ -429,7 +437,6 @@
 				96824872265CC850004223A7 /* default_bg.png in Resources */,
 				96618BD424D9A31200128708 /* icon_back@2x.png in Resources */,
 				960B0EAC2541968800C5DA4B /* icon_align_right@2x.png in Resources */,
-				96618BDA24D9B60000128708 /* icon_delete.png in Resources */,
 				96824878265E44C8004223A7 /* default_bg_v2.png in Resources */,
 				96EF93CE254050EF00915EFD /* size_on@2x.png in Resources */,
 				96EF93D3254050EF00915EFD /* size_off@2x.png in Resources */,
@@ -455,6 +462,7 @@
 				96618BD624D9A31200128708 /* icon_text.png in Resources */,
 				96618BCD24D9A31200128708 /* icon_text@3x.png in Resources */,
 				056513351EF489C0009EA38F /* ColorCollectionViewCell.xib in Resources */,
+				9682487C265E71B2004223A7 /* icon_delete@2x.png in Resources */,
 				96EF93D2254050EF00915EFD /* size_off.png in Resources */,
 				0565133A1EF489C0009EA38F /* PhotoCropEditorBorder@2x.png in Resources */,
 				96EF93B8254050D600915EFD /* color_off.png in Resources */,

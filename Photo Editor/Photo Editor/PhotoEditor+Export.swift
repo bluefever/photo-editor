@@ -237,7 +237,7 @@ extension PhotoEditorViewController {
             if let bgColor = expressionData.backgroundColor {
                 setBackgroundColor(color: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
-                if (bgImage != "default_v2") {
+                if (bgImage != "default_bg_v2") {
                     var bgUrl: String?
                     
                     for url in bgImages {

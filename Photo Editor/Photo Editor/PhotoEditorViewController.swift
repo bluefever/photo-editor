@@ -226,11 +226,6 @@ public final class PhotoEditorViewController: UIViewController {
         continueButton.layer.cornerRadius = continueButton.bounds.height / 2
         continueButton.clipsToBounds = true
         
-        deleteView.layer.cornerRadius = deleteView.bounds.height / 2
-        deleteView.layer.borderWidth = 2.0
-        deleteView.layer.borderColor = UIColor.white.cgColor
-        deleteView.clipsToBounds = true
-        
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true
         
