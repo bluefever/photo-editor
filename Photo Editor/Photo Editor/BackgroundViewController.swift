@@ -170,12 +170,16 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         collectionView.frame = CGRect(x: scrollView.frame.size.width,
                                       y: 0,
                                       width: UIScreen.main.bounds.width,
-                                      height: scrollView.frame.size.height)
+                                      height: scrollView.frame.size.height - bottomPadding / 2)
+        
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
         
         imagesCollectionView.frame = CGRect(x: 0,
                                             y: 0,
                                             width: UIScreen.main.bounds.width,
-                                            height: scrollView.frame.size.height)
+                                            height: scrollView.frame.size.height - bottomPadding / 2)
+        
+        imagesCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
         
         scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
                                         height: scrollView.frame.size.height)

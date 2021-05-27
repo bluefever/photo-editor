@@ -49,13 +49,14 @@ extension PhotoEditorViewController {
         
         let refreshAlert = UIAlertController(title: "Abandon your Note?", message: "Leaving now will delete this note forever.", preferredStyle: UIAlertController.Style.alert)
         
-        refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .default, handler: { (action: UIAlertAction!) in
-            self.photoEditorDelegate?.canceledEditing(edited: self.isPageEdited())
-            self.dismiss(animated: true, completion: nil)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .default, handler: { (action: UIAlertAction!) in
+            refreshAlert.dismiss(animated: true, completion: nil)
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .cancel, handler: { (action: UIAlertAction!) in
-            refreshAlert.dismiss(animated: true, completion: nil)
+        refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.photoEditorDelegate?.canceledEditing(edited: self.isPageEdited())
+            self.dismiss(animated: true, completion: nil)
         }))
         
         present(refreshAlert, animated: true, completion: nil)
@@ -267,9 +268,9 @@ extension PhotoEditorViewController {
             textView.autocorrectionType = .no
             textView.isScrollEnabled = false
             textView.delegate = self
-            textView.placeholder = "Start typing here or skip by tapping ‘DONE’ and browse ‘Backgrounds’ for some inspo.."
+            textView.placeholder = "Start typing..."
             textView.placeholderColor = UIColor.init(hexString: "#fff")
-            textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
+            textView.placeholderFont = UIFont(name: "HelveticaNeue", size: 20)
             
             
             let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y - topToolbar.frame.height,
