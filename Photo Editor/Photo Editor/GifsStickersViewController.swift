@@ -87,27 +87,35 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
             self.onPageChange(page: index)
         }
         
-        self.view.layer.cornerRadius = 20
-        self.view.clipsToBounds = true
-        
-        if #available(iOS 11.0, *) {
-            self.view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        } else {
-            let path = UIBezierPath(roundedRect: self.view.bounds,
-                                    byRoundingCorners: [.topRight, .topLeft],
-                                    cornerRadii: CGSize(width: 20, height: 20))
-            
-            let maskLayer = CAShapeLayer()
-            
-            maskLayer.path = path.cgPath
-            self.view.layer.mask = maskLayer
-        }
-        
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(GifsStickersViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
+        
+        
+        self.view.layer.cornerRadius = 20
+        self.view.layer.masksToBounds = true
+        
+        self.view.layer.shadowColor = UIColor.black.cgColor
+        self.view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.view.layer.shadowOpacity = 0.36
+        self.view.layer.shadowRadius = 8.0
+        self.view.layer.masksToBounds = false
     }
+    
+
+
+        func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+            self.view.layer.masksToBounds = false
+            self.view.layer.shadowOffset = offset
+            self.view.layer.shadowColor = color.cgColor
+            self.view.layer.shadowRadius = radius
+            self.view.layer.shadowOpacity = opacity
+
+            self.view.layer.backgroundColor =  UIColor.black.cgColor
+        }
+    
+    
     
     @IBAction func onSearchChanged(_ sender: UITextField) {
         if let searchText = sender.text {
@@ -232,7 +240,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        prepareBackgroundView()
+//        prepareBackgroundView()
     }
     
     public override func viewDidAppear(_ animated: Bool) {

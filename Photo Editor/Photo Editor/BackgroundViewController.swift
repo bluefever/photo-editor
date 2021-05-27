@@ -65,8 +65,6 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
         
-        self.view.layer.cornerRadius = 20
-        self.view.clipsToBounds = true
         
         if #available(iOS 11.0, *) {
             self.view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -88,6 +86,15 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         
         imagesCollectionView.bounces = false
         collectionView.bounces = false
+    
+        self.view.layer.cornerRadius = 20
+        self.view.layer.masksToBounds = true
+        
+        self.view.layer.shadowColor = UIColor.black.cgColor
+        self.view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.view.layer.shadowOpacity = 0.36
+        self.view.layer.shadowRadius = 8.0
+        self.view.layer.masksToBounds = false
     }
     
     func configureCollectionViews() {

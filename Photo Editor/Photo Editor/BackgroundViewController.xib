@@ -34,7 +34,7 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oF-YM-OfZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="12"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="12" id="qg5-9S-8HM"/>
                                     </constraints>
@@ -107,6 +107,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="72l-Pf-i7O" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" constant="16" id="Gdo-60-4ae"/>
                                 <constraint firstItem="FFz-HG-EXZ" firstAttribute="leading" secondItem="Sgy-xB-bRW" secondAttribute="leading" id="boN-O8-w1P"/>
@@ -119,7 +120,7 @@
                             <rect key="frame" x="0.0" y="166" width="375" height="501"/>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="389-Pb-g4p" firstAttribute="width" secondItem="XW5-Il-2gL" secondAttribute="width" id="1CO-gH-dXZ"/>
                         <constraint firstAttribute="bottom" secondItem="389-Pb-g4p" secondAttribute="bottom" id="ehg-Ke-JmF"/>
