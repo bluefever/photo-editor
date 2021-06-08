@@ -60,6 +60,8 @@
 		964F1C7724C5E3AB00F96C62 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F1C7024C5E3AB00F96C62 /* Extensions.swift */; };
 		964F1C7824C5E3AB00F96C62 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F1C7124C5E3AB00F96C62 /* ImageCollectionViewCell.swift */; };
 		964F1C7924C5E3AB00F96C62 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */; };
+		9656D391266F857900727AE1 /* TemplateCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9656D38F266F857900727AE1 /* TemplateCategoryCell.xib */; };
+		9656D392266F857900727AE1 /* TemplateCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D390266F857900727AE1 /* TemplateCategoryViewCell.swift */; };
 		96618BBE24D99FD200128708 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96618BA424D99E8600128708 /* Nunito-ExtraBold.ttf */; };
 		96618BCB24D9A31200128708 /* icon_sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BBF24D9A31100128708 /* icon_sticker.png */; };
 		96618BCC24D9A31200128708 /* icon_sticker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96618BC024D9A31100128708 /* icon_sticker@2x.png */; };
@@ -165,6 +167,8 @@
 		964F1C7024C5E3AB00F96C62 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		964F1C7124C5E3AB00F96C62 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		9656D38F266F857900727AE1 /* TemplateCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemplateCategoryCell.xib; sourceTree = "<group>"; };
+		9656D390266F857900727AE1 /* TemplateCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCategoryViewCell.swift; sourceTree = "<group>"; };
 		96618BA424D99E8600128708 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		96618BBF24D9A31100128708 /* icon_sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sticker.png; sourceTree = "<group>"; };
 		96618BC024D9A31100128708 /* icon_sticker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_sticker@2x.png"; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
 				969D232F2541A50800695C90 /* FastInMyCar.ttf */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
+				9656D38F266F857900727AE1 /* TemplateCategoryCell.xib */,
+				9656D390266F857900727AE1 /* TemplateCategoryViewCell.swift */,
 				960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */,
 				960ED6B324DBCC7F002D3B85 /* icon_thumb@3x.png */,
 				96824871265CC850004223A7 /* default_bg.png */,
@@ -437,6 +443,7 @@
 				96824872265CC850004223A7 /* default_bg.png in Resources */,
 				96618BD424D9A31200128708 /* icon_back@2x.png in Resources */,
 				960B0EAC2541968800C5DA4B /* icon_align_right@2x.png in Resources */,
+				9656D391266F857900727AE1 /* TemplateCategoryCell.xib in Resources */,
 				96824878265E44C8004223A7 /* default_bg_v2.png in Resources */,
 				96EF93CE254050EF00915EFD /* size_on@2x.png in Resources */,
 				96EF93D3254050EF00915EFD /* size_off@2x.png in Resources */,
@@ -491,6 +498,7 @@
 				056513281EF489B4009EA38F /* UIImage+Crop.swift in Sources */,
 				964F1C7424C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift in Sources */,
 				056513221EF489B4009EA38F /* UIView+Image.swift in Sources */,
+				9656D392266F857900727AE1 /* TemplateCategoryViewCell.swift in Sources */,
 				056513461EF489CD009EA38F /* PhotoEditor+Gestures.swift in Sources */,
 				9611043324E2695B0021D4D7 /* ExpressionPreview.swift in Sources */,
 				056513201EF489B4009EA38F /* UIImage+Size.swift in Sources */,

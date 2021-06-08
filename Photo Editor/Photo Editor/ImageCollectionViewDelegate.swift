@@ -7,12 +7,25 @@
 
 import UIKit
 
-class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
     
     var bgImages: [String] = []
     var templateCategories: [String] = []
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 16, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.font = UIFont(name: "Poppins-Bold", size: 22)
+        label.text = templateCategories[section]
+        label.textColor = UIColor.init(hexString: "#1E2347")
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bgImages.count
@@ -26,17 +39,17 @@ class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColle
         return templateCategories[section]
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return templateCategories.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "templateCategoryViewCell", for: indexPath) as? TemplateCategoryViewCell {
-            cell.title = templateCategories[indexPath.item]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TemplateCategoryViewCell", for: indexPath) as? TemplateCategoryViewCell {
             
             return cell
         }
@@ -44,18 +57,6 @@ class ImageCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColle
         
         return UITableViewCell()
     }
-
-    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-//        cell.image.layer.cornerRadius = 14
-//        cell.image.clipsToBounds = true
-//        cell.image.image = nil
-//        cell.image.tag = indexPath.item
-//        cell.image.loadImage(urlString: bgImages[indexPath.item])
-//
-//        return cell
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12

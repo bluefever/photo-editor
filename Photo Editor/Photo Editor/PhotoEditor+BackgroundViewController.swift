@@ -23,6 +23,8 @@ extension PhotoEditorViewController {
             backgroundViewController.bgImages.append(image)
         }
         
+        backgroundViewController.templateCategories = self.templatesCategories
+        
         self.addChild(backgroundViewController)
         self.view.addSubview(backgroundViewController.view)
         backgroundViewController.didMove(toParent: self)
