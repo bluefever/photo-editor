@@ -150,6 +150,8 @@ public final class PhotoEditorViewController: UIViewController {
         backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
         hideControls()
         configureCollectionView()
+        
+        addBackgroundViewController()
     }
     
     public override func viewDidLayoutSubviews() {

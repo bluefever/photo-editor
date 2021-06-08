@@ -18,6 +18,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var imageDelegate: ImageCollectionViewDelegate!
     
+    var templateCategories: [String] = ["ab","cd","ef"]
     var bgImages : [String] = []
     var bgColors : [String] = []
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
@@ -140,7 +141,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         imageDelegate = ImageCollectionViewDelegate()
         
         imageDelegate.bgImages = bgImages
-        
+        imageDelegate.templateCategories = templateCategories
         
         imageDelegate.backgroundViewControllerDelegate = backgroundViewControllerDelegate
         
