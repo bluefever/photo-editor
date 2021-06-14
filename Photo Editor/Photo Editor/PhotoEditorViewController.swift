@@ -79,6 +79,10 @@ public final class PhotoEditorViewController: UIViewController {
      */
     @objc public var bgImages : [String] = []
     /**
+     Array of template categories
+     */
+    @objc public var templateCategories : [String] = []
+    /**
      Initial background template
      */
     @objc public var initialBgUrl : String?
@@ -92,6 +96,11 @@ public final class PhotoEditorViewController: UIViewController {
     Json data to import expression
     */
     @objc public var initialData: String?
+    
+    /**
+    Json data to import backgrounds
+    */
+    @objc public var backgroundsCategories: String?
     
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
@@ -156,6 +165,8 @@ public final class PhotoEditorViewController: UIViewController {
         backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
         hideControls()
         configureCollectionView()
+        
+        addBackgroundViewController()
     }
     
     public override func viewDidLayoutSubviews() {

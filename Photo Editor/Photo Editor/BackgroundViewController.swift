@@ -14,10 +14,11 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var segmentedView: TTSegmentedControl!
     
     var collectionView: UICollectionView!
-    var imagesCollectionView: UICollectionView!
+    var imagesCollectionView: UITableView!
     
     var imageDelegate: ImageCollectionViewDelegate!
     
+    var templateCategories: [String] = []
     var bgImages : [String] = []
     var bgColors : [String] = []
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
@@ -133,23 +134,24 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         let imageWidth = (CGFloat) ((screenSize.width - 36) / 2)
         imageslayout.itemSize = CGSize(width: imageWidth, height: imageWidth * 1.3)
         
-        imagesCollectionView = UICollectionView(frame: imagesFrame, collectionViewLayout: imageslayout)
+        imagesCollectionView = UITableView(frame: imagesFrame)
         imagesCollectionView.backgroundColor = .clear
         scrollView.addSubview(imagesCollectionView)
         scrollView.addSubview(collectionView)
         imageDelegate = ImageCollectionViewDelegate()
         
         imageDelegate.bgImages = bgImages
-        
+        imageDelegate.templateCategories = templateCategories
         
         imageDelegate.backgroundViewControllerDelegate = backgroundViewControllerDelegate
         
         imagesCollectionView.delegate = imageDelegate
         imagesCollectionView.dataSource = imageDelegate
         
+        imagesCollectionView.rowHeight = imageWidth * 1.3
         imagesCollectionView.register(
-            UINib(nibName: "ImageCollectionViewCell", bundle: Bundle(for: ImageCollectionViewCell.self)),
-            forCellWithReuseIdentifier: "ImageCollectionViewCell")
+            UINib(nibName: "TemplateCategoryViewCell", bundle: Bundle(for: TemplateCategoryViewCell.self)),
+            forCellReuseIdentifier: "TemplateCategoryViewCell")
         
     }
     override func viewWillAppear(_ animated: Bool) {

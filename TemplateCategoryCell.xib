@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCategoryViewCell" rowHeight="249" id="sa4-Zs-5Zu" customClass="TemplateCategoryViewCell" customModule="iOSPhotoEditor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="249"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sa4-Zs-5Zu" id="XLz-hV-XKD">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="249"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z70-z9-heB">
+                        <rect key="frame" x="-3" y="17.5" width="426" height="214.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-OY-p31">
+                                <rect key="frame" x="0.0" y="0.0" width="426" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CEL-sw-vTA">
+                                <rect key="frame" x="0.0" y="20.5" width="426" height="194"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AmO-uq-Dzw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6bW-OY-p31" firstAttribute="leading" secondItem="z70-z9-heB" secondAttribute="leading" id="M39-pK-dja"/>
+                            <constraint firstItem="6bW-OY-p31" firstAttribute="leading" secondItem="z70-z9-heB" secondAttribute="leading" constant="16" id="bCo-M5-aNp"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="z70-z9-heB" firstAttribute="height" secondItem="XLz-hV-XKD" secondAttribute="height" multiplier="0.861446" id="7dH-cW-fsx"/>
+                    <constraint firstItem="z70-z9-heB" firstAttribute="width" secondItem="XLz-hV-XKD" secondAttribute="width" multiplier="1.01429" id="Scr-rd-Nqj"/>
+                    <constraint firstItem="z70-z9-heB" firstAttribute="centerY" secondItem="XLz-hV-XKD" secondAttribute="centerY" id="Vxt-bz-65C"/>
+                    <constraint firstItem="z70-z9-heB" firstAttribute="centerX" secondItem="XLz-hV-XKD" secondAttribute="centerX" id="urk-TI-z5t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="title" destination="6bW-OY-p31" id="Y9N-wx-A2N"/>
+            </connections>
+            <point key="canvasLocation" x="-69.565217391304358" y="69.308035714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
