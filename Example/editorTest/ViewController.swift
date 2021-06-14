@@ -12,6 +12,8 @@ import iOSPhotoEditor
 class ViewController: UIViewController {
     let bgColors: [String] = ["#4282F7","#538EF7","#669AF8","#739FEE","#8CB3F9","#9EC0FA","#B2CDFB","#C4D8FB","#D9E6FD","#ECF2FE","#DCC7C6","#DFCCCB","#E3D2D1","#E6D8D6","#EADEDC","#EDE2E2","#F1E8E8","#F4EDED","#FBF9F9","#EED5BB","#EFD9C2","#F2DEC9","#F2E0CF","#F4E5D6","#4282F7","#538EF7","#669AF8","#739FEE","#8CB3F9","#9EC0FA","#B2CDFB","#C4D8FB","#D9E6FD","#ECF2FE","#DCC7C6"]
     
+    let backgroundsByCategory = "{\"Holidays\":[{\"size\":\"215212\",\"active\":true,\"internalId\":\"bg_317\",\"category\":[\"Holidays\"],\"url\":\"https:\\/\\/shinggg-development.bluefever.com\\/backgroundThumbs\\/bg_317.png\"},{\"size\":\"3775272\",\"active\":true,\"internalId\":\"bg_313\",\"category\":[\"Holidays\"],\"url\":\"https:\\/\\/shinggg-development.bluefever.com\\/backgroundThumbs\\/bg_313.png\"},{\"size\":\"90904\",\"active\":true,\"internalId\":\"bg_312\",\"category\":[\"Holidays\"],\"url\":\"https:\\/\\/shinggg-development.bluefever.com\\/backgroundThumbs\\/bg_312.png\"}]}"
+    
   
     
     func showPhotoEditor () {
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
         
         photoEditor.bgColors = bgColors
 //        photoEditor.initialData = note
+        photoEditor.backgroundsByCategory = backgroundsByCategory
         photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2F303.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
 //        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"

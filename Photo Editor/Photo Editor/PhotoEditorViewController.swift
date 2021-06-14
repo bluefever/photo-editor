@@ -84,6 +84,11 @@ public final class PhotoEditorViewController: UIViewController {
     @objc public var initialBgUrl : String?
     
     /**
+     Dictionary of backgrounds by category
+     */
+    @objc public var backgroundsByCategoryJson : String?
+    
+    /**
     Json data to import expression
     */
     @objc public var initialData: String?
@@ -94,6 +99,7 @@ public final class PhotoEditorViewController: UIViewController {
     // list of controls to be hidden
     @objc public var hiddenControls : [NSString] = []
     
+    var : Dictionary<String, [Background]> = [:]
     var imageBgName: String? = nil
     var backgroundVCIsVisible = false
     var gifsStickersVCIsVisible = false
@@ -154,6 +160,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        importBackgroundsByCategory(data: backgroundsByCategoryJson!)
         renderCount += 1
         
         if (renderCount > 1 && !imported) {

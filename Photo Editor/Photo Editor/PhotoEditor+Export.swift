@@ -98,6 +98,10 @@ struct OriginalFrame: Codable, Hashable {
     }
 }
 
+public struct Background: Codable, Hashable {
+    let internalId, url: String?
+}
+
 public struct Expression: Codable, Hashable {
     var backgroundColor: String?
     var backgroundImage: String?
@@ -353,5 +357,29 @@ extension PhotoEditorViewController {
         
         self.canvasImageView.addSubview(view)
         addGestures(view: view)
+    }
+    
+    func importBackgroundsByCategory (data: String) {
+        if let data = data.data(using: .utf8) {
+               do {
+                var backgroundsByCategory: Dictionary<String, [Background]> = [:]
+                if let parsed = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, [AnyObject]> {
+                    for key in parsed.keys {
+                        backgroundsByCategory[key] = []
+                        
+                        if let values = parsed[key] {
+                            for val in values {
+                                let bg = try JSONDecoder().decode(Background.self, from: JSONSerialization.data(withJSONObject: val))
+                                backgroundsByCategory[key]?.append(bg)
+                            }
+                        }
+                     }
+                }
+
+                self.backgroundsByCategory = backgroundsByCategory
+               } catch {
+                   print(error.localizedDescription)
+               }
+           }
     }
 }
