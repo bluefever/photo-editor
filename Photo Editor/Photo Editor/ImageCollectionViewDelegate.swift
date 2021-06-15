@@ -41,9 +41,10 @@ class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TemplateCategoryViewCell", for: indexPath) as? TemplateCategoryViewCell {
-            
+            cell.collectionView.tag = indexPath.section
             cell.imageArray = templateCategories[Array(templateCategories.keys)[indexPath.section]] ?? []
             cell.backgroundViewControllerDelegate = backgroundViewControllerDelegate
+            cell.collectionView.reloadData()
             return cell
         }
         

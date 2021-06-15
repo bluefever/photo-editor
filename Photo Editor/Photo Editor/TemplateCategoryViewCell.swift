@@ -28,7 +28,7 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let url = imageArray[indexPath.section].url {
+        if let url = imageArray[indexPath.item].url {
             backgroundViewControllerDelegate?.didSelectImageBackground(image: url)
         }
         
@@ -44,7 +44,8 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell: ImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
-            if let url = imageArray[indexPath.section].url {
+            cell.image.image = nil
+            if let url = imageArray[indexPath.item].url {
                 cell.image.load(url: url)
                
                 let path = UIBezierPath(roundedRect: cell.bounds,
