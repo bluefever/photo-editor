@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
-    var imageArray = [String] ()
+    
+    var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
+    var imageArray = [Background] ()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.collectionView.delegate = self
@@ -22,32 +25,49 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.collectionViewLayout = layout
         self.collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: Bundle(for: ImageCollectionViewCell.self)), forCellWithReuseIdentifier: "ImageCollectionViewCell")
-        
-        imageArray = ["https://static.scientificamerican.com/sciam/cache/file/32665E6F-8D90-4567-9769D59E11DB7F26_source.jpg?w=590&h=800&7E4B4CAD-CAE1-4726-93D6A160C2B068B2", "https://static.scientificamerican.com/sciam/cache/file/32665E6F-8D90-4567-9769D59E11DB7F26_source.jpg?w=590&h=800&7E4B4CAD-CAE1-4726-93D6A160C2B068B2",
-                      "https://static.scientificamerican.com/sciam/cache/file/32665E6F-8D90-4567-9769D59E11DB7F26_source.jpg?w=590&h=800&7E4B4CAD-CAE1-4726-93D6A160C2B068B2"]
-        // Initialization code
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = imageArray[indexPath.section].url {
+            backgroundViewControllerDelegate?.didSelectImageBackground(image: url)
+        }
+        
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imageArray.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell: ImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+            if let url = imageArray[indexPath.section].url {
+                cell.image.load(url: url)
+               
+                let path = UIBezierPath(roundedRect: cell.bounds,
+                                        byRoundingCorners: [.topRight, .bottomRight],
+                                        cornerRadii: CGSize(width: 24, height: 24))
+                
+                let maskLayer = CAShapeLayer()
+                
+                maskLayer.path = path.cgPath
+                cell.layer.mask = maskLayer
+                
+                cell.layer.borderWidth = 0.75
+                cell.layer.borderColor = UIColor.init(hexString: "#EEEEEE").cgColor
+            }
             
-            let randomNumber = Int(arc4random_uniform(UInt32(imageArray.count)))
-            cell.image.load(url: imageArray[randomNumber])
-         
             return cell
         }
         
         return UICollectionViewCell()
-    }
+    } 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let height = UIScreen.main.bounds.size.height / 3
-        let size = CGSize(width: 120, height: height)
+        let size = CGSize(width: 120, height: collectionView.frame.size.height)
         
         return size
     }

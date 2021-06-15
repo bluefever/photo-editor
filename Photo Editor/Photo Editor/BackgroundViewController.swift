@@ -18,8 +18,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var imageDelegate: ImageCollectionViewDelegate!
     
-    var templateCategories: [String] = []
-    var bgImages : [String] = []
+    var templateCategories: Dictionary<String, [Background]> = [:]
     var bgColors : [String] = []
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
     
@@ -140,7 +139,6 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         scrollView.addSubview(collectionView)
         imageDelegate = ImageCollectionViewDelegate()
         
-        imageDelegate.bgImages = bgImages
         imageDelegate.templateCategories = templateCategories
         
         imageDelegate.backgroundViewControllerDelegate = backgroundViewControllerDelegate

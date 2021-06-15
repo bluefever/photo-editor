@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         photoEditor.bgColors = bgColors
 //        photoEditor.initialData = note
-        photoEditor.backgroundsByCategory = backgroundsByCategory
+        photoEditor.backgroundsByCategoryJson = backgroundsByCategory
         photoEditor.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2F303.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
 //        photoEditor.initialBgUrl = "https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"

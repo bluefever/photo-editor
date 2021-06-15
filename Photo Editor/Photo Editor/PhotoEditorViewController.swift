@@ -108,7 +108,7 @@ public final class PhotoEditorViewController: UIViewController {
     // list of controls to be hidden
     @objc public var hiddenControls : [NSString] = []
     
-    var : Dictionary<String, [Background]> = [:]
+    var backgroundsByCategory: Dictionary<String, [Background]> = [:]
     var imageBgName: String? = nil
     var backgroundVCIsVisible = false
     var gifsStickersVCIsVisible = false
@@ -159,19 +159,20 @@ public final class PhotoEditorViewController: UIViewController {
                                                name: UIResponder.keyboardDidHideNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
+        
+        importBackgroundsByCategory(data: backgroundsByCategoryJson!)
+        
         gifsStickersViewController = GifsStickersViewController(nibName: "GifsStickersViewController", bundle: Bundle(for: GifsStickersViewController.self))
         
         backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
+        
         hideControls()
         configureCollectionView()
-        
-        addBackgroundViewController()
     }
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        importBackgroundsByCategory(data: backgroundsByCategoryJson!)
+        
         renderCount += 1
         
         if (renderCount > 1 && !imported) {

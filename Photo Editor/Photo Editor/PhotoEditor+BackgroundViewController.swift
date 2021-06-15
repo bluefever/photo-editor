@@ -18,12 +18,8 @@ extension PhotoEditorViewController {
         for color in self.bgColors {
             backgroundViewController.bgColors.append(color)
         }
-
-        for image in self.bgImages {
-            backgroundViewController.bgImages.append(image)
-        }
         
-        backgroundViewController.templateCategories = self.templateCategories
+        backgroundViewController.templateCategories = self.backgroundsByCategory
         
         self.addChild(backgroundViewController)
         self.view.addSubview(backgroundViewController.view)
@@ -57,7 +53,7 @@ extension PhotoEditorViewController: BackgroundViewControllerDelegate {
         self.setBackgroundColor(color: color)
     }
     
-    func didSelectImageBackground(image: String, index: Int) {
+    func didSelectImageBackground(image: String) {
         self.removeBackgroundView()
         var matches = image.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
         

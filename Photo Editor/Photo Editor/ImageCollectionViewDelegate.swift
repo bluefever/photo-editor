@@ -10,8 +10,7 @@ import UIKit
 class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     var backgroundViewControllerDelegate : BackgroundViewControllerDelegate?
     
-    var bgImages: [String] = []
-    var templateCategories: [String] = []
+    var templateCategories: Dictionary<String, [Background]> = [:]
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
@@ -19,7 +18,7 @@ class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewD
         let label = UILabel()
         label.frame = CGRect.init(x: 16, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-10)
         label.font = UIFont(name: "Poppins-Bold", size: 22)
-        label.text = templateCategories[section]
+        label.text = Array(templateCategories.keys)[section]
         label.textColor = UIColor.init(hexString: "#1E2347")
         
         headerView.addSubview(label)
@@ -27,16 +26,8 @@ class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewD
         return headerView
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bgImages.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        backgroundViewControllerDelegate?.didSelectImageBackground(image: bgImages[indexPath.item], index: indexPath.item + 1)
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return templateCategories[section]
+        return Array(templateCategories.keys)[section]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,6 +42,8 @@ class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TemplateCategoryViewCell", for: indexPath) as? TemplateCategoryViewCell {
             
+            cell.imageArray = templateCategories[Array(templateCategories.keys)[indexPath.section]] ?? []
+            cell.backgroundViewControllerDelegate = backgroundViewControllerDelegate
             return cell
         }
         

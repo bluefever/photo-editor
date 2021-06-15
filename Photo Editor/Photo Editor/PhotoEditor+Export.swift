@@ -118,11 +118,6 @@ public struct Expression: Codable, Hashable {
     }
 }
 
-public struct Background: Codable, Hashable {
-    var category: String?
-    var url: String?
-}
-
 extension PhotoEditorViewController {
     func pointFromAspectFill(for point: CGPoint, in view: UIImageView) -> Point {
         guard let img = view.image else {

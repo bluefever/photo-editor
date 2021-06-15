@@ -60,7 +60,7 @@ protocol BackgroundViewControllerDelegate {
     /**
      - Parameter image: selected image from BackgroundViewController
      */
-    func didSelectImageBackground(image: String, index: Int)
+    func didSelectImageBackground(image: String)
     /**
      BackgroundViewController did Disappear
      */
