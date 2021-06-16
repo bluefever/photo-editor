@@ -81,7 +81,7 @@ public final class PhotoEditorViewController: UIViewController {
     /**
      Array of template categories
      */
-    @objc public var templateCategories : [String] = []
+    @objc public var backgroundCategoriesJson : String?
     /**
      Initial background template
      */
@@ -97,11 +97,6 @@ public final class PhotoEditorViewController: UIViewController {
     */
     @objc public var initialData: String?
     
-    /**
-    Json data to import backgrounds
-    */
-    @objc public var backgroundsCategories: String?
-    
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
@@ -109,6 +104,7 @@ public final class PhotoEditorViewController: UIViewController {
     @objc public var hiddenControls : [NSString] = []
     
     var backgroundsByCategory: Dictionary<String, [Background]> = [:]
+    var backgroundCategories: [BackgroundCategory] = []
     var imageBgName: String? = nil
     var backgroundVCIsVisible = false
     var gifsStickersVCIsVisible = false
@@ -142,6 +138,7 @@ public final class PhotoEditorViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
+        importBackgroundsByCategory(data: backgroundsByCategoryJson!, categories: backgroundCategoriesJson!)
         prepareBackgrounds()
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
@@ -160,7 +157,7 @@ public final class PhotoEditorViewController: UIViewController {
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
-        importBackgroundsByCategory(data: backgroundsByCategoryJson!)
+        
         
         gifsStickersViewController = GifsStickersViewController(nibName: "GifsStickersViewController", bundle: Bundle(for: GifsStickersViewController.self))
         

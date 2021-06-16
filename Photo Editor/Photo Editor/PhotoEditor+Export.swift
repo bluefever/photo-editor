@@ -100,6 +100,12 @@ struct OriginalFrame: Codable, Hashable {
 
 public struct Background: Codable, Hashable {
     let internalId, url: String?
+    var active: Bool? = false
+}
+
+public struct BackgroundCategory: Codable, Hashable {
+    var order: Int = 0
+    var label: String = ""
 }
 
 public struct Expression: Codable, Hashable {
@@ -359,23 +365,51 @@ extension PhotoEditorViewController {
         addGestures(view: view)
     }
     
-    func importBackgroundsByCategory (data: String) {
+    func importBackgroundsByCategory (data: String, categories: String) {
+        if let categoriesData = categories.data(using: .utf8) {
+            do {
+                var categories: [BackgroundCategory] = []
+                if let parsed = try JSONSerialization.jsonObject(with: categoriesData, options: []) as? [AnyObject] {
+                    for val in parsed {
+                        let category = try JSONDecoder().decode(BackgroundCategory.self, from: JSONSerialization.data(withJSONObject: val))
+                        categories.append(category)
+                    }
+                    
+                    
+                    self.backgroundCategories = categories.sorted(by: { item1, item2 in
+                        return item1.order < item2.order
+                    })
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
         if let data = data.data(using: .utf8) {
                do {
                 var backgroundsByCategory: Dictionary<String, [Background]> = [:]
-                if let parsed = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, [AnyObject]> {
+                var allBackgrounds: [String] = []
+                if let parsed = try JSONSerialization.jsonObject(with: data, options: []) as? Dictionary<String, [AnyObject]> {
                     for key in parsed.keys {
                         backgroundsByCategory[key] = []
                         
                         if let values = parsed[key] {
                             for val in values {
                                 let bg = try JSONDecoder().decode(Background.self, from: JSONSerialization.data(withJSONObject: val))
-                                backgroundsByCategory[key]?.append(bg)
+                                
+                                if (bg.active ?? false) {
+                                    backgroundsByCategory[key]?.append(bg)
+                                }
+                                
+                                if let url = bg.url {
+                                    allBackgrounds.append(url)
+                                }
                             }
                         }
                      }
                 }
 
+                self.bgImages = allBackgrounds
                 self.backgroundsByCategory = backgroundsByCategory
                } catch {
                    print(error.localizedDescription)
