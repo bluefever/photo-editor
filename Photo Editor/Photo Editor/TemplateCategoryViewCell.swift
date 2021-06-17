@@ -16,8 +16,10 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .white
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.backgroundColor = .white
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 12)
