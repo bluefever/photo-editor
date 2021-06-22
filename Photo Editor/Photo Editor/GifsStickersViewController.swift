@@ -133,6 +133,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: searchTextField.frame.height))
         searchTextField.leftViewMode = .always
         searchTextField.returnKeyType = UIReturnKeyType.done
+        searchTextField.tintColor = UIColor.init(hexString: "#767676")
         searchTextField.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
     }
     
