@@ -265,7 +265,6 @@ extension PhotoEditorViewController {
             textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
-            textView.autocorrectionType = .no
             textView.isScrollEnabled = false
             textView.delegate = self
             textView.placeholder = "Start typing..."

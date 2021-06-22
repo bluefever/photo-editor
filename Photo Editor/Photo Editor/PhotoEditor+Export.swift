@@ -334,7 +334,6 @@ extension PhotoEditorViewController {
         textView.placeholderColor = UIColor.init(hexString: "#fff")
         textView.placeholderFont = UIFont(name: "HelveticaNeue", size: 20)
         textView.layer.backgroundColor = UIColor.clear.cgColor
-        textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
 
