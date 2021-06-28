@@ -305,6 +305,8 @@ public final class PhotoEditorViewController: UIViewController {
         self.imageBg.image = nil
         self.imageBgName = nil
         self.imageBg.backgroundColor = UIColor(hexString: color)
+        
+        enableNextButton()
     }
     
     func setBackgroundImage(image: String, internalId: String) {
@@ -319,6 +321,8 @@ public final class PhotoEditorViewController: UIViewController {
                 }
             }
         }
+        
+       enableNextButton()
     }
     
     func hideToolbar(hide: Bool) {

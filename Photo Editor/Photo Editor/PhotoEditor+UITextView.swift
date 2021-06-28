@@ -138,5 +138,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         let opacityTopToolbar = self.view.viewWithTag(100)
         opacityTopToolbar!.removeFromSuperview()
+        
+        enableNextButton()
     }
 }

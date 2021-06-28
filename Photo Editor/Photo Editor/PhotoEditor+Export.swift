@@ -353,4 +353,21 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(view)
         addGestures(view: view)
     }
+    
+    
+    public func enableNextButton () {
+        var enabled = false
+        
+        if imageBgName != nil || imageBg.backgroundColor != nil || canvasImageView.subviews.count > 0  || gifsSources.count > 0 {
+            enabled = true
+        }
+        
+        continueButton.isEnabled = enabled
+        
+        if (enabled) {
+            continueButton.backgroundColor = UIColor.init(hexString: "#4150BE")
+        } else {
+            continueButton.backgroundColor = UIColor.init(hexString: "#767676")
+        }
+    }
 }
