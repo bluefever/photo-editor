@@ -247,6 +247,8 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 gifsImages.remove(at: gifsImages.index(of: imageView)!)
             }
         }
+        
+        enableNextButton()
     }
     
     func subImageViews(view: UIView) -> [UIImageView] {

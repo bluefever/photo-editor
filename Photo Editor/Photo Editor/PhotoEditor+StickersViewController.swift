@@ -74,6 +74,8 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
                 gifsSources.append(GifImage(image: image, url: gif))
             }
         }
+        
+        enableNextButton()
     }
     
     public func stickersViewDidDisappear() {
