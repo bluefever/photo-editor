@@ -420,8 +420,14 @@ extension PhotoEditorViewController {
     public func enableNextButton () {
         var enabled = false
         
-        if imageBgName != nil || imageBg.backgroundColor != nil || canvasImageView.subviews.count > 0  || gifsSources.count > 0 {
+        if imageBgName != nil || imageBg.backgroundColor != nil || gifsSources.count > 0 {
             enabled = true
+        }
+        
+        for view in canvasImageView.subviews {
+            if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
+                enabled = true
+            }
         }
         
         continueButton.isEnabled = enabled
