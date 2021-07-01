@@ -134,7 +134,8 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         let imageWidth = (CGFloat) ((screenSize.width - 36) / 2)
         imageslayout.itemSize = CGSize(width: imageWidth, height: imageWidth * 1.3)
         
-        imagesCollectionView = UITableView(frame: imagesFrame)
+        imagesCollectionView = UITableView(frame: imagesFrame, style: .grouped)
+        imagesCollectionView.separatorColor = UIColor.clear
         imagesCollectionView.backgroundColor = .clear
         scrollView.addSubview(imagesCollectionView)
         scrollView.addSubview(collectionView)

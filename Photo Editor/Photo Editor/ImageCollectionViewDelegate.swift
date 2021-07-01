@@ -17,9 +17,9 @@ class ImageCollectionViewDelegate: NSObject, UITableViewDataSource, UITableViewD
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         
         let label = UILabel()
-        label.frame = CGRect.init(x: 16, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.frame = CGRect.init(x: 16, y: 0, width: headerView.frame.width-10, height: headerView.frame.height - 25)
         label.font = UIFont(name: "Poppins-Bold", size: 22)
-        label.text = backgroundCategories[section].label
+        label.text = backgroundCategories[section].label.lowercased()
         label.textColor = UIColor.init(hexString: "#1E2347")
         
         headerView.addSubview(label)
