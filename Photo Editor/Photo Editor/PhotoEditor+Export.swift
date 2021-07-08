@@ -257,7 +257,7 @@ extension PhotoEditorViewController {
                     }
                     
                     if let url = bgUrl {
-                        imageBg.load(url: url)
+                        imageBg.loadImage(url: url)
                         imageBgName = bgImage
                     } else {
                         setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)

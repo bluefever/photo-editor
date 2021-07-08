@@ -78,7 +78,7 @@ open class ExpressionScalablePreview: UIView {
                     imageBg!.contentMode = .scaleAspectFill
                     
                     if let url = bgUrl {
-                        imageBg!.load(url: url)
+                        imageBg!.loadImage(url: url)
                         self.addSubview(imageBg!)
                         self.sendSubviewToBack(imageBg!)
                     } else {

@@ -33,14 +33,14 @@ extension KMPlaceholderTextView {
 }
 
 extension UIImageView {
-    func loadImage(urlString: String) {
+    func loadImage(url: String) {
         
-        if let cacheImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
+        if let cacheImage = imageCache.object(forKey: url as AnyObject) as? UIImage {
             self.image = cacheImage
             return
         }
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -52,27 +52,13 @@ extension UIImageView {
             let image = UIImage(data: data)
             
             if let img = image {
-                imageCache.setObject(img, forKey: urlString as AnyObject)
+                imageCache.setObject(img, forKey: url as AnyObject)
                 
                 DispatchQueue.main.async {
                     self.image = image
                 }
             }
         }.resume()
-    }
-}
-
-extension UIImageView {
-    func load(url: String) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: URL(string: url)!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
     }
 }
 

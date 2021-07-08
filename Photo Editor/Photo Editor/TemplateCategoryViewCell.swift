@@ -48,7 +48,7 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         if let cell: ImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
             cell.image.image = nil
             if let url = imageArray[indexPath.item].url {
-                cell.image.load(url: url)
+                cell.image.loadImage(url: url)
                
                 let path = UIBezierPath(roundedRect: cell.bounds,
                                         byRoundingCorners: [.topRight, .bottomRight],

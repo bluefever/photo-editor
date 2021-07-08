@@ -53,15 +53,6 @@ open class ExpressionPreview: UIView {
         }
         
         if var expressionData = expression {
-            let bounds = self.bounds
-            var scaleX = CGFloat(1)
-            var scaleY = CGFloat(1)
-            
-            if (expressionData.originalFrame != nil) {
-                scaleX = bounds.width / expressionData.originalFrame!.width
-                scaleY = bounds.height / expressionData.originalFrame!.height
-            }
- 
             if let bgColor = expressionData.backgroundColor {
                 self.backgroundColor = UIColor(hexString: bgColor)
             } else if let bgImage = expressionData.backgroundImage {
@@ -79,7 +70,7 @@ open class ExpressionPreview: UIView {
                     imageBg!.contentMode = .scaleAspectFill
                     
                     if let url = bgUrl {
-                        imageBg!.load(url: url)
+                        imageBg!.loadImage(url: url)
                         self.addSubview(imageBg!)
                         self.sendSubviewToBack(imageBg!)
                     } else {
