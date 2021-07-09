@@ -14,17 +14,17 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     
     let gifManager = SwiftyGifManager(memoryLimit:200)
     let width = (CGFloat) ((UIScreen.main.bounds.size.width - 30) / 2.0)
-    var data: [GiphyObject] = []
+    var data: [GiphySizes] = []
     
     func randomizeContent() {
         data.shuffle()
     }
     
-    func setData(data: [GiphyObject]) {
+    func setData(data: [GiphySizes]) {
         self.data = data
     }
     
-    func insertData(data: [GiphyObject]) {
+    func insertData(data: [GiphySizes]) {
         self.data.append(contentsOf: data)
     }
     
@@ -38,7 +38,7 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let aspectRatio = CGFloat(Double(data[indexPath.item].height!)! / Double(data[indexPath.item].width!)!)
+        let aspectRatio = CGFloat(Double((data[indexPath.item].preview_gif?.height)!)! / Double((data[indexPath.item].preview_gif?.width)!)!)
         
         return CGSize(width: width, height: width * aspectRatio)
     }
@@ -48,7 +48,7 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        gifsStickersViewControllerDelegate?.didSelectGif(gif: data[indexPath.item].url!, width: Int((collectionView.cellForItem(at: indexPath)?.frame.width)!), height: Int((collectionView.cellForItem(at: indexPath)?.frame.height)!))
+        gifsStickersViewControllerDelegate?.didSelectGif(gif: (data[indexPath.item].downsized?.url)!, width: Int((collectionView.cellForItem(at: indexPath)?.frame.width)!), height: Int((collectionView.cellForItem(at: indexPath)?.frame.height)!))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -59,7 +59,7 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCollectionViewCell", for: indexPath) as! GifCollectionViewCell
         
         
-        if let url = URL.init(string: data[indexPath.item].url!) {
+        if let url = URL.init(string: (data[indexPath.item].preview_gif?.url)!) {
             let loader = UIActivityIndicatorView.init(style: .gray)
             cell.gifImageView.setGifFromURL(url, customLoader: loader)
         }
@@ -68,13 +68,13 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let aspectRatio = CGFloat(Double(data[indexPath.item].height!)! / Double(data[indexPath.item].width!)!)
+        let aspectRatio = CGFloat(Double((data[indexPath.item].preview_gif?.height)!)! / Double((data[indexPath.item].preview_gif?.width)!)!)
         
         return CGSize(width: width, height: width * aspectRatio)
     }
     
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        let aspectRatio = CGFloat(Double(data[indexPath.item].height!)! / Double(data[indexPath.item].width!)!)
+        let aspectRatio = CGFloat(Double((data[indexPath.item].preview_gif?.height)!)! / Double((data[indexPath.item].preview_gif?.width)!)!)
         
         return CGFloat(width * aspectRatio)
     }

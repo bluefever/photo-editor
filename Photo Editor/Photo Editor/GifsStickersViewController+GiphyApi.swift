@@ -8,7 +8,7 @@
 import Foundation
 
 extension GifsStickersViewController: GiphyApiManagerDelegate {
-    func onLoadData(data: [GiphyObject], type: GiphyType) {
+    func onLoadData(data: [GiphySizes], type: GiphyType) {
         
         if (type == GiphyType.gifs) {
             self.gifsDelegate.setData(data: data)
@@ -27,7 +27,7 @@ extension GifsStickersViewController: GiphyApiManagerDelegate {
         }
     }
     
-    func onLoadMoreData(data: [GiphyObject], type: GiphyType) {
+    func onLoadMoreData(data: [GiphySizes], type: GiphyType) {
          if (type == GiphyType.gifs) {
              self.gifsDelegate.insertData(data: data)
              

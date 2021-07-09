@@ -12,17 +12,18 @@ struct Pagination: Decodable, Hashable {
 }
 
 struct GiphyObject: Decodable, Hashable {
-    let url: String?
-    let height: String?
-    let width: String?
+    let url: String
+    let height: String
+    let width: String
 }
 
-struct GiphyDownsize: Decodable, Hashable {
+struct GiphySizes: Decodable, Hashable {
     let downsized: GiphyObject?
+    let preview_gif: GiphyObject?
 }
 
 struct GiphyImages: Decodable, Hashable {
-    let images: GiphyDownsize
+    let images: GiphySizes
 }
 
 struct GiphyResponse: Decodable {
@@ -77,17 +78,13 @@ class GiphyApiManager {
         }
     }
     
-    private func decodeData(data: Data) -> [GiphyObject] {
+    private func decodeData(data: Data) -> [GiphySizes] {
         let gifs: GiphyResponse = try! JSONDecoder().decode(GiphyResponse.self, from: data)
         
-        var giphyGifs: [GiphyObject] = []
+        var giphyGifs: [GiphySizes] = []
         
         for image in gifs.data {
-            if let downsized = image.images.downsized {
-                if downsized.url != nil && downsized.width != nil && downsized.height != nil {
-                    giphyGifs.append(downsized)
-                }
-            }
+            giphyGifs.append(image.images)
         }
         
         return giphyGifs

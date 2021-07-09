@@ -76,6 +76,6 @@ protocol ColorDelegate {
 }
 
 protocol GiphyApiManagerDelegate {
-    func onLoadData(data: [GiphyObject], type: GiphyType)
-    func onLoadMoreData(data: [GiphyObject], type: GiphyType)
+    func onLoadData(data: [GiphySizes], type: GiphyType)
+    func onLoadMoreData(data: [GiphySizes], type: GiphyType)
 }
