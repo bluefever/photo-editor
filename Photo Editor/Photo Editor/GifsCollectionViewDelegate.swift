@@ -58,8 +58,9 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCollectionViewCell", for: indexPath) as! GifCollectionViewCell
         
+        let gifUrl = data[indexPath.item].preview_gif?.url ?? data[indexPath.item].downsized?.url
         
-        if let url = URL.init(string: (data[indexPath.item].preview_gif?.url)!) {
+        if let url = URL.init(string: (gifUrl)!) {
             let loader = UIActivityIndicatorView.init(style: .gray)
             cell.gifImageView.setGifFromURL(url, customLoader: loader)
         }

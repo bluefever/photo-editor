@@ -12,7 +12,7 @@ struct Pagination: Decodable, Hashable {
 }
 
 struct GiphyObject: Decodable, Hashable {
-    let url: String
+    let url: String?
     let height: String
     let width: String
 }
