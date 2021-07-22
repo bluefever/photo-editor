@@ -13,8 +13,8 @@ struct Pagination: Decodable, Hashable {
 
 struct GiphyObject: Decodable, Hashable {
     let url: String?
-    let height: String
-    let width: String
+    let height: String?
+    let width: String?
 }
 
 struct GiphySizes: Decodable, Hashable {
@@ -84,7 +84,10 @@ class GiphyApiManager {
         var giphyGifs: [GiphySizes] = []
         
         for image in gifs.data {
-            giphyGifs.append(image.images)
+            if image.images.downsized != nil && image.images.downsized?.url != nil && image.images.downsized?.width != nil && image.images.downsized?.height != nil
+                && image.images.preview_gif != nil && image.images.preview_gif?.url != nil && image.images.preview_gif?.width != nil && image.images.preview_gif?.height != nil {
+                giphyGifs.append(image.images)
+            }
         }
         
         return giphyGifs
