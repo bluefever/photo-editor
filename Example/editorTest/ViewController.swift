@@ -38,11 +38,12 @@ class ViewController: UIViewController {
         photoEditor.backgroundsByCategoryJson = backgroundsByCategory
         photoEditor.backgroundCategoriesJson = categories
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-        present(photoEditor, animated: true, completion: nil)
+//        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
         let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 168, height: 241))
         preview.data = note
+        preview.withShadow = 1
 //
         preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2F303.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         

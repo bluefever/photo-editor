@@ -9,6 +9,7 @@ import KMPlaceholderTextView
 
 open class ExpressionScalablePreview: UIView {
     @objc open var data: String? = nil
+    @objc open var withShadow: NSNumber? = nil
     @objc open var bgImages: [String] = []
     var scaleX = CGFloat(1)
     var scaleY = CGFloat(1)
@@ -118,6 +119,10 @@ open class ExpressionScalablePreview: UIView {
                     addGifObject(contentUrl: gifUrl, x: centerX, y: centerY, size: CGSize.init(width: layer.size!.width * scaleX, height: height), transform: layer.transform!)
                 }
             }
+            
+            if (withShadow !== nil) {
+                addShadow()
+            }
         }
     }
     
@@ -173,6 +178,18 @@ open class ExpressionScalablePreview: UIView {
         }
         
         self.addSubview(view)
+    }
+    
+    func addShadow () {
+        let gradientView = UIView(frame: CGRect(x: 0, y: self.frame.height * 3 / 4, width: self.frame.width, height: self.frame.height / 4))
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.shadowRadius = 6
+        gradientLayer.frame.size = CGSize.init(width: self.frame.width, height: self.frame.height / 4)
+        gradientLayer.colors =
+            [UIColor.clear.cgColor,UIColor.black.withAlphaComponent(0.3).cgColor,UIColor.black.withAlphaComponent(0.6).cgColor]
+       
+        gradientView.layer.addSublayer(gradientLayer)
+        self.addSubview(gradientView)
     }
     
     func alignmentFromString (alignment: String?) -> NSTextAlignment {
