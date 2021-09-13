@@ -181,12 +181,12 @@ open class ExpressionScalablePreview: UIView {
     }
     
     func addShadow () {
-        let gradientView = UIView(frame: CGRect(x: 0, y: self.frame.height * 3 / 4, width: self.frame.width, height: self.frame.height / 4))
+        let gradientView = UIView(frame: CGRect(x: 0, y: self.frame.height * 5 / 6, width: self.frame.width, height: self.frame.height / 6))
         let gradientLayer:CAGradientLayer = CAGradientLayer()
         gradientLayer.shadowRadius = 6
-        gradientLayer.frame.size = CGSize.init(width: self.frame.width, height: self.frame.height / 4)
+        gradientLayer.frame.size = CGSize.init(width: self.frame.width, height: self.frame.height / 6)
         gradientLayer.colors =
-            [UIColor.clear.cgColor,UIColor.black.withAlphaComponent(0.3).cgColor,UIColor.black.withAlphaComponent(0.6).cgColor]
+            [UIColor.clear.cgColor,UIColor.black.withAlphaComponent(0.2).cgColor,UIColor.black.withAlphaComponent(0.6).cgColor]
        
         gradientView.layer.addSublayer(gradientLayer)
         self.addSubview(gradientView)
