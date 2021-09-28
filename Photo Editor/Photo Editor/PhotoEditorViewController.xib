@@ -9,20 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="BowlbyOneSC-Regular.ttf">
-            <string>BowlbyOneSC-Regular</string>
-        </array>
-        <array key="Cheria.ttf">
-            <string>Cheria</string>
+        <array key="Caveat-Bold.ttf">
+            <string>Caveat-Bold</string>
         </array>
         <array key="DMSans-Bold.ttf">
             <string>DMSans-Bold</string>
         </array>
-        <array key="FastInMyCar.ttf">
-            <string>FastInMyCar</string>
+        <array key="HomemadeApple-Regular.ttf">
+            <string>HomemadeApple-Regular</string>
         </array>
-        <array key="SundayMorningRegular.ttf">
-            <string>SundayMorningRegular</string>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+        <array key="Rasa-Regular.ttf">
+            <string>Rasa-Regular</string>
+        </array>
+        <array key="SFCompactText-Heavy.ttf">
+            <string>SFCompactText-Heavy</string>
         </array>
         <array key="ZillaSlabHighlight-Bold.ttf">
             <string>ZillaSlabHighlight-Bold</string>
@@ -397,8 +400,8 @@
                                                                 <constraint firstAttribute="width" constant="35" id="JVf-6Q-ARt"/>
                                                                 <constraint firstAttribute="height" constant="33" id="hT9-mN-hEi"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -421,8 +424,8 @@
                                                                 <constraint firstAttribute="height" constant="35" id="7iN-te-il9"/>
                                                                 <constraint firstAttribute="width" constant="35" id="uJG-b7-hHC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="BowlbyOneSC-Regular" family="Bowlby One SC" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <fontDescription key="fontDescription" name="Rasa-Regular" family="Rasa" pointSize="0.0"/>
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -445,8 +448,8 @@
                                                                 <constraint firstAttribute="width" constant="35" id="DKk-1S-hdi"/>
                                                                 <constraint firstAttribute="height" constant="35" id="aEC-dX-MCx"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Cheria" family="Cheria" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <fontDescription key="fontDescription" name="HomemadeApple-Regular" family="Homemade Apple" pointSize="17"/>
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -469,8 +472,8 @@
                                                                 <constraint firstAttribute="width" constant="35" id="JAB-DD-4oH"/>
                                                                 <constraint firstAttribute="height" constant="35" id="vap-SP-iKD"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="SundayMorningRegular" family="Sunday Morning" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <fontDescription key="fontDescription" name="Caveat-Bold" family="Caveat" pointSize="17"/>
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -493,8 +496,8 @@
                                                                 <constraint firstAttribute="height" constant="35" id="Bj9-bi-pxI"/>
                                                                 <constraint firstAttribute="width" constant="35" id="QlJ-e0-Lwg"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="FastInMyCar" family="Fast In My Car" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <fontDescription key="fontDescription" name="SFCompactText-Heavy" family="SF Compact Text" pointSize="17"/>
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -518,7 +521,7 @@
                                                                 <constraint firstAttribute="width" constant="35" id="gRX-Sj-yC3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="ZillaSlabHighlight-Bold" family="Zilla Slab Highlight" pointSize="17"/>
-                                                            <state key="normal" title="Bb">
+                                                            <state key="normal" title="Aa">
                                                                 <color key="titleColor" systemColor="labelColor"/>
                                                             </state>
                                                             <connections>

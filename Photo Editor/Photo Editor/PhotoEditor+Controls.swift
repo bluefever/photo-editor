@@ -187,23 +187,23 @@ extension PhotoEditorViewController {
         if (fontIndex == 0) {
             styleFont1Button.backgroundColor = UIColor.white
             styleFont1Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "Nunito-SemiBold", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 1) {
             styleFont2Button.backgroundColor = UIColor.white
             styleFont2Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "BowlbyOneSC-Regular", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "Rasa-Regular", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 2) {
             styleFont3Button.backgroundColor = UIColor.white
             styleFont3Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "Cheria", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "HomemadeApple-Regular", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 3) {
             styleFont4Button.backgroundColor = UIColor.white
             styleFont4Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "SundayMorningRegular", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "Caveat-Bold", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 4) {
             styleFont5Button.backgroundColor = UIColor.white
             styleFont5Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "FastInMyCar", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "SFCompactText-Heavy", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 5) {
             styleFont6Button.backgroundColor = UIColor.white
             styleFont6Button.setTitleColor(UIColor.black, for: .normal)
@@ -262,14 +262,14 @@ extension PhotoEditorViewController {
             let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
                                                                width: UIScreen.main.bounds.width - 40, height: 90))
             textView.textAlignment = .left
-            textView.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
+            textView.font = UIFont(name: "Nunito-SemiBold", size: 20)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
             textView.isScrollEnabled = false
             textView.delegate = self
             textView.placeholder = "Start typing..."
             textView.placeholderColor = UIColor.init(hexString: "#fff")
-            textView.placeholderFont = UIFont(name: "HelveticaNeue", size: 20)
+            textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
             let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y - topToolbar.frame.height,

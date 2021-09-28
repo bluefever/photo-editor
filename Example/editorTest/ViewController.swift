@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         photoEditor.backgroundsByCategoryJson = backgroundsByCategory
         photoEditor.backgroundCategoriesJson = categories
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-//        present(photoEditor, animated: true, completion: nil)
+        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
         let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 168, height: 241))

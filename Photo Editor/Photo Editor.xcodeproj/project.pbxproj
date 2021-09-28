@@ -86,6 +86,10 @@
 		969D23322541A50800695C90 /* FastInMyCar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D232F2541A50800695C90 /* FastInMyCar.ttf */; };
 		969D235D2541AA1C00695C90 /* Cheria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D235C2541AA1C00695C90 /* Cheria.ttf */; };
 		969D237C2541AB3D00695C90 /* SundayMorningRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */; };
+		96B92DF627031DC2006547A8 /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF427031D6F006547A8 /* Caveat-Bold.ttf */; };
+		96B92DF727031DCB006547A8 /* SFCompactText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF527031D96006547A8 /* SFCompactText-Heavy.ttf */; };
+		96B92DF827031DD7006547A8 /* Rasa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF327031D6F006547A8 /* Rasa-Regular.ttf */; };
+		96B92DF927031DE0006547A8 /* HomemadeApple-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF227031D6F006547A8 /* HomemadeApple-Regular.ttf */; };
 		96C9D47924C6C36100BB803D /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */; };
 		96C9D47B24C6C36700BB803D /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */; };
 		96EF93B4254050D600915EFD /* color_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EF93AE254050D500915EFD /* color_off@2x.png */; };
@@ -195,6 +199,10 @@
 		969D232F2541A50800695C90 /* FastInMyCar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FastInMyCar.ttf; sourceTree = "<group>"; };
 		969D235C2541AA1C00695C90 /* Cheria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cheria.ttf; sourceTree = "<group>"; };
 		969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SundayMorningRegular.ttf; sourceTree = "<group>"; };
+		96B92DF227031D6F006547A8 /* HomemadeApple-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HomemadeApple-Regular.ttf"; sourceTree = "<group>"; };
+		96B92DF327031D6F006547A8 /* Rasa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rasa-Regular.ttf"; sourceTree = "<group>"; };
+		96B92DF427031D6F006547A8 /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
+		96B92DF527031D96006547A8 /* SFCompactText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Heavy.ttf"; sourceTree = "<group>"; };
 		96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsStickersViewController.swift; sourceTree = "<group>"; };
 		96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifsStickersViewController.xib; sourceTree = "<group>"; };
 		96EF93AE254050D500915EFD /* color_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_off@2x.png"; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
 				9656D38F266F857900727AE1 /* TemplateCategoryCell.xib */,
 				9656D390266F857900727AE1 /* TemplateCategoryViewCell.swift */,
+				96B92DF527031D96006547A8 /* SFCompactText-Heavy.ttf */,
 				960ED6B024DBCC7F002D3B85 /* icon_thumb@2x.png */,
 				960ED6B324DBCC7F002D3B85 /* icon_thumb@3x.png */,
 				96824871265CC850004223A7 /* default_bg.png */,
@@ -322,6 +331,9 @@
 				96618BCA24D9A31200128708 /* icon_text.png */,
 				96618BC624D9A31100128708 /* icon_text@2x.png */,
 				969D237B2541AB3C00695C90 /* SundayMorningRegular.ttf */,
+				96B92DF427031D6F006547A8 /* Caveat-Bold.ttf */,
+				96B92DF227031D6F006547A8 /* HomemadeApple-Regular.ttf */,
+				96B92DF327031D6F006547A8 /* Rasa-Regular.ttf */,
 				96618BC124D9A31100128708 /* icon_text@3x.png */,
 				0565133E1EF489CD009EA38F /* PhotoEditor+Gestures.swift */,
 				0565133F1EF489CD009EA38F /* PhotoEditor+Drawing.swift */,
@@ -418,6 +430,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B92DF927031DE0006547A8 /* HomemadeApple-Regular.ttf in Resources */,
+				96B92DF827031DD7006547A8 /* Rasa-Regular.ttf in Resources */,
+				96B92DF727031DCB006547A8 /* SFCompactText-Heavy.ttf in Resources */,
+				96B92DF627031DC2006547A8 /* Caveat-Bold.ttf in Resources */,
 				96824876265CDF13004223A7 /* Poppins-Bold.ttf in Resources */,
 				96824874265CDA78004223A7 /* DMSans-Bold.ttf in Resources */,
 				96EF93C1254050E800915EFD /* text_on@2x.png in Resources */,
