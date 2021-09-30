@@ -24,8 +24,8 @@
         <array key="Rasa-Regular.ttf">
             <string>Rasa-Regular</string>
         </array>
-        <array key="SFCompactText-Heavy.ttf">
-            <string>SFCompactText-Heavy</string>
+        <array key="SFCompactText-HeavyItalic.ttf">
+            <string>SFCompactText-HeavyItalic</string>
         </array>
         <array key="ZillaSlabHighlight-Bold.ttf">
             <string>ZillaSlabHighlight-Bold</string>
@@ -424,7 +424,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="7iN-te-il9"/>
                                                                 <constraint firstAttribute="width" constant="35" id="uJG-b7-hHC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rasa-Regular" family="Rasa" pointSize="0.0"/>
+                                                            <fontDescription key="fontDescription" name="Rasa-Regular" family="Rasa" pointSize="21"/>
                                                             <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -448,7 +448,7 @@
                                                                 <constraint firstAttribute="width" constant="35" id="DKk-1S-hdi"/>
                                                                 <constraint firstAttribute="height" constant="35" id="aEC-dX-MCx"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HomemadeApple-Regular" family="Homemade Apple" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="HomemadeApple-Regular" family="Homemade Apple" pointSize="14"/>
                                                             <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -496,7 +496,7 @@
                                                                 <constraint firstAttribute="height" constant="35" id="Bj9-bi-pxI"/>
                                                                 <constraint firstAttribute="width" constant="35" id="QlJ-e0-Lwg"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="SFCompactText-Heavy" family="SF Compact Text" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="SFCompactText-HeavyItalic" family="SF Compact Text" pointSize="17"/>
                                                             <state key="normal" title="Aa">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>

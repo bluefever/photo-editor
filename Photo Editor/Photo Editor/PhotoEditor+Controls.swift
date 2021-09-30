@@ -203,7 +203,7 @@ extension PhotoEditorViewController {
         } else if (fontIndex == 4) {
             styleFont5Button.backgroundColor = UIColor.white
             styleFont5Button.setTitleColor(UIColor.black, for: .normal)
-            lastTextViewFont = UIFont(name: "SFCompactText-Heavy", size: CGFloat(Int(textSizeSlider.value)))
+            lastTextViewFont = UIFont(name: "SFCompactText-HeavyItalic", size: CGFloat(Int(textSizeSlider.value)))
         } else if (fontIndex == 5) {
             styleFont6Button.backgroundColor = UIColor.white
             styleFont6Button.setTitleColor(UIColor.black, for: .normal)

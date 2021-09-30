@@ -90,6 +90,7 @@
 		96B92DF727031DCB006547A8 /* SFCompactText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF527031D96006547A8 /* SFCompactText-Heavy.ttf */; };
 		96B92DF827031DD7006547A8 /* Rasa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF327031D6F006547A8 /* Rasa-Regular.ttf */; };
 		96B92DF927031DE0006547A8 /* HomemadeApple-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B92DF227031D6F006547A8 /* HomemadeApple-Regular.ttf */; };
+		96C3F6C5270519CD00F0A59C /* SFCompactText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96C3F6C4270518B700F0A59C /* SFCompactText-HeavyItalic.ttf */; };
 		96C9D47924C6C36100BB803D /* GifsStickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */; };
 		96C9D47B24C6C36700BB803D /* GifsStickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */; };
 		96EF93B4254050D600915EFD /* color_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96EF93AE254050D500915EFD /* color_off@2x.png */; };
@@ -203,6 +204,7 @@
 		96B92DF327031D6F006547A8 /* Rasa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rasa-Regular.ttf"; sourceTree = "<group>"; };
 		96B92DF427031D6F006547A8 /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
 		96B92DF527031D96006547A8 /* SFCompactText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Heavy.ttf"; sourceTree = "<group>"; };
+		96C3F6C4270518B700F0A59C /* SFCompactText-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-HeavyItalic.ttf"; sourceTree = "<group>"; };
 		96C9D47824C6C36100BB803D /* GifsStickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifsStickersViewController.swift; sourceTree = "<group>"; };
 		96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifsStickersViewController.xib; sourceTree = "<group>"; };
 		96EF93AE254050D500915EFD /* color_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_off@2x.png"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				96F9690324E177690081A0DB /* CustomTextField.swift */,
 				9611043224E2695B0021D4D7 /* ExpressionPreview.swift */,
 				9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */,
+				96C3F6C4270518B700F0A59C /* SFCompactText-HeavyItalic.ttf */,
 				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
 				969D232F2541A50800695C90 /* FastInMyCar.ttf */,
 				960ED6AF24DBCC7F002D3B85 /* icon_thumb.png */,
@@ -430,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C3F6C5270519CD00F0A59C /* SFCompactText-HeavyItalic.ttf in Resources */,
 				96B92DF927031DE0006547A8 /* HomemadeApple-Regular.ttf in Resources */,
 				96B92DF827031DD7006547A8 /* Rasa-Regular.ttf in Resources */,
 				96B92DF727031DCB006547A8 /* SFCompactText-Heavy.ttf in Resources */,
