@@ -242,6 +242,8 @@ public final class PhotoEditorViewController: UIViewController {
         doneButton.clipsToBounds = true
         continueButton.layer.cornerRadius = continueButton.bounds.height / 2
         continueButton.clipsToBounds = true
+        continueButton.addTopBtnShadow()
+        cancelButton.addTopBtnShadow()
         
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true

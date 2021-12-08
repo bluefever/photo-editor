@@ -433,7 +433,7 @@ extension PhotoEditorViewController {
         continueButton.isEnabled = enabled
         
         if (enabled) {
-            continueButton.backgroundColor = UIColor.init(hexString: "#4150BE")
+            continueButton.backgroundColor = UIColor.init(hexString: "#FFF")
         } else {
             continueButton.backgroundColor = UIColor.init(hexString: "#767676")
         }
