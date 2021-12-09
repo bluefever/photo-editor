@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Medium.ttf">
-            <string>Montserrat-Medium</string>
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -31,35 +31,27 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="La6-LQ-roE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
                                         <state key="normal" title="next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="okayButtonPressed:" destination="ihQ-hS-wVt" eventType="touchUpInside" id="VOB-u3-fXZ"/>
+                                            <action selector="continueButtonPressed:" destination="ihQ-hS-wVt" eventType="touchUpInside" id="RMt-5L-H80"/>
                                         </connections>
                                     </button>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-LJ-k8t">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-LJ-k8t">
                                         <rect key="frame" x="24" y="35" width="318" height="250"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47C-9V-41B">
-                                                <rect key="frame" x="0.0" y="8" width="318" height="234"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                        </subviews>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
                                         <constraints>
-                                            <constraint firstItem="47C-9V-41B" firstAttribute="top" secondItem="cfH-LJ-k8t" secondAttribute="top" constant="8" id="05z-Lp-itt"/>
-                                            <constraint firstItem="47C-9V-41B" firstAttribute="centerY" secondItem="cfH-LJ-k8t" secondAttribute="centerY" id="6TN-Sb-8oc"/>
-                                            <constraint firstItem="47C-9V-41B" firstAttribute="centerX" secondItem="cfH-LJ-k8t" secondAttribute="centerX" id="DgX-cw-AHy"/>
                                             <constraint firstAttribute="height" constant="250" id="N4h-Xw-edA"/>
-                                            <constraint firstItem="47C-9V-41B" firstAttribute="leading" secondItem="cfH-LJ-k8t" secondAttribute="leading" id="Shu-0B-IT0"/>
-                                            <constraint firstAttribute="trailing" secondItem="47C-9V-41B" secondAttribute="trailing" id="XR4-MI-eRH"/>
-                                            <constraint firstAttribute="bottom" secondItem="47C-9V-41B" secondAttribute="bottom" constant="-8" id="ttI-lj-AXa"/>
                                         </constraints>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5F5-b1-zDh">
                                         <rect key="frame" x="105" y="283" width="156" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.11764705882352941" green="0.13725490196078433" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -85,8 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="Fsk-CG-fat" id="sJQ-qg-ItR"/>
                         <outlet property="dialogBoxView" destination="Oup-GP-W8e" id="Vxz-xm-QH4"/>
-                        <outlet property="okayButton" destination="Fsk-CG-fat" id="W8j-sp-zDB"/>
                         <outlet property="pageControl" destination="5F5-b1-zDh" id="rtl-WX-b6W"/>
                         <outlet property="scrollView" destination="cfH-LJ-k8t" id="Bpn-LZ-ToE"/>
                     </connections>
@@ -97,6 +89,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
