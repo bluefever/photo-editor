@@ -53,16 +53,28 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     
     func createSlides() -> [WelcomeSlide] {
         let bundle = Bundle(for: WelcomeSlide.self)
+        let imgBundle = Bundle(for: type(of: self))
         
         let slide1:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView_1", owner: nil, options: nil)?.first as! WelcomeSlide
-//        slide1.imageView.image = UIImage(named: "text_off")
-//        slide1.label.text = "Blue Fever is a 100% anonymous + judgment-free space for you to express your thoughts, feelings and experiences."
+        slide1.imageView.image = UIImage(named: "slide_1", in: imgBundle, compatibleWith: nil)
+        slide1.label.numberOfLines = 0
+        slide1.label.textAlignment = .center
+        slide1.label.attributedText = attributedText(withString: "Blue Fever is a 100% anonymous + judgment-free space for you to\nexpress your thoughts, feelings and\n experiences.\n", boldString: "100% anonymous + judgment-free", font: UIFont.init(name: "Cheria", size: 16)!)
         
         let slide2:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView_1", owner: nil, options: nil)?.first as! WelcomeSlide
-//        slide2.imageView.image = UIImage(named: "text_off")
+        slide2.imageView.image = UIImage(named: "slide_2", in: imgBundle, compatibleWith: nil)
 //        slide2.label.text = "Blue Fever is a 100% anonymous + judgment-free space for you to express your thoughts, feelings and experiences."
         
         return [slide1, slide2]
+    }
+    
+    func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: string,
+                                                     attributes: [NSAttributedString.Key.font: font])
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: font.pointSize)]
+        let range = (string as NSString).range(of: boldString)
+        attributedString.addAttributes(boldFontAttribute, range: range)
+        return attributedString
     }
     
     func setupSlideScrollView(slides : [WelcomeSlide]) {

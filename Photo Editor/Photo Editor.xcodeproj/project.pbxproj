@@ -124,6 +124,7 @@
 		E1F2524027629A20003CA722 /* slide_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F2523D27629A20003CA722 /* slide_1@2x.png */; };
 		E1F2524127629A20003CA722 /* slide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F2523E27629A20003CA722 /* slide_1.png */; };
 		E1F2524227629A20003CA722 /* slide_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F2523F27629A20003CA722 /* slide_1@3x.png */; };
+		E1F2524427629F8E003CA722 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1F2524327629F6E003CA722 /* DMSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +251,7 @@
 		E1F2523D27629A20003CA722 /* slide_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_1@2x.png"; sourceTree = "<group>"; };
 		E1F2523E27629A20003CA722 /* slide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slide_1.png; sourceTree = "<group>"; };
 		E1F2523F27629A20003CA722 /* slide_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide_1@3x.png"; sourceTree = "<group>"; };
+		E1F2524327629F6E003CA722 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 				056513141EF489B4009EA38F /* CropView.swift */,
 				96C9D47A24C6C36700BB803D /* GifsStickersViewController.xib */,
 				96824873265CD0EC004223A7 /* DMSans-Bold.ttf */,
+				E1F2524327629F6E003CA722 /* DMSans-Regular.ttf */,
 				056513151EF489B4009EA38F /* CropRectView.swift */,
 				96618BA424D99E8600128708 /* Nunito-ExtraBold.ttf */,
 				056513161EF489B4009EA38F /* CropViewController.swift */,
@@ -469,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F2524427629F8E003CA722 /* DMSans-Regular.ttf in Resources */,
 				96C3F6C5270519CD00F0A59C /* SFCompactText-HeavyItalic.ttf in Resources */,
 				96B92DF927031DE0006547A8 /* HomemadeApple-Regular.ttf in Resources */,
 				96B92DF827031DD7006547A8 /* Rasa-Regular.ttf in Resources */,
