@@ -168,7 +168,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     public override func viewDidAppear(_ animated: Bool) {
-        if let popupViewController = UIStoryboard(name: "WelcomeDialogViewController", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
+        if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
             popupViewController.modalPresentationStyle = .custom
             popupViewController.modalTransitionStyle = .crossDissolve
             

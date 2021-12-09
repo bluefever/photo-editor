@@ -17,7 +17,7 @@
         <!--Welcome Dialog View Controller-->
         <scene sceneID="TlR-EU-Ocp">
             <objects>
-                <viewController storyboardIdentifier="NormalPopupViewController" id="ihQ-hS-wVt" customClass="WelcomeDialogViewController" customModule="iOSPhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeDialog" id="ihQ-hS-wVt" customClass="WelcomeDialogViewController" customModule="iOSPhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k4a-7o-oEs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,10 @@
                                             <constraint firstAttribute="bottom" secondItem="47C-9V-41B" secondAttribute="bottom" constant="-8" id="ttI-lj-AXa"/>
                                         </constraints>
                                     </scrollView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5F5-b1-zDh">
+                                        <rect key="frame" x="105" y="283" width="156" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -83,6 +87,8 @@
                     <connections>
                         <outlet property="dialogBoxView" destination="Oup-GP-W8e" id="Vxz-xm-QH4"/>
                         <outlet property="okayButton" destination="Fsk-CG-fat" id="W8j-sp-zDB"/>
+                        <outlet property="pageControl" destination="5F5-b1-zDh" id="rtl-WX-b6W"/>
+                        <outlet property="scrollView" destination="cfH-LJ-k8t" id="Bpn-LZ-ToE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43C-a7-2P3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

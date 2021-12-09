@@ -115,6 +115,8 @@
 		E164100F2762756000C2A05B /* WelcomeDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164100E2762756000C2A05B /* WelcomeDialogViewController.swift */; };
 		E16410122762761600C2A05B /* icon_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16410102762761600C2A05B /* icon_close@2x.png */; };
 		E16410132762761600C2A05B /* icon_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E16410112762761600C2A05B /* icon_close@3x.png */; };
+		E164102227627D1D00C2A05B /* WelcomeSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164102027627D1D00C2A05B /* WelcomeSlide.swift */; };
+		E164102327627D1D00C2A05B /* WelcomeSlideView_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E164102127627D1D00C2A05B /* WelcomeSlideView_1.xib */; };
 		E1B519FD2760F4B00037EE4E /* CustomDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B519FA2760F4B00037EE4E /* CustomDialog.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -233,6 +235,8 @@
 		E164100E2762756000C2A05B /* WelcomeDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeDialogViewController.swift; sourceTree = "<group>"; };
 		E16410102762761600C2A05B /* icon_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@2x.png"; sourceTree = "<group>"; };
 		E16410112762761600C2A05B /* icon_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@3x.png"; sourceTree = "<group>"; };
+		E164102027627D1D00C2A05B /* WelcomeSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSlide.swift; sourceTree = "<group>"; };
+		E164102127627D1D00C2A05B /* WelcomeSlideView_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeSlideView_1.xib; sourceTree = "<group>"; };
 		E1B519FA2760F4B00037EE4E /* CustomDialog.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomDialog.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +285,8 @@
 				964F1C7224C5E3AB00F96C62 /* ImageCollectionViewCell.xib */,
 				96F9690324E177690081A0DB /* CustomTextField.swift */,
 				9611043224E2695B0021D4D7 /* ExpressionPreview.swift */,
+				E164102027627D1D00C2A05B /* WelcomeSlide.swift */,
+				E164102127627D1D00C2A05B /* WelcomeSlideView_1.xib */,
 				9611052824E2D0070021D4D7 /* BowlbyOneSC-Regular.ttf */,
 				96C3F6C4270518B700F0A59C /* SFCompactText-HeavyItalic.ttf */,
 				9611052924E2D0070021D4D7 /* ZillaSlabHighlight-Bold.ttf */,
@@ -513,6 +519,7 @@
 				960B0EB12541968800C5DA4B /* icon_align_left@2x.png in Resources */,
 				0565133C1EF489C0009EA38F /* StickerCollectionViewCell.xib in Resources */,
 				96EF93C6254050E800915EFD /* text_off.png in Resources */,
+				E164102327627D1D00C2A05B /* WelcomeSlideView_1.xib in Resources */,
 				96EF93B9254050D600915EFD /* color_on@3x.png in Resources */,
 				056513381EF489C0009EA38F /* LaunchScreen.storyboard in Resources */,
 				96EF93C4254050E800915EFD /* text_off@2x.png in Resources */,
@@ -532,6 +539,7 @@
 			files = (
 				056513281EF489B4009EA38F /* UIImage+Crop.swift in Sources */,
 				964F1C7424C5E3AB00F96C62 /* PhotoEditor+BackgroundViewController.swift in Sources */,
+				E164102227627D1D00C2A05B /* WelcomeSlide.swift in Sources */,
 				056513221EF489B4009EA38F /* UIView+Image.swift in Sources */,
 				9656D392266F857900727AE1 /* TemplateCategoryViewCell.swift in Sources */,
 				E164100F2762756000C2A05B /* WelcomeDialogViewController.swift in Sources */,
