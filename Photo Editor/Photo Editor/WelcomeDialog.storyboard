@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Welcome Dialog View Controller-->
+        <scene sceneID="TlR-EU-Ocp">
+            <objects>
+                <viewController storyboardIdentifier="NormalPopupViewController" id="ihQ-hS-wVt" customClass="WelcomeDialogViewController" customModule="iOSPhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k4a-7o-oEs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oup-GP-W8e">
+                                <rect key="frame" x="24" y="214" width="366" height="398"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsk-CG-fat">
+                                        <rect key="frame" x="24" y="324" width="318" height="50"/>
+                                        <color key="backgroundColor" red="0.25490196078431371" green="0.31372549019607843" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="La6-LQ-roE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                        <state key="normal" title="next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okayButtonPressed:" destination="ihQ-hS-wVt" eventType="touchUpInside" id="VOB-u3-fXZ"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-LJ-k8t">
+                                        <rect key="frame" x="24" y="35" width="318" height="250"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47C-9V-41B">
+                                                <rect key="frame" x="0.0" y="8" width="318" height="234"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="47C-9V-41B" firstAttribute="top" secondItem="cfH-LJ-k8t" secondAttribute="top" constant="8" id="05z-Lp-itt"/>
+                                            <constraint firstItem="47C-9V-41B" firstAttribute="centerY" secondItem="cfH-LJ-k8t" secondAttribute="centerY" id="6TN-Sb-8oc"/>
+                                            <constraint firstItem="47C-9V-41B" firstAttribute="centerX" secondItem="cfH-LJ-k8t" secondAttribute="centerX" id="DgX-cw-AHy"/>
+                                            <constraint firstAttribute="height" constant="250" id="N4h-Xw-edA"/>
+                                            <constraint firstItem="47C-9V-41B" firstAttribute="leading" secondItem="cfH-LJ-k8t" secondAttribute="leading" id="Shu-0B-IT0"/>
+                                            <constraint firstAttribute="trailing" secondItem="47C-9V-41B" secondAttribute="trailing" id="XR4-MI-eRH"/>
+                                            <constraint firstAttribute="bottom" secondItem="47C-9V-41B" secondAttribute="bottom" constant="-8" id="ttI-lj-AXa"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="leading" secondItem="Oup-GP-W8e" secondAttribute="leading" constant="24" id="DQa-VE-3mx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fsk-CG-fat" secondAttribute="trailing" constant="24" id="Ehe-6G-iEA"/>
+                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="centerX" secondItem="Oup-GP-W8e" secondAttribute="centerX" id="Gj6-7r-j8Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="cfH-LJ-k8t" secondAttribute="trailing" constant="24" id="Oeu-pr-FII"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fsk-CG-fat" secondAttribute="bottom" constant="24" id="RRN-N7-Jhn"/>
+                                    <constraint firstItem="Fsk-CG-fat" firstAttribute="centerX" secondItem="Oup-GP-W8e" secondAttribute="centerX" id="V2X-On-PBC"/>
+                                    <constraint firstItem="Fsk-CG-fat" firstAttribute="leading" secondItem="Oup-GP-W8e" secondAttribute="leading" constant="24" id="jh3-Ob-JJB"/>
+                                    <constraint firstAttribute="height" constant="398" id="p1f-xS-WcX"/>
+                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="top" secondItem="Oup-GP-W8e" secondAttribute="top" constant="35" id="siK-db-bls"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ouw-91-Dx0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oup-GP-W8e" firstAttribute="centerY" secondItem="k4a-7o-oEs" secondAttribute="centerY" constant="-35" id="etS-tw-n9E"/>
+                            <constraint firstItem="ouw-91-Dx0" firstAttribute="trailing" secondItem="Oup-GP-W8e" secondAttribute="trailing" constant="24" id="oiW-jC-pBI"/>
+                            <constraint firstItem="Oup-GP-W8e" firstAttribute="leading" secondItem="ouw-91-Dx0" secondAttribute="leading" constant="24" id="ug0-7j-UzU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dialogBoxView" destination="Oup-GP-W8e" id="Vxz-xm-QH4"/>
+                        <outlet property="okayButton" destination="Fsk-CG-fat" id="W8j-sp-zDB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43C-a7-2P3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100.00000000000001" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

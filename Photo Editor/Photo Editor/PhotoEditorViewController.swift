@@ -167,6 +167,19 @@ public final class PhotoEditorViewController: UIViewController {
         configureCollectionView()
     }
     
+    public override func viewDidAppear(_ animated: Bool) {
+        if let popupViewController = UIStoryboard(name: "WelcomeDialogViewController", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
+            popupViewController.modalPresentationStyle = .custom
+            popupViewController.modalTransitionStyle = .crossDissolve
+            
+            //setting the delegate of the dialog box to the parent viewController
+//            popupViewController.delegate = parentVC as? PopUpProtocol
+
+            //presenting the pop up viewController from the parent viewController
+            self.present(popupViewController, animated: true)
+        }
+    }
+    
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
