@@ -51,7 +51,14 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         if (currentPage == 0) {
-            scrollView.setCurrentPage(position: 1)
+            let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
+            
+            self.addChild(sensitiveContentViewController)
+            self.view.addSubview(sensitiveContentViewController.view)
+            sensitiveContentViewController.didMove(toParent: self)
+            let height = view.frame.height
+            let width  = view.frame.width
+            sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
         } else {
             self.dismiss(animated: true)
         }
@@ -92,14 +99,14 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
                 generator.impactOccurred()
             }
             
-            let backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
+            let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
             
-            self.addChild(backgroundViewController)
-            self.view.addSubview(backgroundViewController.view)
-            backgroundViewController.didMove(toParent: self)
+            self.addChild(sensitiveContentViewController)
+            self.view.addSubview(sensitiveContentViewController.view)
+            sensitiveContentViewController.didMove(toParent: self)
             let height = view.frame.height
             let width  = view.frame.width
-            backgroundViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+            sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
         }
     }
     
