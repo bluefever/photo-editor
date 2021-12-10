@@ -171,11 +171,6 @@ public final class PhotoEditorViewController: UIViewController {
         if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
             popupViewController.modalPresentationStyle = .custom
             popupViewController.modalTransitionStyle = .crossDissolve
-            
-            //setting the delegate of the dialog box to the parent viewController
-//            popupViewController.delegate = parentVC as? PopUpProtocol
-
-            //presenting the pop up viewController from the parent viewController
             self.present(popupViewController, animated: true)
         }
     }

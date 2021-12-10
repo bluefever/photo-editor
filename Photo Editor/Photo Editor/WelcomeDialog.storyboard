@@ -39,16 +39,25 @@
                                             <action selector="continueButtonPressed:" destination="ihQ-hS-wVt" eventType="touchUpInside" id="RMt-5L-H80"/>
                                         </connections>
                                     </button>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-LJ-k8t">
-                                        <rect key="frame" x="24" y="35" width="318" height="250"/>
-                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-Hc-aF4">
+                                        <rect key="frame" x="24" y="24" width="318" height="250"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-LJ-k8t">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="250"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="N4h-Xw-edA"/>
+                                            <constraint firstItem="cfH-LJ-k8t" firstAttribute="width" secondItem="BCi-Hc-aF4" secondAttribute="width" id="3cr-dG-YbF"/>
+                                            <constraint firstItem="cfH-LJ-k8t" firstAttribute="centerX" secondItem="BCi-Hc-aF4" secondAttribute="centerX" id="KV0-I1-X0W"/>
+                                            <constraint firstAttribute="height" constant="250" id="X4t-01-8Z6"/>
+                                            <constraint firstItem="cfH-LJ-k8t" firstAttribute="centerY" secondItem="BCi-Hc-aF4" secondAttribute="centerY" id="cmn-dm-zpR"/>
+                                            <constraint firstItem="cfH-LJ-k8t" firstAttribute="height" secondItem="BCi-Hc-aF4" secondAttribute="height" id="wnp-w1-IAx"/>
                                         </constraints>
-                                    </scrollView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5F5-b1-zDh">
-                                        <rect key="frame" x="105" y="283" width="156" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5F5-b1-zDh">
+                                        <rect key="frame" x="105" y="282" width="156" height="26"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="pageIndicatorTintColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                         <color key="currentPageIndicatorTintColor" red="0.11764705882352941" green="0.13725490196078433" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -56,15 +65,17 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="leading" secondItem="Oup-GP-W8e" secondAttribute="leading" constant="24" id="DQa-VE-3mx"/>
+                                    <constraint firstItem="BCi-Hc-aF4" firstAttribute="top" secondItem="Oup-GP-W8e" secondAttribute="top" constant="24" id="1OC-VW-1hA"/>
+                                    <constraint firstItem="5F5-b1-zDh" firstAttribute="width" secondItem="Oup-GP-W8e" secondAttribute="width" multiplier="0.42623" id="6Hj-P3-uOm"/>
+                                    <constraint firstItem="BCi-Hc-aF4" firstAttribute="leading" secondItem="Oup-GP-W8e" secondAttribute="leading" constant="24" id="DSH-VJ-A1k"/>
                                     <constraint firstAttribute="trailing" secondItem="Fsk-CG-fat" secondAttribute="trailing" constant="24" id="Ehe-6G-iEA"/>
-                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="centerX" secondItem="Oup-GP-W8e" secondAttribute="centerX" id="Gj6-7r-j8Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="cfH-LJ-k8t" secondAttribute="trailing" constant="24" id="Oeu-pr-FII"/>
+                                    <constraint firstItem="5F5-b1-zDh" firstAttribute="centerX" secondItem="Oup-GP-W8e" secondAttribute="centerX" id="N19-JC-0SK"/>
+                                    <constraint firstItem="5F5-b1-zDh" firstAttribute="top" secondItem="Oup-GP-W8e" secondAttribute="top" constant="282" id="QVA-ew-gpK"/>
                                     <constraint firstAttribute="bottom" secondItem="Fsk-CG-fat" secondAttribute="bottom" constant="24" id="RRN-N7-Jhn"/>
                                     <constraint firstItem="Fsk-CG-fat" firstAttribute="centerX" secondItem="Oup-GP-W8e" secondAttribute="centerX" id="V2X-On-PBC"/>
                                     <constraint firstItem="Fsk-CG-fat" firstAttribute="leading" secondItem="Oup-GP-W8e" secondAttribute="leading" constant="24" id="jh3-Ob-JJB"/>
                                     <constraint firstAttribute="height" constant="398" id="p1f-xS-WcX"/>
-                                    <constraint firstItem="cfH-LJ-k8t" firstAttribute="top" secondItem="Oup-GP-W8e" secondAttribute="top" constant="35" id="siK-db-bls"/>
+                                    <constraint firstAttribute="trailing" secondItem="BCi-Hc-aF4" secondAttribute="trailing" constant="24" id="vZa-c5-m9Z"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -77,6 +88,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="container" destination="BCi-Hc-aF4" id="Pen-bn-iFh"/>
                         <outlet property="continueButton" destination="Fsk-CG-fat" id="sJQ-qg-ItR"/>
                         <outlet property="dialogBoxView" destination="Oup-GP-W8e" id="Vxz-xm-QH4"/>
                         <outlet property="pageControl" destination="5F5-b1-zDh" id="rtl-WX-b6W"/>
