@@ -124,7 +124,7 @@ public final class PhotoEditorViewController: UIViewController {
     var gifsSources: [GifImage] = []
     
     var gifsStickersViewController: GifsStickersViewController!
-    var backgroundViewController: BackgroundViewController!
+    var backgroundViewController: BackgroundsViewController!
     var renderCount: Int = 0
     var imported: Bool = false
     
@@ -161,7 +161,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         gifsStickersViewController = GifsStickersViewController(nibName: "GifsStickersViewController", bundle: Bundle(for: GifsStickersViewController.self))
         
-        backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
+        backgroundViewController = BackgroundsViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundsViewController.self))
         
         hideControls()
         configureCollectionView()

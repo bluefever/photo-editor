@@ -51,14 +51,7 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         if (currentPage == 0) {
-            let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
-            
-            self.addChild(sensitiveContentViewController)
-            self.view.addSubview(sensitiveContentViewController.view)
-            sensitiveContentViewController.didMove(toParent: self)
-            let height = view.frame.height
-            let width  = view.frame.width
-            sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+            scrollView.setCurrentPage(position: 1)
         } else {
             self.dismiss(animated: true)
         }
