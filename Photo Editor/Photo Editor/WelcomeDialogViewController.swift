@@ -130,8 +130,6 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
             slides[i].frame = CGRect(x: container.frame.width * CGFloat(i), y: 0, width: container.frame.width, height: container.frame.height)
             scrollView.addSubview(slides[i])
         }
-        
-        print(scrollView.subviews.count)
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -97,6 +97,11 @@ public final class PhotoEditorViewController: UIViewController {
     */
     @objc public var initialData: String?
     
+    /**
+    Bool to show welcome dialog
+     */
+    @objc public var showWelcomeDialog: String?
+    
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
@@ -168,10 +173,12 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     public override func viewDidAppear(_ animated: Bool) {
-        if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
-            popupViewController.modalPresentationStyle = .custom
-            popupViewController.modalTransitionStyle = .crossDissolve
-            self.present(popupViewController, animated: true)
+        if (showWelcomeDialog != nil) {
+            if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
+                popupViewController.modalPresentationStyle = .custom
+                popupViewController.modalTransitionStyle = .crossDissolve
+                self.present(popupViewController, animated: true)
+            }
         }
     }
     
