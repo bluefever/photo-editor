@@ -24,6 +24,7 @@
                 <outlet property="holdView" destination="FFz-HG-EXZ" id="EOi-i7-b7v"/>
                 <outlet property="label" destination="XDZ-4X-79F" id="RuJ-QH-tTb"/>
                 <outlet property="scrollView" destination="389-Pb-g4p" id="NYa-PG-Qi9"/>
+                <outlet property="sendMessage" destination="XDZ-4X-79F" id="UVk-EI-8RZ"/>
                 <outlet property="topLine" destination="jhO-3w-a1V" id="Hk3-Pq-x2q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="dC0-Wh-GO9"/>
             </connections>

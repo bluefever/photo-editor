@@ -13,6 +13,7 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var topLine: UIView!
+    @IBOutlet weak var sendMessage: UILabel!
     
     let screenSize = UIScreen.main.bounds.size
     
@@ -48,6 +49,28 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
         scrollView.contentSize = CGSize(width: image!.size.width, height: image!.size.height + 32)
         scrollView.addSubview(imageView)
         scrollView.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.sendMessageOnClick))
+        sendMessage.isUserInteractionEnabled = true
+        sendMessage.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func sendMessageOnClick(sender:UITapGestureRecognizer) {
+        guard let url = URL(string: "https://www.bluefever.com/talk-to-us") else {
+          return
+        }
+        
+        if #available(iOS 10.0, *) {
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
