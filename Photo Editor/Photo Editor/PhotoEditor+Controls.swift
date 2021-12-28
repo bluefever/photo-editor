@@ -60,7 +60,6 @@ extension PhotoEditorViewController {
         }))
         
         present(refreshAlert, animated: true, completion: nil)
-        
     }
     
     @IBAction func cropButtonTapped(_ sender: UIButton) {

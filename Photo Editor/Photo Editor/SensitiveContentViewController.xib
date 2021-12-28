@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -113,7 +112,8 @@ sensitive?</string>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gon-Sk-6R7">
                                     <rect key="frame" x="0.0" y="1" width="375" height="16"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="APh-C7-bCn"/>
                                     </constraints>
@@ -132,7 +132,7 @@ sensitive?</string>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-H6-tUY">
                                     <rect key="frame" x="0.0" y="52" width="375" height="28"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="ewP-4b-tc6"/>
                                     </constraints>
@@ -157,9 +157,4 @@ sensitive?</string>
             <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -247,4 +247,66 @@ extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
+    
+    func addViewShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 3.0
+        self.layer.masksToBounds = false
+    }
+    
+    func blink() {
+     self.alpha = 0.2
+     UIView.animate(withDuration: 1, delay: 0.0, options: .curveLinear, animations: {self.alpha = 1.0}, completion: nil)
+    }
+    
+    func fadeIn(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
+        self.alpha = 0.0
+
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.isHidden = false
+            self.alpha = 1.0
+        }, completion: completion)
+    }
+
+    func fadeOut(duration: TimeInterval = 0.1, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+        self.alpha = 1.0
+
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }) { (completed) in
+            self.isHidden = true
+            completion(true)
+        }
+    }
+}
+
+extension KMPlaceholderTextView {
+    func highlight(searchedText: String) {
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: text)
+        }
+        
+        let searchPattern = "\\b"+NSRegularExpression.escapedPattern(for: searchedText)+"\\b"
+        let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+
+        for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
+            attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.init(hexString: "#E1F4FC"), range: match.range)
+        }
+        
+        self.attributedText = attributed
+   }
+    
+    func clearAttributes() {
+        let attrText = NSMutableAttributedString(attributedString: attributedText)
+        
+        attrText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.clear, range: NSMakeRange(0,  attrText.length))
+        
+        self.attributedText = attrText
+    }
 }

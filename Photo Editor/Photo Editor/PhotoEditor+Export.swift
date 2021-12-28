@@ -114,13 +114,15 @@ public struct Expression: Codable, Hashable {
     var backgroundSize: OriginalFrame?
     var originalFrame: OriginalFrame?
     var layers: [ExpressionLayer]
+    var crisisTerms: [String]?
     
-    init(originalFrame: OriginalFrame? = nil, backgroundSize: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
+    init(originalFrame: OriginalFrame? = nil, backgroundSize: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = [], crisisTerms: [String] = []) {
         self.originalFrame = originalFrame
         self.backgroundSize = backgroundSize
         self.backgroundColor = backgroundColor
         self.backgroundImage = backgroundImage
         self.layers = layers
+        self.crisisTerms = crisisTerms
     }
 }
 
@@ -154,6 +156,8 @@ extension PhotoEditorViewController {
         
         expression.originalFrame = OriginalFrame.init(height: UIScreen.main.bounds.height, width:
             UIScreen.main.bounds.width)
+        
+        expression.crisisTerms = verifyTextContent()
         
         if let imageName = imageBgName {
             expression.backgroundImage = imageName
@@ -301,6 +305,8 @@ extension PhotoEditorViewController {
                 }
             }
         }
+        
+        verifyTextContent()
     }
     
     public func isPageEdited () -> Bool {

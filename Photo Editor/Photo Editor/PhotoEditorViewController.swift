@@ -42,6 +42,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var alertButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var topTextSizeButton: UIButton!
     @IBOutlet weak var topTextStyleButton: UIButton!
@@ -61,6 +62,12 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var centerHorizontalView: UIView!
     @IBOutlet weak var centerVerticalView: UIView!
     
+    @IBOutlet weak var crisisToast: UIView!
+    @IBOutlet weak var crisisLabel: UILabel!
+    @IBOutlet weak var learnMoreLabel: UILabel!
+    @IBOutlet weak var closeToastButton: UIButton!
+    @IBOutlet weak var toastBlueImage: UIImageView!
+    
     @objc public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -78,6 +85,14 @@ public final class PhotoEditorViewController: UIViewController {
      Array of Background Images that the user will choose from
      */
     @objc public var bgImages : [String] = []
+    /**
+     Array of active terms
+     */
+    @objc public var activeTerms : [String] = []
+    /**
+     Array of active toxic terms
+     */
+    @objc public var activeToxicTerms : [String] = []
     /**
      Array of template categories
      */
@@ -127,6 +142,19 @@ public final class PhotoEditorViewController: UIViewController {
     var isTyping: Bool = false
     var gifsImages: [UIImageView] = []
     var gifsSources: [GifImage] = []
+    var crisisTerm: CrisisTerm? = nil {
+        didSet {
+            if (crisisTerm == .toxic) {
+                showToxicTermToast()
+            } else if (crisisTerm == .active) {
+                showActiveTermToast()
+            } else {
+                clearCrisisViews()
+            }
+        }
+    }
+    
+    var crisisToastMode: CrisisToastMode = .toast
     
     var gifsStickersViewController: GifsStickersViewController!
     var backgroundViewController: BackgroundsViewController!
@@ -259,6 +287,19 @@ public final class PhotoEditorViewController: UIViewController {
         continueButton.clipsToBounds = true
         continueButton.addTopBtnShadow()
         cancelButton.addTopBtnShadow()
+        alertButton.addTopBtnShadow()
+        
+        crisisToast.layer.cornerRadius = 20
+        crisisToast.clipsToBounds = true
+        crisisToast.addViewShadow()
+        
+        crisisLabel.text = "It looks like your page mentions a sensitive topic. Pls note, there’ll be a special TW label if posted publicly 💙"
+        crisisLabel.sizeToFit()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onLearMore))
+        learnMoreLabel.isUserInteractionEnabled = true
+        learnMoreLabel.addGestureRecognizer(tap)
+        learnMoreLabel.sizeToFit()
         
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true
@@ -295,6 +336,23 @@ public final class PhotoEditorViewController: UIViewController {
         prepareTopTextButtons()
     }
     
+    @objc
+    func onLearMore(sender:UITapGestureRecognizer) {
+       if #available(iOS 10.0, *) {
+           learnMoreLabel.blink()
+           let generator = UIImpactFeedbackGenerator(style: .heavy)
+           generator.impactOccurred()
+       }
+       
+       let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
+       
+       self.addChild(sensitiveContentViewController)
+       self.view.addSubview(sensitiveContentViewController.view)
+       sensitiveContentViewController.didMove(toParent: self)
+       let height = view.frame.height
+       let width  = view.frame.width
+       sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+   }
     
     func prepareTopTextButtons() {
         topTextSizeButton.addShadow()
@@ -361,10 +419,16 @@ public final class PhotoEditorViewController: UIViewController {
     
     func hideToolbar(hide: Bool) {
         toolbars.isHidden = hide
-//        topToolbar.isHidden = hide
-//        bottomToolbar.isHidden = hide
+        
+        alertButton.isHidden = true
         continueButton.isHidden = isTyping ? true : hide
         view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
+        
+        if (!hide) {
+            verifyTextContent()
+        } else {
+            crisisToast.isHidden = true
+        }
     }
 }
 

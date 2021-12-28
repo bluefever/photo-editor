@@ -61,14 +61,14 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
         let bundle = Bundle(for: WelcomeSlide.self)
         let imgBundle = Bundle(for: type(of: self))
         
-        let slide1:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView_1", owner: nil, options: nil)?.first as! WelcomeSlide
+        let slide1:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView", owner: nil, options: nil)?.first as! WelcomeSlide
         slide1.imageView.image = UIImage(named: "slide_1", in: imgBundle, compatibleWith: nil)
         slide1.label.numberOfLines = 5
         slide1.label.textAlignment = .center
         slide1.label.attributedText = attributedText(withString: "Blue Fever is a 100% anonymous +\njudgment-free space for you to\nexpress your thoughts, feelings and  experiences.\n", boldString: "100% anonymous +\njudgment-free", font: UIFont.init(name: "DMSans-Regular", size: 15)!, withColor: false)
         
         
-        let slide2:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView_1", owner: nil, options: nil)?.first as! WelcomeSlide
+        let slide2:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView", owner: nil, options: nil)?.first as! WelcomeSlide
         slide2.imageView.image = UIImage(named: "slide_2", in: imgBundle, compatibleWith: nil)
         slide2.label.numberOfLines = 5
         slide2.label.textAlignment = .center
