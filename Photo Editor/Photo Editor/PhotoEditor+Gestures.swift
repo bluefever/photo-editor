@@ -249,7 +249,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         }
         
         enableNextButton()
-        verifyTextContent()
+        
+        if (disableCrisisVerification == nil) {
+            verifyTextContent()
+        }
     }
     
     func subImageViews(view: UIView) -> [UIImageView] {

@@ -306,7 +306,9 @@ extension PhotoEditorViewController {
             }
         }
         
-        verifyTextContent()
+        if (disableCrisisVerification == nil) {
+            verifyTextContent()
+        }
     }
     
     public func isPageEdited () -> Bool {

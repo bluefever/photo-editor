@@ -113,9 +113,13 @@ public final class PhotoEditorViewController: UIViewController {
     @objc public var initialData: String?
     
     /**
-    Bool to show welcome dialog
+    Show welcome dialog - 1
      */
     @objc public var showWelcomeDialog: String?
+    /**
+    Disable crisisVerification - 1
+     */
+    @objc public var disableCrisisVerification: String?
     
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
@@ -424,10 +428,12 @@ public final class PhotoEditorViewController: UIViewController {
         continueButton.isHidden = isTyping ? true : hide
         view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
         
-        if (!hide) {
-            verifyTextContent()
-        } else {
-            crisisToast.isHidden = true
+        if (disableCrisisVerification == nil) {
+            if (!hide) {
+                verifyTextContent()
+            } else {
+                crisisToast.isHidden = true
+            }
         }
     }
 }
