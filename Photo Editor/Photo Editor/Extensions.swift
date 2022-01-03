@@ -302,11 +302,43 @@ extension KMPlaceholderTextView {
         self.attributedText = attributed
    }
     
+    func highlightAt(searchedText: String) {
+        
+        
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: text)
+        }
+        
+        
+        let specialCharacterRegEx  = "[@]"
+        let regex = try! NSRegularExpression(pattern: specialCharacterRegEx, options: .caseInsensitive)
+
+        for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
+            attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.init(hexString: "#E1F4FC"), range: match.range)
+        }
+        
+        self.attributedText = attributed
+    }
+    
     func clearAttributes() {
         let attrText = NSMutableAttributedString(attributedString: attributedText)
         
         attrText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.clear, range: NSMakeRange(0,  attrText.length))
         
         self.attributedText = attrText
+    }
+}
+
+extension String {
+    func ranges(of substring: String, options: CompareOptions = [], locale: Locale? = nil) -> [Range<Index>] {
+        var ranges: [Range<Index>] = []
+        while let range = range(of: substring, options: options, range: (ranges.last?.upperBound ?? self.startIndex)..<self.endIndex, locale: locale) {
+            ranges.append(range)
+        }
+        return ranges
     }
 }

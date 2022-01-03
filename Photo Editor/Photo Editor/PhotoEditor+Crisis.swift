@@ -107,8 +107,19 @@ extension PhotoEditorViewController {
                             if (foundCrisisTerm != .toxic) {
                                 foundCrisisTerm = .active
                             }
+
+                        }
+                        
+                        if term == "@" {
+                            if (!crisisTerms.contains(term)) {
+                                crisisTerms.append(term)
+                            }
                             
-                            textView.highlight(searchedText: term)
+                            textView.highlightAt(searchedText: term)
+                            
+                            if (foundCrisisTerm != .toxic) {
+                                foundCrisisTerm = .active
+                            }
                         }
                     }
                 }
