@@ -184,6 +184,7 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
             self.removeFromParent()
+            self.dismiss(animated: false, completion: nil)
         })
     }
 }
