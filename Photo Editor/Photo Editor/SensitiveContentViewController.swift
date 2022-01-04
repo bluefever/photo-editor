@@ -8,7 +8,7 @@
 import UIKit
 import TTSegmentedControl
 
-class SensitiveContentViewController: UIViewController, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+public final class SensitiveContentViewController: UIViewController, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var label: UILabel!
@@ -30,7 +30,7 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
         return topPadding!
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -73,7 +73,7 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 0.6) { [weak self] in
@@ -114,7 +114,7 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.contentOffset.y > 0) {
             self.topLine.backgroundColor = UIColor.init(hexString: "#EEEEEE")
         } else {
@@ -123,11 +123,11 @@ class SensitiveContentViewController: UIViewController, UIGestureRecognizerDeleg
             
     }
     
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
