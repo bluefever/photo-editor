@@ -110,7 +110,7 @@ extension PhotoEditorViewController {
 
                         }
                         
-                        if term == "@" {
+                        if term == "@" && text.contains("@") {
                             if (!crisisTerms.contains(term)) {
                                 crisisTerms.append(term)
                             }
