@@ -107,7 +107,8 @@ extension PhotoEditorViewController {
                             if (foundCrisisTerm != .toxic) {
                                 foundCrisisTerm = .active
                             }
-
+                            
+                            textView.highlight(searchedText: term)
                         }
                         
                         if term == "@" && text.contains("@") {
