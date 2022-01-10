@@ -24,6 +24,11 @@ import UIKit
      StickersViewController did Disappear
      */
     func canceledEditing(edited: Bool)
+    
+    /**
+     - Parameter event id
+     */
+    func onAnalyticsEvent(event: String)
 }
 
 

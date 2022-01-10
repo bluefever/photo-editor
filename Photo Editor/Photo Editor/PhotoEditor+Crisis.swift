@@ -136,8 +136,10 @@ extension PhotoEditorViewController {
         crisisToastMode = .toast
 
         if (crisisTerm == .toxic) {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0020")
             showToxicTermToast()
         } else {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0023")
             showActiveTermToast()
         }
     }
@@ -145,5 +147,11 @@ extension PhotoEditorViewController {
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         closeToastButton.blink()
         hideToast()
+        
+        if (crisisTerm == .active) {
+            self.photoEditorDelegate?.onAnalyticsEvent(event: "pc_0018")
+        } else {
+            self.photoEditorDelegate?.onAnalyticsEvent(event: "pc_0021")
+        }
     }
 }

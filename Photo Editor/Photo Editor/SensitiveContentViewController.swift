@@ -15,6 +15,8 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
     @IBOutlet weak var topLine: UIView!
     @IBOutlet weak var sendMessage: UILabel!
     
+    public var photoEditorDelegate: PhotoEditorDelegate?
+    
     let screenSize = UIScreen.main.bounds.size
     
     let fullView: CGFloat = 100 // remainder of screen height
@@ -71,6 +73,8 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
         } else {
             UIApplication.shared.openURL(url)
         }
+        
+        photoEditorDelegate?.onAnalyticsEvent(event: "pc_0024")
     }
     
     public override func viewDidAppear(_ animated: Bool) {

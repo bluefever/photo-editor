@@ -15,6 +15,8 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var container: UIView!
     
+    public var photoEditorDelegate: PhotoEditorDelegate?
+    
     var slides:[WelcomeSlide] = [];
     var currentPage = 0;
     
@@ -94,12 +96,15 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
             
             let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
             
+            sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate
             self.addChild(sensitiveContentViewController)
             self.view.addSubview(sensitiveContentViewController.view)
             sensitiveContentViewController.didMove(toParent: self)
             let height = view.frame.height
             let width  = view.frame.width
             sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+            
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0017")
         }
     }
     

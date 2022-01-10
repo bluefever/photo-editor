@@ -209,6 +209,7 @@ public final class PhotoEditorViewController: UIViewController {
             if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
                 popupViewController.modalPresentationStyle = .custom
                 popupViewController.modalTransitionStyle = .crossDissolve
+                popupViewController.photoEditorDelegate = photoEditorDelegate
                 self.present(popupViewController, animated: true)
             }
         }
@@ -350,12 +351,19 @@ public final class PhotoEditorViewController: UIViewController {
        
        let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
        
+       sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate
        self.addChild(sensitiveContentViewController)
        self.view.addSubview(sensitiveContentViewController.view)
        sensitiveContentViewController.didMove(toParent: self)
        let height = view.frame.height
        let width  = view.frame.width
        sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+        
+        if (crisisTerm == .active) {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0019")
+        } else {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0022")
+        }
    }
     
     func prepareTopTextButtons() {

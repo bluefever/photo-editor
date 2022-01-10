@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
         photoEditor.activeToxicTerms = ["self harm", "jap"]
         photoEditor.activeTerms = ["bully", "throw up", "@"]
+        photoEditor.showWelcomeDialog = "1"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
@@ -65,6 +66,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: PhotoEditorDelegate {
+    func onAnalyticsEvent(event: String) {
+        print(event)
+    }
+    
     
     func doneEditing(expression: String, image: UIImage) {
         print(expression)
