@@ -41,7 +41,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="collectionView" destination="CEL-sw-vTA" id="7Rc-B8-dat"/>
+                <outlet property="collectionView" destination="CEL-sw-vTA" id="fCv-Qd-Oid"/>
             </connections>
             <point key="canvasLocation" x="-69.565217391304358" y="69.308035714285708"/>
         </tableViewCell>
