@@ -282,6 +282,29 @@ extension UIView {
     }
 }
 
+extension UILabel {
+    func highlight(searchedText: String) {
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: self.text!)
+        }
+        
+        let searchPattern = NSRegularExpression.escapedPattern(for: searchedText)
+        let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+        
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
+
+        for match in regex.matches(in: self.text!, range: NSRange(0..<self.text!.utf16.count)) {
+            attributed.addAttributes(attrs, range: match.range)
+        }
+        
+        self.attributedText = attributed
+   }
+}
+
 extension KMPlaceholderTextView {
     func highlight(searchedText: String) {
         let attributed: NSMutableAttributedString
@@ -294,17 +317,21 @@ extension KMPlaceholderTextView {
         
         let searchPattern = "\\b"+NSRegularExpression.escapedPattern(for: searchedText)+"\\b"
         let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+        
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
 
         for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
-            attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.init(hexString: "#E1F4FC"), range: match.range)
+            attributed.addAttributes(attrs, range: match.range)
+            
+            if (self.font.fontName == "ZillaSlabHighlight-Bold") {
+                attributed.addAttributes([NSAttributedString.Key.font: UIFont(name: "ZillaSlab-Bold", size: CGFloat(self.font.pointSize))!], range: match.range)
+            }
         }
         
         self.attributedText = attributed
    }
     
     func highlightAt(searchedText: String) {
-        
-        
         let attributed: NSMutableAttributedString
         
         if let attrText = self.attributedText {
@@ -313,12 +340,16 @@ extension KMPlaceholderTextView {
             attributed = NSMutableAttributedString(string: text)
         }
         
-        
         let specialCharacterRegEx  = "[@]"
         let regex = try! NSRegularExpression(pattern: specialCharacterRegEx, options: .caseInsensitive)
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
 
         for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
-            attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.init(hexString: "#E1F4FC"), range: match.range)
+            attributed.addAttributes(attrs, range: match.range)
+            
+            if (self.font.fontName == "ZillaSlabHighlight-Bold") {
+                attributed.addAttributes([NSAttributedString.Key.font: UIFont(name: "ZillaSlab-Bold", size: CGFloat(self.font.pointSize))!], range: match.range)
+            }
         }
         
         self.attributedText = attributed
@@ -326,9 +357,8 @@ extension KMPlaceholderTextView {
     
     func clearAttributes() {
         let attrText = NSMutableAttributedString(attributedString: attributedText)
-        
-        attrText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.clear, range: NSMakeRange(0,  attrText.length))
-        
+        attrText.addAttributes([NSAttributedString.Key.font: UIFont(name: self.font.fontName, size: CGFloat(self.font.pointSize))!], range: NSMakeRange(0, attrText.length))
+        attrText.removeAttribute(NSAttributedString.Key.underlineStyle, range: NSMakeRange(0, attrText.length))
         self.attributedText = attrText
     }
 }

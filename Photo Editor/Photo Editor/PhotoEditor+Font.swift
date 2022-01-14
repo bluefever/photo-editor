@@ -11,7 +11,7 @@ import UIKit
 
 extension PhotoEditorViewController {
     static var fonts = ["Nunito-ExtraBold", "Nunito-SemiBold", "Nunito-Black",
-                        "ShadowsIntoLight", "Cheria", "SundayMorningRegular", "FastInMyCar", "ZillaSlabHighlight-Bold", "BowlbyOneSC-Regular", "DMSans-Bold", "DMSans-Regular", "Poppins-Bold", "Caveat-Bold", "HomemadeApple-Regular", "Rasa-Regular", "SFCompactText-HeavyItalic"]
+                        "ShadowsIntoLight", "Cheria", "SundayMorningRegular", "FastInMyCar", "ZillaSlabHighlight-Bold", "ZillaSlab-Bold", "BowlbyOneSC-Regular", "DMSans-Bold", "DMSans-Regular", "Poppins-Bold", "Caveat-Bold", "HomemadeApple-Regular", "Rasa-Regular", "SFCompactText-HeavyItalic"]
     
     //Resources don't load in main bundle we have to register the font
     func registerFont() {

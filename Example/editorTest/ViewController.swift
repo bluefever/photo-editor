@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
         photoEditor.activeToxicTerms = ["self harm", "jap"]
         photoEditor.activeTerms = ["bully", "throw up", "@"]
-        photoEditor.showWelcomeDialog = "1"
+//        photoEditor.showWelcomeDialog = "1"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
