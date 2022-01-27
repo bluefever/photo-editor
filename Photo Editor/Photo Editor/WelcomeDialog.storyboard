@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oup-GP-W8e">
-                                <rect key="frame" x="24" y="214" width="366" height="398"/>
+                                <rect key="frame" x="24" y="249" width="366" height="398"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsk-CG-fat">
                                         <rect key="frame" x="24" y="324" width="318" height="50"/>
@@ -82,7 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="ouw-91-Dx0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Oup-GP-W8e" firstAttribute="centerY" secondItem="k4a-7o-oEs" secondAttribute="centerY" constant="-35" id="etS-tw-n9E"/>
+                            <constraint firstItem="Oup-GP-W8e" firstAttribute="centerY" secondItem="k4a-7o-oEs" secondAttribute="centerY" id="etS-tw-n9E"/>
                             <constraint firstItem="ouw-91-Dx0" firstAttribute="trailing" secondItem="Oup-GP-W8e" secondAttribute="trailing" constant="24" id="oiW-jC-pBI"/>
                             <constraint firstItem="Oup-GP-W8e" firstAttribute="leading" secondItem="ouw-91-Dx0" secondAttribute="leading" constant="24" id="ug0-7j-UzU"/>
                         </constraints>

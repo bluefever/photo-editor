@@ -343,12 +343,6 @@ public final class PhotoEditorViewController: UIViewController {
     
     @objc
     func onLearMore(sender:UITapGestureRecognizer) {
-       if #available(iOS 10.0, *) {
-           learnMoreLabel.blink()
-           let generator = UIImpactFeedbackGenerator(style: .heavy)
-           generator.impactOccurred()
-       }
-       
        let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
        
        sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate

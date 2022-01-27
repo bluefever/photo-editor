@@ -89,11 +89,6 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     //MARK:- tappedOnLabel
     @objc func tappedOnLabel(_ gesture: UITapGestureRecognizer) {
         if gesture.didTapAttributedTextInLabel(label: self.slides[1].label, targetText: "Learn more.") {
-            if #available(iOS 10.0, *) {
-                let generator = UIImpactFeedbackGenerator(style: .heavy)
-                generator.impactOccurred()
-            }
-            
             let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
             
             sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate
@@ -111,7 +106,7 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     func attributedText(withString string: String, boldString: String, font: UIFont, withColor: Bool) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: string,
                                                      attributes: [NSAttributedString.Key.font: font])
-        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: font.pointSize)]
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.init(name: "DMSans-Bold", size: 15)!]
         
         let colorAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "#4150BE")]
         

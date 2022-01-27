@@ -62,11 +62,6 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
         guard let url = URL(string: "https://www.bluefever.com/talk-to-us") else {
           return
         }
-        
-        if #available(iOS 10.0, *) {
-            let generator = UIImpactFeedbackGenerator(style: .heavy)
-            generator.impactOccurred()
-        }
 
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -65,12 +65,22 @@ extension PhotoEditorViewController {
         crisisToast.fadeOut()
         alertButton.isHidden = false
         crisisToastMode = .collapsed
+        clearUnderlines()
     }
     
     func clearCrisisViews () {
         crisisToast.isHidden = true
         alertButton.isHidden = true
         crisisToastMode = .toast
+    }
+    
+    func clearUnderlines () {
+        for view in canvasImageView.subviews {
+            if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
+                let textView = (view.subviews[0] as! KMPlaceholderTextView)
+                textView.clearAttributes()
+            }
+        }
     }
     
     func verifyTextContent () -> [String] {
@@ -93,7 +103,9 @@ extension PhotoEditorViewController {
                             
                             foundCrisisTerm = .toxic
                             
-                            textView.highlight(searchedText: toxicWord)
+                            if (crisisToastMode == .toast) {
+                                textView.highlight(searchedText: toxicWord)
+                            }
                         }
                     }
                     
@@ -110,7 +122,9 @@ extension PhotoEditorViewController {
                                 foundCrisisTerm = .active
                             }
                             
-                            textView.highlight(searchedText: term)
+                            if (crisisToastMode == .toast) {
+                                textView.highlight(searchedText: term)
+                            }
                         }
                         
                         if term == "@" && text.contains("@") {
@@ -118,7 +132,9 @@ extension PhotoEditorViewController {
                                 crisisTerms.append(term)
                             }
                             
-                            textView.highlightAt(searchedText: term)
+                            if (crisisToastMode == .toast) {
+                                textView.highlightAt(searchedText: term)
+                            }
                             
                             if (foundCrisisTerm != .toxic) {
                                 foundCrisisTerm = .active
@@ -136,6 +152,7 @@ extension PhotoEditorViewController {
     
     @IBAction func alertButtonTapped(_ sender: Any) {
         crisisToastMode = .toast
+        verifyTextContent()
 
         if (crisisTerm == .toxic) {
             photoEditorDelegate?.onAnalyticsEvent(event: "pc_0020")
