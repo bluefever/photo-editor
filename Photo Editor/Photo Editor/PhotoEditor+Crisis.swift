@@ -83,22 +83,22 @@ extension PhotoEditorViewController {
         }
     }
     
-    func verifyTextContent () -> [String] {
+    func verifyTextContent () -> [String:[String]] {
         var foundCrisisTerm: CrisisTerm? = nil
-        var crisisTerms: [String] = []
+        var crisisTerms: [String:[String]] = ["private": [], "tw": [], "exempt": []]
         
         for view in canvasImageView.subviews {
             if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
                 let textView = (view.subviews[0] as! KMPlaceholderTextView)
                 
                 if let text = textView.text {
-                    for toxicWord in activeToxicTerms {
+                    for toxicWord in privateTerms {
                         let searchPattern = "\\b" + NSRegularExpression.escapedPattern(for: toxicWord) + "\\b"
                         let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
                         
                         for _ in regex.matches(in: text, range: NSRange(0..<text.utf16.count)) {
-                            if (!crisisTerms.contains(toxicWord)) {
-                                crisisTerms.append(toxicWord)
+                            if (!crisisTerms["private"]!.contains(toxicWord)) {
+                                crisisTerms["private"]!.append(toxicWord)
                             }
                             
                             foundCrisisTerm = .toxic
@@ -109,13 +109,13 @@ extension PhotoEditorViewController {
                         }
                     }
                     
-                    for term in activeTerms {
-                        let searchPattern = "\\b" + NSRegularExpression.escapedPattern(for: term) + "\\b"
+                    for twWord in twTerms {
+                        let searchPattern = "\\b" + NSRegularExpression.escapedPattern(for: twWord) + "\\b"
                         let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
 
                         for _ in regex.matches(in: text, range: NSRange(0..<text.utf16.count)) {
-                            if (!crisisTerms.contains(term)) {
-                                crisisTerms.append(term)
+                            if (!crisisTerms["tw"]!.contains(twWord)) {
+                                crisisTerms["tw"]!.append(twWord)
                             }
                             
                             if (foundCrisisTerm != .toxic) {
@@ -123,21 +123,32 @@ extension PhotoEditorViewController {
                             }
                             
                             if (crisisToastMode == .toast) {
-                                textView.highlight(searchedText: term)
+                                textView.highlight(searchedText: twWord)
                             }
                         }
                         
-                        if term == "@" && text.contains("@") {
-                            if (!crisisTerms.contains(term)) {
-                                crisisTerms.append(term)
+                        if twWord == "@" && text.contains("@") {
+                            if (!crisisTerms["tw"]!.contains(twWord)) {
+                                crisisTerms["tw"]!.append(twWord)
                             }
                             
                             if (crisisToastMode == .toast) {
-                                textView.highlightAt(searchedText: term)
+                                textView.highlightAt(searchedText: twWord)
                             }
                             
                             if (foundCrisisTerm != .toxic) {
                                 foundCrisisTerm = .active
+                            }
+                        }
+                    }
+                    
+                    for exemptWord in exemptTerms {
+                        let searchPattern = "\\b" + NSRegularExpression.escapedPattern(for: exemptWord) + "\\b"
+                        let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+
+                        for _ in regex.matches(in: text, range: NSRange(0..<text.utf16.count)) {
+                            if (!crisisTerms["exempt"]!.contains(exemptWord)) {
+                                crisisTerms["exempt"]!.append(exemptWord)
                             }
                         }
                     }

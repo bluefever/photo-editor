@@ -286,7 +286,7 @@
                     </subviews>
                 </stackView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-T4-2Jf">
-                    <rect key="frame" x="16" y="682" width="752.5" height="100"/>
+                    <rect key="frame" x="16" y="680" width="752.5" height="102"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toast_alert_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="RgC-Lo-04H">
                             <rect key="frame" x="18" y="12" width="34" height="34"/>
@@ -296,7 +296,7 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNo-rc-vPs">
-                            <rect key="frame" x="65" y="0.0" width="647.5" height="100"/>
+                            <rect key="frame" x="65" y="0.0" width="647.5" height="102"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It looks like your page mentions a sensitive topic. Pls note, there’ll be a special TW label if posted publicly 💙" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOO-zR-dT6">
                                     <rect key="frame" x="0.0" y="12" width="647.5" height="17"/>
@@ -314,7 +314,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="bHa-4Z-ISb" secondAttribute="bottom" constant="8" id="7ak-eY-oa8"/>
+                                <constraint firstAttribute="bottom" secondItem="bHa-4Z-ISb" secondAttribute="bottom" constant="10" id="7ak-eY-oa8"/>
                                 <constraint firstItem="vOO-zR-dT6" firstAttribute="centerX" secondItem="VNo-rc-vPs" secondAttribute="centerX" id="Ncq-33-X92"/>
                                 <constraint firstItem="vOO-zR-dT6" firstAttribute="centerX" secondItem="VNo-rc-vPs" secondAttribute="centerX" id="a2D-5Z-hOM"/>
                                 <constraint firstItem="bHa-4Z-ISb" firstAttribute="leading" secondItem="VNo-rc-vPs" secondAttribute="leading" id="cr0-cC-B1c"/>
@@ -345,7 +345,7 @@
                         <constraint firstAttribute="trailing" secondItem="VNo-rc-vPs" secondAttribute="trailing" constant="40" id="SBx-Aj-Raq"/>
                         <constraint firstAttribute="trailing" secondItem="EX0-Ug-de1" secondAttribute="trailing" constant="10" id="Tpa-QZ-4Ks"/>
                         <constraint firstItem="VNo-rc-vPs" firstAttribute="leading" secondItem="Yup-T4-2Jf" secondAttribute="leading" constant="65" id="UI7-6P-vyu"/>
-                        <constraint firstAttribute="height" constant="100" id="hcw-cu-v4P"/>
+                        <constraint firstAttribute="height" constant="102" id="hcw-cu-v4P"/>
                         <constraint firstItem="RgC-Lo-04H" firstAttribute="leading" secondItem="Yup-T4-2Jf" secondAttribute="leading" constant="18" id="ptg-H0-gkj"/>
                         <constraint firstItem="VNo-rc-vPs" firstAttribute="centerY" secondItem="Yup-T4-2Jf" secondAttribute="centerY" id="qpl-CU-me2"/>
                         <constraint firstItem="VNo-rc-vPs" firstAttribute="top" secondItem="Yup-T4-2Jf" secondAttribute="top" id="u7N-UH-XRe"/>

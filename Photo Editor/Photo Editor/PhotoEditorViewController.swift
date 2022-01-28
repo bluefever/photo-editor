@@ -88,11 +88,15 @@ public final class PhotoEditorViewController: UIViewController {
     /**
      Array of active terms
      */
-    @objc public var activeTerms : [String] = []
+    @objc public var exemptTerms : [String] = []
+    /**
+     Array of active terms
+     */
+    @objc public var twTerms : [String] = []
     /**
      Array of active toxic terms
      */
-    @objc public var activeToxicTerms : [String] = []
+    @objc public var privateTerms : [String] = []
     /**
      Array of template categories
      */
