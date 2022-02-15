@@ -42,6 +42,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var alertButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var topTextSizeButton: UIButton!
     @IBOutlet weak var topTextStyleButton: UIButton!
@@ -61,6 +62,12 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var centerHorizontalView: UIView!
     @IBOutlet weak var centerVerticalView: UIView!
     
+    @IBOutlet weak var crisisToast: UIView!
+    @IBOutlet weak var crisisLabel: UILabel!
+    @IBOutlet weak var learnMoreLabel: UILabel!
+    @IBOutlet weak var closeToastButton: UIButton!
+    @IBOutlet weak var toastBlueImage: UIImageView!
+    
     @objc public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -79,6 +86,18 @@ public final class PhotoEditorViewController: UIViewController {
      */
     @objc public var bgImages : [String] = []
     /**
+     Array of active terms
+     */
+    @objc public var exemptTerms : [String] = []
+    /**
+     Array of active terms
+     */
+    @objc public var twTerms : [String] = []
+    /**
+     Array of active toxic terms
+     */
+    @objc public var privateTerms : [String] = []
+    /**
      Array of template categories
      */
     @objc public var backgroundCategoriesJson : String?
@@ -96,6 +115,15 @@ public final class PhotoEditorViewController: UIViewController {
     Json data to import expression
     */
     @objc public var initialData: String?
+    
+    /**
+    Show welcome dialog - 1
+     */
+    @objc public var showWelcomeDialog: String?
+    /**
+    Disable crisisVerification - 1
+     */
+    @objc public var disableCrisisVerification: String?
     
     @objc public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
@@ -122,9 +150,22 @@ public final class PhotoEditorViewController: UIViewController {
     var isTyping: Bool = false
     var gifsImages: [UIImageView] = []
     var gifsSources: [GifImage] = []
+    var crisisTerm: CrisisTerm? = nil {
+        didSet {
+            if (crisisTerm == .toxic) {
+                showToxicTermToast()
+            } else if (crisisTerm == .active) {
+                showActiveTermToast()
+            } else {
+                clearCrisisViews()
+            }
+        }
+    }
+    
+    var crisisToastMode: CrisisToastMode = .toast
     
     var gifsStickersViewController: GifsStickersViewController!
-    var backgroundViewController: BackgroundViewController!
+    var backgroundViewController: BackgroundsViewController!
     var renderCount: Int = 0
     var imported: Bool = false
     
@@ -161,10 +202,21 @@ public final class PhotoEditorViewController: UIViewController {
         
         gifsStickersViewController = GifsStickersViewController(nibName: "GifsStickersViewController", bundle: Bundle(for: GifsStickersViewController.self))
         
-        backgroundViewController = BackgroundViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundViewController.self))
+        backgroundViewController = BackgroundsViewController(nibName: "BackgroundViewController", bundle: Bundle(for: BackgroundsViewController.self))
         
         hideControls()
         configureCollectionView()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        if (showWelcomeDialog == "1") {
+            if let popupViewController = UIStoryboard(name: "WelcomeDialog", bundle: Bundle(for: WelcomeDialogViewController.self)).instantiateViewController(withIdentifier: "WelcomeDialog") as? WelcomeDialogViewController {
+                popupViewController.modalPresentationStyle = .custom
+                popupViewController.modalTransitionStyle = .crossDissolve
+                popupViewController.photoEditorDelegate = photoEditorDelegate
+                self.present(popupViewController, animated: true)
+            }
+        }
     }
     
     public override func viewDidLayoutSubviews() {
@@ -203,16 +255,25 @@ public final class PhotoEditorViewController: UIViewController {
         bgImages.shuffle()
         
         if let background = initialBgUrl {
-            let matches = background.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
+            var matches = background.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
             
             if (matches.count == 1 && matches[0].count == 2) {
                 self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs%2F", with: ""))
-            } else {
-                let matches = background.matchingStrings(regex: "(/backgroundThumbs/[a-zA-Z0-9_-]+).png")
+                return
+            }
+            
+            matches = background.matchingStrings(regex: "(/backgroundThumbs/[a-zA-Z0-9_-]+).png")
 
-                if (matches.count == 1 && matches[0].count == 2) {
-                    self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs/", with: ""))
-                }
+            if (matches.count == 1 && matches[0].count == 2) {
+                self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs/", with: ""))
+                return
+            }
+            
+            matches = background.matchingStrings(regex: "(/backgrounds/[a-zA-Z0-9_-]+).png")
+            
+            if (matches.count == 1 && matches[0].count == 2) {
+                self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds/", with: ""))
+                return
             }
         }
     }
@@ -242,6 +303,21 @@ public final class PhotoEditorViewController: UIViewController {
         doneButton.clipsToBounds = true
         continueButton.layer.cornerRadius = continueButton.bounds.height / 2
         continueButton.clipsToBounds = true
+        continueButton.addTopBtnShadow()
+        cancelButton.addTopBtnShadow()
+        alertButton.addTopBtnShadow()
+        
+        crisisToast.layer.cornerRadius = 20
+        crisisToast.clipsToBounds = true
+        crisisToast.addViewShadow()
+        
+        crisisLabel.text = "It looks like your page mentions a sensitive topic. Pls note, there’ll be a special TW label if posted publicly 💙"
+        crisisLabel.sizeToFit()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onLearMore))
+        learnMoreLabel.isUserInteractionEnabled = true
+        learnMoreLabel.addGestureRecognizer(tap)
+        learnMoreLabel.sizeToFit()
         
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true
@@ -278,6 +354,24 @@ public final class PhotoEditorViewController: UIViewController {
         prepareTopTextButtons()
     }
     
+    @objc
+    func onLearMore(sender:UITapGestureRecognizer) {
+       let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
+       
+       sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate
+       self.addChild(sensitiveContentViewController)
+       self.view.addSubview(sensitiveContentViewController.view)
+       sensitiveContentViewController.didMove(toParent: self)
+       let height = view.frame.height
+       let width  = view.frame.width
+       sensitiveContentViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+        
+        if (crisisTerm == .active) {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0019")
+        } else {
+            photoEditorDelegate?.onAnalyticsEvent(event: "pc_0022")
+        }
+   }
     
     func prepareTopTextButtons() {
         topTextSizeButton.addShadow()
@@ -344,10 +438,18 @@ public final class PhotoEditorViewController: UIViewController {
     
     func hideToolbar(hide: Bool) {
         toolbars.isHidden = hide
-//        topToolbar.isHidden = hide
-//        bottomToolbar.isHidden = hide
+        
+        alertButton.isHidden = true
         continueButton.isHidden = isTyping ? true : hide
         view.viewWithTag(UIViewController.insetBackgroundViewTag)?.isHidden = hide
+        
+        if (disableCrisisVerification == nil) {
+            if (!hide) {
+                verifyTextContent()
+            } else {
+                crisisToast.isHidden = true
+            }
+        }
     }
 }
 

@@ -47,6 +47,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
         
         activeTextView = (textView as! KMPlaceholderTextView)
+        activeTextView?.clearAttributes()
         textView.superview?.bringSubviewToFront(textView)
         canvasImageView.bringSubviewToFront(textView.superview!)
         UIView.animate(withDuration: 0.3,
@@ -99,6 +100,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func onTextToolOpen() {
+        alertButton.isHidden = true
         cancelButton.isHidden = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         canvasImageView.addGestureRecognizer(tapGesture)

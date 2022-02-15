@@ -225,6 +225,15 @@ extension UIButton {
         self.layer.masksToBounds = false
     }
     
+    func addTopBtnShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 3.0
+        self.layer.masksToBounds = false
+    }
+    
+    
     func removeShadow() {
         self.layer.shadowColor = UIColor.clear.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -237,5 +246,129 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
+    }
+    
+    func addViewShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 3.0
+        self.layer.masksToBounds = false
+    }
+    
+    func blink() {
+     self.alpha = 0.2
+     UIView.animate(withDuration: 1, delay: 0.0, options: .curveLinear, animations: {self.alpha = 1.0}, completion: nil)
+    }
+    
+    func fadeIn(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
+        self.alpha = 0.0
+
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.isHidden = false
+            self.alpha = 1.0
+        }, completion: completion)
+    }
+
+    func fadeOut(duration: TimeInterval = 0.1, delay: TimeInterval = 0.0, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+        self.alpha = 1.0
+
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }) { (completed) in
+            self.isHidden = true
+            completion(true)
+        }
+    }
+}
+
+extension UILabel {
+    func highlight(searchedText: String) {
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: self.text!)
+        }
+        
+        let searchPattern = NSRegularExpression.escapedPattern(for: searchedText)
+        let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+        
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
+
+        for match in regex.matches(in: self.text!, range: NSRange(0..<self.text!.utf16.count)) {
+            attributed.addAttributes(attrs, range: match.range)
+        }
+        
+        self.attributedText = attributed
+   }
+}
+
+extension KMPlaceholderTextView {
+    func highlight(searchedText: String) {
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: text)
+        }
+        
+        let searchPattern = "\\b"+NSRegularExpression.escapedPattern(for: searchedText)+"\\b"
+        let regex = try! NSRegularExpression(pattern: searchPattern, options: .caseInsensitive)
+        
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
+
+        for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
+            attributed.addAttributes(attrs, range: match.range)
+            
+            if (self.font.fontName == "ZillaSlabHighlight-Bold") {
+                attributed.addAttributes([NSAttributedString.Key.font: UIFont(name: "ZillaSlab-Bold", size: CGFloat(self.font.pointSize))!], range: match.range)
+            }
+        }
+        
+        self.attributedText = attributed
+   }
+    
+    func highlightAt(searchedText: String) {
+        let attributed: NSMutableAttributedString
+        
+        if let attrText = self.attributedText {
+            attributed = NSMutableAttributedString(attributedString: attrText)
+        } else {
+            attributed = NSMutableAttributedString(string: text)
+        }
+        
+        let specialCharacterRegEx  = "[@]"
+        let regex = try! NSRegularExpression(pattern: specialCharacterRegEx, options: .caseInsensitive)
+        let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.patternDot.rawValue | NSUnderlineStyle.single.rawValue]
+
+        for match in regex.matches(in: self.text, range: NSRange(0..<self.text.utf16.count)) {
+            attributed.addAttributes(attrs, range: match.range)
+            
+            if (self.font.fontName == "ZillaSlabHighlight-Bold") {
+                attributed.addAttributes([NSAttributedString.Key.font: UIFont(name: "ZillaSlab-Bold", size: CGFloat(self.font.pointSize))!], range: match.range)
+            }
+        }
+        
+        self.attributedText = attributed
+    }
+    
+    func clearAttributes() {
+        let attrText = NSMutableAttributedString(attributedString: attributedText)
+        attrText.addAttributes([NSAttributedString.Key.font: UIFont(name: self.font.fontName, size: CGFloat(self.font.pointSize))!], range: NSMakeRange(0, attrText.length))
+        attrText.removeAttribute(NSAttributedString.Key.underlineStyle, range: NSMakeRange(0, attrText.length))
+        self.attributedText = attrText
+    }
+}
+
+extension String {
+    func ranges(of substring: String, options: CompareOptions = [], locale: Locale? = nil) -> [Range<Index>] {
+        var ranges: [Range<Index>] = []
+        while let range = range(of: substring, options: options, range: (ranges.last?.upperBound ?? self.startIndex)..<self.endIndex, locale: locale) {
+            ranges.append(range)
+        }
+        return ranges
     }
 }

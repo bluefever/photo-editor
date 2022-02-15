@@ -101,6 +101,7 @@ struct OriginalFrame: Codable, Hashable {
 public struct Background: Codable, Hashable {
     let internalId, url: String?
     var active: Bool? = false
+    var order: Int? = 0
 }
 
 public struct BackgroundCategory: Codable, Hashable {
@@ -114,13 +115,15 @@ public struct Expression: Codable, Hashable {
     var backgroundSize: OriginalFrame?
     var originalFrame: OriginalFrame?
     var layers: [ExpressionLayer]
+    var crisisTerms: [String:[String]]?
     
-    init(originalFrame: OriginalFrame? = nil, backgroundSize: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = []) {
+    init(originalFrame: OriginalFrame? = nil, backgroundSize: OriginalFrame? = nil, backgroundColor: String? = nil, backgroundImage: String? = nil, layers: [ExpressionLayer] = [], crisisTerms: [String: [String]] = ["private": [], "tw": [], "exempt": []]) {
         self.originalFrame = originalFrame
         self.backgroundSize = backgroundSize
         self.backgroundColor = backgroundColor
         self.backgroundImage = backgroundImage
         self.layers = layers
+        self.crisisTerms = crisisTerms
     }
 }
 
@@ -154,6 +157,8 @@ extension PhotoEditorViewController {
         
         expression.originalFrame = OriginalFrame.init(height: UIScreen.main.bounds.height, width:
             UIScreen.main.bounds.width)
+        
+        expression.crisisTerms = verifyTextContent()
         
         if let imageName = imageBgName {
             expression.backgroundImage = imageName
@@ -301,6 +306,10 @@ extension PhotoEditorViewController {
                 }
             }
         }
+        
+        if (disableCrisisVerification == nil) {
+            verifyTextContent()
+        }
     }
     
     public func isPageEdited () -> Bool {
@@ -394,17 +403,23 @@ extension PhotoEditorViewController {
                         backgroundsByCategory[key] = []
                         
                         if let values = parsed[key] {
+                            var backgrounds: [Background] = []
+                            
                             for val in values {
                                 let bg = try JSONDecoder().decode(Background.self, from: JSONSerialization.data(withJSONObject: val))
                                 
                                 if (bg.active ?? false) {
-                                    backgroundsByCategory[key]?.append(bg)
+                                    backgrounds.append(bg)
                                 }
                                 
                                 if let url = bg.url {
                                     allBackgrounds.append(url)
                                 }
                             }
+                            
+                            backgroundsByCategory[key]?.append(contentsOf: backgrounds.sorted(by: { item1, item2 in
+                                return item1.order ?? 0 < item2.order ?? 0
+                            }))
                         }
                      }
                 }
@@ -433,9 +448,11 @@ extension PhotoEditorViewController {
         continueButton.isEnabled = enabled
         
         if (enabled) {
-            continueButton.backgroundColor = UIColor.init(hexString: "#4150BE")
+            continueButton.backgroundColor = UIColor.white
+            continueButton.setTitleColor(UIColor.init(hexString: "#4150BE"), for: .normal)
         } else {
             continueButton.backgroundColor = UIColor.init(hexString: "#767676")
+            continueButton.setTitleColor(UIColor.white, for: .normal)
         }
     }
 }

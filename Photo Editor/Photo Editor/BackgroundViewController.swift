@@ -8,7 +8,7 @@
 import UIKit
 import TTSegmentedControl
 
-class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
+class BackgroundsViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentedView: TTSegmentedControl!
@@ -81,7 +81,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         holdView.layer.cornerRadius = 3
-        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BackgroundViewController.panGesture))
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BackgroundsViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
         
@@ -267,7 +267,7 @@ class BackgroundViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 }
 
-extension BackgroundViewController: UIScrollViewDelegate {
+extension BackgroundsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ sender: UIScrollView) {
         if (sender.tag == 1) {
@@ -279,7 +279,7 @@ extension BackgroundViewController: UIScrollViewDelegate {
 }
 
 // MARK: - UICollectionViewDataSource
-extension BackgroundViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension BackgroundsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bgColors.count

@@ -60,7 +60,6 @@ extension PhotoEditorViewController {
         }))
         
         present(refreshAlert, animated: true, completion: nil)
-        
     }
     
     @IBAction func cropButtonTapped(_ sender: UIButton) {
@@ -89,6 +88,7 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
+        crisisToastMode = .toast
         closeTextTool()
     }
     

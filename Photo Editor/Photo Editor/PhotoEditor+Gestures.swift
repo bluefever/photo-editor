@@ -74,6 +74,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     @objc func tapGesture(_ recognizer: UITapGestureRecognizer) {
         if (isTyping) {
             closeTextTool()
+            crisisToastMode = .toast
             return
         }
         
@@ -94,6 +95,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     @objc func swipeGesture(_ recognizer: UISwipeGestureRecognizer) {
         if recognizer.direction == .down {
             closeTextTool()
+            crisisToastMode = .toast
        }
     }
     
@@ -249,6 +251,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         }
         
         enableNextButton()
+        
+        if (disableCrisisVerification == nil) {
+            verifyTextContent()
+        }
     }
     
     func subImageViews(view: UIView) -> [UIImageView] {
