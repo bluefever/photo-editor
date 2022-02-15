@@ -255,16 +255,25 @@ public final class PhotoEditorViewController: UIViewController {
         bgImages.shuffle()
         
         if let background = initialBgUrl {
-            let matches = background.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
+            var matches = background.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
             
             if (matches.count == 1 && matches[0].count == 2) {
                 self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs%2F", with: ""))
-            } else {
-                let matches = background.matchingStrings(regex: "(/backgroundThumbs/[a-zA-Z0-9_-]+).png")
+                return
+            }
+            
+            matches = background.matchingStrings(regex: "(/backgroundThumbs/[a-zA-Z0-9_-]+).png")
 
-                if (matches.count == 1 && matches[0].count == 2) {
-                    self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs/", with: ""))
-                }
+            if (matches.count == 1 && matches[0].count == 2) {
+                self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgroundThumbs/", with: ""))
+                return
+            }
+            
+            matches = background.matchingStrings(regex: "(/backgrounds/[a-zA-Z0-9_-]+).png")
+            
+            if (matches.count == 1 && matches[0].count == 2) {
+                self.setBackgroundImage(image: background, internalId: (matches[0][1]).replacingOccurrences(of: "/backgrounds/", with: ""))
+                return
             }
         }
     }
