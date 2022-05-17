@@ -32,36 +32,6 @@ extension KMPlaceholderTextView {
     }
 }
 
-extension UIImageView {
-    func loadImage(url: String) {
-        
-        if let cacheImage = imageCache.object(forKey: url as AnyObject) as? UIImage {
-            self.image = cacheImage
-            return
-        }
-        
-        guard let url = URL(string: url) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print("Couldn't download image: ", error)
-                return
-            }
-            
-            guard let data = data else { return }
-            let image = UIImage(data: data)
-            
-            if let img = image {
-                imageCache.setObject(img, forKey: url as AnyObject)
-                
-                DispatchQueue.main.async {
-                    self.image = image
-                }
-            }
-        }.resume()
-    }
-}
-
 extension UIImage {
     func imageWithSize(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import KMPlaceholderTextView
+import SDWebImage
 
 struct GifImage {
     let image: UIImageView
@@ -262,7 +263,7 @@ extension PhotoEditorViewController {
                     }
                     
                     if let url = bgUrl {
-                        imageBg.loadImage(url: url)
+                        imageBg.sd_setImage(with: URL(string: url))
                         imageBgName = bgImage
                     } else {
                         setBackgroundImage(image:  UIImage(named: "default_bg", in: Bundle(for: type(of: self)), compatibleWith: nil)!)

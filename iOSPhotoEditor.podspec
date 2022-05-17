@@ -23,4 +23,5 @@ with the ability to scale and rotate objects
   s.dependency "CollectionViewWaterfallLayout"
   s.dependency "TTSegmentedControl"
   s.dependency "KMPlaceholderTextView"
+  s.dependency "SDWebImage", "~> 5.0"
 end
