@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SDWebImage
 import UIKit
 class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,7 +48,7 @@ class TemplateCategoryViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         if let cell: ImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
             cell.image.image = nil
             if let url = imageArray[indexPath.item].url {
-                cell.image.loadImage(url: url)
+                cell.image.sd_setImage(with: URL(string: url))
                
                 let path = UIBezierPath(roundedRect: cell.bounds,
                                         byRoundingCorners: [.topRight, .bottomRight],

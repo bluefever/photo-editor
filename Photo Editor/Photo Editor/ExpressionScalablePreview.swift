@@ -6,6 +6,7 @@
 
 import Foundation
 import KMPlaceholderTextView
+import SDWebImage
 
 open class ExpressionScalablePreview: UIView {
     @objc open var data: String? = nil
@@ -79,7 +80,7 @@ open class ExpressionScalablePreview: UIView {
                     imageBg!.contentMode = .scaleAspectFill
                     
                     if let url = bgUrl {
-                        imageBg!.loadImage(url: url)
+                        imageBg!.sd_setImage(with: URL(string: url))
                         self.addSubview(imageBg!)
                         self.sendSubviewToBack(imageBg!)
                     } else {
