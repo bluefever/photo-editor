@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 extension PhotoEditorViewController {
     func addGifsStickersViewController() {
@@ -50,17 +51,17 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
     public func didSelectGif(gif: String, width: Int, height: Int) {
         self.removeStickersView()
         
-        var imageView: UIImageView? = nil
+        var imageView: SDAnimatedImageView? = nil
         
         if (!gifsImages.isEmpty &&  gifsImages.count > 4) {
             imageView = gifsImages[gifsImages.count - 1]
             gifsSources[gifsSources.count - 1].url = gif
         } else {
-            imageView = UIImageView()
+            imageView = SDAnimatedImageView()
         }
         
         if let image = imageView {
-            image.setGifFromURL(URL.init(string: gif)!)
+            image.sd_setImage(with: URL(string: gif)!)
             image.contentMode = .scaleAspectFit
             image.frame.size = CGSize(width: width, height: height)
             image.center = canvasImageView.center

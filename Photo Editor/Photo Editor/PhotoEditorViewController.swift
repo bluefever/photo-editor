@@ -8,6 +8,7 @@
 
 import UIKit
 import KMPlaceholderTextView
+import SDWebImage
 
 public final class PhotoEditorViewController: UIViewController {
     
@@ -148,7 +149,7 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: KMPlaceholderTextView?
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
-    var gifsImages: [UIImageView] = []
+    var gifsImages: [SDAnimatedImageView] = []
     var gifsSources: [GifImage] = []
     var crisisTerm: CrisisTerm? = nil {
         didSet {

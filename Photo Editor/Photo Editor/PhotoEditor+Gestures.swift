@@ -9,6 +9,7 @@
 import Foundation
 import KMPlaceholderTextView
 import UIKit
+import SDWebImage
 
 extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
@@ -243,7 +244,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             setAlignButton(align: .left)
         }
         
-        if let imageView = view as? UIImageView {
+        if let imageView = view as? SDAnimatedImageView {
             if(gifsImages.contains(imageView)) {
                 gifsSources.remove(at: gifsImages.index(of: imageView)!)
                 gifsImages.remove(at: gifsImages.index(of: imageView)!)

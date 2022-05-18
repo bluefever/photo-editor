@@ -11,10 +11,10 @@ import KMPlaceholderTextView
 import SDWebImage
 
 struct GifImage {
-    let image: UIImageView
+    let image: SDAnimatedImageView
     var url: String
     
-    init(image: UIImageView, url: String) {
+    init(image: SDAnimatedImageView, url: String) {
         self.image = image
         self.url = url
     }
@@ -325,9 +325,9 @@ extension PhotoEditorViewController {
     }
     
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
-        let imageView: UIImageView = UIImageView()
+        let imageView: SDAnimatedImageView = SDAnimatedImageView()
+        imageView.sd_setImage(with: URL(string: contentUrl))
         
-        imageView.setGifFromURL(URL.init(string: contentUrl)!)
         imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
