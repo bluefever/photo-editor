@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import SwiftyGif
 import CollectionViewWaterfallLayout
+import SDWebImage
 
 class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, CollectionViewWaterfallLayoutDelegate {
     var gifsStickersViewControllerDelegate : GifsStickersViewControllerDelegate?
     
-    let gifManager = SwiftyGifManager(memoryLimit:200)
     let width = (CGFloat) ((UIScreen.main.bounds.size.width - 30) / 2.0)
     var data: [GiphySizes] = []
     
@@ -61,8 +60,8 @@ class GifsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollec
         let gifUrl = data[indexPath.item].preview_gif?.url ?? data[indexPath.item].downsized?.url
         
         if let url = URL.init(string: (gifUrl)!) {
-            let loader = UIActivityIndicatorView.init(style: .gray)
-            cell.gifImageView.setGifFromURL(url, customLoader: loader)
+            cell.gifImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            cell.gifImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"))
         }
         
         return cell

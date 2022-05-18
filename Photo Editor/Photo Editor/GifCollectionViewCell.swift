@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GifCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var gifImageView: UIImageView!
+    @IBOutlet weak var gifImageView: SDAnimatedImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +19,5 @@ class GifCollectionViewCell: UICollectionViewCell {
         gifImageView.layer.borderColor = UIColor.init(hexString: "#DFDFDF").cgColor
         gifImageView.layer.borderWidth = 1
         gifImageView.layer.masksToBounds = true
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        gifImageView.clear()
     }
 }

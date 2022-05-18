@@ -121,9 +121,9 @@ open class ExpressionPreview: UIView {
     }
     
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
-        let imageView: UIImageView = UIImageView()
-        
-        imageView.setGifFromURL(URL.init(string: contentUrl)!)
+        let imageView: SDAnimatedImageView = SDAnimatedImageView()
+        imageView.sd_setImage(with: URL(string: contentUrl))
+
         imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
