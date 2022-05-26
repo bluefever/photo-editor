@@ -38,6 +38,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransCenter = textView.superview?.center
         lastTextViewFont = textView.font!
         
+        
+        if (!textView.text.isEmpty) {
+            let oldFrame = textView.frame
+            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+            textView.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+            textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+        }
+        
         if (textView.text.count != 0) {
             colorsCollectionViewDelegate.initialColor = textView.textColor
             self.colorsCollectionView.reloadData()
@@ -48,13 +56,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         activeTextView = (textView as! KMPlaceholderTextView)
         activeTextView?.clearAttributes()
+        
         textView.superview?.bringSubviewToFront(textView)
         canvasImageView.bringSubviewToFront(textView.superview!)
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
-                        textView.superview!.center = CGPoint(x: UIScreen.main.bounds.width / 2,
-                                                             y:  UIScreen.main.bounds.height / 5)
+                        textView.superview!.frame = CGRect(x: 20, y: UIScreen.main.bounds.height / 5,
+                                       width: textView.frame.width, height: textView.frame.height)
                        }, completion: nil)
         
         if let recognizers = activeTextView!.superview!.gestureRecognizers {
@@ -73,6 +82,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
         else {
             return
+        }
+        
+        if (activeTextView != nil) {
+            let oldFrame = activeTextView?.frame
+            let sizeToFit = activeTextView?.sizeThatFits(CGSize(width: oldFrame!.width, height:CGFloat.greatestFiniteMagnitude))
+        
+            activeTextView?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
+            activeTextView?.superview?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
         }
         
         activeTextView = nil

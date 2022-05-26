@@ -3,10 +3,12 @@ PODS:
   - iOSPhotoEditor (0.5):
     - CollectionViewWaterfallLayout
     - KMPlaceholderTextView
-    - SwiftyGif (= 5.4.2)
+    - SDWebImage (~> 5.0)
     - TTSegmentedControl
   - KMPlaceholderTextView (1.4.0)
-  - SwiftyGif (5.4.2)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - TTSegmentedControl (0.4.10)
 
 DEPENDENCIES:
@@ -16,7 +18,7 @@ SPEC REPOS:
   trunk:
     - CollectionViewWaterfallLayout
     - KMPlaceholderTextView
-    - SwiftyGif
+    - SDWebImage
     - TTSegmentedControl
 
 EXTERNAL SOURCES:
@@ -25,9 +27,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CollectionViewWaterfallLayout: 4399ba01be265fff4da1ed1d607130fe009780e4
-  iOSPhotoEditor: b537c2b32b720584820744025f2d1d8e7ad13fd4
+  iOSPhotoEditor: 65dbd2ed7948a6839d9dfa1b86aa191ca8d7fc76
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
-  SwiftyGif: dec758a9dd3d278e5a855dbf279bf062c923c387
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
 PODFILE CHECKSUM: ea06b1d06d0409ebea265171df70afd29804d0c8
