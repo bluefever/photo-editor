@@ -147,6 +147,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastTextViewTransCenter: CGPoint?
     var lastTextViewFont:UIFont?
     var activeTextView: KMPlaceholderTextView?
+    var isNewText = false
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
     var gifsImages: [SDAnimatedImageView] = []

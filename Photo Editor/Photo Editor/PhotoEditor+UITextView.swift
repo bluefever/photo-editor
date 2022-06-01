@@ -27,6 +27,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
             textView.superview?.frame.size = CGSize(width: oldFrame.width, height: 90)
         }
     }
+    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         selectTextStyle()
         
@@ -44,6 +45,9 @@ extension PhotoEditorViewController: UITextViewDelegate {
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
             textView.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
             textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+            isNewText = false
+        } else {
+            isNewText = true
         }
         
         if (textView.text.count != 0) {
@@ -59,12 +63,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         textView.superview?.bringSubviewToFront(textView)
         canvasImageView.bringSubviewToFront(textView.superview!)
+        
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
                         textView.superview!.frame = CGRect(x: 20, y: UIScreen.main.bounds.height / 5,
                                        width: textView.frame.width, height: textView.frame.height)
                        }, completion: nil)
+        
         
         if let recognizers = activeTextView!.superview!.gestureRecognizers {
             for recognizer in recognizers {
@@ -102,11 +108,13 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         textView.font = self.lastTextViewFont!
         
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        textView.superview!.transform = self.lastTextViewTransform!
-                        textView.superview!.center = self.lastTextViewTransCenter!
-                       }, completion: nil)
+        if (!isNewText) {
+            UIView.animate(withDuration: 0.3,
+                           animations: {
+                            textView.superview!.transform = self.lastTextViewTransform!
+                            textView.superview!.center = self.lastTextViewTransCenter!
+                           }, completion: nil)
+        }
         
         let panGesture = UIPanGestureRecognizer(target: self,
                                                 action: #selector(PhotoEditorViewController.panGesture))

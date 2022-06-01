@@ -281,6 +281,7 @@ extension PhotoEditorViewController {
             
             let oldFrame = textView.frame
             textView.frame.size = CGSize(width: oldFrame.width, height: 90)
+            isNewText = true
         } else {
             activeTextView?.becomeFirstResponder()
             activeTextView?.isHidden = false
