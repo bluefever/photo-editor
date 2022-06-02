@@ -45,6 +45,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      */
     @objc func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
         // For V1 only gifs and stickers can be scaled
+        if (isTyping) {
+            return
+        }
         
         if let view = recognizer.view {
             
@@ -62,6 +65,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      UIRotationGestureRecognizer - Rotating Objects
      */
     @objc func rotationGesture(_ recognizer: UIRotationGestureRecognizer) {
+        if (isTyping) {
+            return
+        }
+        
         if let view = recognizer.view {
             view.transform = view.transform.rotated(by: recognizer.rotation)
             recognizer.rotation = 0
