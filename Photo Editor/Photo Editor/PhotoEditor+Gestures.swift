@@ -52,13 +52,6 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             
             if (scale(from: view.transform) < 10 || scale(from: view.transform) > scale(from: transform)) {
                 view.transform = transform
-                
-                if view.subviews.count == 1 && view.subviews[0] is KMPlaceholderTextView {
-                    if (scale(from: view.transform) > 2) {
-                        let textView = (view.subviews[0] as! KMPlaceholderTextView)
-                        textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
-                    }
-                }
             }
         
             recognizer.scale = 1

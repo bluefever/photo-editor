@@ -165,7 +165,6 @@ open class ExpressionScalablePreview: UIView {
         textView.isUserInteractionEnabled = false
 
         let sizeToFit = textView.sizeThatFits(CGSize(width: bounds.width - 40 * scaleX, height:CGFloat.greatestFiniteMagnitude))
-        print(sizeToFit.width, sizeToFit.height)
         textView.frame =  CGRect(x: 0, y: 0, width: sizeToFit.width, height: sizeToFit.height)
         textView.setNeedsDisplay()
         

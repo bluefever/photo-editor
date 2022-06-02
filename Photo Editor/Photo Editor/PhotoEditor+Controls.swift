@@ -279,8 +279,8 @@ extension PhotoEditorViewController {
             
             addGestures(view: view)
             textView.becomeFirstResponder()
-            textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 40);
-            
+            textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20);
+
             let oldFrame = textView.frame
             textView.frame.size = CGSize(width: oldFrame.width, height: 90)
             isNewText = true

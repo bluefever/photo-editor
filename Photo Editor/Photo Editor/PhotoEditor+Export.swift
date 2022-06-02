@@ -344,7 +344,7 @@ extension PhotoEditorViewController {
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
-        
+
         textColor = color
         textView.text = text
         textView.font = UIFont(name: font, size: textSize)
@@ -356,20 +356,20 @@ extension PhotoEditorViewController {
         textView.layer.backgroundColor = UIColor.clear.cgColor
         textView.isScrollEnabled = false
         textView.delegate = self
-
-        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20);
         
-        textView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
+        textView.frame =  CGRect(x: 0, y: 0, width: sizeToFit.width, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
-        let view = UIView.init(frame: CGRect(x: 0, y :0, width: UIScreen.main.bounds.size.width - 40, height: sizeToFit.height))
-        
+        let view = UIView.init(frame: CGRect(x: 0, y :0, width: sizeToFit.width, height: sizeToFit.height))
         view.center = CGPoint.init(x: x, y: y)
         view.addSubview(textView)
+        
         if let trans = transform  {
             view.transform = CGAffineTransform.init(a: trans.a, b: trans.b, c: trans.c, d: trans.d, tx: trans.tx, ty: trans.ty)
         }
-        
+
         self.canvasImageView.addSubview(view)
         addGestures(view: view)
     }

@@ -3,4 +3,86 @@
    uuid = "0D871001-2924-46C8-809C-C585D642B88E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0CA01B0-C56C-45ED-A40C-71BAE99C5520"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Photo Editor/Photo Editor/ExpressionPreview.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "addTextObject(text:font:color:textSize:textAlignment:x:y:transform:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0CA01B0-C56C-45ED-A40C-71BAE99C5520 - d1beea7ea32278e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSPhotoEditor.ExpressionPreview.addTextObject(text: Swift.String, font: Swift.String, color: __C.UIColor, textSize: CoreGraphics.CGFloat, textAlignment: Swift.Optional&lt;Swift.String&gt;, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, transform: Swift.Optional&lt;iOSPhotoEditor.Transform&gt;) -&gt; ()"
+                  moduleName = "iOSPhotoEditor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ap/Documents/projects/photo-editor/Photo%20Editor/Photo%20Editor/ExpressionPreview.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "1336">
+               </Location>
+               <Location
+                  uuid = "C0CA01B0-C56C-45ED-A40C-71BAE99C5520 - d1beea7ea32278e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSPhotoEditor.ExpressionPreview.addTextObject(text: Swift.String, font: Swift.String, color: __C.UIColor, textSize: CoreGraphics.CGFloat, textAlignment: Swift.Optional&lt;Swift.String&gt;, x: CoreGraphics.CGFloat, y: CoreGraphics.CGFloat, transform: Swift.Optional&lt;iOSPhotoEditor.Transform&gt;) -&gt; ()"
+                  moduleName = "iOSPhotoEditor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ap/Documents/projects/photo-editor/Photo%20Editor/Photo%20Editor/ExpressionPreview.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "1444">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E8EDFCA-19D3-48CB-81AF-F6FF04C7EFF0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Photo Editor/Photo Editor/ExpressionPreview.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "importExpression()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9373910E-6B6C-468E-A64F-9B78AC459BCD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Photo Editor/Photo Editor/ExpressionPreview.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "importExpression()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
