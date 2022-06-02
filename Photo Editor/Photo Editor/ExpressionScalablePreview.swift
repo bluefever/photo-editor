@@ -109,7 +109,7 @@ open class ExpressionScalablePreview: UIView {
                     centerX = self.bounds.width / 2
                     centerY = self.bounds.height / 2
                 }
-                
+
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize! * scaleX, textAlignment: layer.textAlign,
                                   x: centerX, y: centerY, transform: layer.transform)
@@ -165,11 +165,11 @@ open class ExpressionScalablePreview: UIView {
         textView.isUserInteractionEnabled = false
 
         let sizeToFit = textView.sizeThatFits(CGSize(width: bounds.width - 40 * scaleX, height:CGFloat.greatestFiniteMagnitude))
-        
-        textView.frame =  CGRect(x: 0, y: 0, width: bounds.width - 40 * scaleX, height: sizeToFit.height)
+        print(sizeToFit.width, sizeToFit.height)
+        textView.frame =  CGRect(x: 0, y: 0, width: sizeToFit.width, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
-        let view = UIView.init(frame: CGRect(x: 0, y :0, width: bounds.width - 40 * scaleX, height: sizeToFit.height))
+        let view = UIView.init(frame: CGRect(x: 0, y :0, width: sizeToFit.width, height: sizeToFit.height))
         
         view.center = CGPoint.init(x: x, y: y)
         view.addSubview(textView)

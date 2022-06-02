@@ -276,8 +276,10 @@ extension PhotoEditorViewController {
                                              width: UIScreen.main.bounds.width - 40, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
+            
             addGestures(view: view)
             textView.becomeFirstResponder()
+            textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 40);
             
             let oldFrame = textView.frame
             textView.frame.size = CGSize(width: oldFrame.width, height: 90)
