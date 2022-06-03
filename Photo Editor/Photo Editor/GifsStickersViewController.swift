@@ -64,7 +64,7 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         
-        segmentedView.itemTitles = ["stickers", "gifs"]
+        segmentedView.itemTitles = ["Stickers", "Gifs"]
         segmentedView.allowChangeThumbWidth = false
         segmentedView.selectedTextFont = UIFont.init(name: "DMSans-Bold", size: 16)!
         segmentedView.defaultTextFont = UIFont.init(name: "DMSans-Bold", size: 16)!
