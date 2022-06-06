@@ -170,6 +170,7 @@ public final class PhotoEditorViewController: UIViewController {
     var backgroundViewController: BackgroundsViewController!
     var renderCount: Int = 0
     var imported: Bool = false
+    var keyboardSize: CGFloat = 0
     
     //Register Custom font before we load XIB
     public override func loadView() {

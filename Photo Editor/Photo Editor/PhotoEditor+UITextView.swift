@@ -13,18 +13,32 @@ import KMPlaceholderTextView
 extension PhotoEditorViewController: UITextViewDelegate {
     
     public func textViewDidChange(_ textView: UITextView) {
-        let rotation = atan2(textView.transform.b, textView.transform.a)
-        if rotation == 0 {
+        print(keyboardSize, textView.frame.origin.y, textView.frame.height, canvasImageView.center.y - topToolbar.frame.height)
+        
+        
+//        let rotation = atan2(textView.transform.b, textView.transform.a)
+//        if rotation == 0 {
+//            let oldFrame = textView.frame
+//            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+//            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+//            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
+//        }
+//
+//        if (textView.text.count == 0) {
+//            let oldFrame = textView.frame
+//            textView.frame.size = CGSize(width: oldFrame.width, height: 90)
+//            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: 90)
+//        }
+        
+        
+        if (textView.frame.height >= 204) {
+            let oldFrame = textView.frame
+            textView.frame.size = CGSize(width: oldFrame.width, height: 204)
+        } else {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
             textView.superview?.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-        }
-        
-        if (textView.text.count == 0) {
-            let oldFrame = textView.frame
-            textView.frame.size = CGSize(width: oldFrame.width, height: 90)
-            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: 90)
         }
     }
     
@@ -34,6 +48,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         isTyping = true
         continueButton.isHidden = true
         doneButton.isHidden = false
+        textView.isScrollEnabled = true
         
         lastTextViewTransform =  textView.superview?.transform
         lastTextViewTransCenter = textView.superview?.center
@@ -107,6 +122,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
         
         textView.font = self.lastTextViewFont!
+        textView.isScrollEnabled = false
         
         if (!isNewText) {
             UIView.animate(withDuration: 0.3,

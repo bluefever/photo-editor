@@ -35,6 +35,8 @@ extension PhotoEditorViewController {
     }
     
     @objc func keyboardWillChangeFrame(_ notification: NSNotification) {
+        keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+        
         var bottomPadding: CGFloat {
             var topPadding:CGFloat? = 0
             

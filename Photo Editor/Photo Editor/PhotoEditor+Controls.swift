@@ -265,18 +265,19 @@ extension PhotoEditorViewController {
             textView.font = UIFont(name: "Nunito-SemiBold", size: 20)
             textView.textColor = textColor
             textView.layer.backgroundColor = UIColor.clear.cgColor
-            textView.isScrollEnabled = false
+            textView.isScrollEnabled = true
             textView.delegate = self
             textView.placeholder = "Start typing..."
             textView.placeholderColor = UIColor.init(hexString: "#fff")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
-            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y - topToolbar.frame.height,
+            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y,
                                              width: UIScreen.main.bounds.width - 40, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
-            
+            view.backgroundColor = UIColor.red
+            view.autoresizesSubviews = false
             addGestures(view: view)
             textView.becomeFirstResponder()
             textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20);
