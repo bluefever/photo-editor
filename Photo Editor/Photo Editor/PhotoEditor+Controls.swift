@@ -260,7 +260,7 @@ extension PhotoEditorViewController {
             }
             
             let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
-                                                               width: UIScreen.main.bounds.width - 40, height: 90))
+                                                               width: UIScreen.main.bounds.width, height: 90))
             textView.textAlignment = .left
             textView.font = UIFont(name: "Nunito-SemiBold", size: 20)
             textView.textColor = textColor
@@ -272,11 +272,10 @@ extension PhotoEditorViewController {
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
-            let view = UIView(frame:  CGRect(x: 20, y: canvasImageView.center.y,
-                                             width: UIScreen.main.bounds.width - 40, height: 90))
+            let view = UIView(frame:  CGRect(x: 0, y: canvasImageView.center.y,
+                                             width: UIScreen.main.bounds.width - 0, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
-            view.backgroundColor = UIColor.red
             view.autoresizesSubviews = false
             addGestures(view: view)
             textView.becomeFirstResponder()

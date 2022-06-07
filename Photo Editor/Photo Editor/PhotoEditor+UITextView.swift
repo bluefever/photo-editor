@@ -58,8 +58,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         if (!textView.text.isEmpty) {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-            textView.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
-            textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width - 40, height: sizeToFit.height)
+            textView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: sizeToFit.height)
+            textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width, height: sizeToFit.height)
             isNewText = false
         } else {
             isNewText = true
@@ -82,7 +82,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
-                        textView.superview!.frame = CGRect(x: 20, y: UIScreen.main.bounds.height / 5,
+                        textView.superview!.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 5,
                                        width: textView.frame.width, height: textView.frame.height)
                        }, completion: nil)
         
