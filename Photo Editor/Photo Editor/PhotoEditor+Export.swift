@@ -343,7 +343,7 @@ extension PhotoEditorViewController {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
-        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: 90))
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90))
 
         textColor = color
         textView.text = text
@@ -358,7 +358,7 @@ extension PhotoEditorViewController {
         textView.delegate = self
         textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20);
         
-        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width - 40, height:CGFloat.greatestFiniteMagnitude))
+        let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
         textView.frame =  CGRect(x: 0, y: 0, width: sizeToFit.width, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
