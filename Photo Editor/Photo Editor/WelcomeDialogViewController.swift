@@ -139,9 +139,9 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
         currentPage = Int(pageIndex)
         
         if (currentPage == 1) {
-            continueButton.setTitle("sounds good", for: .normal)
+            continueButton.setTitle("Sounds good", for: .normal)
         } else {
-            continueButton.setTitle("next", for: .normal)
+            continueButton.setTitle("Next", for: .normal)
         }
     }
 }
