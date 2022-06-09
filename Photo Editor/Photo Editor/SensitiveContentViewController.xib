@@ -124,7 +124,7 @@ sensitive?</string>
                                     <color key="textColor" red="0.11764705882352941" green="0.13725490196078433" blue="0.27843137254901962" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="send us a message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDZ-4X-79F">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Send us a message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDZ-4X-79F">
                                     <rect key="frame" x="0.0" y="31.5" width="375" height="20.5"/>
                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                     <color key="textColor" red="0.1176470588" green="0.13725490200000001" blue="0.2784313725" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="adobeRGB1998"/>
