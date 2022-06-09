@@ -35,6 +35,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         continueButton.isHidden = true
         doneButton.isHidden = false
         
+        lastTextViewFrame = textView.superview?.frame.origin
         lastTextViewTransform =  textView.superview?.transform
         lastTextViewTransCenter = textView.superview?.center
         lastTextViewFont = textView.font!
@@ -92,8 +93,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         if (activeTextView != nil) {
             let oldFrame = activeTextView?.frame
+
             let sizeToFit = activeTextView?.sizeThatFits(CGSize(width: oldFrame!.width, height:CGFloat.greatestFiniteMagnitude))
-        
             activeTextView?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
             activeTextView?.superview?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
         }
@@ -109,11 +110,22 @@ extension PhotoEditorViewController: UITextViewDelegate {
         textView.font = self.lastTextViewFont!
         
         if (!isNewText) {
-            UIView.animate(withDuration: 0.3,
+            let transformPoint = __CGPointApplyAffineTransform(self.lastTextViewFrame!, self.lastTextViewTransform!)
+            
+            if (self.lastTextViewFrame!.x != transformPoint.x) {
+                UIView.animate(withDuration: 0.3,
                            animations: {
                             textView.superview!.transform = self.lastTextViewTransform!
                             textView.superview!.center = self.lastTextViewTransCenter!
                            }, completion: nil)
+            } else {
+                UIView.animate(withDuration: 0.3,
+                           animations: {
+                            textView.superview!.transform = self.lastTextViewTransform!
+                            textView.superview!.frame.origin.x = self.lastTextViewFrame!.x
+                            textView.superview!.frame.origin.y = self.lastTextViewFrame!.y
+                           }, completion: nil)
+            }
         }
         
         let panGesture = UIPanGestureRecognizer(target: self,

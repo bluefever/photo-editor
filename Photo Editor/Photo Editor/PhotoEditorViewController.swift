@@ -145,6 +145,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
+    var lastTextViewFrame: CGPoint?
     var lastTextViewFont:UIFont?
     var activeTextView: KMPlaceholderTextView?
     var isNewText = false
