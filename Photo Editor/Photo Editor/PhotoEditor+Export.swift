@@ -71,9 +71,10 @@ struct ExpressionLayer: Codable, Hashable {
     var textAlign: String?
     var textSize: CGFloat?
     var contentUrl: String?
+    var layerWrapped: Bool?
     
     init(size: Size? = nil, center: Point = Point(), aspectRatio: Int? = nil, zIndex: Int = 0, angle: Int? = nil,
-         text: String? = nil, textColor: String? = nil, textSize: CGFloat? = nil, textStyle: String? = nil, textAlign: String? = nil, contentUrl: String? = nil, transform: Transform? = nil) {
+         text: String? = nil, textColor: String? = nil, textSize: CGFloat? = nil, textStyle: String? = nil, textAlign: String? = nil, contentUrl: String? = nil, transform: Transform? = nil, layerWrapped: Bool? = false) {
         self.size = size
         self.center = center
         self.aspectRatio = aspectRatio
@@ -86,6 +87,7 @@ struct ExpressionLayer: Codable, Hashable {
         self.contentUrl = contentUrl
         self.transform = transform
         self.textAlign = textAlign
+        self.layerWrapped = layerWrapped
     }
 }
 
@@ -183,6 +185,7 @@ extension PhotoEditorViewController {
                 textLayer.zIndex = canvasImageView.subviews.index(of: view)!
                 textLayer.text = textView.text
                 textLayer.transform = Transform(a: view.transform.a, b: view.transform.b, c: view.transform.c,d: view.transform.d, tx: view.transform.tx, ty: view.transform.ty)
+                textLayer.layerWrapped = true
                 
                 if (expression.backgroundImage != nil && expression.backgroundImage != "default_bg_v2") {
                     textLayer.center = pointFromAspectFill(for: center, in: imageBg)

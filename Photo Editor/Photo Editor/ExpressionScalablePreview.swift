@@ -112,7 +112,7 @@ open class ExpressionScalablePreview: UIView {
 
                 if let text = layer.text {
                     addTextObject(text: text, font: layer.textStyle!, color: UIColor.init(hexString: layer.textColor!), textSize: layer.textSize! * scaleX, textAlignment: layer.textAlign,
-                                  x: centerX, y: centerY, transform: layer.transform)
+                                  x: centerX, y: centerY, transform: layer.transform, layerWrapped: layer.layerWrapped)
                 } else if let gifUrl = layer.contentUrl {
                     let ratio = layer.size!.width / layer.size!.height
                     let height = layer.size!.width * scaleX / ratio
@@ -149,7 +149,7 @@ open class ExpressionScalablePreview: UIView {
         self.addSubview(imageView)
     }
     
-    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?) {
+    func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?, layerWrapped: Bool?) {
         let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: bounds.width * scaleX, height: 90 * scaleY))
         
         textView.text = text
@@ -164,11 +164,20 @@ open class ExpressionScalablePreview: UIView {
         textView.isScrollEnabled = false
         textView.isUserInteractionEnabled = false
 
+        var width = 0.0
+        
         let sizeToFit = textView.sizeThatFits(CGSize(width: bounds.width * scaleX, height:CGFloat.greatestFiniteMagnitude))
-        textView.frame =  CGRect(x: 0, y: 0, width: sizeToFit.width, height: sizeToFit.height)
+
+        width = sizeToFit.width
+        
+        if (layerWrapped ?? false) {
+            width = bounds.width - 40 * scaleX
+        }
+        
+        textView.frame =  CGRect(x: 0, y: 0, width: width, height: sizeToFit.height)
         textView.setNeedsDisplay()
         
-        let view = UIView.init(frame: CGRect(x: 0, y :0, width: sizeToFit.width, height: sizeToFit.height))
+        let view = UIView.init(frame: CGRect(x: 0, y :0, width: width, height: sizeToFit.height))
         
         view.center = CGPoint.init(x: x, y: y)
         view.addSubview(textView)
