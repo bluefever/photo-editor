@@ -170,7 +170,7 @@ open class ExpressionScalablePreview: UIView {
 
         width = sizeToFit.width
         
-        if (layerWrapped ?? false) {
+        if (layerWrapped == nil) {
             width = bounds.width - 40 * scaleX
         }
         
