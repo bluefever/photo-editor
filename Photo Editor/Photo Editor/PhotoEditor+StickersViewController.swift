@@ -58,6 +58,7 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
             gifsSources[gifsSources.count - 1].url = gif
         } else {
             imageView = SDAnimatedImageView()
+            imageView?.maxBufferSize = 1
         }
         
         if let image = imageView {

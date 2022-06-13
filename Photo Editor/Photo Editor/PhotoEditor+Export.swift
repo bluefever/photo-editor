@@ -330,7 +330,7 @@ extension PhotoEditorViewController {
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
         let imageView: SDAnimatedImageView = SDAnimatedImageView()
         imageView.sd_setImage(with: URL(string: contentUrl))
-        
+        imageView.maxBufferSize = 1
         imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
         imageView.center = CGPoint.init(x: x, y: y)
