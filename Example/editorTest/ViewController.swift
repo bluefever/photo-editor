@@ -42,11 +42,11 @@ class ViewController: UIViewController {
         photoEditor.twTerms = ["bully", "throw up", "@"]
         photoEditor.exemptTerms = ["sad"]
 //        photoEditor.showWelcomeDialog = "1"
-        present(photoEditor, animated: true, completion: nil)
+//        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
         let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: 168, height: 241))
-        preview.data = note2
+        preview.data = note
         preview.withShadow = 1
 //
         preview.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2F303.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
@@ -57,6 +57,11 @@ class ViewController: UIViewController {
         preview2.bgImages = ["https://firebasestorage.googleapis.com/v0/b/shinggg-development.appspot.com/o/backgrounds%2Fbg_98.png?alt=media&token=f067203c-3268-405e-9717-26071f94a673"]
         self.view.addSubview(preview)
 //        self.view.addSubview(preview2)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            preview.data = note2
+            preview.importPage()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

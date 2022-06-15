@@ -44,6 +44,10 @@ open class ExpressionScalablePreview: UIView {
     }
     
     @objc open func importPage () {
+        for subview in self.subviews {
+            subview.removeFromSuperview()
+        }
+        
         self.clipsToBounds = true
         var imageBg: UIImageView? = nil
         let jsonData = data!.data(using: .utf8)!
