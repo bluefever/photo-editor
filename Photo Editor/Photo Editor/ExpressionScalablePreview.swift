@@ -137,6 +137,7 @@ open class ExpressionScalablePreview: UIView {
     
     func addGifObject (contentUrl: String, x: CGFloat, y: CGFloat, size: CGSize, transform: Transform) {
         let imageView: SDAnimatedImageView = SDAnimatedImageView()
+        imageView.maxBufferSize = 1
         imageView.sd_setImage(with: URL(string: contentUrl))
         imageView.contentMode = .scaleAspectFill
         imageView.frame.size = size
