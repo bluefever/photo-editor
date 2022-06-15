@@ -30,7 +30,7 @@ open class ExpressionScalablePreview: UIView {
         
         if (!imported) {
             imported = true
-            importExpression()
+            importPage()
         }
     }
     
@@ -43,7 +43,7 @@ open class ExpressionScalablePreview: UIView {
             y: (point.y / aspectRatio) - yOffset)
     }
     
-    func importExpression () {
+    @objc open func importPage () {
         self.clipsToBounds = true
         var imageBg: UIImageView? = nil
         let jsonData = data!.data(using: .utf8)!
