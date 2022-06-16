@@ -44,6 +44,10 @@ open class ExpressionScalablePreview: UIView {
     }
     
     @objc open func importPage () {
+        if (data == nil) {
+            return
+        }
+
         for subview in self.subviews {
             subview.removeFromSuperview()
         }
