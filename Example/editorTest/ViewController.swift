@@ -41,7 +41,6 @@ class ViewController: UIViewController {
         photoEditor.privateTerms = ["self harm", "jap"]
         photoEditor.twTerms = ["bully", "throw up", "@"]
         photoEditor.exemptTerms = ["sad"]
-        photoEditor.showWelcomeDialog = "1"
         present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view

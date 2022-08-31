@@ -139,8 +139,6 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func onTextToolOpen() {
         alertButton.isHidden = true
         cancelButton.isHidden = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
-        canvasImageView.addGestureRecognizer(tapGesture)
         
         let opacityCanvas = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         opacityCanvas.backgroundColor = UIColor.black.withAlphaComponent(0.5)

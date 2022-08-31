@@ -91,12 +91,17 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 if let view = recognizer.view {
                     if canvasImageView.subviews.contains(view) {
                         scaleEffect(view: view)
-                        
+                        return
                     }
                 }
             } else {
                 canvasImageView.bringSubviewToFront(view)
+                return
             }
+        }
+        
+        if (!isTyping) {
+            openTextTool()
         }
     }
     

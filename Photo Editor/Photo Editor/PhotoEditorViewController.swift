@@ -209,6 +209,9 @@ public final class PhotoEditorViewController: UIViewController {
         
         hideControls()
         configureCollectionView()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
+        canvasImageView.addGestureRecognizer(tapGesture)
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -382,8 +385,8 @@ public final class PhotoEditorViewController: UIViewController {
     
     func configureCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width = (UIScreen.main.bounds.width - 24) / 10
-        layout.itemSize = CGSize(width: width, height: 28)
+        let width = (UIScreen.main.bounds.width - 24) / 9
+        layout.itemSize = CGSize(width: width, height: width)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0

@@ -36,6 +36,11 @@ extension PhotoEditorViewController {
             break
         case 2:
             selectTextColor()
+            
+            if let index = colorsCollectionViewDelegate.colors.firstIndex(of: colorsCollectionViewDelegate.initialColor!) {
+                let ind =  IndexPath(item: index, section: 0)
+                colorsCollectionView.selectItem(at:ind, animated: false, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+            }
             break
         default:
             return
@@ -254,9 +259,9 @@ extension PhotoEditorViewController {
             textColor = UIColor.black
             setFontStyleButton(fontIndex: 0)
             setAlignButton(align: .left)
+
             if (colorsCollectionViewDelegate != nil) {
                 colorsCollectionViewDelegate.initialColor = UIColor.black
-                colorsCollectionView.reloadData()
             }
             
             let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
