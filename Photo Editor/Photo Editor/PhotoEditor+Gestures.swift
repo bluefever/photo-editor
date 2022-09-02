@@ -178,7 +178,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                               y: view.center.y + recognizer.translation(in: canvasImageView).y)
         let center = self.view.convert(view.center, from: canvasImageView)
         
-        if (view.center.x > UIScreen.main.bounds.width / 2 - 5 && view.center.x < UIScreen.main.bounds.width / 2 + 5) {
+        if (view.center.x > UIScreen.main.bounds.width / 2 - 2 && view.center.x < UIScreen.main.bounds.width / 2 + 2) {
             view.center = CGPoint(x: canvasImageView.frame.width / 2,
                                   y: view.center.y + recognizer.translation(in: canvasImageView).y)
             centerHorizontalView.isHidden = false
@@ -186,7 +186,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             centerHorizontalView.isHidden = true
         }
         
-        if (center.y > UIScreen.main.bounds.size.height / 2 - 5 && center.y < UIScreen.main.bounds.size.height / 2 + 5) {
+        if (center.y > UIScreen.main.bounds.size.height / 2 - 2 && center.y < UIScreen.main.bounds.size.height / 2 + 2) {
             view.center = CGPoint(x: view.center.x + recognizer.translation(in: canvasImageView).x,
                                   y: canvasImageView.frame.height / 2)
             centerVerticalView.isHidden = false
