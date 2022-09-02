@@ -63,6 +63,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var centerHorizontalView: UIView!
     @IBOutlet weak var centerVerticalView: UIView!
     
+    @IBOutlet weak var topSafeZoneLine: UIView!
+    @IBOutlet weak var bottomSafeZoneLine: UIView!
+    
     @IBOutlet weak var crisisToast: UIView!
     @IBOutlet weak var crisisLabel: UILabel!
     @IBOutlet weak var learnMoreLabel: UILabel!
@@ -212,6 +215,9 @@ public final class PhotoEditorViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         canvasImageView.addGestureRecognizer(tapGesture)
+        
+        topSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #DFDFDF").cgColor)
+        bottomSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #DFDFDF").cgColor)
     }
     
     public override func viewDidAppear(_ animated: Bool) {
