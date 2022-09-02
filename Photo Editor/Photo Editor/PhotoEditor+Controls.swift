@@ -52,14 +52,14 @@ extension PhotoEditorViewController {
             closeTextTool()
         }
         
-        let refreshAlert = UIAlertController(title: "Abandon your Note?", message: "Leaving now will delete this note forever.", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: "Discard your page?", message: "This action cannot be undone.", preferredStyle: UIAlertController.Style.alert)
         
         
         refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .default, handler: { (action: UIAlertAction!) in
             refreshAlert.dismiss(animated: true, completion: nil)
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .destructive, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: { (action: UIAlertAction!) in
             self.photoEditorDelegate?.canceledEditing(edited: self.isPageEdited())
             self.dismiss(animated: true, completion: nil)
         }))
