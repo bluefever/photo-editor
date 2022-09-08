@@ -272,8 +272,9 @@ extension PhotoEditorViewController {
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
             
-            let view = UIView(frame:  CGRect(x: 0, y: canvasImageView.center.y,
+            let view = UIView(frame:  CGRect(x: 0, y: 0,
                                              width: UIScreen.main.bounds.width - 0, height: 90))
+            view.backgroundColor = UIColor.blue
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
             view.autoresizesSubviews = false

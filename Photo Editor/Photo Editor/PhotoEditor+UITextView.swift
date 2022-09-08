@@ -31,9 +31,10 @@ extension PhotoEditorViewController: UITextViewDelegate {
 //        }
         
         
-        if (textView.frame.height >= 204) {
+        if (textView.frame.height >= canvasView.frame.height - 40) {
             let oldFrame = textView.frame
-            textView.frame.size = CGSize(width: oldFrame.width, height: 204)
+            textView.backgroundColor = UIColor.red
+            textView.frame.size = CGSize(width: oldFrame.width, height: canvasView.frame.height - 40)
         } else {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
@@ -82,7 +83,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.superview!.transform = CGAffineTransform.identity
-                        textView.superview!.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 5,
+                        textView.superview!.frame = CGRect(x: 0, y: 0,
                                        width: textView.frame.width, height: textView.frame.height)
                        }, completion: nil)
         
@@ -168,19 +169,21 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func onTextToolClose() {
         cancelButton.isHidden = false
         
-        if let recognizers = canvasImageView!.superview!.gestureRecognizers {
+        if let recognizers = canvasImageView.superview?.gestureRecognizers {
             for recognizer in recognizers {
                 if let recognizer = recognizer as? UITapGestureRecognizer {
-                    canvasImageView!.superview!.removeGestureRecognizer(recognizer)
+                    canvasImageView.superview?.removeGestureRecognizer(recognizer)
                 }
             }
         }
         
-        let opacityCanvas = canvasImageView.viewWithTag(100)
-        opacityCanvas!.removeFromSuperview()
+        if let opacityCanvas = canvasImageView.viewWithTag(100) {
+            opacityCanvas.removeFromSuperview()
+        }
         
-        let opacityTopToolbar = self.view.viewWithTag(100)
-        opacityTopToolbar!.removeFromSuperview()
+        if let opacityTopToolbar = self.view.viewWithTag(100) {
+            opacityTopToolbar.removeFromSuperview()
+        }
         
         enableNextButton()
     }
