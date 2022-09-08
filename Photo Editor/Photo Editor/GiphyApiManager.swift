@@ -79,16 +79,18 @@ class GiphyApiManager {
     }
     
     private func decodeData(data: Data) -> [GiphySizes] {
-        let gifs: GiphyResponse = try! JSONDecoder().decode(GiphyResponse.self, from: data)
-        
         var giphyGifs: [GiphySizes] = []
         
-        for image in gifs.data {
-            if image.images.downsized != nil && image.images.downsized?.url != nil && image.images.downsized?.width != nil && image.images.downsized?.height != nil
-                && image.images.preview_gif != nil && image.images.preview_gif?.url != nil && image.images.preview_gif?.width != nil && image.images.preview_gif?.height != nil {
-                giphyGifs.append(image.images)
+        do {
+            let gifs: GiphyResponse = try JSONDecoder().decode(GiphyResponse.self, from: data)
+            
+            for image in gifs.data {
+                if image.images.downsized != nil && image.images.downsized?.url != nil && image.images.downsized?.width != nil && image.images.downsized?.height != nil
+                    && image.images.preview_gif != nil && image.images.preview_gif?.url != nil && image.images.preview_gif?.width != nil && image.images.preview_gif?.height != nil {
+                    giphyGifs.append(image.images)
+                }
             }
-        }
+        } catch { }
         
         return giphyGifs
     }
