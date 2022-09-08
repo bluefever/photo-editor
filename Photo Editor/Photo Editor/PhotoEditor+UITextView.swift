@@ -162,7 +162,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func onTextToolClose() {
         cancelButton.isHidden = false
         
-        if let recognizers = canvasImageView!.superview!.gestureRecognizers {
+        if let recognizers = canvasImageView.superview?.gestureRecognizers {
             for recognizer in recognizers {
                 if let recognizer = recognizer as? UITapGestureRecognizer {
                     canvasImageView!.superview!.removeGestureRecognizer(recognizer)
@@ -170,11 +170,13 @@ extension PhotoEditorViewController: UITextViewDelegate {
             }
         }
         
-        let opacityCanvas = canvasImageView.viewWithTag(100)
-        opacityCanvas!.removeFromSuperview()
+        if let opacityCanvas = canvasImageView.viewWithTag(100) {
+            opacityCanvas.removeFromSuperview()
+        }
         
-        let opacityTopToolbar = self.view.viewWithTag(100)
-        opacityTopToolbar!.removeFromSuperview()
+        if let opacityTopToolbar = self.view.viewWithTag(100) {
+            opacityTopToolbar.removeFromSuperview()
+        }
         
         enableNextButton()
     }
