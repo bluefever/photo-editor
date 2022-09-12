@@ -31,10 +31,9 @@ extension PhotoEditorViewController: UITextViewDelegate {
 //        }
         
         
-        if (textView.frame.height >= canvasView.frame.height - 40) {
-            let oldFrame = textView.frame
-            textView.backgroundColor = UIColor.red
-            textView.frame.size = CGSize(width: oldFrame.width, height: canvasView.frame.height - 40)
+        if (textView.frame.height >= canvasView.frame.height - 250) {
+            let oldFrame = textView.frame.blue
+            textView.frame.size = CGSize(width: oldFrame.width, height: canvasView.frame.height - 250)
         } else {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))

@@ -274,7 +274,6 @@ extension PhotoEditorViewController {
             
             let view = UIView(frame:  CGRect(x: 0, y: 0,
                                              width: UIScreen.main.bounds.width - 0, height: 90))
-            view.backgroundColor = UIColor.blue
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
             view.autoresizesSubviews = false
