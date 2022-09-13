@@ -44,7 +44,7 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
                                                   attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.attributedText = underlineAttriString
         
-        let image = UIImage(named: "scg_content", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        let image = UIImage(named: "contents", in: Bundle(for: type(of: self)), compatibleWith: nil)
         let imageView = UIImageView.init(frame: CGRect(x:16, y:16, width: scrollView.frame.width, height: scrollView.frame.height))
         imageView.image = image
         imageView.frame.size = image?.size ?? .zero
