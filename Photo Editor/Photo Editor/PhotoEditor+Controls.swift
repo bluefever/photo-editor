@@ -287,7 +287,7 @@ extension PhotoEditorViewController {
         } else {
             activeTextView?.becomeFirstResponder()
             activeTextView?.isHidden = false
-        }
+        } 
     }
     
     func hideControls() {
