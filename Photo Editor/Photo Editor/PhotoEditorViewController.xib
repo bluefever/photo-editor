@@ -151,7 +151,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="784.5" height="64"/>
                             <subviews>
                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-LV-rNF">
-                                    <rect key="frame" x="326" y="0.0" width="133" height="45"/>
+                                    <rect key="frame" x="327" y="0.0" width="131" height="45"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcz-fC-Nv8">
                                             <rect key="frame" x="0.0" y="0.0" width="31" height="45"/>
@@ -161,7 +161,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep1-06-7yn">
-                                            <rect key="frame" x="51" y="0.0" width="31" height="45"/>
+                                            <rect key="frame" x="51" y="0.0" width="30" height="45"/>
                                             <state key="normal" image="text_on.png">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </state>
@@ -170,7 +170,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipx-of-77w">
-                                            <rect key="frame" x="102" y="0.0" width="31" height="45"/>
+                                            <rect key="frame" x="101" y="0.0" width="30" height="45"/>
                                             <state key="normal" image="color_off.png"/>
                                             <connections>
                                                 <action selector="onTopTextButtonTapped:" destination="-1" eventType="touchUpInside" id="lEs-gs-xdA"/>
@@ -755,7 +755,7 @@
         </view>
     </objects>
     <resources>
-        <image name="color_off.png" width="31" height="30"/>
+        <image name="color_off.png" width="30" height="30"/>
         <image name="icon_align_center.png" width="30" height="30"/>
         <image name="icon_canvas.png" width="32.5" height="32"/>
         <image name="icon_close.png" width="28" height="28"/>
@@ -763,7 +763,7 @@
         <image name="icon_sticker.png" width="32" height="32"/>
         <image name="icon_text.png" width="32" height="32"/>
         <image name="size_off.png" width="31" height="30"/>
-        <image name="text_on.png" width="31" height="30"/>
+        <image name="text_on.png" width="30" height="30"/>
         <image name="toast_alert_blue.png" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
