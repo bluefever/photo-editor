@@ -210,14 +210,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oro-sg-sRe">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="26.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
                                                                     <state key="normal" image="icon_canvas.png"/>
                                                                     <connections>
                                                                         <action selector="backgroundButtonPressed:" destination="-1" eventType="touchUpInside" id="Qgd-kj-1TT"/>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Templates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6w-fH-saO">
-                                                                    <rect key="frame" x="0.0" y="26.5" width="243.5" height="18.5"/>
+                                                                    <rect key="frame" x="0.0" y="32" width="243.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                                                     <color key="textColor" red="0.25490196078431371" green="0.31372549019607843" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -227,19 +227,15 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QNc-pj-l3B">
                                                             <rect key="frame" x="258.5" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="26.5"/>
-                                                                    <size key="titleShadowOffset" width="1" height="0.0"/>
-                                                                    <state key="normal" image="icon_text.png">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
-                                                                    </state>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
+                                                                    <state key="normal" image="icon_text.png"/>
                                                                     <connections>
                                                                         <action selector="textButtonTapped:" destination="-1" eventType="touchUpInside" id="qcG-gq-62j"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT5-Xm-MnN">
-                                                                    <rect key="frame" x="0.0" y="26.5" width="243.5" height="18.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT5-Xm-MnN">
+                                                                    <rect key="frame" x="0.0" y="32" width="243.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                                                     <color key="textColor" red="0.25490196078431371" green="0.31372549019607843" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -249,16 +245,16 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-2v-os4">
                                                             <rect key="frame" x="517" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEy-K4-lMs">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="26.5"/>
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEy-K4-lMs">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <state key="normal" image="icon_sticker.png"/>
                                                                     <connections>
                                                                         <action selector="stickersButtonTapped:" destination="-1" eventType="touchUpInside" id="wlF-0B-SiV"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun stuff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyL-O8-2tH">
-                                                                    <rect key="frame" x="0.0" y="26.5" width="243.5" height="18.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Stickers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyL-O8-2tH">
+                                                                    <rect key="frame" x="0.0" y="32" width="243.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                                                     <color key="textColor" red="0.25490196078431371" green="0.31372549019607843" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -761,11 +757,11 @@
     <resources>
         <image name="color_off.png" width="31" height="30"/>
         <image name="icon_align_center.png" width="30" height="30"/>
-        <image name="icon_canvas.png" width="20" height="20"/>
+        <image name="icon_canvas.png" width="32.5" height="32"/>
         <image name="icon_close.png" width="28" height="28"/>
         <image name="icon_delete.png" width="46" height="46"/>
-        <image name="icon_sticker.png" width="20" height="20"/>
-        <image name="icon_text.png" width="20" height="20"/>
+        <image name="icon_sticker.png" width="32" height="32"/>
+        <image name="icon_text.png" width="32" height="32"/>
         <image name="size_off.png" width="31" height="30"/>
         <image name="text_on.png" width="31" height="30"/>
         <image name="toast_alert_blue.png" width="32" height="32"/>
