@@ -216,8 +216,8 @@ public final class PhotoEditorViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         canvasImageView.addGestureRecognizer(tapGesture)
         
-        topSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #DFDFDF").cgColor)
-        bottomSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #DFDFDF").cgColor)
+        topSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #FF0000").cgColor)
+        bottomSafeZoneLine.addDottedLine(width: 1.5, color: UIColor.init(hexString: " #FF0000").cgColor)
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -229,6 +229,9 @@ public final class PhotoEditorViewController: UIViewController {
                 self.present(popupViewController, animated: true)
             }
         }
+        
+        centerVerticalView.heightConstraint?.constant = 1.5
+        centerHorizontalView.widthConstraint?.constant = 1.5
     }
     
     public override func viewDidLayoutSubviews() {
