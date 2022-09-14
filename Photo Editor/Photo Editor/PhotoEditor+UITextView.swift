@@ -13,27 +13,10 @@ import KMPlaceholderTextView
 extension PhotoEditorViewController: UITextViewDelegate {
     
     public func textViewDidChange(_ textView: UITextView) {
-        print(keyboardSize, textView.frame.origin.y, textView.frame.height, canvasImageView.center.y - topToolbar.frame.height)
-        
-        
-//        let rotation = atan2(textView.transform.b, textView.transform.a)
-//        if rotation == 0 {
-//            let oldFrame = textView.frame
-//            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-//            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-//            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-//        }
-//
-//        if (textView.text.count == 0) {
-//            let oldFrame = textView.frame
-//            textView.frame.size = CGSize(width: oldFrame.width, height: 90)
-//            textView.superview?.frame.size = CGSize(width: oldFrame.width, height: 90)
-//        }
-        
-        
-        if (textView.frame.height >= canvasView.frame.height - 250) {
+        print(keyboardSize)
+        if (textView.frame.height >= canvasView.frame.height - keyboardSize + 40) {
             let oldFrame = textView.frame.size
-            textView.frame.size = CGSize(width: oldFrame.width, height: canvasView.frame.height - 250)
+            textView.frame.size = CGSize(width: oldFrame.width, height: canvasView.frame.height - keyboardSize + 40)
         } else {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
