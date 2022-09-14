@@ -91,12 +91,17 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 if let view = recognizer.view {
                     if canvasImageView.subviews.contains(view) {
                         scaleEffect(view: view)
-                        
+                        return
                     }
                 }
             } else {
                 canvasImageView.bringSubviewToFront(view)
+                return
             }
+        }
+        
+        if (!isTyping) {
+            openTextTool()
         }
     }
     
@@ -173,7 +178,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                               y: view.center.y + recognizer.translation(in: canvasImageView).y)
         let center = self.view.convert(view.center, from: canvasImageView)
         
-        if (view.center.x > UIScreen.main.bounds.width / 2 - 5 && view.center.x < UIScreen.main.bounds.width / 2 + 5) {
+        if (view.center.x > UIScreen.main.bounds.width / 2 - 2 && view.center.x < UIScreen.main.bounds.width / 2 + 2) {
             view.center = CGPoint(x: canvasImageView.frame.width / 2,
                                   y: view.center.y + recognizer.translation(in: canvasImageView).y)
             centerHorizontalView.isHidden = false
@@ -181,7 +186,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             centerHorizontalView.isHidden = true
         }
         
-        if (center.y > UIScreen.main.bounds.size.height / 2 - 5 && center.y < UIScreen.main.bounds.size.height / 2 + 5) {
+        if (center.y > UIScreen.main.bounds.size.height / 2 - 2 && center.y < UIScreen.main.bounds.size.height / 2 + 2) {
             view.center = CGPoint(x: view.center.x + recognizer.translation(in: canvasImageView).x,
                                   y: canvasImageView.frame.height / 2)
             centerVerticalView.isHidden = false
@@ -189,6 +194,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             centerVerticalView.isHidden = true
         }
         
+        showSafeAreaLines(viewY: view.center.y, canvasImageHeight: canvasImageView.frame.height)
         recognizer.setTranslation(CGPoint.zero, in: canvasImageView)
         
         if let previousPoint = lastPanPoint {
@@ -215,6 +221,8 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         lastPanPoint = pointToSuperView
         
         if recognizer.state == .ended {
+            topSafeZoneLine.isHidden = true
+            bottomSafeZoneLine.isHidden = true
             centerHorizontalView.isHidden = true
             centerVerticalView.isHidden = true
             imageViewToPan = nil
@@ -232,13 +240,27 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }
-            } else if !canvasImageView.bounds.contains(view.center) {
+            } else if (view.center.y > canvasImageView.frame.height || view.center.y < 0) {
                 //Snap the view back to canvasImageView
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    view.center = self.canvasImageView.center
-//                })
+                UIView.animate(withDuration: 0.3, animations: {
+                    view.center = self.canvasImageView.center
+                })
                 
             }
+        }
+    }
+    
+    func showSafeAreaLines (viewY: CGFloat, canvasImageHeight: CGFloat) {
+        if (viewY < 0) {
+            topSafeZoneLine.isHidden = false
+        } else {
+            topSafeZoneLine.isHidden = true
+        }
+        
+        if (viewY > canvasImageHeight) {
+            bottomSafeZoneLine.isHidden = false
+        } else {
+            bottomSafeZoneLine.isHidden = true
         }
     }
     

@@ -16,9 +16,12 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
     @IBOutlet weak var segmentedView: TTSegmentedControl!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var pageTileLabel: UILabel!
+    @IBOutlet weak var stickersLimitView: UIView!
     
     @objc public var gifsStickersViewControllerDelegate : GifsStickersViewControllerDelegate?
     @objc public var pageTitle: String?
+    
+    var showLimit: Bool = false
     
     var stickersCollectionView: UICollectionView!
     var gifsCollectionView: UICollectionView!
@@ -103,19 +106,15 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
         self.view.layer.masksToBounds = false
     }
     
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+        self.view.layer.masksToBounds = false
+        self.view.layer.shadowOffset = offset
+        self.view.layer.shadowColor = color.cgColor
+        self.view.layer.shadowRadius = radius
+        self.view.layer.shadowOpacity = opacity
 
-
-        func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
-            self.view.layer.masksToBounds = false
-            self.view.layer.shadowOffset = offset
-            self.view.layer.shadowColor = color.cgColor
-            self.view.layer.shadowRadius = radius
-            self.view.layer.shadowOpacity = opacity
-
-            self.view.layer.backgroundColor =  UIColor.black.cgColor
-        }
-    
-    
+        self.view.layer.backgroundColor =  UIColor.black.cgColor
+    }
     
     @IBAction func onSearchChanged(_ sender: UITextField) {
         if let searchText = sender.text {
@@ -255,6 +254,19 @@ public final class GifsStickersViewController: UIViewController, UIGestureRecogn
                                      y: yComponent,
                                      width: frame.width,
                                      height: UIScreen.main.bounds.height - self.bottomPadding)
+        }
+        
+        showLimitBanner()
+    }
+    
+    public func showLimitBanner() {
+        if (showLimit) {
+            stickersLimitView.isHidden = false
+            stickersLimitView.layer.cornerRadius = 16
+            stickersLimitView.layer.borderWidth = 0.5
+            stickersLimitView.layer.borderColor = UIColor.init(hexString: "#DFDFDF").cgColor
+        } else {
+            stickersLimitView.isHidden = true
         }
     }
     

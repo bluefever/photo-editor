@@ -50,6 +50,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         doneButton.isHidden = false
         textView.isScrollEnabled = true
         
+        lastTextViewFrame = textView.superview?.frame.origin
         lastTextViewTransform =  textView.superview?.transform
         lastTextViewTransCenter = textView.superview?.center
         lastTextViewFont = textView.font!
@@ -107,8 +108,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         if (activeTextView != nil) {
             let oldFrame = activeTextView?.frame
+
             let sizeToFit = activeTextView?.sizeThatFits(CGSize(width: oldFrame!.width, height:CGFloat.greatestFiniteMagnitude))
-        
             activeTextView?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
             activeTextView?.superview?.frame.size = CGSize(width: sizeToFit!.width, height: sizeToFit!.height)
         }
@@ -125,11 +126,22 @@ extension PhotoEditorViewController: UITextViewDelegate {
         textView.isScrollEnabled = false
         
         if (!isNewText) {
-            UIView.animate(withDuration: 0.3,
+            let transformPoint = __CGPointApplyAffineTransform(self.lastTextViewFrame!, self.lastTextViewTransform!)
+            
+            if (self.lastTextViewFrame!.x != transformPoint.x) {
+                UIView.animate(withDuration: 0.3,
                            animations: {
                             textView.superview!.transform = self.lastTextViewTransform!
                             textView.superview!.center = self.lastTextViewTransCenter!
                            }, completion: nil)
+            } else {
+                UIView.animate(withDuration: 0.3,
+                           animations: {
+                            textView.superview!.transform = self.lastTextViewTransform!
+                            textView.superview!.frame.origin.x = self.lastTextViewFrame!.x
+                            textView.superview!.frame.origin.y = self.lastTextViewFrame!.y
+                           }, completion: nil)
+            }
         }
         
         let panGesture = UIPanGestureRecognizer(target: self,
@@ -143,8 +155,6 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func onTextToolOpen() {
         alertButton.isHidden = true
         cancelButton.isHidden = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
-        canvasImageView.addGestureRecognizer(tapGesture)
         
         let opacityCanvas = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         opacityCanvas.backgroundColor = UIColor.black.withAlphaComponent(0.5)

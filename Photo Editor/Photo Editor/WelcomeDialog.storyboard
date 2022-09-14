@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="50" id="La6-LQ-roE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
-                                        <state key="normal" title="next">
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

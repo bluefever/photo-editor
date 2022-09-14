@@ -14,6 +14,7 @@ extension PhotoEditorViewController {
     func addGifsStickersViewController() {
         gifsStickersVCIsVisible = true
         gifsStickersViewController.gifsStickersViewControllerDelegate = self
+        gifsStickersViewController.showLimit = gifsImages.count == 10
         
         self.addChild(gifsStickersViewController)
         self.view.addSubview(gifsStickersViewController.view)
@@ -21,6 +22,7 @@ extension PhotoEditorViewController {
         let height = view.frame.height
         let width  = view.frame.width
         gifsStickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+        
     }
     
     func removeStickersView() {
@@ -53,11 +55,12 @@ extension PhotoEditorViewController: GifsStickersViewControllerDelegate {
         
         var imageView: SDAnimatedImageView? = nil
         
-        if (!gifsImages.isEmpty &&  gifsImages.count > 4) {
+        if (!gifsImages.isEmpty &&  gifsImages.count > 9) {
             imageView = gifsImages[gifsImages.count - 1]
             gifsSources[gifsSources.count - 1].url = gif
         } else {
             imageView = SDAnimatedImageView()
+            imageView?.maxBufferSize = 1
         }
         
         if let image = imageView {

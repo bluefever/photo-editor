@@ -350,3 +350,41 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
 }
+
+extension UIView {
+   func addDottedLine(width: CGFloat, color: CGColor) {
+      let caShapeLayer = CAShapeLayer()
+      caShapeLayer.strokeColor = color
+      caShapeLayer.lineWidth = width
+      caShapeLayer.lineDashPattern = [2,3]
+       
+      let cgPath = CGMutablePath()
+      let cgPoint = [CGPoint(x: 0, y: 0), CGPoint(x: self.frame.width, y: 0)]
+       
+      cgPath.addLines(between: cgPoint)
+      caShapeLayer.path = cgPath
+       
+      layer.addSublayer(caShapeLayer)
+   }
+}
+
+extension UIView {
+    var heightConstraint: NSLayoutConstraint? {
+    get {
+        return constraints.first(where: {
+            $0.firstAttribute == .height && $0.relation == .equal
+        })
+    }
+    set { setNeedsLayout() }
+}
+
+    var widthConstraint: NSLayoutConstraint? {
+    get {
+        return constraints.first(where: {
+            $0.firstAttribute == .width && $0.relation == .equal
+        })
+    }
+    set { setNeedsLayout() }
+}
+
+}

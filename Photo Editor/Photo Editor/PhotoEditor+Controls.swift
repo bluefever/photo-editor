@@ -36,6 +36,11 @@ extension PhotoEditorViewController {
             break
         case 2:
             selectTextColor()
+            
+            if let index = colorsCollectionViewDelegate.colors.firstIndex(of: colorsCollectionViewDelegate.initialColor!) {
+                let ind =  IndexPath(item: index, section: 0)
+                colorsCollectionView.selectItem(at:ind, animated: false, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+            }
             break
         default:
             return
@@ -47,14 +52,14 @@ extension PhotoEditorViewController {
             closeTextTool()
         }
         
-        let refreshAlert = UIAlertController(title: "Abandon your Note?", message: "Leaving now will delete this note forever.", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: "Discard your page?", message: "This action cannot be undone.", preferredStyle: UIAlertController.Style.alert)
         
         
         refreshAlert.addAction(UIAlertAction(title: "Keep Editing", style: .default, handler: { (action: UIAlertAction!) in
             refreshAlert.dismiss(animated: true, completion: nil)
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Abandon", style: .destructive, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: { (action: UIAlertAction!) in
             self.photoEditorDelegate?.canceledEditing(edited: self.isPageEdited())
             self.dismiss(animated: true, completion: nil)
         }))
@@ -254,9 +259,9 @@ extension PhotoEditorViewController {
             textColor = UIColor.black
             setFontStyleButton(fontIndex: 0)
             setAlignButton(align: .left)
+
             if (colorsCollectionViewDelegate != nil) {
                 colorsCollectionViewDelegate.initialColor = UIColor.black
-                colorsCollectionView.reloadData()
             }
             
             let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0,
@@ -271,9 +276,8 @@ extension PhotoEditorViewController {
             textView.placeholderColor = UIColor.init(hexString: "#fff")
             textView.placeholderFont = UIFont(name: "Nunito-SemiBold", size: 20)
             
-            
             let view = UIView(frame:  CGRect(x: 0, y: 0,
-                                             width: UIScreen.main.bounds.width - 0, height: 90))
+                                             width: UIScreen.main.bounds.width, height: 90))
             self.canvasImageView.addSubview(view)
             view.addSubview(textView)
             view.autoresizesSubviews = false

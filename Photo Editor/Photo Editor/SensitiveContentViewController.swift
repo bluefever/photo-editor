@@ -40,7 +40,7 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
           
        
         
-        let underlineAttriString = NSAttributedString(string: "send us a message",
+        let underlineAttriString = NSAttributedString(string: "Send us a message",
                                                   attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.attributedText = underlineAttriString
         
