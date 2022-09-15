@@ -209,7 +209,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zfa-Do-1KJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oro-sg-sRe">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oro-sg-sRe">
                                                                     <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
                                                                     <state key="normal" image="icon_canvas.png"/>
                                                                     <connections>
@@ -227,7 +227,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QNc-pj-l3B">
                                                             <rect key="frame" x="258.5" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
                                                                     <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
                                                                     <state key="normal" image="icon_text.png"/>
                                                                     <connections>
@@ -245,9 +245,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-2v-os4">
                                                             <rect key="frame" x="517" y="0.0" width="243.5" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEy-K4-lMs">
+                                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEy-K4-lMs">
                                                                     <rect key="frame" x="0.0" y="0.0" width="243.5" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <state key="normal" image="icon_sticker.png"/>
                                                                     <connections>
                                                                         <action selector="stickersButtonTapped:" destination="-1" eventType="touchUpInside" id="wlF-0B-SiV"/>

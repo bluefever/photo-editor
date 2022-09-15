@@ -40,10 +40,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
         
         if (!textView.text.isEmpty) {
-            let oldFrame = textView.frame
-            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-            textView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: sizeToFit.height)
-            textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width, height: sizeToFit.height)
+            textView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: canvasView.frame.height - keyboardSize + 40)
+            textView.superview?.frame.size = CGSize(width: UIScreen.main.bounds.width, height: canvasView.frame.height - keyboardSize + 40)
             isNewText = false
         } else {
             isNewText = true
