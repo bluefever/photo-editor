@@ -231,8 +231,8 @@ public final class PhotoEditorViewController: UIViewController {
             }
         }
         
-        centerVerticalView.heightConstraint?.constant = 1.5
-        centerHorizontalView.widthConstraint?.constant = 1.5
+        centerVerticalView.heightConstraint?.constant = 1.75
+        centerHorizontalView.widthConstraint?.constant = 1.6
     }
     
     public override func viewDidLayoutSubviews() {
