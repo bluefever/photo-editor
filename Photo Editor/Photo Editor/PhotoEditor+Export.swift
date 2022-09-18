@@ -439,7 +439,7 @@ extension PhotoEditorViewController {
     public func enableNextButton () {
         var enabled = false
         
-        if imageBgName != nil || imageBg.backgroundColor != nil || gifsSources.count > 0 {
+        if gifsSources.count > 0 {
             enabled = true
         }
         

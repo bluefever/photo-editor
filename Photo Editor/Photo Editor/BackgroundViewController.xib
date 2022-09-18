@@ -70,7 +70,7 @@
                                         <constraint firstAttribute="height" constant="16" id="z8C-CR-VWo"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sib-kD-Uen" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sib-kD-Uen" customClass="TTSegmentedControl" customModule="iOSPhotoEditor" customModuleProvider="target">
                                     <rect key="frame" x="16" y="102" width="343" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>

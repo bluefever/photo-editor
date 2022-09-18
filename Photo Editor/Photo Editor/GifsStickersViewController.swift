@@ -8,7 +8,6 @@
 
 import UIKit
 import CollectionViewWaterfallLayout
-import TTSegmentedControl
 
 public final class GifsStickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!

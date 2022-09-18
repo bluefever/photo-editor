@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import TTSegmentedControl
 
 public final class SensitiveContentViewController: UIViewController, UIGestureRecognizerDelegate, UIScrollViewDelegate {
     @IBOutlet weak var holdView: UIView!

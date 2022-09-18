@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import TTSegmentedControl
 
 class BackgroundsViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var holdView: UIView!

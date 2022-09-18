@@ -20,7 +20,6 @@ with the ability to scale and rotate objects
   s.exclude_files = "Photo Editor/**/AppDelegate.swift"
   s.resources = "Photo Editor/**/*.{png,jpeg,jpg,storyboard,xib,ttf}"
   s.dependency "CollectionViewWaterfallLayout"
-  s.dependency "TTSegmentedControl"
   s.dependency "KMPlaceholderTextView"
   s.dependency "SDWebImage", "~> 5.0"
 end
