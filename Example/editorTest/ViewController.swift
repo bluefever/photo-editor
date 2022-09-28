@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 //        present(photoEditor, animated: true, completion: nil)
         
         // Expression preview view
-        let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 2))
+        let preview = ExpressionScalablePreview.init(frame: CGRect.init(x: 100, y: 100, width: 188, height: 301))
         preview.data = note3
         preview.withShadow = 1
 //

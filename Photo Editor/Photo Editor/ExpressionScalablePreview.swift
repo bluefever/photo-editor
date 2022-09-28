@@ -159,7 +159,7 @@ open class ExpressionScalablePreview: UIView {
     }
     
     func addTextObject (text: String, font: String, color: UIColor, textSize: CGFloat, textAlignment: String?, x: CGFloat, y: CGFloat, transform: Transform?, layerWrapped: Bool?) {
-        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: bounds.width * scaleX, height: 90 * scaleY))
+        let textView = KMPlaceholderTextView(frame: CGRect(x: 0, y: 0, width: bounds.width - 40 * scaleX, height: 90 * scaleY))
         
         textView.text = text
         textView.font = UIFont(name: font, size: textSize)
@@ -175,7 +175,7 @@ open class ExpressionScalablePreview: UIView {
 
         var width = 0.0
         
-        let sizeToFit = textView.sizeThatFits(CGSize(width: bounds.width * scaleX, height:CGFloat.greatestFiniteMagnitude))
+        let sizeToFit = textView.sizeThatFits(CGSize(width: bounds.width - 40 * scaleX, height:CGFloat.greatestFiniteMagnitude))
         width = sizeToFit.width
         
         if (layerWrapped == nil) {
