@@ -121,6 +121,11 @@ public final class PhotoEditorViewController: UIViewController {
     @objc public var initialData: String?
     
     /**
+    Disable object added verification - 1
+     */
+    @objc public var disableVerification: String?
+    
+    /**
     Show welcome dialog - 1
      */
     @objc public var showWelcomeDialog: String?

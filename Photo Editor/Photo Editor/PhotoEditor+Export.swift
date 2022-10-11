@@ -449,6 +449,12 @@ extension PhotoEditorViewController {
             }
         }
         
+        if let disable = disableVerification {
+            if (disable == "1" ) {
+                enabled = true
+            }
+        }
+        
         continueButton.isEnabled = enabled
         
         if (enabled) {
