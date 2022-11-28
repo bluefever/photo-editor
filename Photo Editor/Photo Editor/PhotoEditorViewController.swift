@@ -109,6 +109,11 @@ public final class PhotoEditorViewController: UIViewController {
      Initial background template
      */
     @objc public var initialBgUrl : String?
+
+     /**
+     Initial background color
+     */
+    @objc public var initialBgColor : String?
     
     /**
      Dictionary of backgrounds by category
@@ -274,8 +279,11 @@ public final class PhotoEditorViewController: UIViewController {
     
     func prepareBackgrounds() {
         bgImages.shuffle()
-        
-        if let background = initialBgUrl {
+
+        if let bgColor = initialBgColor {
+            self.setBackgroundColor(color: bgColor)
+        }
+        else if let background = initialBgUrl {
             var matches = background.matchingStrings(regex: "(/backgroundThumbs%2F[a-zA-Z0-9_-]+).png")
             
             if (matches.count == 1 && matches[0].count == 2) {
