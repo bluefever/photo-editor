@@ -54,7 +54,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
             setFontStyleButton(fontIndex: fontIndex(fontName: textView.font!.fontName))
             setAlignButton(align: textView.textAlignment)
         }
-        
+        textView.backgroundColor = .red
         activeTextView = (textView as! KMPlaceholderTextView)
         activeTextView?.clearAttributes()
         
