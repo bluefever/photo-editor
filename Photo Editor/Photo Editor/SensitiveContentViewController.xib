@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SensitiveContentViewController" customModule="iOSPhotoEditor" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SensitiveContentViewController" customModule="Photo_Editor" customModuleProvider="target">
             <connections>
                 <outlet property="holdView" destination="FFz-HG-EXZ" id="EOi-i7-b7v"/>
                 <outlet property="label" destination="XDZ-4X-79F" id="RuJ-QH-tTb"/>
@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sgy-xB-bRW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oF-YM-OfZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="12"/>
@@ -61,26 +61,24 @@
                                         <constraint firstAttribute="height" constant="16" id="jjH-Ms-a7X"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72l-Pf-i7O">
-                                    <rect key="frame" x="16" y="33" width="343" height="80"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Guidelines" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72l-Pf-i7O">
+                                    <rect key="frame" x="16" y="33" width="343" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="80" id="mpk-Az-Jmi"/>
+                                        <constraint firstAttribute="height" constant="40" id="mpk-Az-Jmi"/>
                                     </constraints>
-                                    <string key="text">What’s considered 
-sensitive?</string>
                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="28"/>
                                     <color key="textColor" red="0.11764705882352941" green="0.13725490196078433" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl1-1k-nE9">
-                                    <rect key="frame" x="0.0" y="113" width="375" height="8"/>
+                                    <rect key="frame" x="0.0" y="73" width="375" height="8"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="8" id="k07-P3-5KU"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-3w-a1V">
-                                    <rect key="frame" x="0.0" y="121" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="81" width="375" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="YFj-tr-uMd"/>
@@ -98,7 +96,7 @@ sensitive?</string>
                             </constraints>
                         </stackView>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" directionalLockEnabled="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="389-Pb-g4p">
-                            <rect key="frame" x="0.0" y="122" width="375" height="465"/>
+                            <rect key="frame" x="0.0" y="82" width="375" height="505"/>
                         </scrollView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eIz-gs-rpm">
                             <rect key="frame" x="0.0" y="587" width="375" height="80"/>
@@ -119,13 +117,13 @@ sensitive?</string>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to share your feedback?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD5-Ao-JZg">
-                                    <rect key="frame" x="0.0" y="17" width="375" height="14.5"/>
+                                    <rect key="frame" x="0.0" y="17" width="375" height="13"/>
                                     <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="11"/>
                                     <color key="textColor" red="0.11764705882352941" green="0.13725490196078433" blue="0.27843137254901962" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Send us a message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDZ-4X-79F">
-                                    <rect key="frame" x="0.0" y="31.5" width="375" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="30" width="375" height="22"/>
                                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="14"/>
                                     <color key="textColor" red="0.1176470588" green="0.13725490200000001" blue="0.2784313725" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                     <nil key="highlightedColor"/>
