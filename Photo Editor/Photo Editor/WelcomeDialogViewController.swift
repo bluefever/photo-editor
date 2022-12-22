@@ -67,14 +67,14 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
         slide1.imageView.image = UIImage(named: "slide_1", in: imgBundle, compatibleWith: nil)
         slide1.label.numberOfLines = 5
         slide1.label.textAlignment = .center
-        slide1.label.attributedText = attributedText(withString: "Blue Fever is a 100% anonymous +\njudgment-free space for you to\nexpress your thoughts, feelings and  experiences.\n", boldString: "100% anonymous +\njudgment-free", font: UIFont.init(name: "DMSans-Regular", size: 15)!, withColor: false)
+        slide1.label.attributedText = attributedText(withString: "Blue Fever is a 100% anonymous +\njudgment-free space for you to\nexpress your thoughts, feelings and  experiences.\n", boldString: "100% anonymous +\njudgment-free", font: UIFont.init(name: "DMSans-Regular", size: 15)!, withColor: false, withUnderline: false)
         
         
         let slide2:WelcomeSlide = bundle.loadNibNamed("WelcomeSlideView", owner: nil, options: nil)?.first as! WelcomeSlide
         slide2.imageView.image = UIImage(named: "slide_2", in: imgBundle, compatibleWith: nil)
         slide2.label.numberOfLines = 5
         slide2.label.textAlignment = .center
-        slide2.label.attributedText = attributedText(withString: "In order to maintain a supportive space for all, if sensitive topics are mentioned, we may add a simple TW on your page or default it to private. Learn more.\n", boldString: "Learn more.", font: UIFont.init(name: "DMSans-Regular", size: 15)!, withColor: true)
+        slide2.label.attributedText = attributedText(withString: "To ensure a safe space for all, pages noting sensitive topics or contact info may have a trigger warning or may default to private view. Learn more in our Community Guidelines.\n", boldString: "Community Guidelines", font: UIFont.init(name: "DMSans-Regular", size: 15)!, withColor: true, withUnderline: true)
         slide2.label.isUserInteractionEnabled = true
         
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnLabel(_ :)))
@@ -88,7 +88,7 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
     
     //MARK:- tappedOnLabel
     @objc func tappedOnLabel(_ gesture: UITapGestureRecognizer) {
-        if gesture.didTapAttributedTextInLabel(label: self.slides[1].label, targetText: "Learn more.") {
+        if gesture.didTapAttributedTextInLabel(label: self.slides[1].label, targetText: "Community Guidelines") {
             let sensitiveContentViewController = SensitiveContentViewController(nibName: "SensitiveContentViewController", bundle: Bundle(for: SensitiveContentViewController.self))
             
             sensitiveContentViewController.photoEditorDelegate = photoEditorDelegate
@@ -103,12 +103,12 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
         }
     }
     
-    func attributedText(withString string: String, boldString: String, font: UIFont, withColor: Bool) -> NSAttributedString {
+    func attributedText(withString string: String, boldString: String, font: UIFont, withColor: Bool, withUnderline: Bool) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: string,
                                                      attributes: [NSAttributedString.Key.font: font])
         let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.init(name: "DMSans-Bold", size: 15)!]
         
-        let colorAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "#4150BE")]
+        let colorAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "#1E2347")]
         
         let range = (string as NSString).range(of: boldString)
         attributedString.addAttributes(boldFontAttribute, range: range)
@@ -116,6 +116,11 @@ public final class WelcomeDialogViewController: UIViewController, UIScrollViewDe
         if (withColor) {
             attributedString.addAttributes(colorAttribute, range: range)
         }
+        
+        if(withUnderline) {
+            attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        }
+        
         
         return attributedString
     }
