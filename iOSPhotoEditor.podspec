@@ -21,5 +21,5 @@ with the ability to scale and rotate objects
   s.resources = "Photo Editor/**/*.{png,jpeg,jpg,storyboard,xib,ttf}"
   s.dependency "CollectionViewWaterfallLayout"
   s.dependency "KMPlaceholderTextView"
-  s.dependency "SDWebImage", "~> 5.14.2"
+  s.dependency "SDWebImage", "~> 5.11.1"
 end
