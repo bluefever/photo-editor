@@ -3,11 +3,11 @@ PODS:
   - iOSPhotoEditor (0.5):
     - CollectionViewWaterfallLayout
     - KMPlaceholderTextView
-    - SDWebImage (~> 5.11.1)
+    - SDWebImage (~> 5.14.2)
   - KMPlaceholderTextView (1.4.0)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+  - SDWebImage (5.14.2):
+    - SDWebImage/Core (= 5.14.2)
+  - SDWebImage/Core (5.14.2)
 
 DEPENDENCIES:
   - iOSPhotoEditor (from `../`)
@@ -24,9 +24,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CollectionViewWaterfallLayout: 4399ba01be265fff4da1ed1d607130fe009780e4
-  iOSPhotoEditor: 2c3c94db06c6b40811915ba977237bcf48ace59b
+  iOSPhotoEditor: f72ace6026bd1e8fc58921d1a0e7c457ee4ba6cf
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
 
 PODFILE CHECKSUM: ea06b1d06d0409ebea265171df70afd29804d0c8
 

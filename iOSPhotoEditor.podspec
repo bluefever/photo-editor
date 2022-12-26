@@ -13,7 +13,7 @@ with the ability to scale and rotate objects
   s.author           = { 'Mohamed Hamed' => 'mohamed.hamed.ibrahem@gmail.com' }
   s.source           = { :git => 'https://github.com/M-Hamed/photo-editor.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '4.2'
 
   s.source_files = "Photo Editor/**/*.{swift}"
@@ -21,5 +21,5 @@ with the ability to scale and rotate objects
   s.resources = "Photo Editor/**/*.{png,jpeg,jpg,storyboard,xib,ttf}"
   s.dependency "CollectionViewWaterfallLayout"
   s.dependency "KMPlaceholderTextView"
-  s.dependency "SDWebImage", "~> 5.11.1"
+  s.dependency "SDWebImage", "~> 5.14.2"
 end
