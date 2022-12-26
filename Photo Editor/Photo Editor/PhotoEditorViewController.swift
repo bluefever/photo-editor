@@ -467,7 +467,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         if (disableCrisisVerification == nil) {
             if (!hide) {
-                verifyTextContent()
+                _ = verifyTextContent()
             } else {
                 crisisToast.isHidden = true
             }

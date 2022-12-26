@@ -163,7 +163,7 @@ extension PhotoEditorViewController {
     
     @IBAction func alertButtonTapped(_ sender: Any) {
         crisisToastMode = .toast
-        verifyTextContent()
+        _ = verifyTextContent()
 
         if (crisisTerm == .toxic) {
             photoEditorDelegate?.onAnalyticsEvent(event: "pc_0020")

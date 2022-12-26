@@ -284,7 +284,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         enableNextButton()
         
         if (disableCrisisVerification == nil) {
-            verifyTextContent()
+            _ = verifyTextContent()
         }
     }
     

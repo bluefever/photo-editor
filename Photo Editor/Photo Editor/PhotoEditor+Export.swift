@@ -312,7 +312,7 @@ extension PhotoEditorViewController {
         }
         
         if (disableCrisisVerification == nil) {
-            verifyTextContent()
+            _ = verifyTextContent()
         }
     }
     
