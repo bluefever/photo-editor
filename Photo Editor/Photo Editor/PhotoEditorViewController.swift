@@ -337,9 +337,17 @@ public final class PhotoEditorViewController: UIViewController {
         crisisLabel.sizeToFit()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onLearMore))
+        let learnMoreLabelText = "Learn more in our guidelines."
+        
+        let underlineAttriLinkString = NSMutableAttributedString(string: learnMoreLabelText)
+        let range = (learnMoreLabelText as NSString).range(of:learnMoreLabelText)
+        underlineAttriLinkString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        
+        learnMoreLabel.attributedText = underlineAttriLinkString
         learnMoreLabel.isUserInteractionEnabled = true
         learnMoreLabel.addGestureRecognizer(tap)
         learnMoreLabel.sizeToFit()
+        
         
         controlsView.layer.cornerRadius = 20
         controlsView.clipsToBounds = true

@@ -14,11 +14,18 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
     @IBOutlet weak var topLine: UIView!
     @IBOutlet weak var sendMessage: UILabel!
     
+    var learnMoreLinkLabel: UILabel!
+    
     public var photoEditorDelegate: PhotoEditorDelegate?
     
     let screenSize = UIScreen.main.bounds.size
     
     let fullView: CGFloat = 100 // remainder of screen height
+    let scrollViewBottomPadding: CGFloat = 32 + 68 // padding bottom for scrollview
+    let imageBottomPadding: CGFloat = 36 // padding bottom for image view
+    
+    let cgTitleText = "Where can I find BF’s full Community Guidelines?"
+    let learnMoreText = "Learn more on bluefever.com/community-guidelines."
     
     var bottomPadding: CGFloat {
         var topPadding:CGFloat? = 0
@@ -36,9 +43,7 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
         
         self.automaticallyAdjustsScrollViewInsets = false
         scrollView.showsVerticalScrollIndicator = false
-          
-       
-        
+
         let underlineAttriString = NSAttributedString(string: "Send us a message",
                                                   attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.attributedText = underlineAttriString
@@ -47,13 +52,69 @@ public final class SensitiveContentViewController: UIViewController, UIGestureRe
         let imageView = UIImageView.init(frame: CGRect(x:16, y:16, width: scrollView.frame.width, height: scrollView.frame.height))
         imageView.image = image
         imageView.frame.size = image?.size ?? .zero
-        scrollView.contentSize = CGSize(width: image!.size.width, height: image!.size.height + 32)
+        scrollView.contentSize = CGSize(width: image!.size.width, height: image!.size.height + scrollViewBottomPadding)
         scrollView.addSubview(imageView)
+        
         scrollView.delegate = self
+        
+        let vStack = UIStackView(frame: CGRect(x: 16, y: imageView.frame.height + imageBottomPadding, width: imageView.frame.width, height: 40))
+        vStack.axis = .vertical
+        
+        let boldFont = UIFont(name: "DMSans-Bold", size: 14)
+        let normalFont = UIFont(name: "DMSans-Regular", size: 14)
+        
+        let titleLabel = UILabel()
+        titleLabel.textColor = UIColor.init(hexString: "#1E2347")
+        titleLabel.textAlignment = .left
+        let boldFontAttribute = [NSAttributedString.Key.font:boldFont!]
+        let boldString = NSMutableAttributedString(string: cgTitleText, attributes:boldFontAttribute)
+        titleLabel.attributedText = boldString
+        
+        let learnMoreLabel = UILabel()
+        learnMoreLabel.textColor = UIColor.black
+        learnMoreLabel.textAlignment = .left
+       
+        let nonBoldFontAttribute = [NSAttributedString.Key.font:normalFont!]
+        let underlineAttriLinkString = NSMutableAttributedString(string: learnMoreText, attributes: nonBoldFontAttribute)
+        let range1 = (learnMoreText as NSString).range(of: "bluefever.com/community-guidelines.")
+        underlineAttriLinkString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range1)
+        underlineAttriLinkString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(hexString: "#4150BE"), range: range1)
+        
+        learnMoreLabel.isUserInteractionEnabled = true
+        learnMoreLabel.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(tapLabel(gesture:))))
+        learnMoreLabel.attributedText = underlineAttriLinkString
+        
+        vStack.addArrangedSubview(titleLabel)
+        vStack.addArrangedSubview(learnMoreLabel)
+        
+        learnMoreLinkLabel = learnMoreLabel
+        
+        
+        learnMoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    
+        
+        scrollView.addSubview(vStack)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.sendMessageOnClick))
         sendMessage.isUserInteractionEnabled = true
         sendMessage.addGestureRecognizer(tap)
+    }
+    
+   
+    @objc
+    func tapLabel(gesture: UITapGestureRecognizer) {
+        if gesture.didTapAttributedTextInLabel(label: self.learnMoreLinkLabel, targetText: "bluefever.com/community-guidelines.") {
+            guard let url = URL(string: "https://www.bluefever.com/community-guidelines") else {
+              return
+            }
+
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     
     @objc

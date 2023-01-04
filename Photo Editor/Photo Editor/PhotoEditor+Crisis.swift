@@ -20,8 +20,8 @@ enum CrisisToastMode {
 
 extension PhotoEditorViewController {
     func showToxicTermToast () {
-        crisisLabel.text = "I spotted some word(s) that our community flagged in the past, so this page can only be posted privately."
-        crisisLabel.highlight(searchedText: "word(s)")
+        crisisLabel.text = "Your page contains sensitive content\nand will default to private view to\nensure a safe space for all."
+        crisisLabel.highlight(searchedText: "sensitive content")
         toastBlueImage.image = UIImage(named: "toast_alert_red", in: Bundle(for: type(of: self)), compatibleWith: nil)!
         alertButton.setImage(UIImage(named: "icon_alert_red", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
         
@@ -41,7 +41,7 @@ extension PhotoEditorViewController {
     }
     
     func showActiveTermToast () {
-        crisisLabel.text = "It looks like your page mentions a sensitive topic. Pls note, there’ll be a special TW label if posted publicly 💙"
+        crisisLabel.text = "It looks like your page mentions a sensitive topic. To be mindful of others,\na TW label will be auto-enabled."
         crisisLabel.highlight(searchedText: "sensitive topic")
         toastBlueImage.image = UIImage(named: "toast_alert_blue", in: Bundle(for: type(of: self)), compatibleWith: nil)!
         alertButton.setImage(UIImage(named: "icon_alert_blue", in: Bundle(for: type(of: self)), compatibleWith: nil)!, for: .normal)
